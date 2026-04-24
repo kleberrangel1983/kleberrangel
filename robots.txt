@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /index.html
+Allow: /politica-privacidade.html
+Allow: /termos.html
+Disallow: /admin/
+Disallow: /.env
+Disallow: /.git/
+
+Sitemap: https://www.drkleberrangel.com.br/sitemap.xml
+
+# Bot delays
+Crawl-delay: 1
+Request-rate: 30/60
+
+# Specific bot rules
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Googlebot
+Crawl-delay: 0
+
+User-agent: Bingbot
+Crawl-delay: 1

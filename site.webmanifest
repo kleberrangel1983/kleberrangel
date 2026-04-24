@@ -1,0 +1,69 @@
+{
+  "name": "Clínica Trate a Dor - Dr. Kleber Rangel",
+  "short_name": "Trate a Dor",
+  "description": "Ortopedista especialista em medicina da dor e regenerativa em Divinópolis-MG. Tratamentos para dor crônica sem cirurgia.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#0d7c7c",
+  "background_color": "#ffffff",
+  "categories": ["medical", "health"],
+  "icons": [
+    {
+      "src": "/assets/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/favicon-256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/Foto_Kleber.jpeg",
+      "sizes": "540x720",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Agendar Consulta",
+      "short_name": "Agendar",
+      "description": "Agendar consulta com Dr. Kleber Rangel",
+      "url": "/?source=pwa-shortcut-agenda",
+      "icons": [
+        {
+          "src": "/assets/favicon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Baixar Guia Grátis",
+      "short_name": "Guia",
+      "description": "Baixar eBook sobre dor crônica sem cirurgia",
+      "url": "/?source=pwa-shortcut-ebook",
+      "icons": [
+        {
+          "src": "/assets/favicon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false
+}

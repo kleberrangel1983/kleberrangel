@@ -1,0 +1,14 @@
+# Redirects para URLs amigáveis
+/privacidade /politica-privacidade.html 301
+/lgpd /politica-privacidade.html 301
+/termos /termos.html 301
+/agenda https://wa.me/5537998419396?text=Olá%2C%20gostaria%20de%20agendar%20minha%20consulta 301
+/whatsapp https://wa.me/5537998419396 301
+/instagram https://instagram.com/drkleberrangel 301
+/google https://maps.app.goo.gl/PMmPiK5sRZVHzy9K7 301
+
+# Cache busting para assets
+/assets/* /:splat 200
+
+# SPA fallback (se adicionar páginas no futuro)
+/* /index.html 200

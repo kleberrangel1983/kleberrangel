@@ -1,0 +1,41 @@
+# Git files
+.git
+.gitignore
+.github
+
+# Docs
+README.md
+*.md
+CHECKLIST_COMPLIANCE.md
+RESUMO_EXECUTIVO.md
+INSTRUÇÕES_RÁPIDO_DEPLOY.md
+
+# Editor/IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Build/Cache
+node_modules
+.cache
+dist
+build
+
+# Environment
+.env
+.env.local
+.env.*.local
