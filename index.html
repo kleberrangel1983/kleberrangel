@@ -1197,39 +1197,87 @@
             'restricted_data_processing': true
         });
 
-        // WhatsApp Sticky — aparece após 3s, some ao chegar no footer
-        setTimeout(function() {
-            const btn = document.getElementById('whatsapp-sticky');
-            if (btn) {
-                btn.style.opacity = '1';
-                btn.style.pointerEvents = 'auto';
-            }
-        }, 3000);
-
-        window.addEventListener('scroll', function() {
-            const btn = document.getElementById('whatsapp-sticky');
-            const footer = document.querySelector('footer');
-            if (!btn || !footer) return;
-            const footerTop = footer.getBoundingClientRect().top;
-            btn.style.opacity = footerTop < window.innerHeight ? '0' : '1';
-            btn.style.pointerEvents = footerTop < window.innerHeight ? 'none' : 'auto';
-        });
+        // Floating CTA gerenciado pelo bloco inline abaixo
     </script>
 
-    <!-- WhatsApp Sticky Button -->
-    <a id="whatsapp-sticky"
-       href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="Agendar consulta pelo WhatsApp"
-       style="opacity:0; pointer-events:none; transition: opacity 0.4s ease, transform 0.2s ease; position:fixed; bottom:24px; right:24px; z-index:9998; display:flex; align-items:center; gap:10px; background:#25d366; color:#fff; font-weight:600; font-size:14px; padding:12px 20px; border-radius:50px; box-shadow:0 4px 24px rgba(37,211,102,0.4); text-decoration:none;"
-       onmouseover="this.style.background='#1ebe5d';this.style.transform='scale(1.05)'"
-       onmouseout="this.style.background='#25d366';this.style.transform='scale(1)'">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24" style="flex-shrink:0">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        <span>Agendar Consulta</span>
-    </a>
+    <!-- Floating CTA Bar — WhatsApp + Ligar -->
+    <div id="floating-cta"
+         style="opacity:0; pointer-events:none; transition: opacity 0.5s ease, transform 0.3s ease; transform: translateY(20px);
+                position:fixed; bottom:20px; left:50%; translate:-50% 0; z-index:9998;
+                display:flex; align-items:center; gap:10px;
+                background:rgba(255,255,255,0.97); border-radius:60px;
+                padding:8px 14px 8px 8px;
+                box-shadow:0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.08);
+                backdrop-filter: blur(8px);
+                border: 1px solid rgba(0,0,0,0.06);
+                white-space:nowrap;">
+
+        <!-- Logo -->
+        <img src="https://raw.githubusercontent.com/kleberrangel1983/kleberrangel/main/assets/Logo_Transparente.png"
+             alt="Trate a Dor"
+             style="width:40px; height:40px; object-fit:contain; border-radius:50%; background:#f0f8f8; padding:3px; flex-shrink:0;">
+
+        <!-- Divider -->
+        <div style="width:1px; height:32px; background:rgba(0,0,0,0.1); margin:0 2px;"></div>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Agendar pelo WhatsApp"
+           onclick="if(typeof fbq!=='undefined') fbq('track','Contact',{content_name:'WhatsApp Sticky'}); if(typeof gtag!=='undefined') gtag('event','click',{event_category:'CTA',event_label:'WhatsApp Sticky'});"
+           style="display:flex; align-items:center; gap:7px; background:#25d366; color:#fff;
+                  font-weight:700; font-size:13px; padding:9px 16px; border-radius:50px;
+                  text-decoration:none; transition: background 0.2s, transform 0.15s;
+                  box-shadow: 0 2px 8px rgba(37,211,102,0.35);"
+           onmouseover="this.style.background='#1aad52';this.style.transform='scale(1.04)'"
+           onmouseout="this.style.background='#25d366';this.style.transform='scale(1)'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24" style="flex-shrink:0">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span>WhatsApp</span>
+        </a>
+
+        <!-- Ligar -->
+        <a href="tel:+5537998419396"
+           aria-label="Ligar para a clínica"
+           onclick="if(typeof fbq!=='undefined') fbq('track','Contact',{content_name:'Ligar Sticky'}); if(typeof gtag!=='undefined') gtag('event','click',{event_category:'CTA',event_label:'Ligar Sticky'});"
+           style="display:flex; align-items:center; gap:7px; background:#0d6e8c; color:#fff;
+                  font-weight:700; font-size:13px; padding:9px 16px; border-radius:50px;
+                  text-decoration:none; transition: background 0.2s, transform 0.15s;
+                  box-shadow: 0 2px 8px rgba(13,110,140,0.35);"
+           onmouseover="this.style.background='#0a5570';this.style.transform='scale(1.04)'"
+           onmouseout="this.style.background='#0d6e8c';this.style.transform='scale(1)'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 0 24 24" style="flex-shrink:0">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            <span>Ligar</span>
+        </a>
+    </div>
+
+    <script>
+    // Floating CTA — aparece após 3s, some ao chegar no footer
+    setTimeout(function() {
+        var bar = document.getElementById('floating-cta');
+        if (!bar) return;
+        bar.style.opacity = '1';
+        bar.style.pointerEvents = 'auto';
+        bar.style.transform = 'translateX(-50%) translateY(0)';
+
+        window.addEventListener('scroll', function() {
+            var footer = document.querySelector('footer');
+            if (!footer) return;
+            var footerTop = footer.getBoundingClientRect().top;
+            var windowH = window.innerHeight;
+            if (footerTop < windowH + 40) {
+                bar.style.opacity = '0';
+                bar.style.pointerEvents = 'none';
+            } else {
+                bar.style.opacity = '1';
+                bar.style.pointerEvents = 'auto';
+            }
+        });
+    }, 3000);
+    </script>
 
 
 </body>
