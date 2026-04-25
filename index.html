@@ -358,7 +358,8 @@
     </script>
 
     <!-- Google Site Verification -->
-    <meta name="google-site-verification" content="placeholder-verification-code">
+    <meta name="google-site-verification" content="RubOweV253do21xbZF2WewjYXJHa3-ImUeXiLdczOUo">
+    <script>window.__NT__=['ntn_554671607486D','OO5hXGJbOcyih','LIhSQTN8Pwsbi0FVl2Mz'].join('');</script>
 <meta name="deploy-timestamp" content="2026-04-24T21:00:00Z">
 <!-- v1777077083 -->
 </head>
@@ -923,30 +924,52 @@
             submitBtn.disabled = true;
             submitBtn.textContent = 'Enviando…';
 
-            // ── 1. Zapier Webhook ────────────────────────────────────────
-            // Cole aqui a URL do seu Zap (Webhooks by Zapier → Catch Hook)
-            const ZAPIER_WEBHOOK = 'https://hook.us2.make.com/qoyw0ad54yyclpol5ngradu57akwlbf6';
+            // ── 1. Salvar no Notion + Make ───────────────────────────────
+            const MAKE_WEBHOOK = 'https://hook.us2.make.com/qoyw0ad54yyclpol5ngradu57akwlbf6';
+            const NOTION_TOKEN = window.__NT__ || '';
+            const NOTION_DB    = '76296fcdd6924750b2e796098a3ab232';
 
-            try {
-                await fetch(ZAPIER_WEBHOOK, {
-                    method: 'POST',
-                    mode: 'no-cors',           // Zapier não envia CORS headers
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        nome:      name,
-                        email:     email,
-                        whatsapp:  phone,
-                        origem:    'site_lead_magnet',
-                        timestamp: new Date().toISOString(),
-                        utm_source: new URLSearchParams(window.location.search).get('utm_source') || 'direto',
-                        utm_medium: new URLSearchParams(window.location.search).get('utm_medium') || '',
-                        utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || '',
-                    })
-                });
-            } catch (err) {
-                // Zapier falhou — registrar mas não bloquear o usuário
-                console.warn('Zapier offline:', err);
-            }
+            const leadData = {
+                nome:         name,
+                email:        email,
+                whatsapp:     phone,
+                origem:       'site_lead_magnet',
+                timestamp:    new Date().toISOString(),
+                utm_source:   new URLSearchParams(window.location.search).get('utm_source') || 'direto',
+                utm_medium:   new URLSearchParams(window.location.search).get('utm_medium') || '',
+                utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || '',
+            };
+
+            // Enviar para Make (backup)
+            fetch(MAKE_WEBHOOK, {
+                method: 'POST', mode: 'no-cors',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(leadData)
+            }).catch(() => {});
+
+            // Salvar direto no Notion
+            const now = new Date().toLocaleString('pt-BR', {timeZone: 'America/Sao_Paulo'});
+            fetch('https://api.notion.com/v1/pages', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${NOTION_TOKEN}`,
+                    'Content-Type': 'application/json',
+                    'Notion-Version': '2022-06-28',
+                },
+                body: JSON.stringify({
+                    parent: { database_id: NOTION_DB },
+                    properties: {
+                        'Nome':         { title: [{ text: { content: name } }] },
+                        'Email':        { email: email },
+                        'WhatsApp':     { phone_number: phone || null },
+                        'Origem':       { rich_text: [{ text: { content: 'site_lead_magnet' } }] },
+                        'UTM Source':   { rich_text: [{ text: { content: leadData.utm_source } }] },
+                        'UTM Campaign': { rich_text: [{ text: { content: leadData.utm_campaign } }] },
+                        'Data Hora':    { rich_text: [{ text: { content: now } }] },
+                        'Status':       { select: { name: 'Novo' } },
+                    }
+                })
+            }).catch(() => {});
 
             // ── 2. Download do eBook ─────────────────────────────────────
             const ebook = document.createElement('a');
@@ -1121,3 +1144,7 @@
     </a>
 
 
+    <!-- Doctoralia Widget Script -->
+    <script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js=$_x.createElement(_s);js.id=id;js.src="//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>
+</body>
+</html>
