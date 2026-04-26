@@ -490,9 +490,6 @@
                         <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20vim%20pelo%20site.%20Tenho%20dor%20e%20gostaria%20de%20entender%20se%20sou%20candidato%20ao%20tratamento." target="_blank" rel="noopener noreferrer" class="btn-primary text-center">
                             Me conta seu caso pelo WhatsApp
                         </a>
-                        <button id="open-lead-magnet" class="text-sm text-white/70 hover:text-white underline underline-offset-2 transition text-center bg-transparent border-0 cursor-pointer">
-                            Receber guia gratuito sobre dor crônica
-                        </button>
                     </div>
                     <p class="text-xs text-white/50 mt-2">Resposta em horário comercial · Sem compromisso</p>
 
@@ -516,7 +513,7 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 <div>
                     <div class="font-display text-3xl font-bold text-medical-teal">2.900+</div>
-                    <p class="text-sm text-accent-gray mt-2">Pacientes tratados</p>
+                    <p class="text-sm text-accent-gray mt-2">Pacientes atendidos desde 2009</p>
                 </div>
                 <div>
                     <div class="font-display text-3xl font-bold text-medical-teal">4.8★</div>
@@ -524,7 +521,7 @@
                 </div>
                 <div>
                     <div class="font-display text-3xl font-bold text-medical-teal">15+</div>
-                    <p class="text-sm text-accent-gray mt-2">Anos de experiência</p>
+                    <p class="text-sm text-accent-gray mt-2">Anos em Divinópolis-MG</p>
                 </div>
                 <div>
                     <div class="font-display text-3xl font-bold text-medical-teal">50-60min</div>
@@ -722,7 +719,7 @@
     <section class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-14">
-                <p class="text-sm font-semibold text-medical-teal uppercase tracking-wider mb-2">O que dizem os pacientes</p>
+                <p class="text-sm font-semibold text-medical-teal uppercase tracking-wider mb-2">Avaliações verificadas · Google</p>
                 <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">O que dizem os pacientes</h2>
                 <p class="text-accent-gray">Pacientes de Divinópolis e região que recuperaram qualidade de vida</p>
             </div>
@@ -950,9 +947,7 @@
                 <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20vim%20pelo%20site.%20Tenho%20dor%20e%20gostaria%20de%20entender%20se%20sou%20candidato%20ao%20tratamento." target="_blank" rel="noopener noreferrer" class="btn-primary px-10">
                     Me conta seu caso pelo WhatsApp
                 </a>
-                <button id="open-lead-magnet-cta" class="text-sm text-white/50 hover:text-white/80 underline underline-offset-2 transition bg-transparent border-0 cursor-pointer">
-                    Receber guia gratuito sobre dor crônica
-                </button>
+
             </div>
             <p class="text-sm text-white/50 mt-6">
                 Resposta em horário comercial · Seg–Sex 8h–17h
@@ -1089,7 +1084,7 @@
     <script>
         // Lead Magnet Modal
         const modal = document.getElementById('lead-magnet-modal');
-        const openButtons = document.querySelectorAll('#open-lead-magnet, #open-lead-magnet-cta');
+        const openButtons = document.querySelectorAll('#open-lead-magnet-disabled'); // guia desativado
         const closeBtn = document.getElementById('close-modal');
         const form = document.getElementById('lead-magnet-form');
         
