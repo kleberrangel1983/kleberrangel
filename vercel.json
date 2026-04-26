@@ -96,6 +96,41 @@
       "permanent": false
     },
     {
+      "source": "/blog/dor-na-coluna",
+      "destination": "/blog/dor-na-coluna.html",
+      "permanent": false
+    },
+    {
+      "source": "/blog/hernia-de-disco",
+      "destination": "/blog/hernia-de-disco.html",
+      "permanent": false
+    },
+    {
+      "source": "/blog/artrose-joelho",
+      "destination": "/blog/artrose-joelho.html",
+      "permanent": false
+    },
+    {
+      "source": "/blog/condromalacia",
+      "destination": "/blog/condromalacia.html",
+      "permanent": false
+    },
+    {
+      "source": "/blog/quando-fazer-cirurgia-joelho",
+      "destination": "/blog/quando-fazer-cirurgia-joelho.html",
+      "permanent": false
+    },
+    {
+      "source": "/blog/dor-cronica",
+      "destination": "/blog/dor-cronica.html",
+      "permanent": false
+    },
+    {
+      "source": "/blog/prp-tratamento",
+      "destination": "/blog/prp-tratamento.html",
+      "permanent": false
+    },
+    {
       "source": "/ozonoterapia-divinopolis",
       "destination": "/ozonoterapia-divinopolis.html",
       "permanent": false

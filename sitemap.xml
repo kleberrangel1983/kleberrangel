@@ -1,81 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-    
+
+    <!-- SITE PRINCIPAL -->
     <url>
         <loc>https://www.drkleberrangel.com.br/</loc>
-        <lastmod>2026-04-25</lastmod>
+        <lastmod>2026-04-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
 
+    <!-- LANDING PAGES DE PROCEDIMENTOS (indexáveis — remover noindex) -->
     <url>
-        <loc>https://www.drkleberrangel.com.br/coluna.html</loc>
-        <lastmod>2026-04-25</lastmod>
+        <loc>https://www.drkleberrangel.com.br/coluna</loc>
+        <lastmod>2026-04-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://www.drkleberrangel.com.br/joelho.html</loc>
-        <lastmod>2026-04-25</lastmod>
+        <loc>https://www.drkleberrangel.com.br/joelho</loc>
+        <lastmod>2026-04-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://www.drkleberrangel.com.br/blog/dor-na-coluna.html</loc>
-        <lastmod>2026-04-25</lastmod>
+        <loc>https://www.drkleberrangel.com.br/ozonoterapia-divinopolis</loc>
+        <lastmod>2026-04-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://www.drkleberrangel.com.br/prp</loc>
+        <lastmod>2026-04-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://www.drkleberrangel.com.br/blog/hernia-de-disco.html</loc>
-        <lastmod>2026-04-25</lastmod>
+        <loc>https://www.drkleberrangel.com.br/ombro</loc>
+        <lastmod>2026-04-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://www.drkleberrangel.com.br/blog/artrose-joelho.html</loc>
-        <lastmod>2026-04-25</lastmod>
+        <loc>https://www.drkleberrangel.com.br/medicina-regenerativa</loc>
+        <lastmod>2026-04-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+    </url>
+
+    <!-- BLOG -->
+    <url>
+        <loc>https://www.drkleberrangel.com.br/blog/dor-na-coluna</loc>
+        <lastmod>2026-04-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://www.drkleberrangel.com.br/blog/condromalacia.html</loc>
-        <lastmod>2026-04-25</lastmod>
+        <loc>https://www.drkleberrangel.com.br/blog/hernia-de-disco</loc>
+        <lastmod>2026-04-26</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://www.drkleberrangel.com.br/blog/quando-fazer-cirurgia-joelho.html</loc>
-        <lastmod>2026-04-25</lastmod>
+        <loc>https://www.drkleberrangel.com.br/blog/artrose-joelho</loc>
+        <lastmod>2026-04-26</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://www.drkleberrangel.com.br/blog/dor-cronica.html</loc>
-        <lastmod>2026-04-25</lastmod>
+        <loc>https://www.drkleberrangel.com.br/blog/condromalacia</loc>
+        <lastmod>2026-04-26</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://www.drkleberrangel.com.br/blog/prp-tratamento.html</loc>
-        <lastmod>2026-04-25</lastmod>
+        <loc>https://www.drkleberrangel.com.br/blog/quando-fazer-cirurgia-joelho</loc>
+        <lastmod>2026-04-26</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
 
+    <url>
+        <loc>https://www.drkleberrangel.com.br/blog/dor-cronica</loc>
+        <lastmod>2026-04-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://www.drkleberrangel.com.br/blog/prp-tratamento</loc>
+        <lastmod>2026-04-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- INSTITUCIONAL -->
     <url>
         <loc>https://www.drkleberrangel.com.br/politica-privacidade.html</loc>
-        <lastmod>2026-04-25</lastmod>
+        <lastmod>2026-04-26</lastmod>
         <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
+        <priority>0.2</priority>
     </url>
+
 </urlset>
