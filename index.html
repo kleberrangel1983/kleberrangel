@@ -1423,30 +1423,57 @@
     </script>
 
     <!-- Floating CTA Bar — WhatsApp + Ligar -->
-    <div id="floating-cta"
-         style="opacity:0; pointer-events:none; transition: opacity 0.5s ease, transform 0.3s ease; transform: translateY(20px);
-                position:fixed; bottom:20px; left:50%; translate:-50% 0; z-index:9998;
-                display:flex; align-items:center; gap:10px;
-                background:rgba(255,255,255,0.97); border-radius:60px;
-                padding:8px 14px 8px 8px;
-                box-shadow:0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.08);
-                backdrop-filter: blur(8px);
-                border: 1px solid rgba(0,0,0,0.06);
-                white-space:nowrap;">
+    <style>
+      #floating-cta {
+        opacity:0; pointer-events:none;
+        transition: opacity 0.4s ease, transform 0.3s ease;
+        transform: translateY(100%);
+        position:fixed; z-index:9998;
+        bottom:0; left:0; right:0;
+        display:flex; align-items:center;
+        background:#fff;
+        border-top:2px solid #e2f0f4;
+        box-shadow:0 -4px 24px rgba(0,0,0,0.12);
+        padding:10px 16px; gap:10px;
+      }
+      #floating-cta.visible {
+        opacity:1; pointer-events:auto; transform:translateY(0);
+      }
+      @media(min-width:768px){
+        #floating-cta {
+          bottom:24px; left:auto; right:24px;
+          border-top:none; border-radius:60px;
+          padding:8px 14px 8px 10px;
+          box-shadow:0 8px 32px rgba(0,0,0,0.18);
+          border:1px solid rgba(0,0,0,0.06);
+          backdrop-filter:blur(8px);
+          background:rgba(255,255,255,0.97);
+          transform:translateY(20px);
+          width:auto;
+        }
+        #floating-cta.visible { transform:translateY(0); }
+        #floating-cta .cta-wa, #floating-cta .cta-tel { flex:none; }
+      }
+      #floating-cta .cta-wa, #floating-cta .cta-tel {
+        flex:1; justify-content:center;
+      }
+    </style>
 
-        <!-- Logo -->
+    <div id="floating-cta">
+
+        <!-- Logo — só desktop -->
         <img src="/assets/Logo_Transparente.png"
-             alt="Trate a Dor"
-             style="width:40px; height:40px; object-fit:contain; border-radius:50%; background:#f0f8f8; padding:3px; flex-shrink:0;">
-
-        <!-- Divider -->
-        <div style="width:1px; height:32px; background:rgba(0,0,0,0.1); margin:0 2px;"></div>
+             alt="Trate a Dor" class="cta-logo"
+             style="width:40px;height:40px;object-fit:contain;border-radius:50%;background:#f0f8f8;padding:3px;flex-shrink:0;display:none;">
+        <!-- Divider — só desktop -->
+        <div class="cta-divider" style="width:1px;height:32px;background:rgba(0,0,0,0.1);margin:0 2px;display:none;"></div>
 
         <!-- WhatsApp -->
         <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta"
            target="_blank" rel="noopener noreferrer"
            aria-label="Agendar pelo WhatsApp"
            onclick="if(typeof fbq!=='undefined') fbq('track','Contact',{content_name:'WhatsApp Sticky'}); if(typeof gtag!=='undefined') gtag('event','click',{event_category:'CTA',event_label:'WhatsApp Sticky'});"
+           class="cta-wa"
            style="display:flex; align-items:center; gap:7px; background:#25d366; color:#fff;
                   font-weight:700; font-size:13px; padding:9px 16px; border-radius:50px;
                   text-decoration:none; transition: background 0.2s, transform 0.15s;
@@ -1463,6 +1490,7 @@
         <a href="tel:+5537998419396"
            aria-label="Ligar para a clínica"
            onclick="if(typeof fbq!=='undefined') fbq('track','Contact',{content_name:'Ligar Sticky'}); if(typeof gtag!=='undefined') gtag('event','click',{event_category:'CTA',event_label:'Ligar Sticky'});"
+           class="cta-tel"
            style="display:flex; align-items:center; gap:7px; background:#0d6e8c; color:#fff;
                   font-weight:700; font-size:13px; padding:9px 16px; border-radius:50px;
                   text-decoration:none; transition: background 0.2s, transform 0.15s;
@@ -1477,28 +1505,22 @@
     </div>
 
     <script>
-    // Floating CTA — aparece após 3s, some ao chegar no footer
+    // Floating CTA — aparece após 2s, some ao chegar no footer
     setTimeout(function() {
         var bar = document.getElementById('floating-cta');
         if (!bar) return;
-        bar.style.opacity = '1';
-        bar.style.pointerEvents = 'auto';
-        bar.style.transform = 'translateX(-50%) translateY(0)';
-
+        bar.classList.add('visible');
         window.addEventListener('scroll', function() {
             var footer = document.querySelector('footer');
             if (!footer) return;
             var footerTop = footer.getBoundingClientRect().top;
-            var windowH = window.innerHeight;
-            if (footerTop < windowH + 40) {
-                bar.style.opacity = '0';
-                bar.style.pointerEvents = 'none';
+            if (footerTop < window.innerHeight + 40) {
+                bar.classList.remove('visible');
             } else {
-                bar.style.opacity = '1';
-                bar.style.pointerEvents = 'auto';
+                bar.classList.add('visible');
             }
         });
-    }, 3000);
+    }, 2000);
     </script>
 
 
