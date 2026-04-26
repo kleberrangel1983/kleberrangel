@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
     <script>
         tailwind.config = {
             theme: {
@@ -38,6 +38,10 @@
         .cta-pulse { animation: pulse 2s infinite; }
         @keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(13,124,124,0.4)} 50%{box-shadow:0 0 0 12px rgba(13,124,124,0)} }
     </style>
+
+<!-- Meta Pixel -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','877941071024223');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=877941071024223&ev=PageView&noscript=1"/></noscript>
 </head>
 <body class="font-sans bg-white">
 
@@ -72,7 +76,7 @@
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <a href="https://wa.me/5537998419396?text=Olá, vim pelo anúncio. Tenho dor no joelho e gostaria de agendar uma consulta com o Dr. Kleber"
-               target="_blank"
+               target="_blank" rel="noopener noreferrer"
                class="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-xl text-lg transition cta-pulse">
                 📱 Agendar pelo WhatsApp
             </a>
@@ -197,7 +201,7 @@
                 </div>
                 <div class="mt-8 flex flex-col sm:flex-row gap-3">
                     <a href="https://wa.me/5537998419396?text=Olá, vim pelo anúncio. Tenho dor no joelho e gostaria de agendar uma consulta"
-                       target="_blank"
+                       target="_blank" rel="noopener noreferrer"
                        class="bg-teal hover:bg-teal-dark text-white font-bold py-3 px-6 rounded-xl transition text-center">
                         📱 Agendar pelo WhatsApp
                     </a>
@@ -224,7 +228,7 @@
         <p class="text-white/90 mb-8">Av. Antônio Olímpio de Morais, 607 — Sala 808 · Centro, Divinópolis-MG</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://wa.me/5537998419396?text=Olá, vim pelo anúncio. Quero agendar consulta para dor no joelho"
-               target="_blank"
+               target="_blank" rel="noopener noreferrer"
                class="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-xl text-lg transition">
                 📱 WhatsApp: (37) 99841-9396
             </a>
