@@ -306,6 +306,14 @@
         "mainEntity": [
             {
                 "@type": "Question",
+                "name": "O que acontece na primeira consulta com o Dr. Kleber?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A consulta dura 50 a 60 minutos e inclui: escuta completa da história da dor, exame clínico detalhado, leitura ativa das imagens (ressonância, tomografia, raio-x) e entrega de um plano terapêutico individualizado. Valor: R$680, com nota fiscal."
+                }
+            },
+            {
+                "@type": "Question",
                 "name": "A cirurgia é sempre necessária para tratar dor crônica?",
                 "acceptedAnswer": {
                     "@type": "Answer",
@@ -475,18 +483,18 @@
                         Aqui a primeira consulta dura 50 a 60 minutos. Não para impressionar — mas porque menos do que isso não é suficiente para entender o seu caso de verdade.
                     </p>
                     <div class="flex flex-wrap gap-3 mb-6 text-sm">
-                        <span class="bg-white/20 text-white px-3 py-1 rounded-full font-semibold">Consulta: R$680</span>
                         <a href="tel:+5537998419396" class="bg-white/20 text-white px-3 py-1 rounded-full font-semibold hover:bg-white/30 transition">(37) 99841-9396</a>
-                        <span class="bg-white/20 text-white px-3 py-1 rounded-full">Seg–Sex 8h–17h</span>
+                        <span class="bg-white/20 text-white px-3 py-1 rounded-full">Seg–Sex 8h–17h · Divinópolis-MG</span>
                     </div>
                     <div class="flex flex-col gap-3">
-                        <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" rel="noopener noreferrer" class="btn-primary text-center">
-                            Agendar pelo WhatsApp
+                        <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20vim%20pelo%20site.%20Tenho%20dor%20e%20gostaria%20de%20entender%20se%20sou%20candidato%20ao%20tratamento." target="_blank" rel="noopener noreferrer" class="btn-primary text-center">
+                            Me conta seu caso pelo WhatsApp
                         </a>
                         <button id="open-lead-magnet" class="text-sm text-white/70 hover:text-white underline underline-offset-2 transition text-center bg-transparent border-0 cursor-pointer">
                             Receber guia gratuito sobre dor crônica
                         </button>
                     </div>
+                    <p class="text-xs text-white/50 mt-2">Resposta em horário comercial · Sem compromisso</p>
 
                 </div>
                 
@@ -764,6 +772,15 @@
                     Ver todas as avaliações na Doctoralia →
                 </a>
             </div>
+
+            <!-- Preço com contexto — após prova social -->
+            <div class="mt-12 bg-medical-light rounded-2xl p-8 text-center max-w-xl mx-auto border border-medical-teal/10">
+                <p class="text-sm font-semibold text-medical-teal uppercase tracking-wider mb-2">Primeira consulta</p>
+                <p class="font-display text-4xl font-bold text-gray-900 mb-3">R$&nbsp;680</p>
+                <p class="text-accent-gray text-sm leading-relaxed mb-4">50 a 60 minutos de avaliação real — histórico completo, exame clínico, leitura das suas imagens e plano terapêutico individualizado. Emitimos nota fiscal. Verifique reembolso no seu plano.</p>
+                <p class="text-xs text-gray-400">Seg–Sex · 8h–17h · Av. Antônio Olímpio de Morais, 607 — Sala 808, Divinópolis-MG</p>
+            </div>
+
         </div>
     </section>
 
@@ -845,6 +862,22 @@
             </div>
             
             <div class="space-y-4">
+                <!-- FAQ Item 0 — objeção de preço -->
+                <details class="border border-medical-teal rounded-lg p-6 cursor-pointer hover:bg-white transition group" open>
+                    <summary class="font-semibold text-lg text-medical-teal flex justify-between items-center">
+                        O que acontece exatamente na primeira consulta?
+                        <span class="group-open:rotate-180 transition">▼</span>
+                    </summary>
+                    <div class="text-accent-gray mt-4 space-y-2">
+                        <p>A consulta dura de 50 a 60 minutos e segue uma sequência específica:</p>
+                        <p><strong>1. Escuta da história completa</strong> — desde quando dói, o que piora, o que já foi tentado, quais exames você já fez.</p>
+                        <p><strong>2. Exame clínico detalhado</strong> — não um exame de triagem. O exame que define onde está o problema real.</p>
+                        <p><strong>3. Leitura ativa das suas imagens</strong> — se você tiver ressonância, tomografia ou raio-x, eles são lidos aqui, no momento, com você.</p>
+                        <p><strong>4. Diagnóstico e plano</strong> — ao final, você sai entendendo o que está acontecendo no seu corpo e com um plano terapêutico claro. Sem "volta daqui a 30 dias para ver como está".</p>
+                        <p class="text-sm text-gray-400 pt-2">Valor: R$680. Nota fiscal emitida. Verifique reembolso no seu plano de saúde.</p>
+                    </div>
+                </details>
+
                 <!-- FAQ Item 1 -->
                 <details class="border border-medical-teal rounded-lg p-6 cursor-pointer hover:bg-white transition group">
                     <summary class="font-semibold text-lg text-medical-teal flex justify-between items-center">
@@ -906,22 +939,23 @@
     <!-- CTA FINAL -->
     <section class="hero-gradient text-white py-16">
         <div class="max-w-4xl mx-auto text-center px-4">
-            <h2 class="font-display text-3xl md:text-4xl font-bold mb-6">
-                Sua dor já roubou tempo demais
+            <p class="text-sm font-semibold uppercase tracking-wider text-white/60 mb-4">Vagas limitadas por semana</p>
+            <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">
+                Pronto para entender de onde vem a sua dor?
             </h2>
-            <p class="text-lg mb-8 text-white/90">
-                A primeira consulta é onde começa o diagnóstico verdadeiro — aquele que olha para você, não para a dor isolada.
+            <p class="text-lg mb-8 text-white/80 max-w-xl mx-auto">
+                Me manda uma mensagem contando seu caso. Sem compromisso — só quero entender se posso te ajudar.
             </p>
             <div class="flex flex-col items-center gap-3">
-                <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" rel="noopener noreferrer" class="btn-primary px-10">
-                    Agendar pelo WhatsApp
+                <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20vim%20pelo%20site.%20Tenho%20dor%20e%20gostaria%20de%20entender%20se%20sou%20candidato%20ao%20tratamento." target="_blank" rel="noopener noreferrer" class="btn-primary px-10">
+                    Me conta seu caso pelo WhatsApp
                 </a>
                 <button id="open-lead-magnet-cta" class="text-sm text-white/50 hover:text-white/80 underline underline-offset-2 transition bg-transparent border-0 cursor-pointer">
                     Receber guia gratuito sobre dor crônica
                 </button>
             </div>
-            <p class="text-sm text-white/70 mt-6">
-                Resposta em horário comercial · Atendimento humanizado
+            <p class="text-sm text-white/50 mt-6">
+                Resposta em horário comercial · Seg–Sex 8h–17h
             </p>
         </div>
     </section>
