@@ -419,7 +419,7 @@
                     <a href="#faq" class="text-sm font-medium text-gray-600 hover:text-medical-teal transition">FAQ</a>
                     <a href="tel:+5537998419396"
                        class="text-sm font-semibold text-medical-teal hover:text-medical-dark transition flex items-center gap-1">
-                        📞 (37) 99841-9396
+                        (37) 99841-9396
                     </a>
                     <!-- CTA PRINCIPAL -->
                     <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta"
@@ -475,21 +475,19 @@
                         Aqui a primeira consulta dura 50 a 60 minutos. Não para impressionar — mas porque menos do que isso não é suficiente para entender o seu caso de verdade.
                     </p>
                     <div class="flex flex-wrap gap-3 mb-6 text-sm">
-                        <span class="bg-white/20 text-white px-3 py-1 rounded-full font-semibold">💰 Consulta: R$680</span>
-                        <a href="tel:+5537998419396" class="bg-white/20 text-white px-3 py-1 rounded-full font-semibold hover:bg-white/30 transition">📞 (37) 99841-9396</a>
+                        <span class="bg-white/20 text-white px-3 py-1 rounded-full font-semibold">Consulta: R$680</span>
+                        <a href="tel:+5537998419396" class="bg-white/20 text-white px-3 py-1 rounded-full font-semibold hover:bg-white/30 transition">(37) 99841-9396</a>
                         <span class="bg-white/20 text-white px-3 py-1 rounded-full">Seg–Sex 8h–17h</span>
                     </div>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" rel="noopener noreferrer" class="btn-primary">
-                            📱 Agendar pelo WhatsApp
+                    <div class="flex flex-col gap-3">
+                        <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" rel="noopener noreferrer" class="btn-primary text-center">
+                            Agendar pelo WhatsApp
                         </a>
-                        <button id="open-lead-magnet" class="btn-secondary">
-                            Receber Guia Grátis sobre Dor Crônica
+                        <button id="open-lead-magnet" class="text-sm text-white/70 hover:text-white underline underline-offset-2 transition text-center bg-transparent border-0 cursor-pointer">
+                            Receber guia gratuito sobre dor crônica
                         </button>
                     </div>
-                    <p class="text-sm text-white/70 mt-6">
-                        👥 +2.900 pacientes atendidos · 4.8★ no Google · CRM-MG 68724
-                    </p>
+
                 </div>
                 
                 <!-- Right - Photo -->
@@ -712,27 +710,6 @@
         </div>
     </section>
     
-    <!-- GALERIA CLÍNICA -->
-    <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="font-display text-4xl font-bold text-medical-teal mb-4">
-                    Clínica Trate a Dor
-                </h2>
-                <p class="text-lg text-accent-gray">
-                    Estrutura moderna, equipamentos de ponta e ambientes que transmitem profissionalismo
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <img src="/assets/consultorio_1.jpeg" alt="Consultório - Recepção e credenciais" class="rounded-xl shadow-md w-full h-auto object-cover" loading="lazy" width="600" height="400">
-                <img src="/assets/COnsultorio_2.jpeg" alt="Consultório - Espaço de trabalho" class="rounded-xl shadow-md w-full h-auto object-cover" loading="lazy" width="600" height="400">
-                <img src="/assets/ultrassom.jpeg" alt="Equipamento ultrassom para guia" class="rounded-xl shadow-md w-full h-auto object-cover" loading="lazy" width="600" height="400">
-                <img src="/assets/sala_repouso.jpeg" alt="Sala de repouso pós-procedimento" class="rounded-xl shadow-md w-full h-auto object-cover" loading="lazy" width="600" height="400">
-            </div>
-        </div>
-    </section>
-    
     <!-- DEPOIMENTOS -->
     <section class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -792,173 +769,52 @@
 
     <!-- VÍDEOS EDUCATIVOS -->
     <section id="videos" class="py-20 bg-medical-light">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div class="text-center mb-14">
+            <div class="text-center mb-10">
                 <p class="text-sm font-semibold text-medical-teal uppercase tracking-wider mb-2">Canal do Dr. Kleber · YouTube</p>
-                <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">Conteúdo que educa antes de tratar</h2>
-                <p class="text-accent-gray max-w-2xl mx-auto">Vídeos técnicos e honestos sobre dor, tratamentos e o que a ciência realmente mostra — para você tomar decisões conscientes.</p>
+                <h2 class="font-display text-4xl font-bold text-gray-900 mb-3">Veja antes de decidir</h2>
+                <p class="text-accent-gray max-w-xl mx-auto">Uma explicação honesta sobre como funciona o tratamento — sem promessas e sem enrolação.</p>
             </div>
 
-            <!-- Grade 2×4 — click-to-play (não pesa no PageSpeed) -->
+            <!-- Vídeo destaque -->
             <style>
-                .yt-thumb { position:relative; cursor:pointer; background:#000; border-radius:12px; overflow:hidden; aspect-ratio:16/9; }
+                .yt-thumb { position:relative; cursor:pointer; background:#000; border-radius:16px; overflow:hidden; aspect-ratio:16/9; }
                 .yt-thumb img { width:100%; height:100%; object-fit:cover; transition: opacity 0.3s; display:block; }
                 .yt-thumb:hover img { opacity:0.75; }
                 .yt-play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none; }
-                .yt-play svg { filter:drop-shadow(0 2px 8px rgba(0,0,0,0.5)); transition: transform 0.2s; }
-                .yt-thumb:hover .yt-play svg { transform: scale(1.12); }
-                .yt-thumb iframe { position:absolute; inset:0; width:100%; height:100%; border:none; }
+                .yt-play svg { filter:drop-shadow(0 4px 12px rgba(0,0,0,0.6)); transition: transform 0.2s; }
+                .yt-thumb:hover .yt-play svg { transform: scale(1.08); }
+                .yt-thumb iframe { position:absolute; inset:0; width:100%; height:100%; border:none; border-radius:16px; }
             </style>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-
-                <!-- Vídeo 1 — Medicina Regenerativa -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-medical-teal/10 hover:shadow-md transition-shadow duration-300 flex flex-col">
-                    <div class="yt-thumb" onclick="playYT(this,'eUca9xCVXos')">
-                        <img src="https://i.ytimg.com/vi/eUca9xCVXos/hqdefault.jpg" width="480" height="360" alt="Medicina Regenerativa" loading="lazy">
-                        <div class="yt-play"><svg width="54" height="54" viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.52 7.74A8.55 8.55 0 0 0 60.71 1.9C55.4 0 34 0 34 0S12.6 0 7.29 1.9A8.55 8.55 0 0 0 1.48 7.74C0 13.06 0 24 0 24s0 10.94 1.48 16.26a8.55 8.55 0 0 0 5.81 5.84C12.6 48 34 48 34 48s21.4 0 26.71-1.9a8.55 8.55 0 0 0 5.81-5.84C68 34.94 68 24 68 24s0-10.94-1.48-16.26z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg></div>
-                    </div>
-                    <div class="p-4 flex flex-col flex-1">
-                        <div class="flex flex-wrap gap-1 mb-2">
-                            <span class="text-xs bg-medical-teal/10 text-medical-teal px-2 py-0.5 rounded-full font-medium">PRP · BMA</span>
-                            <span class="text-xs bg-medical-teal/10 text-medical-teal px-2 py-0.5 rounded-full font-medium">Regenerativa</span>
-                        </div>
-                        <h3 class="font-semibold text-gray-900 text-sm leading-snug mb-1">Medicina Regenerativa: mito ou realidade?</h3>
-                        <p class="text-xs text-gray-500 leading-relaxed flex-1">PRP, BMA e ortobiológicos — o que a ciência realmente mostra, sem promessas irreais.</p>
-                    </div>
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mb-8">
+                <div class="yt-thumb" onclick="playYT(this,'pRhamMUFQtU')">
+                    <img src="https://i.ytimg.com/vi/pRhamMUFQtU/maxresdefault.jpg"
+                         width="1280" height="720"
+                         alt="Artrose no joelho e dor crônica na coluna — Dr. Kleber Rangel"
+                         loading="lazy"
+                         onerror="this.src='https://i.ytimg.com/vi/pRhamMUFQtU/hqdefault.jpg'">
+                    <div class="yt-play"><svg width="64" height="64" viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.52 7.74A8.55 8.55 0 0 0 60.71 1.9C55.4 0 34 0 34 0S12.6 0 7.29 1.9A8.55 8.55 0 0 0 1.48 7.74C0 13.06 0 24 0 24s0 10.94 1.48 16.26a8.55 8.55 0 0 0 5.81 5.84C12.6 48 34 48 34 48s21.4 0 26.71-1.9a8.55 8.55 0 0 0 5.81-5.84C68 34.94 68 24 68 24s0-10.94-1.48-16.26z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg></div>
                 </div>
-
-                <!-- Vídeo 2 — Artrose joelhos + dor coluna -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-medical-teal/10 hover:shadow-md transition-shadow duration-300 flex flex-col">
-                    <div class="yt-thumb" onclick="playYT(this,'pRhamMUFQtU')">
-                        <img src="https://i.ytimg.com/vi/pRhamMUFQtU/hqdefault.jpg" width="480" height="360" alt="Artrose joelhos e dor crônica coluna" loading="lazy">
-                        <div class="yt-play"><svg width="54" height="54" viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.52 7.74A8.55 8.55 0 0 0 60.71 1.9C55.4 0 34 0 34 0S12.6 0 7.29 1.9A8.55 8.55 0 0 0 1.48 7.74C0 13.06 0 24 0 24s0 10.94 1.48 16.26a8.55 8.55 0 0 0 5.81 5.84C12.6 48 34 48 34 48s21.4 0 26.71-1.9a8.55 8.55 0 0 0 5.81-5.84C68 34.94 68 24 68 24s0-10.94-1.48-16.26z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg></div>
+                <div class="p-6">
+                    <div class="flex gap-2 mb-3">
+                        <span class="text-xs bg-medical-teal/10 text-medical-teal px-3 py-1 rounded-full font-medium">Joelho</span>
+                        <span class="text-xs bg-medical-teal/10 text-medical-teal px-3 py-1 rounded-full font-medium">Coluna</span>
+                        <span class="text-xs bg-medical-teal/10 text-medical-teal px-3 py-1 rounded-full font-medium">Sem cirurgia</span>
                     </div>
-                    <div class="p-4 flex flex-col flex-1">
-                        <div class="flex flex-wrap gap-1 mb-2">
-                            <span class="text-xs bg-medical-teal/10 text-medical-teal px-2 py-0.5 rounded-full font-medium">Joelho</span>
-                            <span class="text-xs bg-medical-teal/10 text-medical-teal px-2 py-0.5 rounded-full font-medium">Coluna</span>
-                        </div>
-                        <h3 class="font-semibold text-gray-900 text-sm leading-snug mb-1">Artrose no joelho e dor crônica na coluna</h3>
-                        <p class="text-xs text-gray-500 leading-relaxed flex-1">Tratamento combinado para duas das queixas mais comuns na clínica — sem cirurgia.</p>
-                    </div>
+                    <h3 class="font-display text-xl font-bold text-gray-900 mb-2">Artrose no joelho e dor crônica na coluna</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Tratamento combinado para duas das queixas mais comuns — o que é possível fazer, o que a ciência mostra e o que não é indicado para todo mundo.</p>
                 </div>
+            </div>
 
-                <!-- Vídeo 3 — Hérnia de disco sem cirurgia -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-medical-teal/10 hover:shadow-md transition-shadow duration-300 flex flex-col">
-                    <div class="yt-thumb" onclick="playYT(this,'JuRIuSYut-w')">
-                        <img src="https://i.ytimg.com/vi/JuRIuSYut-w/hqdefault.jpg" width="480" height="360" alt="Hérnia de disco sem cirurgia" loading="lazy">
-                        <div class="yt-play"><svg width="54" height="54" viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.52 7.74A8.55 8.55 0 0 0 60.71 1.9C55.4 0 34 0 34 0S12.6 0 7.29 1.9A8.55 8.55 0 0 0 1.48 7.74C0 13.06 0 24 0 24s0 10.94 1.48 16.26a8.55 8.55 0 0 0 5.81 5.84C12.6 48 34 48 34 48s21.4 0 26.71-1.9a8.55 8.55 0 0 0 5.81-5.84C68 34.94 68 24 68 24s0-10.94-1.48-16.26z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg></div>
-                    </div>
-                    <div class="p-4 flex flex-col flex-1">
-                        <div class="flex flex-wrap gap-1 mb-2">
-                            <span class="text-xs bg-medical-teal/10 text-medical-teal px-2 py-0.5 rounded-full font-medium">Coluna</span>
-                            <span class="text-xs bg-medical-teal/10 text-medical-teal px-2 py-0.5 rounded-full font-medium">Hérnia</span>
-                        </div>
-                        <h3 class="font-semibold text-gray-900 text-sm leading-snug mb-1">Dor na coluna e hérnia de disco sem cirurgia</h3>
-                        <p class="text-xs text-gray-500 leading-relaxed flex-1">Alternativas minimamente invasivas para tratamento da hérnia e dor lombar crônica.</p>
-                    </div>
-                </div>
-
-                <!-- Vídeo 4 — Artrose ambos joelhos -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-medical-teal/10 hover:shadow-md transition-shadow duration-300 flex flex-col">
-                    <div class="yt-thumb" onclick="playYT(this,'qKGG8z3X9Tg')">
-                        <img src="https://i.ytimg.com/vi/qKGG8z3X9Tg/hqdefault.jpg" width="480" height="360" alt="Artrose e artrite ambos joelhos" loading="lazy">
-                        <div class="yt-play"><svg width="54" height="54" viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.52 7.74A8.55 8.55 0 0 0 60.71 1.9C55.4 0 34 0 34 0S12.6 0 7.29 1.9A8.55 8.55 0 0 0 1.48 7.74C0 13.06 0 24 0 24s0 10.94 1.48 16.26a8.55 8.55 0 0 0 5.81 5.84C12.6 48 34 48 34 48s21.4 0 26.71-1.9a8.55 8.55 0 0 0 5.81-5.84C68 34.94 68 24 68 24s0-10.94-1.48-16.26z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg></div>
-                    </div>
-                    <div class="p-4 flex flex-col flex-1">
-                        <div class="flex flex-wrap gap-1 mb-2">
-                            <span class="text-xs bg-medical-teal/10 text-medical-teal px-2 py-0.5 rounded-full font-medium">Joelho</span>
-                            <span class="text-xs bg-medical-teal/10 text-medical-teal px-2 py-0.5 rounded-full font-medium">Artrose · Artrite</span>
-                        </div>
-                        <h3 class="font-semibold text-gray-900 text-sm leading-snug mb-1">Artrose e artrite nos dois joelhos sem cirurgia</h3>
-                        <p class="text-xs text-gray-500 leading-relaxed flex-1">Tratamento bilateral para desgaste articular avançado com foco em função e qualidade de vida.</p>
-                    </div>
-                </div>
-
-                <!-- Vídeo 5 — Artrose ombro/joelhos + insônia -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-medical-teal/10 hover:shadow-md transition-shadow duration-300 flex flex-col">
-                    <div class="yt-thumb" onclick="playYT(this,'nQURG343p_I')">
-                        <img src="https://i.ytimg.com/vi/nQURG343p_I/hqdefault.jpg" width="480" height="360" alt="Artrose ombro joelhos insônia cansaço" loading="lazy">
-                        <div class="yt-play"><svg width="54" height="54" viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.52 7.74A8.55 8.55 0 0 0 60.71 1.9C55.4 0 34 0 34 0S12.6 0 7.29 1.9A8.55 8.55 0 0 0 1.48 7.74C0 13.06 0 24 0 24s0 10.94 1.48 16.26a8.55 8.55 0 0 0 5.81 5.84C12.6 48 34 48 34 48s21.4 0 26.71-1.9a8.55 8.55 0 0 0 5.81-5.84C68 34.94 68 24 68 24s0-10.94-1.48-16.26z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg></div>
-                    </div>
-                    <div class="p-4 flex flex-col flex-1">
-                        <div class="flex flex-wrap gap-1 mb-2">
-                            <span class="text-xs bg-medical-teal/10 text-medical-teal px-2 py-0.5 rounded-full font-medium">Ombro · Joelho</span>
-                            <span class="text-xs bg-medical-teal/10 text-medical-teal px-2 py-0.5 rounded-full font-medium">Fadiga</span>
-                        </div>
-                        <h3 class="font-semibold text-gray-900 text-sm leading-snug mb-1">Artrose no ombro e joelhos, insônia e cansaço crônico</h3>
-                        <p class="text-xs text-gray-500 leading-relaxed flex-1">Abordagem integrativa quando a dor afeta o sono e a disposição — tratamento além da articulação.</p>
-                    </div>
-                </div>
-
-                <!-- Vídeo 6 — Artrite e artrose com resultados -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-medical-teal/10 hover:shadow-md transition-shadow duration-300 flex flex-col">
-                    <div class="yt-thumb" onclick="playYT(this,'DJkBGak5bUc')">
-                        <img src="https://i.ytimg.com/vi/DJkBGak5bUc/hqdefault.jpg" width="480" height="360" alt="Artrite e artrose com resultados" loading="lazy">
-                        <div class="yt-play"><svg width="54" height="54" viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.52 7.74A8.55 8.55 0 0 0 60.71 1.9C55.4 0 34 0 34 0S12.6 0 7.29 1.9A8.55 8.55 0 0 0 1.48 7.74C0 13.06 0 24 0 24s0 10.94 1.48 16.26a8.55 8.55 0 0 0 5.81 5.84C12.6 48 34 48 34 48s21.4 0 26.71-1.9a8.55 8.55 0 0 0 5.81-5.84C68 34.94 68 24 68 24s0-10.94-1.48-16.26z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg></div>
-                    </div>
-                    <div class="p-4 flex flex-col flex-1">
-                        <div class="flex flex-wrap gap-1 mb-2">
-                            <span class="text-xs bg-medical-teal/10 text-medical-teal px-2 py-0.5 rounded-full font-medium">Artrite · Artrose</span>
-                            <span class="text-xs bg-medical-teal/10 text-medical-teal px-2 py-0.5 rounded-full font-medium">Resultados</span>
-                        </div>
-                        <h3 class="font-semibold text-gray-900 text-sm leading-snug mb-1">Artrite e artrose com resultados — sem cirurgia</h3>
-                        <p class="text-xs text-gray-500 leading-relaxed flex-1">Casos reais de melhora com tratamento conservador e regenerativo para doenças articulares.</p>
-                    </div>
-                </div>
-
-                <!-- Vídeo 7 — Dor no ombro, tendinite e bursite -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-medical-teal/10 hover:shadow-md transition-shadow duration-300 flex flex-col">
-                    <div class="yt-thumb" onclick="playYT(this,'aMr5CiqnyhM')">
-                        <img src="https://i.ytimg.com/vi/aMr5CiqnyhM/hqdefault.jpg" width="480" height="360" alt="Dor no ombro tendinite bursite" loading="lazy">
-                        <div class="yt-play"><svg width="54" height="54" viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.52 7.74A8.55 8.55 0 0 0 60.71 1.9C55.4 0 34 0 34 0S12.6 0 7.29 1.9A8.55 8.55 0 0 0 1.48 7.74C0 13.06 0 24 0 24s0 10.94 1.48 16.26a8.55 8.55 0 0 0 5.81 5.84C12.6 48 34 48 34 48s21.4 0 26.71-1.9a8.55 8.55 0 0 0 5.81-5.84C68 34.94 68 24 68 24s0-10.94-1.48-16.26z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg></div>
-                    </div>
-                    <div class="p-4 flex flex-col flex-1">
-                        <div class="flex flex-wrap gap-1 mb-2">
-                            <span class="text-xs bg-medical-teal/10 text-medical-teal px-2 py-0.5 rounded-full font-medium">Ombro</span>
-                            <span class="text-xs bg-medical-teal/10 text-medical-teal px-2 py-0.5 rounded-full font-medium">Tendinite · Bursite</span>
-                        </div>
-                        <h3 class="font-semibold text-gray-900 text-sm leading-snug mb-1">Dor no ombro: tendinite e bursite</h3>
-                        <p class="text-xs text-gray-500 leading-relaxed flex-1">Diagnóstico e tratamento das causas mais comuns de dor no ombro — quando operar e quando não operar.</p>
-                    </div>
-                </div>
-
-                <!-- Vídeo 8 — Hérnia de disco sem cirurgia (2) -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-medical-teal/10 hover:shadow-md transition-shadow duration-300 flex flex-col">
-                    <div class="yt-thumb" onclick="playYT(this,'LDknSGV_pgk')">
-                        <img src="https://i.ytimg.com/vi/LDknSGV_pgk/hqdefault.jpg" width="480" height="360" alt="Hérnia de disco sem cirurgia tratamento" loading="lazy">
-                        <div class="yt-play"><svg width="54" height="54" viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.52 7.74A8.55 8.55 0 0 0 60.71 1.9C55.4 0 34 0 34 0S12.6 0 7.29 1.9A8.55 8.55 0 0 0 1.48 7.74C0 13.06 0 24 0 24s0 10.94 1.48 16.26a8.55 8.55 0 0 0 5.81 5.84C12.6 48 34 48 34 48s21.4 0 26.71-1.9a8.55 8.55 0 0 0 5.81-5.84C68 34.94 68 24 68 24s0-10.94-1.48-16.26z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg></div>
-                    </div>
-                    <div class="p-4 flex flex-col flex-1">
-                        <div class="flex flex-wrap gap-1 mb-2">
-                            <span class="text-xs bg-medical-teal/10 text-medical-teal px-2 py-0.5 rounded-full font-medium">Coluna · Hérnia</span>
-                            <span class="text-xs bg-medical-teal/10 text-medical-teal px-2 py-0.5 rounded-full font-medium">Sem Cirurgia</span>
-                        </div>
-                        <h3 class="font-semibold text-gray-900 text-sm leading-snug mb-1">Tratamento para hérnia de disco sem cirurgia</h3>
-                        <p class="text-xs text-gray-500 leading-relaxed flex-1">Protocolo completo de tratamento conservador com resultados documentados em hérnia discal.</p>
-                    </div>
-                </div>
-
-            </div><!-- /grid -->
-
-            <!-- CTA + link canal -->
-            <div class="text-center mt-12 space-y-4">
+            <!-- Link para os demais vídeos -->
+            <div class="text-center">
                 <a href="https://www.youtube.com/@drkleberrangel" target="_blank" rel="noopener noreferrer"
                    class="inline-flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-red-600 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="text-red-600"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.5 12 3.5 12 3.5s-7.54 0-9.38.55A3.02 3.02 0 0 0 .5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 0 0 2.12 2.14C4.46 20.5 12 20.5 12 20.5s7.54 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
-                    Ver todos os vídeos no canal →
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-red-500"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.5 12 3.5 12 3.5s-7.54 0-9.38.55A3.02 3.02 0 0 0 .5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 0 0 2.12 2.14C4.46 20.5 12 20.5 12 20.5s7.54 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
+                    Ver mais 7 vídeos no canal →
                 </a>
-                <div class="pt-2">
-                    <p class="text-gray-500 text-sm mb-3">Ficou com dúvida sobre o seu caso?</p>
-                    <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20assisti%20seus%20vídeos%20e%20gostaria%20de%20saber%20se%20sou%20candidato%20ao%20tratamento"
-                       target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center gap-2 btn-primary">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        Conversar pelo WhatsApp
-                    </a>
-                </div>
             </div>
 
         </div>
@@ -1056,12 +912,12 @@
             <p class="text-lg mb-8 text-white/90">
                 A primeira consulta é onde começa o diagnóstico verdadeiro — aquele que olha para você, não para a dor isolada.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://wa.me/5537998419396?text=Olá, gostaria de agendar uma consulta com o Dr. Kleber Rangel" target="_blank" rel="noopener noreferrer" class="btn-primary">
-                    📱 Agendar pelo WhatsApp
+            <div class="flex flex-col items-center gap-3">
+                <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" rel="noopener noreferrer" class="btn-primary px-10">
+                    Agendar pelo WhatsApp
                 </a>
-                <button id="open-lead-magnet-cta" class="btn-secondary">
-                    Receber Guia Educativo Grátis
+                <button id="open-lead-magnet-cta" class="text-sm text-white/50 hover:text-white/80 underline underline-offset-2 transition bg-transparent border-0 cursor-pointer">
+                    Receber guia gratuito sobre dor crônica
                 </button>
             </div>
             <p class="text-sm text-white/70 mt-6">
@@ -1139,7 +995,7 @@
         <a href="#sobre" class="block hover:text-medical-teal transition" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Sobre</a>
         <a href="#videos" class="block hover:text-medical-teal transition" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Vídeos</a>
         <a href="#faq" class="block hover:text-medical-teal transition" onclick="document.getElementById('mobile-menu').classList.add('hidden')">FAQ</a>
-        <a href="https://wa.me/5537998419396?text=Olá, gostaria de agendar minha consulta" target="_blank" rel="noopener noreferrer" class="block btn-primary text-center mt-2">Agendar Consulta</a>
+
     </div>
 
     <!-- LEAD MAGNET MODAL -->
