@@ -79,6 +79,26 @@
       "source": "/joelho",
       "destination": "/joelho.html",
       "permanent": false
+    },
+    {
+      "source": "/prp",
+      "destination": "/prp.html",
+      "permanent": false
+    },
+    {
+      "source": "/ombro",
+      "destination": "/ombro.html",
+      "permanent": false
+    },
+    {
+      "source": "/medicina-regenerativa",
+      "destination": "/medicina-regenerativa.html",
+      "permanent": false
+    },
+    {
+      "source": "/ozonoterapia-divinopolis",
+      "destination": "/ozonoterapia-divinopolis.html",
+      "permanent": false
     }
   ]
 }
