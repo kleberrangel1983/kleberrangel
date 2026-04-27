@@ -1,5 +1,4 @@
 {
-  "outputDirectory": ".",
   "headers": [
     {
       "source": "/",
@@ -135,5 +134,6 @@
       "destination": "/ozonoterapia-divinopolis.html",
       "permanent": false
     }
-  ]
+  ],
+  "framework": null
 }
