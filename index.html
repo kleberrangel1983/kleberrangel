@@ -223,16 +223,44 @@
                         <div class="text-lg font-bold" style="color:var(--ink);font-family:'Cormorant Garamond',serif;">50–60 minutos</div>
                         <div class="text-xs" style="color:var(--muted);">de investigação real</div>
                     </div>
-                    <!-- Vídeo placeholder — substituir com link YouTube quando disponível -->
-                    <div style="position:absolute;top:20px;right:-16px;background:#fff;border-radius:12px;padding:12px 16px;box-shadow:0 8px 24px rgba(0,0,0,0.12);display:flex;align-items:center;gap:10px;max-width:200px;">
-                        <div style="width:36px;height:36px;border-radius:50%;background:var(--teal-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--teal)"><path d="M8 5v14l11-7z"/></svg>
+                    <!-- Vídeo de apresentação — YouTube Shorts -->
+                    <div style="position:absolute;top:20px;right:-16px;background:#fff;border-radius:16px;padding:10px;box-shadow:0 8px 28px rgba(0,0,0,0.14);width:140px;" id="video-badge">
+                        <div id="yt-thumb" onclick="openVideo()" style="cursor:pointer;border-radius:10px;overflow:hidden;position:relative;aspect-ratio:9/16;background:#000;">
+                            <img src="https://i.ytimg.com/vi/yI42EaBILQ4/hqdefault.jpg"
+                                 alt="Vídeo de apresentação Dr. Kleber Rangel"
+                                 style="width:100%;height:100%;object-fit:cover;display:block;opacity:0.85;">
+                            <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+                                <div style="width:40px;height:40px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <div class="text-xs font-semibold" style="color:var(--ink);">Vídeo de apresentação</div>
-                            <div class="text-xs" style="color:var(--muted);">Em breve</div>
+                        <div class="text-center mt-2">
+                            <div style="font-size:11px;font-weight:600;color:var(--ink);">Apresentação</div>
+                            <div style="font-size:10px;color:var(--muted);">2:35 min</div>
                         </div>
                     </div>
+                    <!-- Modal vídeo -->
+                    <div id="yt-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;" onclick="closeVideo()">
+                        <div style="position:relative;width:min(380px,90vw);aspect-ratio:9/16;border-radius:16px;overflow:hidden;" onclick="event.stopPropagation()">
+                            <iframe id="yt-iframe" src="" title="Dr. Kleber Rangel — Apresentação" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;"></iframe>
+                            <button onclick="closeVideo()" style="position:absolute;top:12px;right:12px;background:rgba(0,0,0,0.6);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;">✕</button>
+                        </div>
+                    </div>
+                    <script>
+                    function openVideo(){
+                        var m=document.getElementById('yt-modal');
+                        document.getElementById('yt-iframe').src='https://www.youtube.com/embed/yI42EaBILQ4?autoplay=1&rel=0';
+                        m.style.display='flex';
+                        document.body.style.overflow='hidden';
+                    }
+                    function closeVideo(){
+                        document.getElementById('yt-modal').style.display='none';
+                        document.getElementById('yt-iframe').src='';
+                        document.body.style.overflow='';
+                    }
+                    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeVideo();});
+                    </script>
                 </div>
                 <p class="text-sm text-center mt-4" style="color:var(--muted);">
                     Dr. Kleber Rangel · <span style="color:var(--teal);">Especialista em dor · Tratamentos sem cirurgia</span>
@@ -549,21 +577,43 @@
             .yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;}
             .yt-thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:16px;}
         </style>
-        <div style="background:var(--warm);border-radius:20px;overflow:hidden;border:1px solid #E8E0D8;">
-            <div class="yt-thumb" onclick="playYT(this,'pRhamMUFQtU')">
-                <img src="https://i.ytimg.com/vi/pRhamMUFQtU/maxresdefault.jpg" width="1280" height="720" alt="Artrose no joelho e dor crônica na coluna — Dr. Kleber Rangel" loading="lazy" onerror="this.src='https://i.ytimg.com/vi/pRhamMUFQtU/hqdefault.jpg'">
-                <div class="yt-play">
-                    <svg width="64" height="48" viewBox="0 0 68 48"><path d="M66.52 7.74A8.55 8.55 0 0 0 60.71 1.9C55.4 0 34 0 34 0S12.6 0 7.29 1.9A8.55 8.55 0 0 0 1.48 7.74C0 13.06 0 24 0 24s0 10.94 1.48 16.26a8.55 8.55 0 0 0 5.81 5.84C12.6 48 34 48 34 48s21.4 0 26.71-1.9a8.55 8.55 0 0 0 5.81-5.84C68 34.94 68 24 68 24s0-10.94-1.48-16.26z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Vídeo apresentação — Shorts vertical -->
+            <div style="background:var(--warm);border-radius:20px;overflow:hidden;border:1px solid #E8E0D8;">
+                <div style="display:flex;gap:0;align-items:stretch;">
+                    <div class="yt-thumb" style="width:160px;flex-shrink:0;aspect-ratio:9/16;max-height:285px;" onclick="playYTVertical(this,'yI42EaBILQ4')">
+                        <img src="https://i.ytimg.com/vi/yI42EaBILQ4/hqdefault.jpg" width="360" height="640" alt="Apresentação Dr. Kleber Rangel" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+                        <div class="yt-play">
+                            <svg width="48" height="36" viewBox="0 0 68 48"><path d="M66.52 7.74A8.55 8.55 0 0 0 60.71 1.9C55.4 0 34 0 34 0S12.6 0 7.29 1.9A8.55 8.55 0 0 0 1.48 7.74C0 13.06 0 24 0 24s0 10.94 1.48 16.26a8.55 8.55 0 0 0 5.81 5.84C12.6 48 34 48 34 48s21.4 0 26.71-1.9a8.55 8.55 0 0 0 5.81-5.84C68 34.94 68 24 68 24s0-10.94-1.48-16.26z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg>
+                        </div>
+                    </div>
+                    <div class="p-5 flex flex-col justify-center">
+                        <div class="flex gap-2 mb-3 flex-wrap">
+                            <span class="text-xs px-3 py-1 rounded-full font-medium" style="background:var(--teal-light);color:var(--teal);">Apresentação</span>
+                            <span class="text-xs px-3 py-1 rounded-full font-medium" style="background:var(--gold-light);color:#8B6914;">2:35 min</span>
+                        </div>
+                        <h3 class="text-lg mb-2" style="color:var(--ink);">Quem é o Dr. Kleber Rangel</h3>
+                        <p class="text-sm leading-relaxed" style="color:var(--muted);">Trajetória, filosofia de atendimento e por que escolheu focar em tratamentos sem cirurgia.</p>
+                    </div>
                 </div>
             </div>
-            <div class="p-6">
-                <div class="flex gap-2 mb-3 flex-wrap">
-                    <span class="text-xs px-3 py-1 rounded-full font-medium" style="background:var(--teal-light);color:var(--teal);">Joelho</span>
-                    <span class="text-xs px-3 py-1 rounded-full font-medium" style="background:var(--teal-light);color:var(--teal);">Coluna</span>
-                    <span class="text-xs px-3 py-1 rounded-full font-medium" style="background:var(--gold-light);color:#8B6914;">Sem cirurgia</span>
+            <!-- Vídeo artrose/coluna -->
+            <div style="background:var(--warm);border-radius:20px;overflow:hidden;border:1px solid #E8E0D8;">
+                <div class="yt-thumb" onclick="playYT(this,'pRhamMUFQtU')">
+                    <img src="https://i.ytimg.com/vi/pRhamMUFQtU/maxresdefault.jpg" width="1280" height="720" alt="Artrose no joelho e dor crônica na coluna — Dr. Kleber Rangel" loading="lazy" onerror="this.src='https://i.ytimg.com/vi/pRhamMUFQtU/hqdefault.jpg'">
+                    <div class="yt-play">
+                        <svg width="64" height="48" viewBox="0 0 68 48"><path d="M66.52 7.74A8.55 8.55 0 0 0 60.71 1.9C55.4 0 34 0 34 0S12.6 0 7.29 1.9A8.55 8.55 0 0 0 1.48 7.74C0 13.06 0 24 0 24s0 10.94 1.48 16.26a8.55 8.55 0 0 0 5.81 5.84C12.6 48 34 48 34 48s21.4 0 26.71-1.9a8.55 8.55 0 0 0 5.81-5.84C68 34.94 68 24 68 24s0-10.94-1.48-16.26z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg>
+                    </div>
                 </div>
-                <h3 class="text-xl mb-2" style="color:var(--ink);">Artrose no joelho e dor crônica na coluna</h3>
-                <p class="text-sm leading-relaxed" style="color:var(--muted);">Tratamento combinado para duas das queixas mais comuns — o que é possível fazer, o que a ciência mostra e o que não é indicado para todo mundo.</p>
+                <div class="p-6">
+                    <div class="flex gap-2 mb-3 flex-wrap">
+                        <span class="text-xs px-3 py-1 rounded-full font-medium" style="background:var(--teal-light);color:var(--teal);">Joelho</span>
+                        <span class="text-xs px-3 py-1 rounded-full font-medium" style="background:var(--teal-light);color:var(--teal);">Coluna</span>
+                        <span class="text-xs px-3 py-1 rounded-full font-medium" style="background:var(--gold-light);color:#8B6914;">Sem cirurgia</span>
+                    </div>
+                    <h3 class="text-xl mb-2" style="color:var(--ink);">Artrose no joelho e dor crônica na coluna</h3>
+                    <p class="text-sm leading-relaxed" style="color:var(--muted);">Tratamento combinado para duas das queixas mais comuns — o que é possível fazer, o que a ciência mostra e o que não é indicado para todo mundo.</p>
+                </div>
             </div>
         </div>
         <div class="text-center mt-6">
@@ -571,7 +621,8 @@
         </div>
     </div>
 </section>
-<script>function playYT(el,id){var i=document.createElement('iframe');i.src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';i.title='YouTube video';i.allow='accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture';i.allowFullscreen=true;el.innerHTML='';el.appendChild(i);}</script>
+<script>function playYT(el,id){var i=document.createElement('iframe');i.src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';i.title='YouTube video';i.allow='accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture';i.allowFullscreen=true;el.innerHTML='';el.appendChild(i);}
+function playYTVertical(el,id){var i=document.createElement('iframe');i.src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';i.title='YouTube Shorts';i.allow='accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture';i.allowFullscreen=true;i.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:none;';el.style.position='relative';el.innerHTML='';el.appendChild(i);}</script>
 
 <!-- ══════════════════════════════════════════
      FAQ
