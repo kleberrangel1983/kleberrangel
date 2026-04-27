@@ -2,6 +2,6 @@
   "name": "drkleberrangel-site",
   "version": "1.0.0",
   "scripts": {
-    "build": "mkdir -p /vercel/output/static && cp -r . /vercel/output/static/ 2>/dev/null; echo 'Build OK'"
+    "build": "mkdir -p /vercel/output/static && cp -r . /vercel/output/static/ 2>/dev/null; echo '{\"version\":3}' > /vercel/output/config.json; echo 'Build OK'"
   }
 }
