@@ -135,5 +135,5 @@
       "permanent": false
     }
   ],
-  "framework": null
+  "outputDirectory": "."
 }
