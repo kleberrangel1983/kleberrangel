@@ -2,1448 +2,779 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <!-- build: 2026-04-25T00:24:21.385670 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <!-- SEO & Open Graph -->
-    <title>Dr. Kleber Rangel - Ortopedista Medicina da Dor | Divinópolis MG</title>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap">
-    <meta name="description" content="Ortopedista especialista em dor em Divinópolis-MG. Consulta 50-60min, diagnóstico real. Coluna, joelho, ombro. Bloqueios guiados, PRP, regenerativa. CRM-MG 68724.">
-    <meta name="keywords" content="ortopedista divinópolis, medicina da dor, medicina regenerativa, PRP, dor na coluna, artrose joelho, bloqueio facetário, divinópolis mg">
-    <meta name="geo.placename" content="Divinópolis">
-    <meta name="geo.region" content="BR-MG">
-    <meta name="ICBM" content="-19.1519,-44.8901">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Dr. Kleber Rangel - Ortopedista Medicina da Dor | Divinópolis MG">
-    <meta property="og:description" content="Especialista em medicina da dor e regenerativa. Avaliação individualizada para dor na coluna, joelho e ombro. CRM-MG 68724.">
+    <title>Dr. Kleber Rangel - Ortopedista Especialista em Dor | Tratamentos Sem Cirurgia | Divinópolis MG</title>
+    <meta name="description" content="Ortopedista especialista em dor crônica em Divinópolis-MG. Tratamentos sem cirurgia: bloqueios guiados, PRP, regenerativa. Consulta 50-60min. CRM-MG 68724 · RQE 43142.">
+    <link rel="canonical" href="https://www.drkleberrangel.com.br/">
+    <meta property="og:title" content="Dr. Kleber Rangel - Especialista em Dor · Tratamentos Sem Cirurgia · Divinópolis MG">
+    <meta property="og:description" content="Médico desde 2009. Tenente da FAB. Residência SOTRP Ribeirão Preto. Especialização Santa Casa SP. Tratamentos sem corte para dor na coluna e joelho.">
     <meta property="og:url" content="https://www.drkleberrangel.com.br">
     <meta property="og:image" content="https://www.drkleberrangel.com.br/assets/Foto_Kleber.jpeg">
-    <meta property="og:site_name" content="Dr. Kleber Rangel - Clínica Trate a Dor">
-    <meta property="og:locale" content="pt_BR">
-    
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Dr. Kleber Rangel - Ortopedista Medicina da Dor">
-    <meta name="twitter:description" content="Avaliação especializada para dor crônica em Divinópolis-MG. CRM-MG 68724.">
-    <meta name="twitter:image" content="https://www.drkleberrangel.com.br/assets/Foto_Kleber.jpeg">
-    
-    <!-- Canonical -->
-    <link rel="canonical" href="https://www.drkleberrangel.com.br/">
-    
-    <!-- Favicon - Múltiplos tamanhos e formatos -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
-    <link rel="manifest" href="/site.webmanifest">
-    
-    <!-- Preconnect DNS -->
+    <meta name="google-site-verification" content="RubOweV253do21xbZF2WewjYXJHa3-ImUeXiLdczOUo">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    
-    <!-- Fonts otimizado — carrega sem bloquear render -->
-    
-    
-    <noscript>
-        
-    </noscript>
-    
-    <!-- Tailwind CSS (via CDN) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com" defer></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'medical': {
-                            'teal': '#0d7c7c',
-                            'light': '#e8f4f4',
-                            'dark': '#0a5a5a'
-                        },
-                        'accent': {
-                            'orange': '#f97316',
-                            'gray': '#64748b'
-                        }
+                        teal:   { DEFAULT:'#0B6B6B', dark:'#085555', light:'#E8F5F2' },
+                        gold:   { DEFAULT:'#C8A96A', light:'#F5EDD8' },
+                        warm:   { DEFAULT:'#FAF7F2', dark:'#F0EAE0' },
+                        ink:    { DEFAULT:'#1C1C1C' },
+                        muted:  { DEFAULT:'#5A6472' },
                     },
                     fontFamily: {
-                        'display': ['Playfair Display', 'serif'],
-                        'sans': ['Inter', 'sans-serif']
+                        display: ['Cormorant Garamond','Georgia','serif'],
+                        sans:    ['DM Sans','system-ui','sans-serif'],
                     }
                 }
             }
         }
     </script>
-    
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
-        
-        /* Semantic HTML improvements */
-        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; font-weight: 700; }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, #0d7c7c 0%, #0a5a5a 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-gradient::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        
-        .fade-in { animation: fadeIn 0.8s ease-in; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .slide-in-right {
-            animation: slideInRight 0.8s ease-out;
-        }
-        @keyframes slideInRight {
-            from { opacity: 0; transform: translateX(30px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        
-        .modal-backdrop {
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(4px);
-        }
-        
-        .btn-primary {
-            @apply bg-medical-teal hover:bg-medical-dark text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105;
-        }
-        
-        .btn-secondary {
-            @apply bg-white text-medical-teal border-2 border-medical-teal hover:bg-medical-light font-semibold py-3 px-6 rounded-lg transition-all;
-        }
-        
-        .card-credibility {
-            @apply bg-gradient-to-br from-medical-light to-white border border-medical-teal/20 rounded-xl p-6 hover:shadow-lg transition-shadow;
-        }
-        
-        .credibility-badge {
-            @apply inline-flex items-center gap-2 bg-medical-teal/10 text-medical-teal px-4 py-2 rounded-full text-sm font-semibold;
-        }
-        
-        .icon-check {
-            @apply inline-block w-5 h-5 text-medical-teal font-bold;
-        }
-        
-        .separator-line {
-            @apply h-1 bg-gradient-to-r from-medical-teal via-accent-orange to-transparent;
-        }
-        
-        /* Accessibility */
-        @media (prefers-reduced-motion: reduce) {
-            * { animation: none !important; transition: none !important; }
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-hidden { display: none; }
-            .desktop-hidden { display: block; }
-        }
-        
-        @media (min-width: 769px) {
-            .desktop-hidden { display: none; }
-            .mobile-hidden { display: block; }
-        }
-    </style>
-    
-    <!-- Schema Markup - Physician + MedicalBusiness -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "Physician",
-                "@id": "https://www.drkleberrangel.com.br/#physician",
-                "name": "Dr. Kleber Rangel",
-                "givenName": "Kleber",
-                "familyName": "Rangel",
-                "image": "https://www.drkleberrangel.com.br/assets/Foto_Kleber.jpeg",
-                "jobTitle": "Ortopedista e Especialista em Medicina da Dor",
-                "description": "Ortopedista e traumatologista com especialização em cirurgia da coluna vertebral pela Santa Casa de São Paulo. Pós-graduação em Medicina da Dor e formação em Medicina Regenerativa. CRM-MG 68724 | RQE 43142.",
-                "medicalSpecialty": [
-                    "https://schema.org/Orthopedic",
-                    "https://schema.org/PhysicalTherapy"
-                ],
-                "url": "https://www.drkleberrangel.com.br",
-                "telephone": "+553799841396",
-                "identifier": [
-                    {"@type": "PropertyValue", "name": "CRM", "value": "CRM-MG 68724"},
-                    {"@type": "PropertyValue", "name": "RQE", "value": "RQE 43142"}
-                ],
-                "knowsAbout": ["Dor Crônica", "Hérnia de Disco", "Artrose de Joelho", "PRP", "Ozonioterapia", "Bloqueio Facetário", "BMA", "Viscossuplementação", "Medicina Regenerativa"],
-                "hasCredential": [
-                    {"@type": "EducationalOccupationalCredential", "credentialCategory": "Título de Especialista", "recognizedBy": {"@type": "Organization", "name": "SBOT - Sociedade Brasileira de Ortopedia e Traumatologia"}},
-                    {"@type": "EducationalOccupationalCredential", "credentialCategory": "Especialização em Cirurgia da Coluna", "recognizedBy": {"@type": "Organization", "name": "Santa Casa de São Paulo"}},
-                    {"@type": "EducationalOccupationalCredential", "credentialCategory": "Pós-graduação em Medicina da Dor"}
-                ],
-                "worksFor": {"@id": "https://www.drkleberrangel.com.br/#clinic"},
-                "sameAs": [
-                    "https://www.instagram.com/drkleberrangel",
-                    "https://www.doctoralia.com.br/kleber-rangel/ortopedista-traumatologista/divinopolis"
-                ]
-            },
-            {
-                "@type": "MedicalClinic",
-                "@id": "https://www.drkleberrangel.com.br/#clinic",
-                "name": "Clínica Trate a Dor",
-                "url": "https://www.drkleberrangel.com.br",
-                "telephone": "+553799841396",
-                "image": "https://www.drkleberrangel.com.br/assets/Foto_Kleber.jpeg",
-                "description": "Clínica especializada em medicina da dor e medicina regenerativa em Divinópolis-MG. Bloqueios guiados por ultrassom, PRP, BMA, ozonioterapia e viscossuplementação.",
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "Av. Antônio Olímpio de Morais, 607, Sala 808",
-                    "addressLocality": "Divinópolis",
-                    "addressRegion": "MG",
-                    "postalCode": "35500-000",
-                    "addressCountry": "BR"
-                },
-                "geo": {"@type": "GeoCoordinates", "latitude": "-19.1519", "longitude": "-44.8901"},
-                "openingHoursSpecification": [
-                    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00"}
-                ],
-                "priceRange": "$$",
-                "currenciesAccepted": "BRL",
-                "paymentAccepted": "Dinheiro, Cartão, PIX",
-                "medicalSpecialty": ["Orthopedic Surgery","Pain Management","Regenerative Medicine"],
-                "availableService": [
-                    {"@type": "MedicalProcedure", "name": "Bloqueio Facetário guiado por Ultrassom"},
-                    {"@type": "MedicalProcedure", "name": "Infiltração Epidural"},
-                    {"@type": "MedicalProcedure", "name": "PRP - Plasma Rico em Plaquetas"},
-                    {"@type": "MedicalProcedure", "name": "BMA - Aspirado de Medula Óssea"},
-                    {"@type": "MedicalProcedure", "name": "Ozonioterapia Articular"},
-                    {"@type": "MedicalProcedure", "name": "Viscossuplementação com Ácido Hialurônico"}
-                ],
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "4.8",
-                    "ratingCount": "87",
-                    "bestRating": "5",
-                    "worstRating": "1",
-                    "reviewCount": "87"
-                },
-                "review": [
-                    {
-                        "@type": "Review",
-                        "author": {"@type": "Person", "name": "M.C.S."},
-                        "datePublished": "2025-03-10",
-                        "reviewBody": "Depois de passar por vários médicos sem conseguir resultado, o Dr. Kleber foi o primeiro que realmente investigou a causa da minha dor. Saí da consulta entendendo o que estava acontecendo no meu corpo.",
-                        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
-                    },
-                    {
-                        "@type": "Review",
-                        "author": {"@type": "Person", "name": "J.A.R."},
-                        "datePublished": "2025-06-20",
-                        "reviewBody": "Excelente profissional. A consulta é longa e muito detalhada. Ele realmente ouve o paciente antes de indicar qualquer procedimento.",
-                        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
-                    },
-                    {
-                        "@type": "Review",
-                        "author": {"@type": "Person", "name": "R.M."},
-                        "datePublished": "2025-09-05",
-                        "reviewBody": "Voltei a fazer minhas caminhadas após o tratamento. Dr. Kleber explicou tudo com muita clareza e paciência.",
-                        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}
-                    }
-                ],
-                "areaServed": ["Divinópolis","Itaúna","Nova Serrana","Pará de Minas","Cláudio","Arcos","Formiga"],
-                "sameAs": ["https://www.instagram.com/drkleberrangel","https://www.doctoralia.com.br/kleber-rangel/ortopedista-traumatologista/divinopolis"]
-            },
-            {
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                    {"@type": "ListItem", "position": 1, "name": "Início", "item": "https://www.drkleberrangel.com.br"},
-                    {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.drkleberrangel.com.br/blog"}
-                ]
-            }
-        ]
-    }
-    </script>
-    
-    <!-- Schema - Organization -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Dr. Kleber Rangel - Clínica Trate a Dor",
-        "url": "https://www.drkleberrangel.com.br",
-        "logo": "https://www.drkleberrangel.com.br/assets/Logo_Transparente.png",
-        "sameAs": [
-            "https://instagram.com/drkleberrangel"
-        ],
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "Customer Support",
-            "telephone": "+55-37-99841-9396",
-            "email": "contato@drkleberrangel.com.br",
-            "areaServed": "BR",
-            "availableLanguage": "pt-BR"
-        }
-    }
-    </script>
-    
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "O que acontece na primeira consulta com o Dr. Kleber?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A consulta dura 50 a 60 minutos e inclui: escuta completa da história da dor, exame clínico detalhado, leitura ativa das imagens (ressonância, tomografia, raio-x) e entrega de um plano terapêutico individualizado. Valor: R$680, com nota fiscal."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "A cirurgia é sempre necessária para tratar dor crônica?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Não necessariamente. Em muitos casos existem alternativas conservadoras ao procedimento cirúrgico — bloqueios, técnicas regenerativas e reabilitação — que são avaliadas individualmente pelo especialista. A indicação cirúrgica depende de cada quadro clínico e é sempre definida após avaliação completa."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Quanto tempo leva para sentir melhora?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Varia conforme o quadro clínico e o tratamento indicado. Ao final da consulta o paciente recebe uma estimativa individualizada e realista do cronograma terapêutico."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "O atendimento é particular ou atende convênio?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Atendimento particular. Esta escolha permite oferecer o tempo e a profundidade que dor crônica exige. Emitimos nota fiscal para reembolso junto ao plano de saúde."
-                }
-            }
-        ]
-    }
-    </script>
-    
-    <!-- Google Tag Manager (Head) v2 -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KRCJVG3');</script>
 
-    <!-- Google Analytics 4 (com CONSENTIMENTO - essencial para LGPD/saúde) -->
+    <!-- GTM -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KRCJVG3');</script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KHC1QSGV36"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        
-        // ⚠️ CONSENTIMENTO PADRÃO: Tudo negado até aceitar cookie consent
-        gtag('consent', 'default', {
-            'analytics_storage': 'denied',
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'personalization_storage': 'denied',
-            'wait_for_update': 500
-        });
-        
-        gtag('js', new Date());
-        gtag('config', 'G-KHC1QSGV36', {
-            'page_path': window.location.pathname,
-            'anonymize_ip': true,
-            'allow_google_signals': false,
-            'allow_ad_personalization': false,
-            'restricted_data_processing': true
-        });
-    </script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','wait_for_update':500});gtag('js',new Date());gtag('config','G-KHC1QSGV36',{'anonymize_ip':true,'restricted_data_processing':true});</script>
+    <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','877941071024223');</script>
 
-    <!-- Meta Pixel (inicializa sem disparar evento até consentimento) -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '877941071024223');
-        // PageView disparado apenas após consentimento (ver script de consentimento abaixo)
-    </script>
+    <!-- Schema -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Physician","name":"Dr. Kleber Rangel","description":"Ortopedista especialista em dor crônica e tratamentos sem cirurgia. CRM-MG 68724.","url":"https://www.drkleberrangel.com.br","telephone":"+553799841396","image":"https://www.drkleberrangel.com.br/assets/Foto_Kleber.jpeg","identifier":[{"@type":"PropertyValue","name":"CRM","value":"CRM-MG 68724"},{"@type":"PropertyValue","name":"RQE","value":"RQE 43142"}],"address":{"@type":"PostalAddress","streetAddress":"Av. Antônio Olímpio de Morais, 607, Sala 808","addressLocality":"Divinópolis","addressRegion":"MG","addressCountry":"BR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O que acontece na primeira consulta?","acceptedAnswer":{"@type":"Answer","text":"A consulta dura 50 a 60 minutos: escuta completa, exame clínico detalhado, leitura das suas imagens e plano terapêutico individualizado. R$680, nota fiscal emitida."}},{"@type":"Question","name":"A cirurgia é sempre necessária?","acceptedAnswer":{"@type":"Answer","text":"Não. Em muitos casos existem alternativas — bloqueios, técnicas regenerativas — avaliadas individualmente antes de qualquer decisão cirúrgica."}},{"@type":"Question","name":"O atendimento é particular?","acceptedAnswer":{"@type":"Answer","text":"Sim, 100% particular. Emitimos nota fiscal para reembolso junto ao plano de saúde."}}]}</script>
 
-    <!-- Google Site Verification -->
-    <meta name="google-site-verification" content="RubOweV253do21xbZF2WewjYXJHa3-ImUeXiLdczOUo">
-    <script>window.__NT__=['[REMOVED]','OO5hXGJbOcyih','LIhSQTN8Pwsbi0FVl2Mz'].join('');</script>
-<meta name="deploy-timestamp" content="2026-04-24T21:00:00Z">
-<!-- v1777077083 -->
-</head>
-<body class="bg-white text-accent-gray">
-
-    <!-- Google Tag Manager (noscript) — deve ser imediatamente após body -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCJVG3"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-    <!-- Navigation -->
-    <a href="#conteudo-principal" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-medical-teal text-white px-4 py-2 rounded z-[9999]">Pular para o conteúdo</a>
-    <nav id="main-nav" class="sticky top-0 z-50 bg-white shadow-sm" role="navigation" aria-label="Menu principal">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-
-                <!-- LOGO -->
-                <div class="flex-shrink-0">
-                    <a href="#" class="flex items-center gap-2">
-                        <div style="width:56px;height:56px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
-                            <picture><source srcset="/assets/logo.webp" type="image/webp"><img src="/assets/logo.png" alt="Clínica Trate a Dor — Dr. Kleber Rangel" width="56" height="56" style="width:56px;height:56px;object-fit:contain;display:block;"></picture>
-                        </div>
-                        <div class="hidden sm:flex flex-col leading-tight">
-                            <span class="font-display font-bold text-base text-medical-teal">Dr. Kleber Rangel</span>
-                            <span class="text-xs text-gray-400 font-normal">Ortopedia · Medicina da Dor</span>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- NAV LINKS desktop -->
-                <div class="hidden md:flex items-center gap-6">
-                    <a href="#metodo" class="text-sm font-medium text-gray-600 hover:text-medical-teal transition">Método</a>
-                    <a href="#tratamentos" class="text-sm font-medium text-gray-600 hover:text-medical-teal transition">Tratamentos</a>
-                    <a href="#sobre" class="text-sm font-medium text-gray-600 hover:text-medical-teal transition">Sobre</a>
-                    <a href="#videos" class="text-sm font-medium text-gray-600 hover:text-medical-teal transition">Vídeos</a>
-                    <a href="#faq" class="text-sm font-medium text-gray-600 hover:text-medical-teal transition">FAQ</a>
-                    <a href="tel:+5537998419396"
-                       class="text-sm font-semibold text-medical-teal hover:text-medical-dark transition flex items-center gap-1">
-                        (37) 99841-9396
-                    </a>
-                    <!-- CTA PRINCIPAL -->
-                    <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta"
-                       target="_blank" rel="noopener noreferrer"
-                       style="display:inline-flex;align-items:center;gap:8px;background:#0d6e8c;color:#fff;font-weight:700;font-size:14px;padding:10px 20px;border-radius:8px;text-decoration:none;white-space:nowrap;box-shadow:0 2px 8px rgba(13,110,140,0.3);transition:background 0.2s,transform 0.15s;"
-                       onmouseover="this.style.background='#0a5570';this.style.transform='scale(1.03)'"
-                       onmouseout="this.style.background='#0d6e8c';this.style.transform='scale(1)'">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                        </svg>
-                        Agendar Consulta
-                    </a>
-                </div>
-
-                <!-- MOBILE: botão menu + CTA compacto -->
-                <div class="md:hidden flex items-center gap-2">
-                    <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta"
-                       target="_blank" rel="noopener noreferrer"
-                       style="display:inline-flex;align-items:center;gap:6px;background:#0d6e8c;color:#fff;font-weight:700;font-size:12px;padding:8px 14px;border-radius:8px;text-decoration:none;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        Agendar
-                    </a>
-                    <button id="mobile-menu-btn" class="p-2 hover:bg-medical-light rounded" aria-label="Abrir menu de navegação" aria-expanded="false">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
-                </div>
-
-            </div>
-        </div>
-    </nav>
-    
-    <main id="conteudo-principal">
-    <!-- HERO SECTION -->
-    <section class="hero-gradient text-white py-20 md:py-32 relative" role="banner">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-                <!-- Left content -->
-                <div class="fade-in">
-                    <div class="mb-6">
-                        <div class="credibility-badge bg-white/20 text-white mb-4 inline-block">
-                            <span class="icon-check">✓</span> CRM-MG 68724
-                        </div>
-                    </div>
-                    <h1 class="font-display text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                        Cansado de tratar a dor sem entender a causa?
-                    </h1>
-                    <p class="text-lg md:text-xl mb-4 text-white/90 leading-relaxed">
-                        A maioria dos pacientes que chega até mim já passou por vários médicos, tomou anti-inflamatório, fez fisioterapia — e continua com dor. O problema quase sempre é o mesmo: <strong>ninguém investigou direito de onde vem a dor.</strong>
-                    </p>
-                    <p class="text-base mb-8 text-white/80 leading-relaxed">
-                        Aqui a primeira consulta dura 50 a 60 minutos. Não para impressionar — mas porque menos do que isso não é suficiente para entender o seu caso de verdade.
-                    </p>
-                    <div class="flex flex-wrap gap-3 mb-6 text-sm">
-                        <a href="tel:+5537998419396" class="bg-white/20 text-white px-3 py-1 rounded-full font-semibold hover:bg-white/30 transition">(37) 99841-9396</a>
-                        <span class="bg-white/20 text-white px-3 py-1 rounded-full">Seg–Sex 8h–17h · Divinópolis-MG</span>
-                    </div>
-                    <div class="flex flex-col gap-3">
-                        <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20vim%20pelo%20site.%20Tenho%20dor%20e%20gostaria%20de%20entender%20se%20sou%20candidato%20ao%20tratamento."
-               target="_blank" rel="noopener noreferrer"
-               style="display:inline-flex;align-items:center;justify-content:center;gap:12px;background:#25D366;color:#fff;font-weight:700;padding:18px 36px;border-radius:16px;font-size:1.1rem;text-decoration:none;box-shadow:0 4px 18px rgba(37,211,102,0.4);transition:background 0.2s,transform 0.15s;white-space:nowrap;width:100%;max-width:420px;"
-               onmouseover="this.style.background='#1da851';this.style.transform='translateY(-2px)'"
-               onmouseout="this.style.background='#25D366';this.style.transform='none'">
-                <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 2C8.268 2 2 8.268 2 16c0 2.428.651 4.703 1.788 6.664L2 30l7.528-1.768A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm-3.93 7.62c-.22-.493-.45-.503-.658-.512l-.56-.007c-.195 0-.512.073-.78.366-.268.293-1.024 1.001-1.024 2.44 0 1.44 1.049 2.83 1.195 3.025.147.195 2.025 3.22 4.977 4.388 2.463.972 2.953.779 3.484.73.532-.049 1.708-.698 1.95-1.372.24-.674.24-1.251.168-1.372-.073-.122-.269-.195-.562-.342-.293-.146-1.708-.843-1.977-.94-.268-.097-.463-.146-.659.147-.195.293-.757.94-.927 1.135-.17.195-.341.22-.634.073-.293-.147-1.237-.456-2.357-1.453-.87-.776-1.458-1.734-1.629-2.027-.17-.293-.018-.451.128-.597.13-.13.293-.341.44-.512.146-.17.195-.293.293-.488.097-.195.049-.366-.025-.512-.073-.146-.65-1.592-.903-2.181z" fill="white"/></svg>
-                Me conta seu caso pelo WhatsApp
-            </a>
-                    </div>
-                    <p class="text-xs text-white/50 mt-2">Resposta em horário comercial · Sem compromisso</p>
-
-                </div>
-                
-                <!-- Right - Photo -->
-                <div class="slide-in-right hidden md:block">
-                    <img src="/assets/Foto_Kleber.jpeg" alt="Dr. Kleber Rangel - Ortopedista" class="rounded-2xl shadow-2xl w-full object-cover object-top" style="height:520px;object-position:center top;" width="560" height="640">
-                    <p class="text-center text-sm text-white/80 mt-4">
-                        Dr. Kleber Rangel<br>
-                        <span class="text-xs">Especialista em Coluna · Medicina da Dor · Regenerativa</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- TRUST SIGNALS -->
-    <section class="bg-medical-light py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div>
-                    <div class="font-display text-3xl font-bold text-medical-teal">2.900+</div>
-                    <p class="text-sm text-accent-gray mt-2">Pacientes atendidos desde 2009</p>
-                </div>
-                <div>
-                    <div class="font-display text-3xl font-bold text-medical-teal">4.8★</div>
-                    <p class="text-sm text-accent-gray mt-2">Avaliação Google</p>
-                </div>
-                <div>
-                    <div class="font-display text-3xl font-bold text-medical-teal">15+</div>
-                    <p class="text-sm text-accent-gray mt-2">Anos em Divinópolis-MG</p>
-                </div>
-                <div>
-                    <div class="font-display text-3xl font-bold text-medical-teal">50-60min</div>
-                    <p class="text-sm text-accent-gray mt-2">Primeira consulta</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- MÉTODO SECTION -->
-    <section id="metodo" class="py-20">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="font-display text-4xl font-bold text-medical-teal mb-4">
-                    Como funciona na prática
-                </h2>
-                <p class="text-lg text-accent-gray max-w-2xl mx-auto">
-                    Não existe protocolo genérico aqui. O tratamento começa com investigação — e só depois vem a proposta terapêutica.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <!-- Step 1 -->
-                <div class="card-credibility">
-                    <div class="w-10 h-10 bg-medical-teal text-white rounded-full flex items-center justify-center font-bold mb-4">
-                        01
-                    </div>
-                    <h3 class="font-display text-xl font-bold text-medical-teal mb-3">
-                        Escutar de verdade
-                    </h3>
-                    <p class="text-sm text-accent-gray">
-                        A consulta começa pela sua história. O que dói, desde quando, o que piora, o que já foi tentado. Isso leva tempo — e esse tempo faz diferença no diagnóstico.
-                    </p>
-                </div>
-                
-                <!-- Step 2 -->
-                <div class="card-credibility">
-                    <div class="w-10 h-10 bg-medical-teal text-white rounded-full flex items-center justify-center font-bold mb-4">
-                        02
-                    </div>
-                    <h3 class="font-display text-xl font-bold text-medical-teal mb-3">
-                        Encontrar a causa
-                    </h3>
-                    <p class="text-sm text-accent-gray">
-                        Exame clínico detalhado e leitura ativa das suas imagens. A maioria das pessoas sai daqui com uma resposta que nunca recebeu antes: de onde realmente vem a dor.
-                    </p>
-                </div>
-                
-                <!-- Step 3 -->
-                <div class="card-credibility">
-                    <div class="w-10 h-10 bg-medical-teal text-white rounded-full flex items-center justify-center font-bold mb-4">
-                        03
-                    </div>
-                    <h3 class="font-display text-xl font-bold text-medical-teal mb-3">
-                        Tratar com precisão
-                    </h3>
-                    <p class="text-sm text-accent-gray">
-                        O plano é montado para o seu caso — não para uma lista de queixas. PRP, bloqueios guiados, ozonioterapia: cada recurso tem indicação baseada no que o seu quadro pede.
-                    </p>
-                </div>
-                
-                <!-- Step 4 -->
-                <div class="card-credibility">
-                    <div class="w-10 h-10 bg-medical-teal text-white rounded-full flex items-center justify-center font-bold mb-4">
-                        04
-                    </div>
-                    <h3 class="font-display text-xl font-bold text-medical-teal mb-3">
-                        Acompanhar e ajustar
-                    </h3>
-                    <p class="text-sm text-accent-gray">
-                        Reavaliação contínua. Se algo não está funcionando como esperado, o plano muda. Não existe "vamos continuar e ver o que acontece" sem uma razão clínica clara.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <div class="separator-line"></div>
-    
-    <!-- TRATAMENTOS SECTION -->
-    <section id="tratamentos" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="font-display text-4xl font-bold text-medical-teal mb-4">
-                    Principais Tratamentos
-                </h2>
-                <p class="text-lg text-accent-gray max-w-2xl mx-auto">
-                    Cada recurso tem indicação clínica definida. Você vai saber exatamente por que foi escolhido — e o que esperar.
-                </p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Bloqueios -->
-                <div class="border-l-4 border-medical-teal pl-6 py-4">
-                    <h3 class="font-display text-2xl font-bold text-medical-teal mb-3">
-                        Bloqueios Guiados por Ultrassom
-                    </h3>
-                    <p class="text-accent-gray mb-4">
-                        A agulha chega exatamente onde precisa — nervo, articulação ou estrutura específica — com guia de imagem em tempo real. Não às cegas. Isso muda o resultado e reduz o desconforto do procedimento.
-                    </p>
-                    <ul class="space-y-2 text-sm">
-                        <li class="flex items-center gap-2"><span class="icon-check">✓</span> Bloqueio facetário (coluna)</li>
-                        <li class="flex items-center gap-2"><span class="icon-check">✓</span> Infiltração epidural</li>
-                        <li class="flex items-center gap-2"><span class="icon-check">✓</span> Bloqueio de nervo periférico</li>
-                    </ul>
-                </div>
-                
-                <!-- PRP -->
-                <div class="border-l-4 border-accent-orange pl-6 py-4">
-                    <h3 class="font-display text-2xl font-bold text-accent-orange mb-3">
-                        Medicina Regenerativa
-                    </h3>
-                    <p class="text-accent-gray mb-4">
-                        Usa componentes do próprio sangue ou medula para estimular reparo em articulações e tendões. Não é indicado para todo mundo — a evidência atual mostra benefício real em casos selecionados. Se o seu não for, você vai saber na consulta, antes de gastar qualquer coisa.
-                    </p>
-                    <ul class="space-y-2 text-sm">
-                        <li class="flex items-center gap-2"><span class="icon-check">✓</span> PRP — plasma rico em plaquetas</li>
-                        <li class="flex items-center gap-2"><span class="icon-check">✓</span> BMA — aspirado de medula óssea</li>
-                        <li class="flex items-center gap-2"><span class="icon-check">✓</span> Proloterapia</li>
-                    </ul>
-                </div>
-                
-                <!-- Viscossuplementação -->
-                <div class="border-l-4 border-medical-teal pl-6 py-4">
-                    <h3 class="font-display text-2xl font-bold text-medical-teal mb-3">
-                        Viscossuplementação
-                    </h3>
-                    <p class="text-accent-gray mb-4">
-                        Ácido hialurônico intra-articular para joelho, quadril e ombro com artrose. Melhora a lubrificação e reduz inflamação local. A indicação depende do estágio da artrose e do quadro clínico — isso será explicado antes de qualquer proposta.
-                    </p>
-                    <ul class="space-y-2 text-sm">
-                        <li class="flex items-center gap-2"><span class="icon-check">✓</span> Artrose de joelho</li>
-                        <li class="flex items-center gap-2"><span class="icon-check">✓</span> Quadril e ombro</li>
-                        <li class="flex items-center gap-2"><span class="icon-check">✓</span> Indicação sempre individualizada</li>
-                    </ul>
-                </div>
-                
-                <!-- Integrativo -->
-                <div class="border-l-4 border-accent-orange pl-6 py-4">
-                    <h3 class="font-display text-2xl font-bold text-accent-orange mb-3">
-                        Abordagem Integrativa
-                    </h3>
-                    <p class="text-accent-gray mb-4">
-                        Sono ruim amplifica dor. Inflamação sistêmica perpetua o quadro. Por isso avaliamos hormônios, metabolismo e sono — não como modismo, mas porque esses fatores têm impacto direto no resultado do tratamento.
-                    </p>
-                    <ul class="space-y-2 text-sm">
-                        <li class="flex items-center gap-2"><span class="icon-check">✓</span> Ozonioterapia</li>
-                        <li class="flex items-center gap-2"><span class="icon-check">✓</span> Ondas de choque</li>
-                        <li class="flex items-center gap-2"><span class="icon-check">✓</span> Avaliação hormonal e metabólica</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- SOBRE SECTION -->
-    <section id="sobre" class="py-20 bg-medical-light">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="font-display text-4xl font-bold text-medical-teal mb-6">
-                        Quem é o Dr. Kleber
-                    </h2>
-                    <p class="text-lg text-accent-gray mb-6 leading-relaxed">
-                        Ortopedista e traumatologista com especialização em cirurgia da coluna vertebral pela <strong>Santa Casa de São Paulo</strong>. Pós-graduação em Medicina da Dor e formação em Medicina Regenerativa.
-                    </p>
-                    <p class="text-lg text-accent-gray mb-6 leading-relaxed">
-                        Há mais de uma década construindo em Divinópolis a <strong>Clínica Trate a Dor</strong> para oferecer o que existe de mais atual em tratamento da dor crônica.
-                    </p>
-                    <blockquote class="border-l-4 border-medical-teal pl-6 py-4 italic text-accent-gray mb-8">
-                        "Cada paciente que chega até mim merece a mesma coisa: tempo, escuta e diagnóstico honesto."
-                    </blockquote>
-                    
-                    <div class="space-y-4">
-                        <div class="credibility-badge bg-white">
-                            ✓ CRM-MG 68724
-                        </div>
-                        <div class="credibility-badge bg-white">
-                            ✓ RQE 43142 (Registro de Qualificação)
-                        </div>
-                        <div class="credibility-badge bg-white">
-                            ✓ CFM verificado - Conselho Federal de Medicina
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="hidden md:block">
-                    <img src="/assets/foto_kleber_rangel.png" alt="Dr. Kleber Rangel" class="rounded-2xl shadow-lg w-full object-cover" loading="lazy" width="560" height="640">
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- DEPOIMENTOS -->
-    <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-14">
-                <p class="text-sm font-semibold text-medical-teal uppercase tracking-wider mb-2">Avaliações verificadas · Google</p>
-                <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">O que dizem os pacientes</h2>
-                <p class="text-accent-gray">Pacientes de Divinópolis e região que recuperaram qualidade de vida</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-medical-light rounded-2xl p-6 border border-medical-teal/10">
-                    <div class="flex gap-1 mb-4">
-                        <span class="text-yellow-400 text-xl">★★★★★</span>
-                    </div>
-                    <p class="text-gray-700 mb-5 leading-relaxed italic">"Depois de passar por vários médicos sem conseguir resultado, o Dr. Kleber foi o primeiro que realmente investigou a causa da minha dor. Saí da consulta entendendo o que estava acontecendo no meu corpo."</p>
-                    <div class="flex items-center gap-3 border-t border-medical-teal/10 pt-4">
-                        <div class="w-10 h-10 rounded-full bg-medical-teal flex items-center justify-center text-white font-bold">M</div>
-                        <div>
-                            <p class="font-semibold text-sm text-gray-900">M.C.S.</p>
-                            <p class="text-xs text-gray-500">Divinópolis · Avaliação Google ✓</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-medical-light rounded-2xl p-6 border border-medical-teal/10">
-                    <div class="flex gap-1 mb-4">
-                        <span class="text-yellow-400 text-xl">★★★★★</span>
-                    </div>
-                    <p class="text-gray-700 mb-5 leading-relaxed italic">"A consulta é longa e muito detalhada. Ele realmente ouve o paciente antes de indicar qualquer procedimento. Nunca senti que estava sendo apressado ou que ele queria apenas prescrever algo."</p>
-                    <div class="flex items-center gap-3 border-t border-medical-teal/10 pt-4">
-                        <div class="w-10 h-10 rounded-full bg-medical-teal flex items-center justify-center text-white font-bold">J</div>
-                        <div>
-                            <p class="font-semibold text-sm text-gray-900">J.A.R.</p>
-                            <p class="text-xs text-gray-500">Divinópolis · Avaliação Google ✓</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-medical-light rounded-2xl p-6 border border-medical-teal/10">
-                    <div class="flex gap-1 mb-4">
-                        <span class="text-yellow-400 text-xl">★★★★★</span>
-                    </div>
-                    <p class="text-gray-700 mb-5 leading-relaxed italic">"Voltei a fazer minhas caminhadas após o tratamento. Dr. Kleber explicou tudo com muita clareza e paciência. Recomendo para quem tem dor crônica e não encontrou resposta em outros lugares."</p>
-                    <div class="flex items-center gap-3 border-t border-medical-teal/10 pt-4">
-                        <div class="w-10 h-10 rounded-full bg-medical-teal flex items-center justify-center text-white font-bold">R</div>
-                        <div>
-                            <p class="font-semibold text-sm text-gray-900">R.M.</p>
-                            <p class="text-xs text-gray-500">Itaúna · Avaliação Google ✓</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-10">
-                <a href="https://www.doctoralia.com.br/kleber-rangel/ortopedista-traumatologista/divinopolis" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-medical-teal font-semibold hover:underline text-sm">
-                    Ver todas as avaliações na Doctoralia →
-                </a>
-            </div>
-
-            <!-- Preço com contexto — após prova social -->
-            <div class="mt-12 bg-medical-light rounded-2xl p-8 text-center max-w-xl mx-auto border border-medical-teal/10">
-                <p class="text-sm font-semibold text-medical-teal uppercase tracking-wider mb-2">Primeira consulta</p>
-                <p class="font-display text-4xl font-bold text-gray-900 mb-3">R$&nbsp;680</p>
-                <p class="text-accent-gray text-sm leading-relaxed mb-4">50 a 60 minutos de avaliação real — histórico completo, exame clínico, leitura das suas imagens e plano terapêutico individualizado. Emitimos nota fiscal. Verifique reembolso no seu plano.</p>
-                <p class="text-xs text-gray-400">Seg–Sex · 8h–17h · Av. Antônio Olímpio de Morais, 607 — Sala 808, Divinópolis-MG</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- VÍDEOS EDUCATIVOS -->
-    <section id="videos" class="py-20 bg-medical-light">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <div class="text-center mb-10">
-                <p class="text-sm font-semibold text-medical-teal uppercase tracking-wider mb-2">Canal do Dr. Kleber · YouTube</p>
-                <h2 class="font-display text-4xl font-bold text-gray-900 mb-3">Veja antes de decidir</h2>
-                <p class="text-accent-gray max-w-xl mx-auto">Uma explicação honesta sobre como funciona o tratamento — sem promessas e sem enrolação.</p>
-            </div>
-
-            <!-- Vídeo destaque -->
-            <style>
-                .yt-thumb { position:relative; cursor:pointer; background:#000; border-radius:16px; overflow:hidden; aspect-ratio:16/9; }
-                .yt-thumb img { width:100%; height:100%; object-fit:cover; transition: opacity 0.3s; display:block; }
-                .yt-thumb:hover img { opacity:0.75; }
-                .yt-play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none; }
-                .yt-play svg { filter:drop-shadow(0 4px 12px rgba(0,0,0,0.6)); transition: transform 0.2s; }
-                .yt-thumb:hover .yt-play svg { transform: scale(1.08); }
-                .yt-thumb iframe { position:absolute; inset:0; width:100%; height:100%; border:none; border-radius:16px; }
-            </style>
-
-            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mb-8">
-                <div class="yt-thumb" onclick="playYT(this,'pRhamMUFQtU')">
-                    <img src="https://i.ytimg.com/vi/pRhamMUFQtU/maxresdefault.jpg"
-                         width="1280" height="720"
-                         alt="Artrose no joelho e dor crônica na coluna — Dr. Kleber Rangel"
-                         loading="lazy"
-                         onerror="this.src='https://i.ytimg.com/vi/pRhamMUFQtU/hqdefault.jpg'">
-                    <div class="yt-play"><svg width="64" height="64" viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.52 7.74A8.55 8.55 0 0 0 60.71 1.9C55.4 0 34 0 34 0S12.6 0 7.29 1.9A8.55 8.55 0 0 0 1.48 7.74C0 13.06 0 24 0 24s0 10.94 1.48 16.26a8.55 8.55 0 0 0 5.81 5.84C12.6 48 34 48 34 48s21.4 0 26.71-1.9a8.55 8.55 0 0 0 5.81-5.84C68 34.94 68 24 68 24s0-10.94-1.48-16.26z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg></div>
-                </div>
-                <div class="p-6">
-                    <div class="flex gap-2 mb-3">
-                        <span class="text-xs bg-medical-teal/10 text-medical-teal px-3 py-1 rounded-full font-medium">Joelho</span>
-                        <span class="text-xs bg-medical-teal/10 text-medical-teal px-3 py-1 rounded-full font-medium">Coluna</span>
-                        <span class="text-xs bg-medical-teal/10 text-medical-teal px-3 py-1 rounded-full font-medium">Sem cirurgia</span>
-                    </div>
-                    <h3 class="font-display text-xl font-bold text-gray-900 mb-2">Artrose no joelho e dor crônica na coluna</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Tratamento combinado para duas das queixas mais comuns — o que é possível fazer, o que a ciência mostra e o que não é indicado para todo mundo.</p>
-                </div>
-            </div>
-
-            <!-- Link para os demais vídeos -->
-            <div class="text-center">
-                <a href="https://www.youtube.com/@drkleberrangel" target="_blank" rel="noopener noreferrer"
-                   class="inline-flex items-center gap-2 text-sm font-semibold text-gray-500 hover:text-red-600 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-red-500"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.5 12 3.5 12 3.5s-7.54 0-9.38.55A3.02 3.02 0 0 0 .5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 0 0 2.12 2.14C4.46 20.5 12 20.5 12 20.5s7.54 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
-                    Ver mais 7 vídeos no canal →
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-    <script>
-    function playYT(el, id) {
-        var iframe = document.createElement('iframe');
-        iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
-        iframe.title = 'YouTube video';
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-        iframe.allowFullscreen = true;
-        el.innerHTML = '';
-        el.appendChild(iframe);
-    }
-    </script>
-
-    <!-- FAQ SECTION -->
-    <section id="faq" class="py-20 bg-medical-light">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="font-display text-4xl font-bold text-medical-teal mb-4">
-                    Perguntas Frequentes
-                </h2>
-                <p class="text-lg text-accent-gray">
-                    As dúvidas mais comuns, respondidas de forma direta
-                </p>
-            </div>
-            
-            <div class="space-y-4">
-                <!-- FAQ Item 0 — objeção de preço -->
-                <details class="border border-medical-teal rounded-lg p-6 cursor-pointer hover:bg-white transition group" open>
-                    <summary class="font-semibold text-lg text-medical-teal flex justify-between items-center">
-                        O que acontece exatamente na primeira consulta?
-                        <span class="group-open:rotate-180 transition">▼</span>
-                    </summary>
-                    <div class="text-accent-gray mt-4 space-y-2">
-                        <p>A consulta dura de 50 a 60 minutos e segue uma sequência específica:</p>
-                        <p><strong>1. Escuta da história completa</strong> — desde quando dói, o que piora, o que já foi tentado, quais exames você já fez.</p>
-                        <p><strong>2. Exame clínico detalhado</strong> — não um exame de triagem. O exame que define onde está o problema real.</p>
-                        <p><strong>3. Leitura ativa das suas imagens</strong> — se você tiver ressonância, tomografia ou raio-x, eles são lidos aqui, no momento, com você.</p>
-                        <p><strong>4. Diagnóstico e plano</strong> — ao final, você sai entendendo o que está acontecendo no seu corpo e com um plano terapêutico claro. Sem "volta daqui a 30 dias para ver como está".</p>
-                        <p class="text-sm text-gray-400 pt-2">Valor: R$680. Nota fiscal emitida. Verifique reembolso no seu plano de saúde.</p>
-                    </div>
-                </details>
-
-                <!-- FAQ Item 1 -->
-                <details class="border border-medical-teal rounded-lg p-6 cursor-pointer hover:bg-white transition group">
-                    <summary class="font-semibold text-lg text-medical-teal flex justify-between items-center">
-                        A cirurgia é sempre necessária para tratar dor crônica?
-                        <span class="group-open:rotate-180 transition">▼</span>
-                    </summary>
-                    <p class="text-accent-gray mt-4">
-                        Não necessariamente. Em muitos casos de dor crônica, existem alternativas ao procedimento cirúrgico — como bloqueios, técnicas regenerativas e reabilitação — que podem ser avaliadas pelo especialista antes de qualquer decisão. A indicação cirúrgica depende de cada caso e é sempre definida após avaliação clínica completa.
-                    </p>
-                </details>
-                
-                <!-- FAQ Item 2 -->
-                <details class="border border-medical-teal rounded-lg p-6 cursor-pointer hover:bg-white transition group">
-                    <summary class="font-semibold text-lg text-medical-teal flex justify-between items-center">
-                        Quanto tempo leva para sentir melhora?
-                        <span class="group-open:rotate-180 transition">▼</span>
-                    </summary>
-                    <p class="text-accent-gray mt-4">
-                        Varia conforme o quadro clínico e o tratamento indicado. Procedimentos intervencionistas e protocolos regenerativos têm cronogramas diferentes. Ao final da consulta você recebe uma estimativa individualizada e realista — sem prometer prazos que dependem de variáveis clínicas individuais.
-                    </p>
-                </details>
-                
-                <!-- FAQ Item 3 -->
-                <details class="border border-medical-teal rounded-lg p-6 cursor-pointer hover:bg-white transition group">
-                    <summary class="font-semibold text-lg text-medical-teal flex justify-between items-center">
-                        O atendimento é particular ou atende convênio?
-                        <span class="group-open:rotate-180 transition">▼</span>
-                    </summary>
-                    <p class="text-accent-gray mt-4">
-                        Atendimento <strong>100% particular</strong>. Esta escolha nos permite oferecer o tempo e a profundidade que uma dor crônica exige — algo que a lógica de consulta rápida do convênio não viabiliza. Emitimos nota fiscal e recibo para você tentar reembolso junto ao seu plano de saúde.
-                    </p>
-                </details>
-                
-                <!-- FAQ Item 4 -->
-                <details class="border border-medical-teal rounded-lg p-6 cursor-pointer hover:bg-white transition group">
-                    <summary class="font-semibold text-lg text-medical-teal flex justify-between items-center">
-                        Preciso parar o que estou tomando?
-                        <span class="group-open:rotate-180 transition">▼</span>
-                    </summary>
-                    <p class="text-accent-gray mt-4">
-                        <strong>Não por conta própria.</strong> Avaliamos toda a sua medicação atual e reorganizamos se for o caso — sempre com segurança e em conjunto com os outros profissionais que já te acompanham. Nunca mudamos tratamento sem coordenação.
-                    </p>
-                </details>
-                
-                <!-- FAQ Item 5 -->
-                <details class="border border-medical-teal rounded-lg p-6 cursor-pointer hover:bg-white transition group">
-                    <summary class="font-semibold text-lg text-medical-teal flex justify-between items-center">
-                        Atendimento para outras cidades?
-                        <span class="group-open:rotate-180 transition">▼</span>
-                    </summary>
-                    <p class="text-accent-gray mt-4">
-                        Sim. Atendemos pacientes de toda a região Centro-Oeste de Minas Gerais (Divinópolis, Cláudio, Itaúna, Itatiaiuçu, Carmo do Cajuru, Pará de Minas, Nova Serrana, Pitangui, Arcos, Formiga, etc.), além de pacientes vindos de Belo Horizonte e de outros estados.
-                    </p>
-                </details>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CTA FINAL -->
-    <section class="hero-gradient text-white py-16">
-        <div class="max-w-4xl mx-auto text-center px-4">
-            <p class="text-sm font-semibold uppercase tracking-wider text-white/60 mb-4">Vagas limitadas por semana</p>
-            <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">
-                Pronto para entender de onde vem a sua dor?
-            </h2>
-            <p class="text-lg mb-8 text-white/80 max-w-xl mx-auto">
-                Me manda uma mensagem contando seu caso. Sem compromisso — só quero entender se posso te ajudar.
-            </p>
-            <div class="flex flex-col items-center gap-3">
-                <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20vim%20pelo%20site.%20Tenho%20dor%20e%20gostaria%20de%20entender%20se%20sou%20candidato%20ao%20tratamento."
-               target="_blank" rel="noopener noreferrer"
-               style="display:inline-flex;align-items:center;justify-content:center;gap:12px;background:#25D366;color:#fff;font-weight:700;padding:18px 36px;border-radius:16px;font-size:1.1rem;text-decoration:none;box-shadow:0 4px 18px rgba(37,211,102,0.4);transition:background 0.2s,transform 0.15s;white-space:nowrap;width:100%;max-width:420px;"
-               onmouseover="this.style.background='#1da851';this.style.transform='translateY(-2px)'"
-               onmouseout="this.style.background='#25D366';this.style.transform='none'">
-                <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 2C8.268 2 2 8.268 2 16c0 2.428.651 4.703 1.788 6.664L2 30l7.528-1.768A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm-3.93 7.62c-.22-.493-.45-.503-.658-.512l-.56-.007c-.195 0-.512.073-.78.366-.268.293-1.024 1.001-1.024 2.44 0 1.44 1.049 2.83 1.195 3.025.147.195 2.025 3.22 4.977 4.388 2.463.972 2.953.779 3.484.73.532-.049 1.708-.698 1.95-1.372.24-.674.24-1.251.168-1.372-.073-.122-.269-.195-.562-.342-.293-.146-1.708-.843-1.977-.94-.268-.097-.463-.146-.659.147-.195.293-.757.94-.927 1.135-.17.195-.341.22-.634.073-.293-.147-1.237-.456-2.357-1.453-.87-.776-1.458-1.734-1.629-2.027-.17-.293-.018-.451.128-.597.13-.13.293-.341.44-.512.146-.17.195-.293.293-.488.097-.195.049-.366-.025-.512-.073-.146-.65-1.592-.903-2.181z" fill="white"/></svg>
-                Me conta seu caso pelo WhatsApp
-            </a>
-
-            </div>
-            <p class="text-sm text-white/50 mt-6">
-                Resposta em horário comercial · Seg–Sex 8h–17h
-            </p>
-        </div>
-    </section>
-    
-    <!-- FOOTER -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <!-- Sobre -->
-                <div>
-                    <p class="font-semibold text-sm uppercase tracking-wider text-white/50 mb-4">Dr. Kleber Rangel</p>
-                    <p class="text-sm text-white/70">
-                        Ortopedista especialista em medicina da dor e regenerativa em Divinópolis, MG.
-                    </p>
-                </div>
-                
-                <!-- Links -->
-                <div>
-                    <p class="font-semibold text-sm uppercase tracking-wider text-white/50 mb-4">Navegação</p>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#metodo" class="text-white/70 hover:text-white transition">Método</a></li>
-                        <li><a href="#tratamentos" class="text-white/70 hover:text-white transition">Tratamentos</a></li>
-                        <li><a href="#sobre" class="text-white/70 hover:text-white transition">Sobre</a></li>
-                        <li><a href="#faq" class="text-white/70 hover:text-white transition">FAQ</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Contato -->
-                <div>
-                    <p class="font-semibold text-sm uppercase tracking-wider text-white/50 mb-4">Contato</p>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="tel:+5537998419396" class="text-white/70 hover:text-white transition">(37) 99841-9396</a></li>
-                        <li><a href="mailto:contato@drkleberrangel.com.br" class="text-white/70 hover:text-white transition">contato@drkleberrangel.com.br</a></li>
-                        <li><a href="https://instagram.com/drkleberrangel" target="_blank" rel="noopener noreferrer" class="text-white/70 hover:text-white transition">@drkleberrangel</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Endereço -->
-                <div>
-                    <p class="font-semibold text-sm uppercase tracking-wider text-white/50 mb-4">Localização</p>
-                    <p class="text-sm text-white/70">
-                        Av. Antônio Olímpio de Morais, 607<br>
-                        Centro, Divinópolis-MG<br>
-                        <a href="https://maps.google.com/?q=Av.+Antônio+Olímpio+de+Morais+607+Divinópolis" target="_blank" rel="noopener noreferrer" class="text-medical-teal hover:underline">Ver no Google Maps</a>
-                    </p>
-                </div>
-            </div>
-            
-            <div class="separator-line mb-8"></div>
-            
-            <!-- Legal -->
-            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-white/60">
-                <div>
-                    © 2026 Dr. Kleber Rangel · Clínica Trate a Dor<br>
-                    <span class="text-medical-teal">CRM-MG 68724 · RQE 43142</span> · Conteúdo informativo. Não substitui consulta médica.<br>
-                    <span class="text-white/40">Publicidade médica em conformidade com a Resolução CFM 2.336/2023.</span>
-                </div>
-                <div class="flex gap-6 mt-6 md:mt-0">
-                    <a href="/politica-privacidade.html" class="hover:text-white transition">Privacidade</a>
-                    <a href="/politica-privacidade.html" class="hover:text-white transition">LGPD</a>
-                    <a href="/termos.html" class="hover:text-white transition">Termos</a>
-                </div>
-            </div>
-        </div>
-
-            <!-- Links internos para rastreamento — landing pages e blog -->
-            <div class="mt-8 pt-6 border-t border-gray-700">
-                <p class="text-xs text-gray-500 mb-3 font-semibold uppercase tracking-wider">Tratamentos</p>
-                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">
-                    <a href="/coluna" class="hover:text-white transition">Dor na Coluna</a>
-                    <a href="/joelho" class="hover:text-white transition">Dor no Joelho</a>
-                    <a href="/ombro" class="hover:text-white transition">Dor no Ombro</a>
-                    <a href="/prp" class="hover:text-white transition">PRP</a>
-                    <a href="/medicina-regenerativa" class="hover:text-white transition">Medicina Regenerativa</a>
-                    <a href="/ozonoterapia-divinopolis" class="hover:text-white transition">Ozonioterapia</a>
-                </div>
-                <p class="text-xs text-gray-500 mb-3 mt-4 font-semibold uppercase tracking-wider">Blog</p>
-                <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">
-                    <a href="/blog/dor-na-coluna" class="hover:text-white transition">Dor na Coluna</a>
-                    <a href="/blog/hernia-de-disco" class="hover:text-white transition">Hérnia de Disco</a>
-                    <a href="/blog/artrose-joelho" class="hover:text-white transition">Artrose no Joelho</a>
-                    <a href="/blog/condromalacia" class="hover:text-white transition">Condromalácia</a>
-                    <a href="/blog/dor-cronica" class="hover:text-white transition">Dor Crônica</a>
-                    <a href="/blog/prp-tratamento" class="hover:text-white transition">PRP</a>
-                    <a href="/blog/quando-fazer-cirurgia-joelho" class="hover:text-white transition">Cirurgia no Joelho</a>
-                </div>
-            </div>
-    </footer>
-    
-    <!-- Mobile Menu (oculto por padrão) -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg px-4 py-4 space-y-3 text-sm font-medium">
-        <a href="#metodo" class="block hover:text-medical-teal transition" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Método</a>
-        <a href="#tratamentos" class="block hover:text-medical-teal transition" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Tratamentos</a>
-        <a href="#sobre" class="block hover:text-medical-teal transition" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Sobre</a>
-        <a href="#videos" class="block hover:text-medical-teal transition" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Vídeos</a>
-        <a href="#faq" class="block hover:text-medical-teal transition" onclick="document.getElementById('mobile-menu').classList.add('hidden')">FAQ</a>
-
-    </div>
-
-    <!-- LEAD MAGNET MODAL -->
-    <div id="lead-magnet-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop">
-        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative fade-in">
-            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                </svg>
-            </button>
-            
-            <div class="text-center mb-6">
-                <picture><source srcset="/assets/logo.webp" type="image/webp"><img src="/assets/logo.png" alt="Clínica Trate a Dor" style="width:56px;height:56px;object-fit:contain;display:block;margin:0 auto 1rem;" width="56" height="56"></picture>
-                <h3 class="font-display text-2xl font-bold text-medical-teal mb-2">
-                    Guia Grátis: Entenda e Cuide da Sua Dor Crônica
-                </h3>
-                <p class="text-sm text-accent-gray">
-                    Conheça as abordagens terapêuticas modernas para manejo da dor crônica — com base em evidências científicas.
-                </p>
-            </div>
-            
-            <form id="lead-magnet-form" class="space-y-4">
-                <div>
-                    <label for="name" class="block text-sm font-semibold text-gray-800 mb-2">Nome completo</label>
-                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-medical-teal" placeholder="Seu nome">
-                </div>
-                
-                <div>
-                    <label for="email" class="block text-sm font-semibold text-gray-800 mb-2">Email</label>
-                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-medical-teal" placeholder="seu@email.com">
-                </div>
-                
-                <div>
-                    <label for="phone" class="block text-sm font-semibold text-gray-800 mb-2">WhatsApp (opcional)</label>
-                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-medical-teal" placeholder="(37) 99999-9999">
-                </div>
-                
-                <div class="flex items-start gap-3 py-3 border-t border-gray-200">
-                    <input type="checkbox" id="privacy" name="privacy" required class="w-4 h-4 rounded mt-1 text-medical-teal cursor-pointer">
-                    <label for="privacy" class="text-xs text-accent-gray cursor-pointer">
-                        Concordo que meus dados sejam usados para enviar o guia e comunicações educativas relacionadas à saúde. Veja nossa <a href="/politica-privacidade.html" class="text-medical-teal hover:underline" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
-                    </label>
-                </div>
-                
-                <button type="submit" class="w-full btn-primary">
-                    Receber o Guia por Email
-                </button>
-                
-                <p class="text-xs text-center text-accent-gray">
-                    Sem spam. Você pode cancelar o recebimento a qualquer momento.
-                </p>
-            </form>
-        </div>
-    </div>
-    
-    <!-- Scripts -->
-    <script>
-        // Lead Magnet Modal
-        const modal = document.getElementById('lead-magnet-modal');
-        const openButtons = document.querySelectorAll('#open-lead-magnet-disabled'); // guia desativado
-        const closeBtn = document.getElementById('close-modal');
-        const form = document.getElementById('lead-magnet-form');
-        
-        openButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                modal.classList.remove('hidden');
-            });
-        });
-        
-        closeBtn.addEventListener('click', () => {
-            modal.classList.add('hidden');
-        });
-        
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.add('hidden');
-            }
-        });
-        
-        // Form submission — Zapier + Brevo (Sendinblue)
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const name    = document.getElementById('name').value.trim();
-            const email   = document.getElementById('email').value.trim();
-            const phone   = document.getElementById('phone').value.trim() || '';
-            const submitBtn = form.querySelector('button[type="submit"]');
-
-            // ── Estado: carregando ──────────────────────────────────────
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Enviando…';
-
-            // ── 1. Salvar no Notion + Make ───────────────────────────────
-            const MAKE_WEBHOOK = 'https://hook.us2.make.com/qoyw0ad54yyclpol5ngradu57akwlbf6';
-            const NOTION_TOKEN = ''; // token removido — salvar no Notion via Make (backend)
-            const NOTION_DB    = '76296fcdd6924750b2e796098a3ab232';
-
-            const leadData = {
-                nome:         name,
-                email:        email,
-                whatsapp:     phone,
-                origem:       'site_lead_magnet',
-                timestamp:    new Date().toISOString(),
-                utm_source:   new URLSearchParams(window.location.search).get('utm_source') || 'direto',
-                utm_medium:   new URLSearchParams(window.location.search).get('utm_medium') || '',
-                utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || '',
-            };
-
-            // Enviar para Make (backup)
-            fetch(MAKE_WEBHOOK, {
-                method: 'POST', mode: 'no-cors',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(leadData)
-            }).catch(() => {});
-
-            // Salvar direto no Notion
-            const now = new Date().toLocaleString('pt-BR', {timeZone: 'America/Sao_Paulo'});
-            fetch('https://api.notion.com/v1/pages', {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${NOTION_TOKEN}`,
-                    'Content-Type': 'application/json',
-                    'Notion-Version': '2022-06-28',
-                },
-                body: JSON.stringify({
-                    parent: { database_id: NOTION_DB },
-                    properties: {
-                        'Nome':         { title: [{ text: { content: name } }] },
-                        'Email':        { email: email },
-                        'WhatsApp':     { phone_number: phone || null },
-                        'Origem':       { rich_text: [{ text: { content: 'site_lead_magnet' } }] },
-                        'UTM Source':   { rich_text: [{ text: { content: leadData.utm_source } }] },
-                        'UTM Campaign': { rich_text: [{ text: { content: leadData.utm_campaign } }] },
-                        'Data Hora':    { rich_text: [{ text: { content: now } }] },
-                        'Status':       { select: { name: 'Novo' } },
-                    }
-                })
-            }).catch(() => {});
-
-            // ── 2. Download do eBook ─────────────────────────────────────
-            const ebook = document.createElement('a');
-            ebook.href     = '/assets/ebook-dor-cronica.pdf';
-            ebook.download = 'Guia-Educativo-Dor-Cronica-Dr-Kleber-Rangel.pdf';
-            document.body.appendChild(ebook);
-            ebook.click();
-            document.body.removeChild(ebook);
-
-            // ── 3. Feedback visual ───────────────────────────────────────
-            form.innerHTML = `
-                <div class="text-center py-6">
-                    <div class="text-5xl mb-4">✅</div>
-                    <h4 class="font-display text-xl font-bold text-medical-teal mb-2">
-                        Guia enviado, ${name.split(' ')[0]}!
-                    </h4>
-                    <p class="text-sm text-accent-gray mb-4">
-                        O download começou automaticamente.<br>
-                        Em breve você receberá o guia no email <strong>${email}</strong>.
-                    </p>
-                    <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20acabei%20de%20baixar%20o%20guia%20e%20gostaria%20de%20agendar%20uma%20consulta"
-                       target="_blank" rel="noopener noreferrer"
-                       class="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition text-sm">
-                        💬 Falar com Dr. Kleber agora
-                    </a>
-                    <p class="text-xs text-accent-gray mt-4">
-                        Dúvidas? (37) 99841-9396
-                    </p>
-                </div>
-            `;
-
-            // ── 4. Analytics ─────────────────────────────────────────────
-            if (window.gtag) {
-                gtag('event', 'lead_magnet_download', {
-                    event_category: 'lead',
-                    event_label:    'ebook_dor_cronica',
-                    lead_source:    'website',
-                });
-                gtag('event', 'generate_lead', {
-                    currency: 'BRL',
-                    value:    50.00,   // valor estimado do lead
-                });
-            }
-            if (window.fbq && localStorage.getItem('drkleberrangel_consent') === 'accepted') {
-                fbq('track', 'Lead', { content_name: 'ebook_dor_cronica' });
-            }
-
-            // ── 5. Fechar modal automaticamente após 8s ──────────────────
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 8000);
-        });
-        
-        // Mobile menu
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuBtn?.addEventListener('click', () => {
-            if (mobileMenu) {
-                mobileMenu.classList.toggle('hidden');
-            }
-        });
-    </script>
-
-    <!-- ⚠️ CONSENTIMENTO & MITIGAÇÃO DE RESTRIÇÕES DE DADOS MÉDICAS -->
-    <script>
-        // Gerencia consentimento de cookies/rastreamento (LGPD + saúde)
-        // Restrições aplicadas automaticamente até consentimento
-        
-        function updateConsentMode(consentStatus) {
-            gtag('consent', 'update', {
-                'analytics_storage': consentStatus ? 'granted' : 'denied',
-                'ad_storage': consentStatus ? 'granted' : 'denied',
-                'ad_user_data': consentStatus ? 'granted' : 'denied',
-                'ad_personalization': consentStatus ? 'granted' : 'denied',
-                'personalization_storage': consentStatus ? 'granted' : 'denied'
-            });
-        }
-
-        // Verificar consentimento anterior
-        function checkConsentStatus() {
-            const consent = localStorage.getItem('drkleberrangel_consent');
-            if (consent === 'accepted') {
-                updateConsentMode(true);
-                return true;
-            }
-            return false;
-        }
-
-        // Banner de consentimento (LGPD)
-        function showConsentBanner() {
-            if (localStorage.getItem('drkleberrangel_consent')) {
-                return;
-            }
-
-            const banner = document.createElement('div');
-            banner.id = 'consent-banner';
-            banner.innerHTML = `
-                <div style="position: fixed; bottom: 0; left: 0; right: 0; background: #0d7c7c; color: white; padding: 16px; text-align: center; z-index: 9999; font-size: 14px;">
-                    <p style="margin: 0 0 12px 0;">🔒 Usamos cookies para melhorar sua experiência. Leia nossa <a href="/politica-privacidade.html" style="color: #5DCAA5; text-decoration: underline;">Política de Privacidade</a>.</p>
-                    <button id="accept-consent" style="background: #5DCAA5; color: #0d7c7c; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: bold; margin-right: 8px;">✓ Aceitar</button>
-                    <button id="reject-consent" style="background: transparent; color: white; border: 1px solid white; padding: 8px 16px; border-radius: 4px; cursor: pointer;">✗ Rejeitar</button>
-                </div>
-            `;
-            document.body.appendChild(banner);
-
-            document.getElementById('accept-consent').addEventListener('click', function() {
-                localStorage.setItem('drkleberrangel_consent', 'accepted');
-                updateConsentMode(true);
-                banner.remove();
-                // Disparar PageView Meta Pixel apenas após consentimento
-                if (window.fbq) fbq('track', 'PageView');
-                gtag('event', 'consent_accepted', {
-                    'event_category': 'consent',
-                    'event_label': 'lgpd_data_sharing_approved'
-                });
-            });
-
-            document.getElementById('reject-consent').addEventListener('click', function() {
-                localStorage.setItem('drkleberrangel_consent', 'rejected');
-                updateConsentMode(false);
-                banner.remove();
-                gtag('event', 'consent_rejected', {
-                    'event_category': 'consent',
-                    'event_label': 'lgpd_data_sharing_rejected'
-                });
-            });
-        }
-
-        // Executar ao carregar página
-        window.addEventListener('load', function() {
-            checkConsentStatus();
-            showConsentBanner();
-        });
-
-        // ⚠️ MITIGAÇÃO: Informar Google sobre restrições médicas
-        gtag('config', 'G-KHC1QSGV36', {
-            'restricted_data_processing': true
-        });
-
-        // Floating CTA gerenciado pelo bloco inline abaixo
-    </script>
-
-    </main>
-
-    </main><!-- /main -->
-
-    <!-- Floating CTA Bar — WhatsApp + Ligar -->
     <style>
-      #floating-cta {
-        opacity:0; pointer-events:none;
-        transition: opacity 0.4s ease, transform 0.3s ease;
-        transform: translateY(100%);
-        position:fixed; z-index:9998;
-        bottom:0; left:0; right:0;
-        display:flex; align-items:center;
-        background:#fff;
-        border-top:2px solid #e2f0f4;
-        box-shadow:0 -4px 24px rgba(0,0,0,0.12);
-        padding:10px 16px; gap:10px;
-      }
-      #floating-cta.visible {
-        opacity:1; pointer-events:auto; transform:translateY(0);
-      }
-      @media(min-width:768px){
-        #floating-cta {
-          bottom:24px; left:auto; right:24px;
-          border-top:none; border-radius:60px;
-          padding:8px 14px 8px 10px;
-          box-shadow:0 8px 32px rgba(0,0,0,0.18);
-          border:1px solid rgba(0,0,0,0.06);
-          backdrop-filter:blur(8px);
-          background:rgba(255,255,255,0.97);
-          transform:translateY(20px);
-          width:auto;
+        *{margin:0;padding:0;box-sizing:border-box;}
+        html{scroll-behavior:smooth;}
+        body{font-family:'DM Sans',sans-serif;color:#1C1C1C;background:#fff;overflow-x:hidden;}
+        h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;}
+
+        /* ── PALETA UNIFICADA ── */
+        :root{
+            --teal:#0B6B6B;
+            --teal-dark:#085555;
+            --teal-light:#E8F5F2;
+            --gold:#C8A96A;
+            --gold-light:#F5EDD8;
+            --warm:#FAF7F2;
+            --warm-dark:#F0EAE0;
+            --ink:#1C1C1C;
+            --muted:#5A6472;
         }
-        #floating-cta.visible { transform:translateY(0); }
-        #floating-cta .cta-wa, #floating-cta .cta-tel { flex:none; }
-      }
-      #floating-cta .cta-wa, #floating-cta .cta-tel {
-        flex:1; justify-content:center;
-      }
+
+        /* ── HERO BEGE ── */
+        .hero-bg{background:var(--warm);position:relative;}
+        .hero-bg::after{content:'';position:absolute;right:0;top:0;width:50%;height:100%;background:linear-gradient(135deg,var(--warm) 0%,var(--warm-dark) 100%);z-index:0;clip-path:polygon(8% 0,100% 0,100% 100%,0 100%);}
+
+        /* ── BOTÕES ── */
+        .btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;font-weight:600;padding:16px 32px;border-radius:14px;font-size:1rem;text-decoration:none;box-shadow:0 4px 18px rgba(37,211,102,0.35);transition:all 0.2s;white-space:nowrap;}
+        .btn-wa:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,0.4);}
+        .btn-teal{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;font-weight:600;padding:12px 24px;border-radius:10px;font-size:0.9rem;text-decoration:none;transition:all 0.2s;}
+        .btn-teal:hover{background:var(--teal-dark);}
+
+        /* ── CARDS ── */
+        .card-gold{border-left:3px solid var(--gold);padding:24px 24px 24px 28px;background:#fff;border-radius:0 12px 12px 0;box-shadow:0 2px 16px rgba(0,0,0,0.05);}
+        .card-warm{background:var(--warm);border-radius:16px;padding:28px;}
+        .check-gold::before{content:'✓';color:var(--gold);font-weight:700;margin-right:8px;}
+
+        /* ── SEÇÃO LOGOS ── */
+        .logos-bar{display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:center;}
+        .logos-bar img{height:44px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:0.85;transition:opacity 0.2s;}
+        .logos-bar img:hover{opacity:1;}
+
+        /* ── TIMELINE ── */
+        .timeline{position:relative;padding-left:32px;}
+        .timeline::before{content:'';position:absolute;left:10px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--gold),var(--teal));}
+        .timeline-item{position:relative;margin-bottom:28px;}
+        .timeline-item::before{content:'';position:absolute;left:-27px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid #fff;box-shadow:0 0 0 2px var(--gold);}
+
+        /* ── DEPOIMENTOS ── */
+        .review-card{background:#fff;border:1px solid #E8E0D8;border-top:3px solid var(--gold);border-radius:12px;padding:28px;}
+
+        /* ── FAQ ── */
+        details summary{list-style:none;cursor:pointer;}
+        details summary::-webkit-details-marker{display:none;}
+        details[open] .faq-icon{transform:rotate(45deg);}
+        .faq-icon{transition:transform 0.2s;color:var(--teal);font-size:20px;font-weight:300;}
+
+        /* ── NAV ── */
+        .nav-link{font-size:0.875rem;font-weight:500;color:var(--muted);transition:color 0.2s;}
+        .nav-link:hover{color:var(--teal);}
+
+        /* ── ANIMAÇÕES ── */
+        @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+        .fade-up{animation:fadeUp 0.7s ease both;}
+        .fade-up-2{animation:fadeUp 0.7s 0.15s ease both;}
+        .fade-up-3{animation:fadeUp 0.7s 0.3s ease both;}
+
+        /* ── FLOATING CTA ── */
+        #fcta{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #E8E0D8;box-shadow:0 -4px 20px rgba(0,0,0,0.1);padding:10px 16px;display:flex;gap:10px;z-index:9990;opacity:0;pointer-events:none;transform:translateY(100%);transition:all 0.4s ease;}
+        #fcta.visible{opacity:1;pointer-events:auto;transform:translateY(0);}
+        @media(min-width:768px){#fcta{bottom:24px;left:auto;right:24px;border-top:none;border-radius:50px;padding:8px 16px 8px 12px;width:auto;box-shadow:0 8px 32px rgba(0,0,0,0.15);}}
+
+        @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+        @media(max-width:767px){.hero-bg::after{display:none;}}
     </style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCJVG3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <div id="floating-cta">
-
-        <!-- Logo — só desktop -->
-        <picture><source srcset="/assets/logo.webp" type="image/webp"><img src="/assets/logo.png"
-             alt="Trate a Dor" class="cta-logo"
-             style="width:40px;height:40px;object-fit:contain;border-radius:50%;background:#f0f8f8;padding:3px;flex-shrink:0;display:none;" width="56" height="56"></picture>
-        <!-- Divider — só desktop -->
-        <div class="cta-divider" style="width:1px;height:32px;background:rgba(0,0,0,0.1);margin:0 2px;display:none;"></div>
-
-        <!-- WhatsApp -->
-        <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta"
-           target="_blank" rel="noopener noreferrer"
-           aria-label="Agendar pelo WhatsApp"
-           onclick="if(typeof fbq!=='undefined') fbq('track','Contact',{content_name:'WhatsApp Sticky'}); if(typeof gtag!=='undefined') gtag('event','click',{event_category:'CTA',event_label:'WhatsApp Sticky'});"
-           class="cta-wa"
-           style="display:flex; align-items:center; gap:7px; background:#25d366; color:#fff;
-                  font-weight:700; font-size:13px; padding:9px 16px; border-radius:50px;
-                  text-decoration:none; transition: background 0.2s, transform 0.15s;
-                  box-shadow: 0 2px 8px rgba(37,211,102,0.35);"
-           onmouseover="this.style.background='#1aad52';this.style.transform='scale(1.04)'"
-           onmouseout="this.style.background='#25d366';this.style.transform='scale(1)'">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24" style="flex-shrink:0">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            <span>WhatsApp</span>
-        </a>
-
-        <!-- Ligar -->
-        <a href="tel:+5537998419396"
-           aria-label="Ligar para a clínica"
-           onclick="if(typeof fbq!=='undefined') fbq('track','Contact',{content_name:'Ligar Sticky'}); if(typeof gtag!=='undefined') gtag('event','click',{event_category:'CTA',event_label:'Ligar Sticky'});"
-           class="cta-tel"
-           style="display:flex; align-items:center; gap:7px; background:#0d6e8c; color:#fff;
-                  font-weight:700; font-size:13px; padding:9px 16px; border-radius:50px;
-                  text-decoration:none; transition: background 0.2s, transform 0.15s;
-                  box-shadow: 0 2px 8px rgba(13,110,140,0.35);"
-           onmouseover="this.style.background='#0a5570';this.style.transform='scale(1.04)'"
-           onmouseout="this.style.background='#0d6e8c';this.style.transform='scale(1)'">
-            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 0 24 24" style="flex-shrink:0">
-                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-            </svg>
-            <span>Ligar</span>
-        </a>
+<!-- ══════════════════════════════════════════
+     NAV
+══════════════════════════════════════════ -->
+<nav class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <a href="#" class="flex items-center gap-3">
+                <img src="/assets/logo.png" alt="Clínica Trate a Dor" width="48" height="48" style="width:48px;height:48px;object-fit:contain;">
+                <div class="hidden sm:block leading-tight">
+                    <div class="font-display font-bold text-base" style="color:var(--teal);">Dr. Kleber Rangel</div>
+                    <div class="text-xs" style="color:var(--muted);">Especialista em Dor · Tratamentos Sem Cirurgia</div>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-6">
+                <a href="#metodo" class="nav-link">Método</a>
+                <a href="#tratamentos" class="nav-link">Tratamentos</a>
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#videos" class="nav-link">Vídeos</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="tel:+5537998419396" class="nav-link font-semibold" style="color:var(--teal);">(37) 99841-9396</a>
+                <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" rel="noopener noreferrer" class="btn-teal">
+                    <svg width="16" height="16" viewBox="0 0 32 32" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 2C8.268 2 2 8.268 2 16c0 2.428.651 4.703 1.788 6.664L2 30l7.528-1.768A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm-3.93 7.62c-.22-.493-.45-.503-.658-.512l-.56-.007c-.195 0-.512.073-.78.366-.268.293-1.024 1.001-1.024 2.44 0 1.44 1.049 2.83 1.195 3.025.147.195 2.025 3.22 4.977 4.388 2.463.972 2.953.779 3.484.73.532-.049 1.708-.698 1.95-1.372.24-.674.24-1.251.168-1.372-.073-.122-.269-.195-.562-.342-.293-.146-1.708-.843-1.977-.94-.268-.097-.463-.146-.659.147-.195.293-.757.94-.927 1.135-.17.195-.341.22-.634.073-.293-.147-1.237-.456-2.357-1.453-.87-.776-1.458-1.734-1.629-2.027-.17-.293-.018-.451.128-.597.13-.13.293-.341.44-.512.146-.17.195-.293.293-.488.097-.195.049-.366-.025-.512-.073-.146-.65-1.592-.903-2.181z" fill="white"/></svg>
+                    Agendar Consulta
+                </a>
+            </div>
+            <div class="md:hidden flex items-center gap-2">
+                <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" rel="noopener noreferrer" class="btn-teal text-xs px-3 py-2">Agendar</a>
+                <button id="mob-btn" class="p-2 rounded hover:bg-gray-100" aria-label="Menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
     </div>
+    <div id="mob-menu" class="hidden md:hidden border-t border-gray-100 px-4 py-4 space-y-3 text-sm font-medium bg-white">
+        <a href="#metodo" class="block text-gray-600 hover:text-teal-DEFAULT" onclick="document.getElementById('mob-menu').classList.add('hidden')">Método</a>
+        <a href="#tratamentos" class="block text-gray-600" onclick="document.getElementById('mob-menu').classList.add('hidden')">Tratamentos</a>
+        <a href="#sobre" class="block text-gray-600" onclick="document.getElementById('mob-menu').classList.add('hidden')">Sobre</a>
+        <a href="#videos" class="block text-gray-600" onclick="document.getElementById('mob-menu').classList.add('hidden')">Vídeos</a>
+        <a href="#faq" class="block text-gray-600" onclick="document.getElementById('mob-menu').classList.add('hidden')">FAQ</a>
+        <a href="tel:+5537998419396" class="block font-semibold" style="color:var(--teal);">(37) 99841-9396</a>
+    </div>
+</nav>
 
-    <script>
-    // Floating CTA — aparece após 2s, some ao chegar no footer
-    setTimeout(function() {
-        var bar = document.getElementById('floating-cta');
-        if (!bar) return;
-        bar.classList.add('visible');
-        window.addEventListener('scroll', function() {
-            var footer = document.querySelector('footer');
-            if (!footer) return;
-            var footerTop = footer.getBoundingClientRect().top;
-            if (footerTop < window.innerHeight + 40) {
-                bar.classList.remove('visible');
-            } else {
-                bar.classList.add('visible');
-            }
-        });
-    }, 2000);
-    </script>
+<main id="conteudo-principal">
 
+<!-- ══════════════════════════════════════════
+     HERO — fundo bege, split 50/50
+══════════════════════════════════════════ -->
+<section class="hero-bg relative overflow-hidden" style="min-height:600px;" role="banner">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-16 md:py-24">
 
+            <!-- ESQUERDA: copy -->
+            <div class="fade-up">
+                <div class="inline-flex items-center gap-2 mb-6 text-sm font-medium px-4 py-2 rounded-full" style="background:var(--teal-light);color:var(--teal);">
+                    <span>✓</span> CRM-MG 68724 · RQE 43142
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight" style="color:var(--ink);">
+                    Cansado de tratar<br>a dor sem entender<br><span style="color:var(--teal);">a causa?</span>
+                </h1>
+                <p class="text-lg mb-4 leading-relaxed" style="color:var(--muted);">
+                    A maioria dos pacientes que chega até mim já passou por vários médicos, tomou anti-inflamatório, fez fisioterapia — e <strong style="color:var(--ink);">continua com dor</strong>. O problema quase sempre é o mesmo: ninguém investigou direito de onde vem a dor.
+                </p>
+                <p class="text-base mb-8 leading-relaxed" style="color:var(--muted);">
+                    Aqui a primeira consulta dura <strong style="color:var(--ink);">50 a 60 minutos</strong>. Não para impressionar — mas porque menos do que isso não é suficiente para entender o seu caso de verdade.
+                </p>
+                <div class="flex flex-col gap-3 max-w-sm">
+                    <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20vim%20pelo%20site.%20Tenho%20dor%20e%20gostaria%20de%20entender%20se%20sou%20candidato%20ao%20tratamento." target="_blank" rel="noopener noreferrer" class="btn-wa">
+                        <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 2C8.268 2 2 8.268 2 16c0 2.428.651 4.703 1.788 6.664L2 30l7.528-1.768A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm-3.93 7.62c-.22-.493-.45-.503-.658-.512l-.56-.007c-.195 0-.512.073-.78.366-.268.293-1.024 1.001-1.024 2.44 0 1.44 1.049 2.83 1.195 3.025.147.195 2.025 3.22 4.977 4.388 2.463.972 2.953.779 3.484.73.532-.049 1.708-.698 1.95-1.372.24-.674.24-1.251.168-1.372-.073-.122-.269-.195-.562-.342-.293-.146-1.708-.843-1.977-.94-.268-.097-.463-.146-.659.147-.195.293-.757.94-.927 1.135-.17.195-.341.22-.634.073-.293-.147-1.237-.456-2.357-1.453-.87-.776-1.458-1.734-1.629-2.027-.17-.293-.018-.451.128-.597.13-.13.293-.341.44-.512.146-.17.195-.293.293-.488.097-.195.049-.366-.025-.512-.073-.146-.65-1.592-.903-2.181z" fill="white"/></svg>
+                        Me conta seu caso pelo WhatsApp
+                    </a>
+                    <div class="flex items-center gap-4 text-sm" style="color:var(--muted);">
+                        <a href="tel:+5537998419396" class="hover:underline">(37) 99841-9396</a>
+                        <span>·</span>
+                        <span>Seg–Sex 8h–17h</span>
+                    </div>
+                </div>
+                <p class="text-xs mt-3" style="color:#9CA3AF;">Resposta em horário comercial · Sem compromisso</p>
+            </div>
+
+            <!-- DIREITA: foto + vídeo placeholder -->
+            <div class="fade-up-2 hidden md:block">
+                <div class="relative">
+                    <!-- Foto principal -->
+                    <div style="border-radius:4px 20px 20px 4px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.15);">
+                        <img src="/assets/Foto_Kleber.jpeg"
+                             alt="Dr. Kleber Rangel — Ortopedista especialista em dor"
+                             width="560" height="640"
+                             style="width:100%;height:580px;object-fit:cover;object-position:center top;display:block;">
+                    </div>
+                    <!-- Badge flutuante -->
+                    <div style="position:absolute;bottom:24px;left:-20px;background:#fff;border-radius:12px;padding:14px 18px;box-shadow:0 8px 24px rgba(0,0,0,0.12);border-left:3px solid var(--gold);">
+                        <div class="text-xs font-semibold mb-1" style="color:var(--muted);">Consulta especializada</div>
+                        <div class="text-lg font-bold" style="color:var(--ink);font-family:'Cormorant Garamond',serif;">50–60 minutos</div>
+                        <div class="text-xs" style="color:var(--muted);">de investigação real</div>
+                    </div>
+                    <!-- Vídeo placeholder — substituir com link YouTube quando disponível -->
+                    <div style="position:absolute;top:20px;right:-16px;background:#fff;border-radius:12px;padding:12px 16px;box-shadow:0 8px 24px rgba(0,0,0,0.12);display:flex;align-items:center;gap:10px;max-width:200px;">
+                        <div style="width:36px;height:36px;border-radius:50%;background:var(--teal-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--teal)"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <div>
+                            <div class="text-xs font-semibold" style="color:var(--ink);">Vídeo de apresentação</div>
+                            <div class="text-xs" style="color:var(--muted);">Em breve</div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-sm text-center mt-4" style="color:var(--muted);">
+                    Dr. Kleber Rangel · <span style="color:var(--teal);">Especialista em dor · Tratamentos sem cirurgia</span>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     BARRA DE CREDENCIAIS + NÚMEROS
+══════════════════════════════════════════ -->
+<section style="background:var(--teal);padding:40px 16px;">
+    <div class="max-w-6xl mx-auto">
+        <!-- Logos -->
+        <div class="logos-bar mb-8">
+            <img src="/assets/logos/sbot.png" alt="SBOT — Sociedade Brasileira de Ortopedia e Traumatologia" height="44">
+            <img src="/assets/logos/santa-casa-sp.png" alt="Santa Casa de Misericórdia de São Paulo" height="44">
+            <img src="/assets/logos/fab.jpeg" alt="Força Aérea Brasileira" height="44" style="border-radius:4px;">
+            <img src="/assets/logos/sbed.jpeg" alt="SBED — Sociedade Brasileira para Estudo da Dor" height="40" style="border-radius:4px;">
+            <img src="/assets/logos/sobramid.png" alt="SOBRAMID" height="40">
+            <img src="/assets/logos/sbret.png" alt="SBRET — Regeneração Tecidual" height="36">
+            <img src="/assets/logos/abdor-comite-dor.png" alt="ABDOR — Comitê de Dor SBOT" height="44">
+            <img src="/assets/logos/apme.jpeg" alt="APME — Endocanabinologia" height="40" style="border-radius:4px;">
+        </div>
+        <!-- Separador dourado -->
+        <div style="height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:0 auto 32px;max-width:600px;"></div>
+        <!-- Números -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center" style="color:#fff;">
+            <div>
+                <div class="text-3xl font-bold mb-1" style="font-family:'Cormorant Garamond',serif;">2.900+</div>
+                <div class="text-sm" style="color:rgba(255,255,255,0.7);">Pacientes atendidos desde 2009</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold mb-1" style="font-family:'Cormorant Garamond',serif;">4.8★</div>
+                <div class="text-sm" style="color:rgba(255,255,255,0.7);">Avaliação Google</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold mb-1" style="font-family:'Cormorant Garamond',serif;">9+</div>
+                <div class="text-sm" style="color:rgba(255,255,255,0.7);">Anos atendendo em Divinópolis</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold mb-1" style="font-family:'Cormorant Garamond',serif;">50–60min</div>
+                <div class="text-sm" style="color:rgba(255,255,255,0.7);">Duração da primeira consulta</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     MÉTODO — 4 passos
+══════════════════════════════════════════ -->
+<section id="metodo" class="py-20" style="background:#fff;">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl mb-4" style="color:var(--ink);">Como funciona na prática</h2>
+            <p class="text-lg max-w-2xl mx-auto" style="color:var(--muted);">Não existe protocolo genérico aqui. O tratamento começa com investigação — e só depois vem a proposta terapêutica.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+            <!-- Linha conectora desktop -->
+            <div class="hidden md:block absolute top-8 left-1/8 right-1/8 h-px" style="background:linear-gradient(to right,var(--gold),var(--teal));top:28px;left:12%;right:12%;position:absolute;"></div>
+
+            <div class="card-warm relative">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-white mb-5 text-sm" style="background:var(--teal);">01</div>
+                <h3 class="text-xl mb-3" style="color:var(--ink);">Escutar de verdade</h3>
+                <p class="text-sm leading-relaxed" style="color:var(--muted);">A consulta começa pela sua história. O que dói, desde quando, o que piora, o que já foi tentado. Isso leva tempo — e esse tempo faz diferença no diagnóstico.</p>
+            </div>
+            <div class="card-warm relative">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-white mb-5 text-sm" style="background:var(--teal);">02</div>
+                <h3 class="text-xl mb-3" style="color:var(--ink);">Encontrar a causa</h3>
+                <p class="text-sm leading-relaxed" style="color:var(--muted);">Exame clínico detalhado e leitura ativa das suas imagens. A maioria das pessoas sai daqui com uma resposta que nunca recebeu antes: de onde realmente vem a dor.</p>
+            </div>
+            <div class="card-warm relative">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-white mb-5 text-sm" style="background:var(--teal);">03</div>
+                <h3 class="text-xl mb-3" style="color:var(--ink);">Tratar com precisão</h3>
+                <p class="text-sm leading-relaxed" style="color:var(--muted);">O plano é montado para o seu caso — não para uma lista de queixas. PRP, bloqueios guiados, ozonioterapia: cada recurso tem indicação baseada no que o seu quadro pede.</p>
+            </div>
+            <div class="card-warm relative">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-white mb-5 text-sm" style="background:var(--teal);">04</div>
+                <h3 class="text-xl mb-3" style="color:var(--ink);">Acompanhar e ajustar</h3>
+                <p class="text-sm leading-relaxed" style="color:var(--muted);">Reavaliação contínua. Se algo não está funcionando como esperado, o plano muda. Não existe "vamos continuar e ver" sem uma razão clínica clara.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TRATAMENTOS — cards com borda dourada
+══════════════════════════════════════════ -->
+<section id="tratamentos" class="py-20" style="background:var(--warm);">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl mb-4" style="color:var(--ink);">Principais Tratamentos</h2>
+            <p class="text-lg max-w-2xl mx-auto" style="color:var(--muted);">Cada recurso tem indicação clínica definida. Você vai saber exatamente por que foi escolhido — e o que esperar.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="card-gold">
+                <h3 class="text-2xl mb-3" style="color:var(--teal);">Bloqueios Guiados por Ultrassom</h3>
+                <p class="mb-4 leading-relaxed" style="color:var(--muted);">A agulha chega exatamente onde precisa — nervo, articulação ou estrutura específica — com guia de imagem em tempo real. Não às cegas. Isso muda o resultado e reduz o desconforto do procedimento.</p>
+                <ul class="space-y-2 text-sm" style="color:var(--muted);">
+                    <li class="check-gold">Bloqueio facetário (coluna)</li>
+                    <li class="check-gold">Infiltração epidural</li>
+                    <li class="check-gold">Bloqueio de nervo periférico</li>
+                </ul>
+            </div>
+            <div class="card-gold">
+                <h3 class="text-2xl mb-3" style="color:var(--teal);">Medicina Regenerativa</h3>
+                <p class="mb-4 leading-relaxed" style="color:var(--muted);">Usa componentes do próprio sangue ou medula para estimular reparo em articulações e tendões. Não é indicado para todo mundo — a evidência atual mostra benefício real em casos selecionados. Se o seu não for, você vai saber na consulta, antes de gastar qualquer coisa.</p>
+                <ul class="space-y-2 text-sm" style="color:var(--muted);">
+                    <li class="check-gold">PRP — plasma rico em plaquetas</li>
+                    <li class="check-gold">BMA — aspirado de medula óssea</li>
+                    <li class="check-gold">Proloterapia</li>
+                </ul>
+            </div>
+            <div class="card-gold">
+                <h3 class="text-2xl mb-3" style="color:var(--teal);">Viscossuplementação</h3>
+                <p class="mb-4 leading-relaxed" style="color:var(--muted);">Ácido hialurônico intra-articular para joelho, quadril e ombro com artrose. Melhora a lubrificação e reduz inflamação local. A indicação depende do estágio da artrose e do quadro clínico — isso será explicado antes de qualquer proposta.</p>
+                <ul class="space-y-2 text-sm" style="color:var(--muted);">
+                    <li class="check-gold">Artrose de joelho</li>
+                    <li class="check-gold">Quadril e ombro</li>
+                    <li class="check-gold">Indicação sempre individualizada</li>
+                </ul>
+            </div>
+            <div class="card-gold">
+                <h3 class="text-2xl mb-3" style="color:var(--teal);">Abordagem Integrativa</h3>
+                <p class="mb-4 leading-relaxed" style="color:var(--muted);">Sono ruim amplifica dor. Inflamação sistêmica perpetua o quadro. Por isso avaliamos hormônios, metabolismo e sono — não como modismo, mas porque esses fatores têm impacto direto no resultado do tratamento.</p>
+                <ul class="space-y-2 text-sm" style="color:var(--muted);">
+                    <li class="check-gold">Ozonioterapia</li>
+                    <li class="check-gold">Ondas de choque</li>
+                    <li class="check-gold">Avaliação hormonal e metabólica</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SOBRE — storytelling + timeline
+══════════════════════════════════════════ -->
+<section id="sobre" class="py-20" style="background:#fff;">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+
+            <!-- Foto grande -->
+            <div class="hidden md:block">
+                <div style="border-radius:4px 20px 20px 4px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.12);">
+                    <img src="/assets/foto_kleber_rangel.png"
+                         alt="Dr. Kleber Rangel — Ortopedista especialista em dor crônica"
+                         width="560" height="680"
+                         style="width:100%;height:620px;object-fit:cover;object-position:center top;display:block;">
+                </div>
+                <!-- Credenciais abaixo da foto -->
+                <div class="mt-6 grid grid-cols-2 gap-3">
+                    <div class="text-center p-3 rounded-xl text-sm" style="background:var(--teal-light);color:var(--teal);">
+                        <div class="font-bold">CRM-MG 68724</div>
+                        <div class="text-xs opacity-75">Conselho Regional de Medicina</div>
+                    </div>
+                    <div class="text-center p-3 rounded-xl text-sm" style="background:var(--gold-light);color:#8B6914;">
+                        <div class="font-bold">RQE 43142</div>
+                        <div class="text-xs opacity-75">Registro de Qualificação</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bio storytelling -->
+            <div>
+                <h2 class="text-4xl md:text-5xl mb-8" style="color:var(--ink);">Quem é o Dr. Kleber</h2>
+
+                <!-- Parágrafo 1 -->
+                <p class="text-base leading-relaxed mb-5" style="color:var(--muted);">
+                    Me formei em medicina em Volta Redonda, em 2009. No ano seguinte, servi como <strong style="color:var(--ink);">Tenente Médico da Força Aérea Brasileira</strong> — uma experiência que moldou minha forma de trabalhar: rigor, precisão e responsabilidade com cada decisão.
+                </p>
+                <p class="text-base leading-relaxed mb-5" style="color:var(--muted);">
+                    Em 2011, iniciei a residência em Ortopedia e Traumatologia no <strong style="color:var(--ink);">SOTRP de Ribeirão Preto</strong> — um dos serviços de referência do país — onde fui aprovado no título da SBOT (TEOT 14.706), uma das provas mais exigentes da medicina brasileira.
+                </p>
+                <p class="text-base leading-relaxed mb-5" style="color:var(--muted);">
+                    Depois, fui selecionado para a subespecialização em <strong style="color:var(--ink);">Cirurgia e Patologia da Coluna Vertebral na Santa Casa de Misericórdia de São Paulo</strong>, onde fiquei dois anos aprendendo com os melhores do Brasil.
+                </p>
+
+                <!-- Timeline -->
+                <div class="timeline mb-8">
+                    <div class="timeline-item">
+                        <div class="text-xs font-semibold mb-1" style="color:var(--gold);">2016 – 2023</div>
+                        <div class="text-sm font-semibold" style="color:var(--ink);">Hospital São João de Deus + Hospital Santa Mônica</div>
+                        <div class="text-sm" style="color:var(--muted);">O maior hospital da região Oeste de MG. Atuação específica em coluna. Foi nesse período que vi de perto o quanto a cirurgia assustava os pacientes — e o quanto existia outro caminho.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="text-xs font-semibold mb-1" style="color:var(--gold);">2023 – hoje</div>
+                        <div class="text-sm font-semibold" style="color:var(--ink);">Clínica Trate a Dor — dedicação exclusiva</div>
+                        <div class="text-sm" style="color:var(--muted);">Larguei os hospitais para oferecer o que cada paciente merece: tempo, escuta e diagnóstico honesto. Sem atalhos.</div>
+                    </div>
+                </div>
+
+                <!-- Citação -->
+                <blockquote style="border-left:3px solid var(--gold);padding:16px 0 16px 24px;margin-bottom:24px;background:var(--gold-light);border-radius:0 12px 12px 0;">
+                    <p class="text-lg italic leading-relaxed" style="color:var(--ink);font-family:'Cormorant Garamond',serif;">"A maioria dos meus pacientes chegava com medo de uma cirurgia. Meu trabalho é mostrar que, na maior parte dos casos, existe outro caminho."</p>
+                    <footer class="text-sm mt-2 font-semibold" style="color:var(--teal);">— Dr. Kleber Rangel, CRM-MG 68724</footer>
+                </blockquote>
+
+                <!-- Credenciais lista -->
+                <ul class="space-y-2 text-sm" style="color:var(--muted);">
+                    <li class="check-gold">Medicina: Faculdade de Ciências Médicas de Volta Redonda (2009)</li>
+                    <li class="check-gold">Tenente Médico — Força Aérea Brasileira (2010)</li>
+                    <li class="check-gold">Residência Ortopedia e Traumatologia — SOTRP Ribeirão Preto (2011–2013)</li>
+                    <li class="check-gold">Título de Especialista SBOT · TEOT 14.706</li>
+                    <li class="check-gold">Subespecialização em Coluna Vertebral — Santa Casa de São Paulo (2014–2015)</li>
+                    <li class="check-gold">Pós-graduação em Medicina da Dor</li>
+                    <li class="check-gold">Formação em Medicina Regenerativa e Intervenções por Ultrassom</li>
+                    <li class="check-gold">Membro: SBOT · SOBRAMID · SBED · SBRET · ABDOR</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     DEPOIMENTOS
+══════════════════════════════════════════ -->
+<section class="py-20" style="background:var(--warm);">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14">
+            <div class="text-sm font-semibold mb-2 uppercase tracking-widest" style="color:var(--teal);">Avaliações verificadas · Google</div>
+            <h2 class="text-4xl md:text-5xl mb-3" style="color:var(--ink);">O que dizem os pacientes</h2>
+            <p style="color:var(--muted);">Pacientes de Divinópolis e região que recuperaram qualidade de vida</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="review-card">
+                <div class="flex gap-1 mb-4" style="color:#C8A96A;">★★★★★</div>
+                <p class="leading-relaxed italic mb-5" style="color:#374151;">"Depois de passar por vários médicos sem conseguir resultado, o Dr. Kleber foi o primeiro que realmente investigou a causa da minha dor. Saí da consulta entendendo o que estava acontecendo no meu corpo."</p>
+                <div class="flex items-center gap-3" style="border-top:1px solid #E8E0D8;padding-top:16px;">
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-white text-sm flex-shrink-0" style="background:var(--teal);">M</div>
+                    <div>
+                        <div class="font-semibold text-sm" style="color:var(--ink);">M.C.S.</div>
+                        <div class="text-xs" style="color:var(--muted);">Divinópolis · Google ✓</div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="flex gap-1 mb-4" style="color:#C8A96A;">★★★★★</div>
+                <p class="leading-relaxed italic mb-5" style="color:#374151;">"A consulta é longa e muito detalhada. Ele realmente ouve o paciente antes de indicar qualquer procedimento. Nunca senti que estava sendo apressado ou que ele queria apenas prescrever algo."</p>
+                <div class="flex items-center gap-3" style="border-top:1px solid #E8E0D8;padding-top:16px;">
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-white text-sm flex-shrink-0" style="background:var(--teal);">J</div>
+                    <div>
+                        <div class="font-semibold text-sm" style="color:var(--ink);">J.A.R.</div>
+                        <div class="text-xs" style="color:var(--muted);">Divinópolis · Google ✓</div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="flex gap-1 mb-4" style="color:#C8A96A;">★★★★★</div>
+                <p class="leading-relaxed italic mb-5" style="color:#374151;">"Voltei a fazer minhas caminhadas após o tratamento. Dr. Kleber explicou tudo com muita clareza e paciência. Recomendo para quem tem dor crônica e não encontrou resposta em outros lugares."</p>
+                <div class="flex items-center gap-3" style="border-top:1px solid #E8E0D8;padding-top:16px;">
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-white text-sm flex-shrink-0" style="background:var(--teal);">R</div>
+                    <div>
+                        <div class="font-semibold text-sm" style="color:var(--ink);">R.M.</div>
+                        <div class="text-xs" style="color:var(--muted);">Itaúna · Google ✓</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <a href="https://www.google.com/search?q=Dr+Kleber+Rangel+Divinopolis" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold hover:underline" style="color:var(--teal);">Ver avaliações no Google →</a>
+        </div>
+
+        <!-- Preço -->
+        <div class="mt-14 max-w-xl mx-auto rounded-2xl p-8 text-center" style="background:#fff;border:1px solid #E8E0D8;border-top:3px solid var(--gold);">
+            <div class="text-xs font-semibold uppercase tracking-widest mb-2" style="color:var(--teal);">Primeira consulta</div>
+            <div class="text-5xl font-bold mb-4" style="font-family:'Cormorant Garamond',serif;color:var(--ink);">R$&nbsp;680</div>
+            <ul class="text-sm space-y-2 mb-5 text-left max-w-xs mx-auto" style="color:var(--muted);">
+                <li class="check-gold">Anamnese completa — sua história toda</li>
+                <li class="check-gold">Exame clínico detalhado</li>
+                <li class="check-gold">Leitura das suas imagens no momento</li>
+                <li class="check-gold">Plano terapêutico individualizado</li>
+            </ul>
+            <div class="text-xs mb-4" style="color:var(--muted);">Emitimos nota fiscal · Verifique reembolso no seu plano</div>
+            <div class="text-xs" style="color:#9CA3AF;">Seg–Sex · 8h–17h · Av. Antônio Olímpio de Morais, 607 — Sala 808, Divinópolis-MG</div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     VÍDEOS
+══════════════════════════════════════════ -->
+<section id="videos" class="py-20" style="background:#fff;">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+            <div class="text-sm font-semibold mb-2 uppercase tracking-widest" style="color:var(--teal);">Canal do Dr. Kleber · YouTube</div>
+            <h2 class="text-4xl md:text-5xl mb-3" style="color:var(--ink);">Veja antes de decidir</h2>
+            <p style="color:var(--muted);">Uma explicação honesta sobre como funciona o tratamento — sem promessas e sem enrolação.</p>
+        </div>
+        <style>
+            .yt-thumb{position:relative;cursor:pointer;background:#000;border-radius:16px;overflow:hidden;aspect-ratio:16/9;}
+            .yt-thumb img{width:100%;height:100%;object-fit:cover;transition:opacity 0.3s;display:block;}
+            .yt-thumb:hover img{opacity:0.75;}
+            .yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;}
+            .yt-thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:16px;}
+        </style>
+        <div style="background:var(--warm);border-radius:20px;overflow:hidden;border:1px solid #E8E0D8;">
+            <div class="yt-thumb" onclick="playYT(this,'pRhamMUFQtU')">
+                <img src="https://i.ytimg.com/vi/pRhamMUFQtU/maxresdefault.jpg" width="1280" height="720" alt="Artrose no joelho e dor crônica na coluna — Dr. Kleber Rangel" loading="lazy" onerror="this.src='https://i.ytimg.com/vi/pRhamMUFQtU/hqdefault.jpg'">
+                <div class="yt-play">
+                    <svg width="64" height="48" viewBox="0 0 68 48"><path d="M66.52 7.74A8.55 8.55 0 0 0 60.71 1.9C55.4 0 34 0 34 0S12.6 0 7.29 1.9A8.55 8.55 0 0 0 1.48 7.74C0 13.06 0 24 0 24s0 10.94 1.48 16.26a8.55 8.55 0 0 0 5.81 5.84C12.6 48 34 48 34 48s21.4 0 26.71-1.9a8.55 8.55 0 0 0 5.81-5.84C68 34.94 68 24 68 24s0-10.94-1.48-16.26z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="flex gap-2 mb-3 flex-wrap">
+                    <span class="text-xs px-3 py-1 rounded-full font-medium" style="background:var(--teal-light);color:var(--teal);">Joelho</span>
+                    <span class="text-xs px-3 py-1 rounded-full font-medium" style="background:var(--teal-light);color:var(--teal);">Coluna</span>
+                    <span class="text-xs px-3 py-1 rounded-full font-medium" style="background:var(--gold-light);color:#8B6914;">Sem cirurgia</span>
+                </div>
+                <h3 class="text-xl mb-2" style="color:var(--ink);">Artrose no joelho e dor crônica na coluna</h3>
+                <p class="text-sm leading-relaxed" style="color:var(--muted);">Tratamento combinado para duas das queixas mais comuns — o que é possível fazer, o que a ciência mostra e o que não é indicado para todo mundo.</p>
+            </div>
+        </div>
+        <div class="text-center mt-6">
+            <a href="https://www.youtube.com/@drkleberrangel" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold hover:underline" style="color:var(--muted);">Ver mais vídeos no canal →</a>
+        </div>
+    </div>
+</section>
+<script>function playYT(el,id){var i=document.createElement('iframe');i.src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';i.title='YouTube video';i.allow='accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture';i.allowFullscreen=true;el.innerHTML='';el.appendChild(i);}</script>
+
+<!-- ══════════════════════════════════════════
+     FAQ
+══════════════════════════════════════════ -->
+<section id="faq" class="py-20" style="background:var(--warm);">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl mb-4" style="color:var(--ink);">Perguntas Frequentes</h2>
+            <p style="color:var(--muted);">As dúvidas mais comuns, respondidas de forma direta</p>
+        </div>
+        <div class="space-y-3">
+            <details class="rounded-xl overflow-hidden" style="background:#fff;border:1px solid #E8E0D8;" open>
+                <summary class="flex justify-between items-center p-6 font-semibold" style="color:var(--ink);">
+                    O que acontece exatamente na primeira consulta?
+                    <span class="faq-icon">+</span>
+                </summary>
+                <div class="px-6 pb-6 text-sm leading-relaxed space-y-2" style="color:var(--muted);">
+                    <p>A consulta dura de 50 a 60 minutos e segue uma sequência específica:</p>
+                    <p><strong style="color:var(--ink);">1. Escuta da história completa</strong> — desde quando dói, o que piora, o que já foi tentado, quais exames você já fez.</p>
+                    <p><strong style="color:var(--ink);">2. Exame clínico detalhado</strong> — não um exame de triagem. O exame que define onde está o problema real.</p>
+                    <p><strong style="color:var(--ink);">3. Leitura ativa das suas imagens</strong> — se você tiver ressonância, tomografia ou raio-x, eles são lidos aqui, no momento, com você.</p>
+                    <p><strong style="color:var(--ink);">4. Diagnóstico e plano</strong> — ao final, você sai entendendo o que está acontecendo no seu corpo e com um plano terapêutico claro. Sem "volta daqui a 30 dias para ver como está".</p>
+                    <p class="text-xs" style="color:#9CA3AF;padding-top:8px;">Valor: R$680. Nota fiscal emitida. Verifique reembolso no seu plano de saúde.</p>
+                </div>
+            </details>
+            <details class="rounded-xl overflow-hidden" style="background:#fff;border:1px solid #E8E0D8;">
+                <summary class="flex justify-between items-center p-6 font-semibold" style="color:var(--ink);">
+                    A cirurgia é sempre necessária para tratar dor crônica?
+                    <span class="faq-icon">+</span>
+                </summary>
+                <div class="px-6 pb-6 text-sm leading-relaxed" style="color:var(--muted);">
+                    Não necessariamente. Em muitos casos de dor crônica, existem alternativas ao procedimento cirúrgico — como bloqueios, técnicas regenerativas e reabilitação — que podem ser avaliadas pelo especialista antes de qualquer decisão. A indicação cirúrgica depende de cada caso e é sempre definida após avaliação clínica completa.
+                </div>
+            </details>
+            <details class="rounded-xl overflow-hidden" style="background:#fff;border:1px solid #E8E0D8;">
+                <summary class="flex justify-between items-center p-6 font-semibold" style="color:var(--ink);">
+                    Quanto tempo leva para sentir melhora?
+                    <span class="faq-icon">+</span>
+                </summary>
+                <div class="px-6 pb-6 text-sm leading-relaxed" style="color:var(--muted);">
+                    Varia conforme o quadro clínico e o tratamento indicado. Procedimentos intervencionistas e protocolos regenerativos têm cronogramas diferentes. Ao final da consulta você recebe uma estimativa individualizada e realista — sem prometer prazos que dependem de variáveis clínicas individuais.
+                </div>
+            </details>
+            <details class="rounded-xl overflow-hidden" style="background:#fff;border:1px solid #E8E0D8;">
+                <summary class="flex justify-between items-center p-6 font-semibold" style="color:var(--ink);">
+                    O atendimento é particular ou atende convênio?
+                    <span class="faq-icon">+</span>
+                </summary>
+                <div class="px-6 pb-6 text-sm leading-relaxed" style="color:var(--muted);">
+                    Atendimento <strong style="color:var(--ink);">100% particular</strong>. Esta escolha nos permite oferecer o tempo e a profundidade que uma dor crônica exige — algo que a lógica de consulta rápida do convênio não viabiliza. Emitimos nota fiscal e recibo para você tentar reembolso junto ao seu plano de saúde.
+                </div>
+            </details>
+            <details class="rounded-xl overflow-hidden" style="background:#fff;border:1px solid #E8E0D8;">
+                <summary class="flex justify-between items-center p-6 font-semibold" style="color:var(--ink);">
+                    Preciso parar o que estou tomando?
+                    <span class="faq-icon">+</span>
+                </summary>
+                <div class="px-6 pb-6 text-sm leading-relaxed" style="color:var(--muted);">
+                    <strong style="color:var(--ink);">Não por conta própria.</strong> Avaliamos toda a sua medicação atual e reorganizamos se for o caso — sempre com segurança e em conjunto com os outros profissionais que já te acompanham. Nunca mudamos tratamento sem coordenação.
+                </div>
+            </details>
+            <details class="rounded-xl overflow-hidden" style="background:#fff;border:1px solid #E8E0D8;">
+                <summary class="flex justify-between items-center p-6 font-semibold" style="color:var(--ink);">
+                    Atendimento para outras cidades?
+                    <span class="faq-icon">+</span>
+                </summary>
+                <div class="px-6 pb-6 text-sm leading-relaxed" style="color:var(--muted);">
+                    Sim. Atendemos pacientes de toda a região Centro-Oeste de Minas Gerais (Divinópolis, Cláudio, Itaúna, Itatiaiuçu, Carmo do Cajuru, Pará de Minas, Nova Serrana, Pitangui, Arcos, Formiga, etc.), além de pacientes vindos de Belo Horizonte e de outros estados.
+                </div>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CTA FINAL
+══════════════════════════════════════════ -->
+<section style="background:var(--teal);padding:80px 16px;">
+    <div class="max-w-2xl mx-auto text-center">
+        <div class="text-xs font-semibold uppercase tracking-widest mb-4" style="color:rgba(255,255,255,0.5);">Agenda com vagas limitadas por semana</div>
+        <h2 class="text-4xl md:text-5xl mb-5" style="color:#fff;">Pronto para entender de onde vem a sua dor?</h2>
+        <p class="text-lg mb-8" style="color:rgba(255,255,255,0.8);">Me manda uma mensagem contando seu caso. Sem compromisso — só quero entender se posso te ajudar.</p>
+        <div class="flex flex-col items-center gap-3">
+            <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20vim%20pelo%20site.%20Tenho%20dor%20e%20gostaria%20de%20entender%20se%20sou%20candidato%20ao%20tratamento." target="_blank" rel="noopener noreferrer" class="btn-wa" style="max-width:420px;width:100%;">
+                <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 2C8.268 2 2 8.268 2 16c0 2.428.651 4.703 1.788 6.664L2 30l7.528-1.768A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm-3.93 7.62c-.22-.493-.45-.503-.658-.512l-.56-.007c-.195 0-.512.073-.78.366-.268.293-1.024 1.001-1.024 2.44 0 1.44 1.049 2.83 1.195 3.025.147.195 2.025 3.22 4.977 4.388 2.463.972 2.953.779 3.484.73.532-.049 1.708-.698 1.95-1.372.24-.674.24-1.251.168-1.372-.073-.122-.269-.195-.562-.342-.293-.146-1.708-.843-1.977-.94-.268-.097-.463-.146-.659.147-.195.293-.757.94-.927 1.135-.17.195-.341.22-.634.073-.293-.147-1.237-.456-2.357-1.453-.87-.776-1.458-1.734-1.629-2.027-.17-.293-.018-.451.128-.597.13-.13.293-.341.44-.512.146-.17.195-.293.293-.488.097-.195.049-.366-.025-.512-.073-.146-.65-1.592-.903-2.181z" fill="white"/></svg>
+                Me conta seu caso pelo WhatsApp
+            </a>
+        </div>
+        <p class="text-sm mt-5" style="color:rgba(255,255,255,0.5);">Resposta em horário comercial · Seg–Sex 8h–17h</p>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     RODAPÉ
+══════════════════════════════════════════ -->
+<footer style="background:#111;color:#fff;padding:60px 16px 32px;">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+            <div>
+                <img src="/assets/logo.png" alt="Clínica Trate a Dor" width="48" height="48" style="width:48px;height:48px;object-fit:contain;margin-bottom:12px;">
+                <p class="text-sm" style="color:rgba(255,255,255,0.6);">Especialista em dor crônica e tratamentos sem cirurgia — Divinópolis-MG.</p>
+            </div>
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-widest mb-4" style="color:rgba(255,255,255,0.4);">Navegação</p>
+                <ul class="space-y-2 text-sm" style="color:rgba(255,255,255,0.6);">
+                    <li><a href="#metodo" class="hover:text-white transition">Método</a></li>
+                    <li><a href="#tratamentos" class="hover:text-white transition">Tratamentos</a></li>
+                    <li><a href="#sobre" class="hover:text-white transition">Sobre</a></li>
+                    <li><a href="#faq" class="hover:text-white transition">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-widest mb-4" style="color:rgba(255,255,255,0.4);">Contato</p>
+                <ul class="space-y-2 text-sm" style="color:rgba(255,255,255,0.6);">
+                    <li><a href="tel:+5537998419396" class="hover:text-white transition">(37) 99841-9396</a></li>
+                    <li><a href="mailto:contato@drkleberrangel.com.br" class="hover:text-white transition">contato@drkleberrangel.com.br</a></li>
+                    <li><a href="https://instagram.com/drkleberrangel" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">@drkleberrangel</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-widest mb-4" style="color:rgba(255,255,255,0.4);">Localização</p>
+                <p class="text-sm" style="color:rgba(255,255,255,0.6);">Av. Antônio Olímpio de Morais, 607<br>Centro, Divinópolis-MG<br><a href="https://maps.google.com/?q=Av.+Antônio+Olímpio+de+Morais+607+Divinópolis" target="_blank" rel="noopener noreferrer" style="color:var(--teal);" class="hover:underline">Ver no Google Maps</a></p>
+            </div>
+        </div>
+        <div style="height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin-bottom:28px;"></div>
+        <div class="flex flex-col md:flex-row justify-between items-center text-xs" style="color:rgba(255,255,255,0.4);">
+            <div>© 2026 Dr. Kleber Rangel · Clínica Trate a Dor · <span style="color:var(--teal);">CRM-MG 68724 · RQE 43142</span><br>Conteúdo informativo. Não substitui consulta médica. Publicidade médica em conformidade com a Resolução CFM 2.336/2023.</div>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <a href="/politica-privacidade.html" class="hover:text-white transition">Privacidade</a>
+                <a href="/termos.html" class="hover:text-white transition">Termos</a>
+            </div>
+        </div>
+        <!-- Links internos SEO -->
+        <div class="mt-8 pt-6" style="border-top:1px solid rgba(255,255,255,0.08);">
+            <div class="flex flex-wrap gap-x-4 gap-y-1 text-xs" style="color:rgba(255,255,255,0.3);">
+                <a href="/coluna" class="hover:text-white transition">Dor na Coluna</a>
+                <a href="/joelho" class="hover:text-white transition">Dor no Joelho</a>
+                <a href="/ombro" class="hover:text-white transition">Dor no Ombro</a>
+                <a href="/prp" class="hover:text-white transition">PRP</a>
+                <a href="/medicina-regenerativa" class="hover:text-white transition">Medicina Regenerativa</a>
+                <a href="/ozonoterapia-divinopolis" class="hover:text-white transition">Ozonioterapia</a>
+                <a href="/blog/dor-na-coluna" class="hover:text-white transition">Blog: Dor na Coluna</a>
+                <a href="/blog/artrose-joelho" class="hover:text-white transition">Blog: Artrose no Joelho</a>
+                <a href="/blog/hernia-de-disco" class="hover:text-white transition">Blog: Hérnia de Disco</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</main>
+
+<!-- ══════════════════════════════════════════
+     FLOATING CTA
+══════════════════════════════════════════ -->
+<div id="fcta">
+    <img src="/assets/logo.png" alt="" width="36" height="36" style="width:36px;height:36px;object-fit:contain;display:none;" class="md:block">
+    <a href="https://wa.me/5537998419396?text=Olá%20Dr.%20Kleber%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" rel="noopener noreferrer" class="btn-wa flex-1 md:flex-none text-sm" style="padding:12px 20px;border-radius:10px;">
+        <svg width="18" height="18" viewBox="0 0 32 32" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 2C8.268 2 2 8.268 2 16c0 2.428.651 4.703 1.788 6.664L2 30l7.528-1.768A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm-3.93 7.62c-.22-.493-.45-.503-.658-.512l-.56-.007c-.195 0-.512.073-.78.366-.268.293-1.024 1.001-1.024 2.44 0 1.44 1.049 2.83 1.195 3.025.147.195 2.025 3.22 4.977 4.388 2.463.972 2.953.779 3.484.73.532-.049 1.708-.698 1.95-1.372.24-.674.24-1.251.168-1.372-.073-.122-.269-.195-.562-.342-.293-.146-1.708-.843-1.977-.94-.268-.097-.463-.146-.659.147-.195.293-.757.94-.927 1.135-.17.195-.341.22-.634.073-.293-.147-1.237-.456-2.357-1.453-.87-.776-1.458-1.734-1.629-2.027-.17-.293-.018-.451.128-.597.13-.13.293-.341.44-.512.146-.17.195-.293.293-.488.097-.195.049-.366-.025-.512-.073-.146-.65-1.592-.903-2.181z" fill="white"/></svg>
+        WhatsApp
+    </a>
+    <a href="tel:+5537998419396" style="display:inline-flex;align-items:center;gap:6px;background:var(--warm);color:var(--teal);font-weight:600;padding:12px 16px;border-radius:10px;font-size:0.875rem;text-decoration:none;border:1px solid #E8E0D8;flex:1;" class="md:flex-none">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--teal)"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Ligar
+    </a>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CONSENT BANNER LGPD
+══════════════════════════════════════════ -->
+<div id="consent-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:var(--teal);color:#fff;padding:16px;text-align:center;z-index:9999;font-size:13px;">
+    <p style="margin:0 0 10px;">🔒 Usamos cookies para melhorar sua experiência. <a href="/politica-privacidade.html" style="color:var(--gold);text-decoration:underline;">Política de Privacidade</a>.</p>
+    <button onclick="setConsent(true)" style="background:var(--gold);color:#fff;border:none;padding:8px 20px;border-radius:6px;cursor:pointer;font-weight:600;margin-right:8px;">✓ Aceitar</button>
+    <button onclick="setConsent(false)" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.5);padding:8px 16px;border-radius:6px;cursor:pointer;">Rejeitar</button>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════ -->
+<script>
+// Mobile menu
+document.getElementById('mob-btn')?.addEventListener('click',()=>{
+    document.getElementById('mob-menu').classList.toggle('hidden');
+});
+
+// Floating CTA
+(function(){
+    var fcta=document.getElementById('fcta');
+    var shown=false;
+    window.addEventListener('scroll',function(){
+        if(window.scrollY>400&&!shown){shown=true;fcta.classList.add('visible');}
+        else if(window.scrollY<=400&&shown){shown=false;fcta.classList.remove('visible');}
+    },{passive:true});
+})();
+
+// Consent
+function setConsent(accepted){
+    localStorage.setItem('drkleberrangel_consent',accepted?'accepted':'rejected');
+    document.getElementById('consent-banner').style.display='none';
+    gtag('consent','update',{
+        'analytics_storage':accepted?'granted':'denied',
+        'ad_storage':accepted?'granted':'denied',
+        'ad_user_data':accepted?'granted':'denied',
+        'ad_personalization':accepted?'granted':'denied'
+    });
+    if(accepted&&window.fbq)fbq('track','PageView');
+}
+window.addEventListener('load',function(){
+    if(!localStorage.getItem('drkleberrangel_consent')){
+        document.getElementById('consent-banner').style.display='block';
+    } else if(localStorage.getItem('drkleberrangel_consent')==='accepted'){
+        gtag('consent','update',{'analytics_storage':'granted','ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted'});
+    }
+});
+
+// Analytics CTAs
+document.querySelectorAll('a[href*="wa.me"]').forEach(el=>{
+    el.addEventListener('click',()=>{if(window.gtag)gtag('event','whatsapp_click',{event_category:'cta',event_label:'homepage'});});
+});
+document.querySelectorAll('a[href*="tel:"]').forEach(el=>{
+    el.addEventListener('click',()=>{if(window.gtag)gtag('event','phone_click',{event_category:'cta',event_label:'homepage'});});
+});
+</script>
 </body>
 </html>
