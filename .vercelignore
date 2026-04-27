@@ -39,3 +39,5 @@ build
 .env
 .env.local
 .env.*.local
+package.json
+package-lock.json
