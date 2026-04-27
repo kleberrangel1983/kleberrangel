@@ -6,7 +6,7 @@
     <title>Dor na Coluna em Divinópolis | Dr. Kleber Rangel | CRM-MG 68724</title>
     <meta name="description" content="Tratamento especializado para dor na coluna em Divinópolis. Bloqueios guiados, ozonioterapia e medicina regenerativa. Consulta R$680 · (37) 99841-9396">
     <link rel="canonical" href="https://www.drkleberrangel.com.br/coluna">
-    <meta name="robots" content="index, follow"><!-- Landing page de ads — não indexar -->
+    <meta name="robots" content="index, follow">
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KRCJVG3');</script>
@@ -158,7 +158,7 @@
     </div>
 </section>
 
-<!-- PROCEDIMENTOS -->
+<!-- PROCEDIMENTOS — FIX: Jinja expandido manualmente -->
 <section class="py-16 bg-teal-light">
     <div class="max-w-5xl mx-auto px-4">
         <h2 class="font-display text-3xl font-bold text-teal text-center mb-4">
@@ -166,26 +166,43 @@
         </h2>
         <p class="text-center text-gray-600 mb-10">Avaliados e indicados individualmente conforme o quadro clínico</p>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {%- for item in [
-                ("Bloqueio Facetário", "guiado por ultrassom"),
-                ("Infiltração Epidural", "guiada por imagem"),
-                ("Ozonioterapia", "paravertebral"),
-                ("PRP", "plasma rico em plaquetas"),
-                ("BMA", "aspirado de medula óssea"),
-                ("Bloqueio de Nervo", "periférico"),
-                ("Termografia", "avaliação clínica"),
-                ("Avaliação Integrativa", "hormonal e metabólica")
-            ] %}
             <div class="bg-white rounded-xl p-4 text-center shadow-sm">
-                <p class="font-semibold text-gray-900 text-sm">✓ {{ item[0] }}</p>
-                <p class="text-xs text-gray-500 mt-1">{{ item[1] }}</p>
+                <p class="font-semibold text-gray-900 text-sm">✓ Bloqueio Facetário</p>
+                <p class="text-xs text-gray-500 mt-1">guiado por ultrassom</p>
             </div>
-            {%- endfor %}
+            <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+                <p class="font-semibold text-gray-900 text-sm">✓ Infiltração Epidural</p>
+                <p class="text-xs text-gray-500 mt-1">guiada por imagem</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+                <p class="font-semibold text-gray-900 text-sm">✓ Ozonioterapia</p>
+                <p class="text-xs text-gray-500 mt-1">paravertebral</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+                <p class="font-semibold text-gray-900 text-sm">✓ PRP</p>
+                <p class="text-xs text-gray-500 mt-1">plasma rico em plaquetas</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+                <p class="font-semibold text-gray-900 text-sm">✓ BMA</p>
+                <p class="text-xs text-gray-500 mt-1">aspirado de medula óssea</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+                <p class="font-semibold text-gray-900 text-sm">✓ Bloqueio de Nervo</p>
+                <p class="text-xs text-gray-500 mt-1">periférico</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+                <p class="font-semibold text-gray-900 text-sm">✓ Termografia</p>
+                <p class="text-xs text-gray-500 mt-1">avaliação clínica</p>
+            </div>
+            <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+                <p class="font-semibold text-gray-900 text-sm">✓ Avaliação Integrativa</p>
+                <p class="text-xs text-gray-500 mt-1">hormonal e metabólica</p>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- DR. KLEBER -->
+<!-- DR. KLEBER — FIX: imagem local em vez de raw.githubusercontent.com -->
 <section class="py-16">
     <div class="max-w-5xl mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -213,7 +230,7 @@
                 </div>
             </div>
             <div class="text-center">
-                <img src="https://raw.githubusercontent.com/kleberrangel1983/kleberrangel/main/assets/Foto_Kleber.jpeg"
+                <img src="/assets/Foto_Kleber.jpeg"
                      alt="Dr. Kleber Rangel — Ortopedista especialista em coluna"
                      class="rounded-2xl shadow-xl w-full max-w-sm mx-auto">
                 <p class="text-sm text-gray-500 mt-3">Dr. Kleber Rangel · CRM-MG 68724</p>
