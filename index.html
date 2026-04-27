@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -121,6 +121,27 @@
         @media(min-width:768px){#fcta{bottom:24px;left:auto;right:24px;border-top:none;border-radius:50px;padding:8px 16px 8px 12px;width:auto;box-shadow:0 8px 32px rgba(0,0,0,0.15);}}
 
         @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+
+        /* ── MOBILE CRÍTICO — garante render sem Tailwind ── */
+        @media(max-width:767px){
+            .hero-bg { background: #FAF7F2 !important; }
+            .hero-bg::after { display:none !important; }
+            .max-w-6xl { max-width:100%; }
+            .px-4 { padding-left:16px; padding-right:16px; }
+            .py-8 { padding-top:32px; padding-bottom:32px; }
+            .text-4xl { font-size:clamp(28px, 8vw, 40px) !important; }
+            .text-lg { font-size:16px; }
+            .text-base { font-size:15px; }
+            .btn-wa { padding:14px 20px; font-size:0.95rem; width:100%; }
+            .grid { display:block !important; }
+            .gap-8 { gap:0; }
+            .logos-bar { gap:20px; overflow-x:auto; flex-wrap:nowrap; padding-bottom:8px; }
+            .logos-bar img { height:32px !important; flex-shrink:0; }
+            .card-warm { margin-bottom:16px; }
+            .card-gold { margin-bottom:16px; }
+            .review-card { margin-bottom:16px; }
+            .timeline { padding-left:24px; }
+        }
         @media(max-width:767px){.hero-bg::after{display:none;}}
     </style>
 </head>
@@ -177,10 +198,19 @@
 ══════════════════════════════════════════ -->
 <section class="hero-bg relative overflow-hidden" style="min-height:600px;" role="banner">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-16 md:py-24">
+        <!-- Foto mobile — visível só no mobile -->
+        <div class="md:hidden pt-8 px-4 flex justify-center">
+            <div style="width:140px;height:160px;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.12);">
+                <img src="/assets/Foto_Kleber.jpeg"
+                     alt="Dr. Kleber Rangel"
+                     style="width:100%;height:100%;object-fit:cover;object-position:center 10%;">
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-8 md:py-24">
 
             <!-- ESQUERDA: copy -->
-            <div class="fade-up">
+            <div class="fade-up" style="opacity:1;transform:none;">
                 <div class="inline-flex items-center gap-2 mb-6 text-sm font-medium px-4 py-2 rounded-full" style="background:var(--teal-light);color:var(--teal);">
                     <span>✓</span> CRM-MG 68724 · RQE 43142
                 </div>
@@ -208,7 +238,7 @@
             </div>
 
             <!-- DIREITA: foto + vídeo placeholder -->
-            <div class="fade-up-2 hidden md:block">
+            <div class="hidden md:block">
                 <div class="relative">
                     <!-- Foto principal -->
                     <div style="border-radius:4px 20px 20px 4px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.15);">
