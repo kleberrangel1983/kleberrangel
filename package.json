@@ -1,29 +1,7 @@
 {
   "name": "drkleberrangel-site",
   "version": "1.0.0",
-  "description": "Site oficial Dr. Kleber Rangel - Clínica Trate a Dor",
-  "main": "index.html",
   "scripts": {
-    "dev": "npx http-server -p 8000 -c-1",
-    "build": "echo 'Static site - no build needed'",
-    "test": "echo 'Run tests here'",
-    "serve": "npx http-server"
-  },
-  "keywords": [
-    "medicina-da-dor",
-    "medicina-regenerativa",
-    "ortopedista",
-    "divinópolis",
-    "minas-gerais"
-  ],
-  "author": "Dr. Kleber Rangel (CRM-MG 68724)",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/seu-usuario/drkleberrangel-site.git"
-  },
-  "homepage": "https://www.drkleberrangel.com.br",
-  "bugs": {
-    "url": "https://github.com/seu-usuario/drkleberrangel-site/issues"
+    "build": "mkdir -p /vercel/output/static && cp -r . /vercel/output/static/ 2>/dev/null; echo 'Build OK'"
   }
 }
