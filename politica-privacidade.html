@@ -3,159 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidade - Dr. Kleber Rangel</title>
-    <meta name="description" content="Política de Privacidade da Clínica Trate a Dor — Dr. Kleber Rangel. Como tratamos seus dados conforme a LGPD. Divinópolis-MG.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'medical': { 'teal': '#0d7c7c', 'light': '#e8f4f4', 'dark': '#0a5a5a' },
-                        'accent': { 'orange': '#f97316', 'gray': '#64748b' }
-                    },
-                    fontFamily: {
-                        'display': ['Playfair Display', 'serif'],
-                        'sans': ['Inter', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+    <title>Política de Privacidade — Dr. Kleber Rangel</title>
+    <meta name="description" content="Política de Privacidade da Clínica Trate a Dor — Dr. Kleber Rangel. LGPD, cookies e proteção de dados.">
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="https://www.drkleberrangel.com.br/politica-privacidade.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; font-weight: 700; }
+        *{box-sizing:border-box;margin:0;padding:0;}
+        body{font-family:'DM Sans',sans-serif;background:#FAF7F2;color:#1C1C1C;line-height:1.7;}
+        h1,h2,h3{font-family:'Cormorant Garamond',serif;}
+
+        /* NAV */
+        nav{background:#fff;border-bottom:1px solid #E8E0D8;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;}
+        .nav-logo{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:#0B6B6B;text-decoration:none;}
+        .nav-back{font-size:13px;color:#5A6472;text-decoration:none;display:flex;align-items:center;gap:6px;}
+        .nav-back:hover{color:#0B6B6B;}
+
+        /* HERO */
+        .hero{background:#0B6B6B;padding:48px 24px;text-align:center;}
+        .hero h1{font-size:clamp(28px,6vw,42px);color:#fff;margin-bottom:8px;}
+        .hero p{font-size:14px;color:rgba(255,255,255,0.65);}
+
+        /* CONTENT */
+        .content{max-width:760px;margin:0 auto;padding:48px 24px 80px;}
+
+        /* SEÇÕES */
+        .section{background:#fff;border-radius:16px;border:1px solid #E8E0D8;border-left:3px solid #C8A96A;padding:28px 32px;margin-bottom:20px;}
+        .section h2{font-size:20px;color:#0B6B6B;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+        .section-num{width:28px;height:28px;border-radius:50%;background:#E8F5F2;color:#0B6B6B;font-size:13px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'DM Sans',sans-serif;}
+        .section p{font-size:14px;color:#374151;margin-bottom:10px;}
+        .section p:last-child{margin-bottom:0;}
+        .section ul{font-size:14px;color:#374151;padding-left:20px;margin-top:8px;}
+        .section ul li{margin-bottom:6px;}
+        .section strong{color:#1C1C1C;}
+
+        /* DESTAQUE */
+        .highlight{background:#E8F5F2;border-radius:10px;padding:14px 18px;font-size:14px;color:#0B6B6B;margin-top:12px;font-weight:500;}
+
+        /* CONTATO */
+        .contact-box{background:#0B6B6B;border-radius:16px;padding:28px 32px;text-align:center;margin-top:32px;}
+        .contact-box h3{font-size:22px;color:#fff;margin-bottom:8px;}
+        .contact-box p{font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:16px;}
+        .contact-box a{display:inline-block;background:#C8A96A;color:#fff;font-weight:600;padding:12px 28px;border-radius:10px;text-decoration:none;font-size:14px;}
+        .contact-box a:hover{background:#b5965a;}
+
+        /* RODAPÉ */
+        footer{background:#111;color:rgba(255,255,255,0.4);text-align:center;padding:24px;font-size:12px;}
+        footer a{color:rgba(255,255,255,0.5);text-decoration:none;}
+        footer a:hover{color:#fff;}
+
+        /* SEPARADOR */
+        .divider{height:1px;background:linear-gradient(to right,transparent,#C8A96A,transparent);margin:32px 0;}
+
+        @media(max-width:600px){
+            .section{padding:20px 18px;}
+            .content{padding:32px 16px 60px;}
+        }
     </style>
 </head>
-<body class="bg-white text-accent-gray font-sans">
-    <nav class="sticky top-0 z-50 bg-white shadow-sm">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="/" class="flex items-center gap-3">
-                    <img src="assets/Logo_Transparente.png" alt="Logo" class="h-10 w-10">
-                    <span class="font-display font-bold text-xl text-medical-teal hidden sm:inline">Dr. Kleber</span>
-                </a>
-                <a href="/" class="text-sm font-medium text-medical-teal hover:underline">← Voltar</a>
-            </div>
-        </div>
-    </nav>
-    
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 class="font-display text-4xl font-bold text-medical-teal mb-8">Política de Privacidade</h1>
-        <div class="prose prose-lg max-w-none">
-            <p><strong>Última atualização: abril de 2026</strong></p>
-            
-            <h2>1. Responsável pelos Dados</h2>
-            <p>
-                <strong>Dr. Kleber Rangel</strong><br>
-                CRMMG 68724 | RQE 43142<br>
-                Clínica Trate a Dor<br>
-                Av. Antônio Olímpio de Morais, 607<br>
-                Divinópolis, MG 35500-000<br>
-                Email: contato@drkleberrangel.com.br
-            </p>
-            
-            <h2>2. Dados que Coletamos</h2>
-            <p>Quando você baixa nosso eBook ou entra em contato conosco, coletamos:</p>
-            <ul>
-                <li><strong>Dados obrigatórios:</strong> Nome completo, email, telefone (WhatsApp)</li>
-                <li><strong>Dados de navegação:</strong> IP, tipo de dispositivo, páginas visitadas (via Google Analytics)</li>
-                <li><strong>Dados clínicos:</strong> Histórico de dor (apenas em consulta presencial, com consentimento informado)</li>
-            </ul>
-            
-            <h2>3. Base Legal (LGPD)</h2>
-            <p>Processamos seus dados com base em:</p>
-            <ul>
-                <li><strong>Consentimento explícito</strong> — você marca a caixa de consentimento</li>
-                <li><strong>Interesse legítimo</strong> — agendar e conduzir sua consulta médica</li>
-                <li><strong>Cumprir obrigação legal</strong> — registros clínicos exigidos pelo CFM</li>
-            </ul>
-            
-            <h2>4. Como Usamos Seus Dados</h2>
-            <ul>
-                <li>Enviar o guia (eBook) por email</li>
-                <li>Comunicações sobre saúde e bem-estar relacionadas</li>
-                <li>Agendar e conduzir sua consulta médica</li>
-                <li>Manter registros clínicos obrigatórios (CFM 2.336/2023)</li>
-                <li>Melhorar o site e serviços (análise de tráfego)</li>
-            </ul>
-            
-            <h2>5. Compartilhamento de Dados</h2>
-            <p>Seus dados <strong>NÃO são vendidos ou compartilhados</strong> com terceiros, exceto:</p>
-            <ul>
-                <li>Plataformas de email (quando você opta por receber comunicações)</li>
-                <li>Google Analytics (dados anônimos de navegação)</li>
-                <li>Profissionais de saúde coordenados (sob sua autorização)</li>
-                <li>Obrigação legal (solicitação judicial, CFM, ANVISA)</li>
-            </ul>
-            
-            <h2>6. Retenção de Dados</h2>
-            <ul>
-                <li><strong>Dados de marketing (lead magnet):</strong> Até você solicitar remoção</li>
-                <li><strong>Dados clínicos:</strong> Conforme legislação médica (no mínimo 2 anos)</li>
-                <li><strong>Registros de navegação:</strong> 24 meses (Google Analytics)</li>
-            </ul>
-            
-            <h2>7. Seus Direitos (LGPD)</h2>
-            <p>Você tem direito a:</p>
-            <ul>
-                <li><strong>Acessar</strong> seus dados conosco</li>
-                <li><strong>Corrigir</strong> informações imprecisas</li>
-                <li><strong>Deletar</strong> seus dados (direito ao esquecimento)</li>
-                <li><strong>Portabilidade</strong> — receber uma cópia em formato acessível</li>
-                <li><strong>Revogar consentimento</strong> a qualquer momento</li>
-                <li><strong>Não aceitar</strong> publicidade direcionada</li>
-            </ul>
-            <p>Para exercer qualquer desses direitos, envie um email para <strong>contato@drkleberrangel.com.br</strong></p>
-            
-            <h2>8. Segurança</h2>
-            <p>Implementamos medidas de segurança para proteger seus dados:</p>
-            <ul>
-                <li>HTTPS/SSL (criptografia em trânsito)</li>
-                <li>Senhas criptografadas</li>
-                <li>Acesso restrito a funcionários autorizados</li>
-                <li>Backup regular de dados</li>
-            </ul>
-            
-            <h2>9. Cookies e Rastreamento</h2>
-            <p>Usamos cookies apenas para:</p>
-            <ul>
-                <li>Análise de tráfego (Google Analytics)</li>
-                <li>Melhorar experiência do site</li>
-            </ul>
-            <p>Você pode desabilitar cookies nas configurações do seu navegador. Alguns serviços podem funcionar de forma limitada.</p>
-            
-            <h2>10. Política Sobre Menores de Idade</h2>
-            <p>Este site é para maiores de 18 anos. Não coletamos dados de menores intencionalmente. Se você é menor de idade, obtenha consentimento dos pais/responsável.</p>
-            
-            <h2>11. Contato com o Encarregado de Dados (DPO)</h2>
-            <p>
-                Dúvidas sobre privacidade?<br>
-                <strong>Email:</strong> contato@drkleberrangel.com.br<br>
-                <strong>Telefone:</strong> (37) 99841-9396<br>
-                <strong>Tempo de resposta:</strong> Até 10 dias úteis
-            </p>
-            
-            <h2>12. Reclamação junto à Autoridade</h2>
-            <p>
-                Se você acredita que seus direitos foram violados, pode fazer reclamação à:<br>
-                <strong>Autoridade Nacional de Proteção de Dados (ANPD)</strong><br>
-                www.gov.br/cidadania/pt-br/acesso-a-informacao/lgpd
-            </p>
-            
-            <h2>13. Alterações nesta Política</h2>
-            <p>Podemos atualizar esta política. A data "Última atualização" no topo indicará as mudanças.</p>
-            
-            <div class="bg-medical-light p-6 rounded-lg mt-8 border-l-4 border-medical-teal">
-                <p class="text-sm"><strong>Confirmação de conformidade:</strong> Esta política está em conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD, Lei nº 13.709/2018), ANPD, e normas do Conselho Federal de Medicina (CFM 2.336/2023).</p>
-            </div>
-        </div>
+<body>
+
+<!-- NAV -->
+<nav>
+    <a href="/" class="nav-logo">Dr. Kleber Rangel</a>
+    <a href="/" class="nav-back">← Voltar ao site</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Política de Privacidade</h1>
+    <p>Última atualização: abril de 2026 · Clínica Trate a Dor</p>
+</div>
+
+<!-- CONTEÚDO -->
+<div class="content">
+
+    <div class="section">
+        <h2><span class="section-num">1</span> Responsável pelos Dados</h2>
+        <p><strong>Dr. Kleber Rangel</strong><br>
+        CRM-MG 68724 · RQE 43142<br>
+        Clínica Trate a Dor<br>
+        Av. Antônio Olímpio de Morais, 607 — Sala 808<br>
+        Centro, Divinópolis-MG · CEP 35500-000</p>
+        <p>Email: <a href="mailto:contato@drkleberrangel.com.br" style="color:#0B6B6B;">contato@drkleberrangel.com.br</a><br>
+        WhatsApp: <a href="tel:+5537998419396" style="color:#0B6B6B;">(37) 99841-9396</a></p>
     </div>
-    
-    <footer class="bg-gray-900 text-white mt-12 py-8">
-        <div class="max-w-6xl mx-auto px-4 text-center text-xs text-white/60">
-            © 2026 Dr. Kleber Rangel · CRM-MG 68724
-        </div>
-    </footer>
+
+    <div class="section">
+        <h2><span class="section-num">2</span> Dados que Coletamos</h2>
+        <p>Quando você entra em contato, solicita informações ou utiliza este site, podemos coletar:</p>
+        <ul>
+            <li><strong>Dados de identificação:</strong> nome, e-mail e telefone (WhatsApp) — apenas quando fornecidos voluntariamente</li>
+            <li><strong>Dados de navegação:</strong> endereço IP, tipo de dispositivo, páginas visitadas e tempo de permanência (via Google Analytics, de forma anônima)</li>
+            <li><strong>Dados clínicos:</strong> histórico de saúde e queixas — coletados exclusivamente durante a consulta presencial, com consentimento informado, conforme exigido pelo CFM</li>
+        </ul>
+        <div class="highlight">Não coletamos dados sensíveis sem sua autorização expressa. Dados clínicos nunca são armazenados neste site.</div>
+    </div>
+
+    <div class="section">
+        <h2><span class="section-num">3</span> Base Legal (LGPD)</h2>
+        <p>Processamos seus dados com fundamento na Lei nº 13.709/2018 (LGPD), especificamente nas seguintes bases legais:</p>
+        <ul>
+            <li><strong>Consentimento explícito</strong> — quando você nos contata ou aceita cookies</li>
+            <li><strong>Execução de contrato</strong> — para agendar e conduzir sua consulta médica</li>
+            <li><strong>Cumprimento de obrigação legal</strong> — registros clínicos exigidos pelo CFM e legislação sanitária</li>
+            <li><strong>Interesse legítimo</strong> — melhoria contínua do site e dos serviços prestados</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2><span class="section-num">4</span> Como Usamos Seus Dados</h2>
+        <ul>
+            <li>Responder mensagens e solicitações de agendamento via WhatsApp ou e-mail</li>
+            <li>Enviar comunicações sobre saúde relacionadas ao seu interesse (apenas com consentimento)</li>
+            <li>Agendar e conduzir consultas médicas</li>
+            <li>Manter registros clínicos obrigatórios conforme a Resolução CFM 2.336/2023</li>
+            <li>Analisar o desempenho do site de forma agregada e anônima</li>
+        </ul>
+        <div class="highlight">Não usamos seus dados para venda, aluguel ou envio de publicidade não solicitada.</div>
+    </div>
+
+    <div class="section">
+        <h2><span class="section-num">5</span> Compartilhamento de Dados</h2>
+        <p>Seus dados <strong>não são vendidos ou compartilhados</strong> com terceiros, exceto nas seguintes situações:</p>
+        <ul>
+            <li><strong>Google Analytics:</strong> dados anônimos de navegação para análise de tráfego</li>
+            <li><strong>Meta (Facebook Pixel):</strong> dados de navegação para métricas de campanhas publicitárias, com seu consentimento</li>
+            <li><strong>Profissionais de saúde parceiros:</strong> somente sob sua autorização expressa</li>
+            <li><strong>Obrigação legal:</strong> quando exigido por autoridade judicial, CFM, ANVISA ou outra autoridade competente</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2><span class="section-num">6</span> Retenção de Dados</h2>
+        <ul>
+            <li><strong>Dados de contato (WhatsApp/e-mail):</strong> até você solicitar a remoção ou encerrarmos a relação</li>
+            <li><strong>Dados clínicos:</strong> mínimo de 20 anos conforme Resolução CFM 1.821/2007 e legislação aplicável</li>
+            <li><strong>Dados de navegação (Google Analytics):</strong> 14 meses (padrão do Google)</li>
+            <li><strong>Cookies de publicidade:</strong> conforme configuração da plataforma e sua escolha no banner de consentimento</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2><span class="section-num">7</span> Seus Direitos (LGPD)</h2>
+        <p>Nos termos da Lei Geral de Proteção de Dados (LGPD), você tem direito a:</p>
+        <ul>
+            <li><strong>Acesso:</strong> solicitar uma cópia dos seus dados que mantemos</li>
+            <li><strong>Correção:</strong> corrigir dados incompletos, inexatos ou desatualizados</li>
+            <li><strong>Exclusão:</strong> solicitar a remoção dos dados (salvo obrigações legais de retenção)</li>
+            <li><strong>Portabilidade:</strong> receber seus dados em formato estruturado e interoperável</li>
+            <li><strong>Revogação do consentimento:</strong> a qualquer momento, sem prejuízo ao tratamento anterior</li>
+            <li><strong>Oposição:</strong> se opor a tratamentos baseados em interesse legítimo</li>
+            <li><strong>Informação:</strong> ser informado sobre com quem compartilhamos seus dados</li>
+        </ul>
+        <div class="highlight">Para exercer qualquer desses direitos, envie um e-mail para <strong>contato@drkleberrangel.com.br</strong> com o assunto "LGPD — Direitos do Titular". Responderemos em até 15 dias úteis.</div>
+    </div>
+
+    <div class="section">
+        <h2><span class="section-num">8</span> Cookies e Rastreamento</h2>
+        <p>Este site utiliza cookies para as seguintes finalidades:</p>
+        <ul>
+            <li><strong>Funcionamento básico:</strong> necessários para o site funcionar corretamente (não podem ser desativados)</li>
+            <li><strong>Análise (Google Analytics):</strong> métricas de acesso anônimas para melhoria do site</li>
+            <li><strong>Publicidade (Meta Pixel):</strong> métricas de campanhas — ativados apenas com seu consentimento</li>
+        </ul>
+        <p style="margin-top:12px;">Ao acessar o site pela primeira vez, você verá um banner de consentimento. Você pode alterar suas preferências a qualquer momento limpando os cookies do navegador.</p>
+    </div>
+
+    <div class="section">
+        <h2><span class="section-num">9</span> Segurança dos Dados</h2>
+        <p>Adotamos medidas técnicas e organizacionais para proteger seus dados:</p>
+        <ul>
+            <li>Transmissão criptografada via HTTPS/TLS</li>
+            <li>Acesso restrito a pessoas autorizadas</li>
+            <li>Infraestrutura hospedada na Vercel (servidores certificados ISO 27001)</li>
+            <li>Revisão periódica das práticas de segurança</li>
+        </ul>
+        <p>Em caso de incidente de segurança que possa afetar seus dados, você será notificado conforme exigido pela LGPD.</p>
+    </div>
+
+    <div class="section">
+        <h2><span class="section-num">10</span> Menores de Idade</h2>
+        <p>Este site é destinado a maiores de 18 anos. Não coletamos intencionalmente dados de menores de idade. Caso identifiquemos que dados de menores foram coletados sem consentimento dos responsáveis, serão excluídos imediatamente.</p>
+    </div>
+
+    <div class="section">
+        <h2><span class="section-num">11</span> Alterações nesta Política</h2>
+        <p>Esta política pode ser atualizada periodicamente para refletir mudanças na legislação, nas nossas práticas ou nos serviços oferecidos. A data de "última atualização" no topo desta página sempre indicará a versão vigente.</p>
+        <p>Alterações significativas serão comunicadas por e-mail (para usuários cadastrados) ou por aviso destacado no site.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- CONTATO -->
+    <div class="contact-box">
+        <h3>Dúvidas sobre privacidade?</h3>
+        <p>Entre em contato com nosso responsável pelos dados pessoais.<br>Resposta em até 15 dias úteis.</p>
+        <a href="mailto:contato@drkleberrangel.com.br">contato@drkleberrangel.com.br</a>
+    </div>
+
+</div>
+
+<!-- RODAPÉ -->
+<footer>
+    <p>© 2026 Dr. Kleber Rangel · Clínica Trate a Dor · CRM-MG 68724 · RQE 43142</p>
+    <p style="margin-top:8px;">
+        <a href="/">Início</a> ·
+        <a href="/termos.html">Termos de Uso</a> ·
+        <a href="/politica-privacidade.html">Política de Privacidade</a>
+    </p>
+    <p style="margin-top:8px;">Conteúdo informativo. Não substitui consulta médica. Publicidade em conformidade com a Resolução CFM 2.336/2023.</p>
+</footer>
+
 </body>
 </html>
