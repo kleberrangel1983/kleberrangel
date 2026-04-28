@@ -3,189 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Termos de Uso - Dr. Kleber Rangel</title>
-    <meta name="description" content="Termos de Uso da Clínica Trate a Dor — Dr. Kleber Rangel. Condições de uso do site drkleberrangel.com.br. Divinópolis-MG.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'medical': { 'teal': '#0d7c7c', 'light': '#e8f4f4', 'dark': '#0a5a5a' },
-                        'accent': { 'orange': '#f97316', 'gray': '#64748b' }
-                    },
-                    fontFamily: {
-                        'display': ['Playfair Display', 'serif'],
-                        'sans': ['Inter', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+    <title>Termos de Uso — Dr. Kleber Rangel | Clínica Trate a Dor</title>
+    <meta name="description" content="Termos de Uso do site drkleberrangel.com.br — Clínica Trate a Dor. Leia antes de utilizar este site.">
+    <meta name="robots" content="noindex">
+    <link rel="canonical" href="https://www.drkleberrangel.com.br/termos.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; font-weight: 700; }
+        *{box-sizing:border-box;margin:0;padding:0;}
+        body{font-family:'DM Sans',sans-serif;background:#FAF7F2;color:#1C1C1C;line-height:1.75;}
+        h1,h2,h3{font-family:'Cormorant Garamond',serif;}
+
+        nav{background:#fff;border-bottom:1px solid #E8E0D8;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;}
+        .nav-logo{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:#0B6B6B;text-decoration:none;}
+        .nav-back{font-size:13px;color:#5A6472;text-decoration:none;display:flex;align-items:center;gap:6px;}
+        .nav-back:hover{color:#0B6B6B;}
+
+        .hero{background:#0B6B6B;padding:48px 24px;text-align:center;}
+        .hero h1{font-size:clamp(28px,6vw,42px);color:#fff;margin-bottom:8px;}
+        .hero p{font-size:14px;color:rgba(255,255,255,0.65);}
+
+        .content{max-width:760px;margin:0 auto;padding:48px 24px 80px;}
+
+        .alert{background:#FFF8E7;border:1px solid #F5C842;border-radius:12px;padding:18px 22px;margin-bottom:32px;font-size:14px;color:#7A5800;line-height:1.6;}
+        .alert strong{color:#5A3E00;}
+
+        .section{background:#fff;border-radius:16px;border:1px solid #E8E0D8;border-left:3px solid #C8A96A;padding:28px 32px;margin-bottom:20px;}
+        .section h2{font-size:20px;color:#0B6B6B;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+        .section-num{width:28px;height:28px;border-radius:50%;background:#E8F5F2;color:#0B6B6B;font-size:13px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'DM Sans',sans-serif;}
+        .section p{font-size:14px;color:#374151;margin-bottom:10px;line-height:1.7;}
+        .section p:last-child{margin-bottom:0;}
+        .section ul{font-size:14px;color:#374151;padding-left:20px;margin-top:8px;}
+        .section ul li{margin-bottom:8px;line-height:1.6;}
+        .section strong{color:#1C1C1C;}
+        .section a{color:#0B6B6B;text-decoration:underline;}
+
+        .highlight{background:#E8F5F2;border-radius:10px;padding:14px 18px;font-size:14px;color:#0B6B6B;margin-top:12px;font-weight:500;line-height:1.6;}
+        .warning{background:#FFF0F0;border-radius:10px;padding:14px 18px;font-size:14px;color:#B91C1C;margin-top:12px;font-weight:500;line-height:1.6;}
+
+        .contact-box{background:#0B6B6B;border-radius:16px;padding:28px 32px;text-align:center;margin-top:32px;}
+        .contact-box h3{font-size:22px;color:#fff;margin-bottom:8px;}
+        .contact-box p{font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:16px;}
+        .contact-box a{display:inline-block;background:#C8A96A;color:#fff;font-weight:600;padding:12px 28px;border-radius:10px;text-decoration:none;font-size:14px;}
+
+        .divider{height:1px;background:linear-gradient(to right,transparent,#C8A96A,transparent);margin:32px 0;}
+
+        footer{background:#111;color:rgba(255,255,255,0.4);text-align:center;padding:24px;font-size:12px;}
+        footer a{color:rgba(255,255,255,0.5);text-decoration:none;}
+        footer a:hover{color:#fff;}
+
+        @media(max-width:600px){
+            .section{padding:20px 18px;}
+            .content{padding:32px 16px 60px;}
+        }
     </style>
 </head>
-<body class="bg-white text-accent-gray font-sans">
-    <nav class="sticky top-0 z-50 bg-white shadow-sm">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="/" class="flex items-center gap-3">
-                    <img src="assets/Logo_Transparente.png" alt="Logo" class="h-10 w-10">
-                    <span class="font-display font-bold text-xl text-medical-teal hidden sm:inline">Dr. Kleber</span>
-                </a>
-                <a href="/" class="text-sm font-medium text-medical-teal hover:underline">← Voltar</a>
-            </div>
-        </div>
-    </nav>
-    
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 class="font-display text-4xl font-bold text-medical-teal mb-8">Termos de Uso e Isenção de Responsabilidade</h1>
-        <div class="prose prose-lg max-w-none">
-            <p><strong>Última atualização: abril de 2026</strong></p>
-            
-            <div class="bg-red-50 border border-red-200 p-6 rounded-lg mb-8">
-                <p class="font-semibold text-red-800">⚠️ AVISO LEGAL IMPORTANTE</p>
-                <p class="text-red-800 text-sm mt-2">
-                    Este site oferece <strong>conteúdo educativo e informativo apenas</strong>. Nada aqui substitui uma avaliação clínica presencial, diagnóstico profissional ou orientação médica personalizada. 
-                </p>
-                <p class="text-red-800 text-sm mt-2">
-                    Se você está com dor, consulte um profissional de saúde qualificado. Em caso de emergência, procure o pronto-socorro.
-                </p>
-            </div>
-            
-            <h2>1. Aceitação dos Termos</h2>
-            <p>
-                Ao acessar este site, você concorda em estar vinculado a estes termos de uso. Se não concordar, não use este site.
-            </p>
-            
-            <h2>2. Escopo da Informação</h2>
-            <p>O conteúdo deste site:</p>
-            <ul>
-                <li>É <strong>exclusivamente educativo e informativo</strong></li>
-                <li><strong>NÃO constitui</strong> consulta médica, diagnóstico ou prescrição</li>
-                <li><strong>NÃO substitui</strong> avaliação clínica presencial</li>
-                <li>Foi preparado com base em evidências científicas, mas deve ser validado em contexto clínico individual</li>
-            </ul>
-            
-            <h2>3. Responsabilidade do Usuário</h2>
-            <p>Você é responsável por:</p>
-            <ul>
-                <li>Buscar opinião médica profissional antes de tomar decisões de saúde</li>
-                <li>Não usar este site como substituto de atendimento médico presencial</li>
-                <li>Manter a confidencialidade de qualquer informação pessoal</li>
-                <li>Usar o site de forma legal e ética</li>
-            </ul>
-            
-            <h2>4. Isenção de Responsabilidade Médica</h2>
-            <p>
-                Dr. Kleber Rangel e a Clínica Trate a Dor <strong>NÃO se responsabilizam</strong> por:
-            </p>
-            <ul>
-                <li>Danos ou lesões resultantes do uso do site</li>
-                <li>Interpretações equivocadas de conteúdo educativo</li>
-                <li>Decisões médicas tomadas sem avaliação presencial</li>
-                <li>Atrasos ou falhas no serviço de atendimento</li>
-                <li>Qualidade ou precisão de links externos</li>
-                <li>Uso não autorizado de suas informações (exceto por negligência nossa)</li>
-            </ul>
-            
-            <h2>5. Consulta Médica: Processo</h2>
-            <p>
-                A primeira consulta é onde começa o diagnóstico real:
-            </p>
-            <ul>
-                <li>Duração: 50–60 minutos</li>
-                <li>Envolve: Anamnese detalhada, exame clínico, revisão de exames</li>
-                <li>Resultado: Diagnóstico personalizado + plano de tratamento com opções</li>
-                <li>Sem obrigação de prosseguir com tratamento após diagnóstico</li>
-            </ul>
-            
-            <h2>6. Resultados Clínicos Não são Garantidos</h2>
-            <p>
-                Os depoimentos no site refletem experiências reais de pacientes. <strong>Porém:</strong>
-            </p>
-            <ul>
-                <li>Resultados variam caso a caso</li>
-                <li>Não há garantia de cura ou eliminação completa de dor</li>
-                <li>Tempo de recuperação depende de múltiplos fatores</li>
-                <li>Alguns pacientes podem não responder aos tratamentos indicados</li>
-            </ul>
-            <p>
-                <strong>Avaliações no Google</strong> foram coletadas com autorização dos pacientes, em conformidade com a Resolução CFM 2.220/2018 (publicidade médica).
-            </p>
-            
-            <h2>7. Conformidade Regulatória (CFM)</h2>
-            <p>
-                Este site está de acordo com:
-            </p>
-            <ul>
-                <li><strong>Resolução CFM 2.336/2023</strong> — Publicidade e divulgação de serviços médicos</li>
-                <li><strong>Resolução CFM 2.220/2018</strong> — Normas sobre depoimentos de pacientes</li>
-                <li><strong>Lei 8.078/1990 (CDC)</strong> — Direitos do consumidor</li>
-                <li><strong>Lei 13.709/2018 (LGPD)</strong> — Proteção de dados pessoais</li>
-            </ul>
-            
-            <h2>8. Limitação de Responsabilidade</h2>
-            <p>
-                Em nenhuma circunstância Dr. Kleber Rangel ou Clínica Trate a Dor serão responsáveis por danos diretos, indiretos, acidentais, especiais ou consequentes, incluindo perda de dados, receita ou uso, mesmo se advertido da possibilidade de tais danos.
-            </p>
-            
-            <h2>9. Cancelamento e Remissão</h2>
-            <p>
-                <strong>Política de cancelamento de consulta agendada:</strong>
-            </p>
-            <ul>
-                <li>Cancelamento com 48h ou mais de antecedência: sem cobranças</li>
-                <li>Cancelamento com menos de 48h: sujeito a taxa administrativa de R$50</li>
-                <li>Não-comparecimento sem aviso: sujeito a taxa administrativa de R$50</li>
-            </ul>
-            <p>Em caso de emergência médica documentada, as taxas são integralmente dispensadas.</p>
-            <p>
-                Remarcação deve ser solicitada via WhatsApp (37) 99841-9396.
-            </p>
-            
-            <h2>10. Direitos Autorais</h2>
-            <p>
-                Todo conteúdo deste site (textos, imagens, vídeos) é propriedade intelectual de Dr. Kleber Rangel. É proibido reproduzir, distribuir ou comercializar sem autorização explícita.
-            </p>
-            
-            <h2>11. Links Externos</h2>
-            <p>
-                Este site pode conter links para sites externos. <strong>Não temos controle sobre o conteúdo de sites terceirizados</strong> e não somos responsáveis por sua precisão ou legalidade.
-            </p>
-            
-            <h2>12. Modificações dos Termos</h2>
-            <p>
-                Podemos atualizar estes termos a qualquer momento. O uso continuado do site após mudanças implica aceitação dos novos termos.
-            </p>
-            
-            <h2>13. Lei Aplicável</h2>
-            <p>
-                Estes termos são regidos pelas leis do Brasil. Qualquer disputa será resolvida nos tribunais competentes de Divinópolis, MG.
-            </p>
-            
-            <h2>14. Contato para Dúvidas</h2>
-            <p>
-                Se tiver perguntas sobre estes termos:<br>
-                <strong>Email:</strong> contato@drkleberrangel.com.br<br>
-                <strong>Telefone:</strong> (37) 99841-9396
-            </p>
-            
-            <div class="bg-medical-light p-6 rounded-lg mt-8 border-l-4 border-medical-teal">
-                <p class="font-semibold text-medical-teal mb-2">Confirmação:</p>
-                <p class="text-sm">
-                    Ao usar este site e agendar consulta, você confirma ter lido e concordado com estes Termos de Uso, nossa Política de Privacidade e que entende as limitações legais da informação educativa.
-                </p>
-            </div>
+<body>
+
+<nav>
+    <a href="/" class="nav-logo">Dr. Kleber Rangel</a>
+    <a href="/" class="nav-back">← Voltar ao site</a>
+</nav>
+
+<div class="hero">
+    <h1>Termos de Uso</h1>
+    <p>Última atualização: abril de 2026 · Clínica Trate a Dor · drkleberrangel.com.br</p>
+</div>
+
+<div class="content">
+
+    <div class="alert">
+        <strong>Leia com atenção antes de utilizar este site.</strong><br>
+        Ao acessar e utilizar o site <strong>drkleberrangel.com.br</strong>, você declara que leu, compreendeu e concorda com estes Termos de Uso em sua integralidade. Caso não concorde com qualquer disposição, interrompa imediatamente o uso deste site.
+    </div>
+
+    <!-- 1. IDENTIFICAÇÃO -->
+    <div class="section">
+        <h2><span class="section-num">1</span> Identificação do Responsável</h2>
+        <p>Este site é de titularidade e responsabilidade de:</p>
+        <p>
+            <strong>Dr. Kleber Rangel</strong> — MÉDICO<br>
+            Ortopedista e Traumatologista<br>
+            CRM-MG 68724 · RQE 43142<br>
+            Clínica Trate a Dor<br>
+            Av. Antônio Olímpio de Morais, 607 — Sala 808, Centro<br>
+            Divinópolis-MG · CEP 35500-000<br>
+            E-mail: <a href="mailto:contato@drkleberrangel.com.br">contato@drkleberrangel.com.br</a><br>
+            Telefone: <a href="tel:+5537998419396">(37) 99841-9396</a>
+        </p>
+        <div class="highlight">
+            Publicidade médica em conformidade com a Resolução CFM nº 2.336/2023. 
+            O conteúdo deste site está sujeito à regulamentação do Conselho Federal de Medicina (CFM) e do Conselho Regional de Medicina de Minas Gerais (CRM-MG).
         </div>
     </div>
-    
-    <footer class="bg-gray-900 text-white mt-12 py-8">
-        <div class="max-w-6xl mx-auto px-4 text-center text-xs text-white/60">
-            © 2026 Dr. Kleber Rangel · CRM-MG 68724
+
+    <!-- 2. NATUREZA DO CONTEÚDO -->
+    <div class="section">
+        <h2><span class="section-num">2</span> Natureza do Conteúdo — Não Constitui Consulta Médica</h2>
+        <p>Todo o conteúdo disponibilizado neste site — incluindo textos, vídeos, imagens, descrições de tratamentos, relatos de pacientes e informações sobre procedimentos — tem <strong>caráter exclusivamente informativo e educativo</strong>.</p>
+        <div class="warning">
+            ⚠️ O conteúdo deste site <strong>NÃO substitui</strong>, em hipótese alguma, a consulta médica presencial, o diagnóstico clínico individualizado, a prescrição ou o acompanhamento médico. Nenhuma informação aqui contida deve ser utilizada para automedicação, autodiagnóstico ou como orientação terapêutica sem avaliação médica prévia.
         </div>
-    </footer>
+        <p style="margin-top:12px;">O acesso a este site e a leitura de seu conteúdo <strong>não estabelecem relação médico-paciente</strong> entre o visitante e o Dr. Kleber Rangel ou a Clínica Trate a Dor. A relação médico-paciente se inicia exclusivamente mediante consulta presencial agendada e realizada conforme os termos do atendimento clínico.</p>
+        <div class="highlight">
+            Base legal: Art. 6º e Art. 11 da Resolução CFM nº 2.336/2023 · Art. 34 e Art. 37 do Código de Ética Médica (Resolução CFM nº 2.217/2018) · Art. 14, §4º do Código de Defesa do Consumidor (Lei nº 8.078/1990).
+        </div>
+    </div>
+
+    <!-- 3. OBRIGAÇÃO DE MEIO -->
+    <div class="section">
+        <h2><span class="section-num">3</span> Obrigação de Meio — Sem Garantia de Resultado</h2>
+        <p>A atividade médica constitui, em regra, <strong>obrigação de meio</strong> — não de resultado. O médico compromete-se a empregar todos os conhecimentos, técnicas e cuidados disponíveis e adequados ao caso clínico individual, sem que isso implique garantia de cura, melhora ou qualquer resultado específico.</p>
+        <p>Os tratamentos, procedimentos e abordagens descritos neste site:</p>
+        <ul>
+            <li>Têm indicação definida individualmente após avaliação clínica presencial</li>
+            <li>Podem ter resultados variáveis de acordo com as características de cada paciente</li>
+            <li>Não garantem resultado específico, cura, eliminação completa da dor ou retorno a atividades anteriores</li>
+            <li>Estão sujeitos a contraindicações, efeitos adversos e limitações inerentes à ciência médica</li>
+        </ul>
+        <div class="highlight">
+            Base legal: Art. 14, §4º do CDC · Art. 951 do Código Civil · Art. 1º, §1º do Código de Ética Médica · Entendimento consolidado do STJ (REsp nº 1.316.628 e REsp nº 1.184.128).
+        </div>
+    </div>
+
+    <!-- 4. COMUNICAÇÃO VIA WHATSAPP -->
+    <div class="section">
+        <h2><span class="section-num">4</span> Comunicação via WhatsApp e Formulários</h2>
+        <p>Os canais de contato disponibilizados neste site — incluindo o WhatsApp, e-mail e formulários — destinam-se <strong>exclusivamente ao agendamento de consultas e ao esclarecimento de dúvidas administrativas</strong> (horários, localização, informações gerais sobre os serviços).</p>
+        <div class="warning">
+            ⚠️ Mensagens enviadas pelo WhatsApp ou e-mail <strong>não configuram consulta médica</strong>, não geram diagnóstico, não constituem prescrição e não estabelecem relação médico-paciente. Orientações clínicas fornecidas por esses canais, se houver, têm caráter estritamente informativo e não substituem avaliação presencial.
+        </div>
+        <p style="margin-top:12px;">O tempo de resposta não é garantido em tempo real. Atendemos as mensagens em horário comercial, de segunda a sexta-feira, das 8h às 17h. Situações de emergência médica devem ser direcionadas ao SAMU (192) ou ao pronto-socorro mais próximo.</p>
+        <div class="highlight">
+            Em caso de urgência ou emergência médica, ligue imediatamente para o SAMU: <strong>192</strong>.
+        </div>
+    </div>
+
+    <!-- 5. DEPOIMENTOS E AVALIAÇÕES -->
+    <div class="section">
+        <h2><span class="section-num">5</span> Depoimentos e Avaliações de Pacientes</h2>
+        <p>Os depoimentos e avaliações de pacientes exibidos neste site são relatos pessoais e individuais, publicados de forma voluntária. Eles <strong>não representam garantia de resultado igual ou similar</strong> para outros pacientes.</p>
+        <p>Os resultados obtidos por cada paciente dependem de fatores individuais como condição clínica específica, histórico de saúde, adesão ao tratamento, características fisiológicas e outras variáveis que fogem ao controle do profissional.</p>
+        <div class="highlight">
+            Os depoimentos foram reproduzidos com autorização dos pacientes, com preservação de sua identidade conforme exigido pelo Art. 75 do Código de Ética Médica e Art. 14 da Resolução CFM nº 2.336/2023.
+        </div>
+    </div>
+
+    <!-- 6. PROPRIEDADE INTELECTUAL -->
+    <div class="section">
+        <h2><span class="section-num">6</span> Propriedade Intelectual</h2>
+        <p>Todo o conteúdo deste site — incluindo textos, imagens, vídeos, logotipos, layout e código-fonte — é protegido pela Lei de Direitos Autorais (Lei nº 9.610/1998) e demais normas de propriedade intelectual aplicáveis.</p>
+        <p>É <strong>vedado</strong>, sem autorização prévia e expressa por escrito:</p>
+        <ul>
+            <li>Reproduzir, copiar, distribuir ou publicar qualquer conteúdo deste site</li>
+            <li>Utilizar o conteúdo para fins comerciais</li>
+            <li>Modificar, adaptar ou criar obras derivadas com base no conteúdo do site</li>
+            <li>Utilizar o nome, imagem ou credenciais do Dr. Kleber Rangel para qualquer finalidade</li>
+        </ul>
+        <p>O compartilhamento de links para as páginas deste site é permitido, desde que não implique reprodução do conteúdo ou indução a erro quanto à autoria.</p>
+    </div>
+
+    <!-- 7. LIMITAÇÃO DE RESPONSABILIDADE -->
+    <div class="section">
+        <h2><span class="section-num">7</span> Limitação de Responsabilidade</h2>
+        <p>O Dr. Kleber Rangel e a Clínica Trate a Dor não se responsabilizam por:</p>
+        <ul>
+            <li>Danos decorrentes do uso indevido das informações contidas neste site como substituto de consulta médica</li>
+            <li>Decisões tomadas pelo visitante com base exclusivamente no conteúdo do site, sem avaliação médica presencial</li>
+            <li>Indisponibilidade temporária do site por manutenção, falhas técnicas ou circunstâncias alheias ao controle do administrador</li>
+            <li>Conteúdo de sites externos acessados por meio de links eventualmente presentes neste site</li>
+            <li>Uso não autorizado das informações por terceiros</li>
+        </ul>
+        <div class="highlight">
+            Base legal: Art. 14, §3º, II do CDC (excludente por culpa exclusiva do consumidor) · Art. 393 do Código Civil (caso fortuito e força maior) · Art. 927, parágrafo único do Código Civil.
+        </div>
+    </div>
+
+    <!-- 8. LINKS EXTERNOS -->
+    <div class="section">
+        <h2><span class="section-num">8</span> Links para Sites Externos</h2>
+        <p>Este site pode conter links para plataformas externas como Google, YouTube, Doctoralia, Instagram e WhatsApp. Esses links são fornecidos apenas para conveniência do visitante.</p>
+        <p>O Dr. Kleber Rangel e a Clínica Trate a Dor <strong>não controlam, endossam nem se responsabilizam</strong> pelo conteúdo, políticas de privacidade ou práticas de qualquer site externo vinculado. O acesso a sites externos é feito por conta e risco do visitante.</p>
+    </div>
+
+    <!-- 9. PRIVACIDADE E PROTEÇÃO DE DADOS -->
+    <div class="section">
+        <h2><span class="section-num">9</span> Privacidade e Proteção de Dados</h2>
+        <p>O tratamento de dados pessoais realizado por meio deste site é regido pela nossa <a href="/politica-privacidade.html">Política de Privacidade</a>, que integra estes Termos de Uso por referência e deve ser lida em conjunto.</p>
+        <p>Ao utilizar este site e seus canais de contato, você consente com o tratamento de seus dados conforme descrito na Política de Privacidade, nos termos da Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018).</p>
+    </div>
+
+    <!-- 10. CONDUTA DO USUÁRIO -->
+    <div class="section">
+        <h2><span class="section-num">10</span> Conduta do Usuário</h2>
+        <p>Ao utilizar este site, você compromete-se a:</p>
+        <ul>
+            <li>Não utilizar o site para fins ilícitos ou que violem direitos de terceiros</li>
+            <li>Não tentar acessar áreas restritas ou sistemas associados ao site sem autorização</li>
+            <li>Não enviar mensagens de conteúdo ofensivo, difamatório, enganoso ou que viole direitos de terceiros pelos canais de contato</li>
+            <li>Fornecer informações verdadeiras ao entrar em contato para agendamento</li>
+            <li>Não utilizar meios automatizados (bots, scrapers) para coletar dados do site</li>
+        </ul>
+    </div>
+
+    <!-- 11. LEGISLAÇÃO APLICÁVEL E FORO -->
+    <div class="section">
+        <h2><span class="section-num">11</span> Legislação Aplicável e Foro</h2>
+        <p>Estes Termos de Uso são regidos e interpretados de acordo com as leis da República Federativa do Brasil, em especial:</p>
+        <ul>
+            <li>Lei nº 8.078/1990 — Código de Defesa do Consumidor</li>
+            <li>Lei nº 10.406/2002 — Código Civil Brasileiro</li>
+            <li>Lei nº 13.709/2018 — Lei Geral de Proteção de Dados (LGPD)</li>
+            <li>Lei nº 9.610/1998 — Lei de Direitos Autorais</li>
+            <li>Resolução CFM nº 2.336/2023 — Publicidade Médica</li>
+            <li>Resolução CFM nº 2.217/2018 — Código de Ética Médica</li>
+        </ul>
+        <p style="margin-top:12px;">Para dirimir quaisquer controvérsias decorrentes da utilização deste site, fica eleito o <strong>Foro da Comarca de Divinópolis, Estado de Minas Gerais</strong>, com renúncia expressa a qualquer outro, por mais privilegiado que seja, salvo nos casos em que a legislação consumerista determine foro diverso em favor do consumidor.</p>
+    </div>
+
+    <!-- 12. ALTERAÇÕES -->
+    <div class="section">
+        <h2><span class="section-num">12</span> Alterações nos Termos de Uso</h2>
+        <p>Estes Termos de Uso podem ser revisados e atualizados a qualquer momento, sem aviso prévio, para refletir mudanças na legislação, nos serviços oferecidos ou nas práticas do site. A data de "última atualização" no topo desta página indica a versão vigente.</p>
+        <p>O uso continuado do site após qualquer alteração constitui aceitação tácita dos novos termos. Recomendamos a revisão periódica desta página.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- IDENTIFICAÇÃO FINAL CFM Art.4 -->
+    <div class="section" style="background:#0B6B6B;border:none;color:#fff;">
+        <h2 style="color:#C8A96A;">Identificação Obrigatória — Art. 4º Resolução CFM 2.336/2023</h2>
+        <p style="color:rgba(255,255,255,0.85);">
+            <strong style="color:#fff;">Dr. Kleber Rangel</strong> — MÉDICO<br>
+            Especialidade registrada: <strong style="color:#fff;">Ortopedia e Traumatologia</strong><br>
+            CRM-MG 68724 · RQE 43142<br>
+            Área de atuação adicional: Medicina da Dor (pós-graduação)<br>
+            Clínica Trate a Dor · Av. Antônio Olímpio de Morais, 607 — Sala 808<br>
+            Centro, Divinópolis-MG · CEP 35500-000<br>
+            (37) 99841-9396 · contato@drkleberrangel.com.br
+        </p>
+        <p style="color:rgba(255,255,255,0.65);font-size:12px;margin-top:12px;">
+            Publicidade médica em conformidade com a Resolução CFM nº 2.336/2023. 
+            O conteúdo deste site tem caráter informativo e educativo. 
+            Não substitui consulta médica presencial. 
+            A responsabilidade civil do médico é subjetiva, nos termos do Art. 14, §4º do CDC. 
+            Os resultados dos tratamentos podem variar de acordo com cada paciente.
+        </p>
+    </div>
+
+    <div class="contact-box">
+        <h3>Dúvidas sobre estes Termos?</h3>
+        <p>Entre em contato pelo e-mail abaixo. Respondemos em até 5 dias úteis.</p>
+        <a href="mailto:contato@drkleberrangel.com.br">contato@drkleberrangel.com.br</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Dr. Kleber Rangel · Clínica Trate a Dor · CRM-MG 68724 · RQE 43142</p>
+    <p style="margin-top:8px;">
+        <a href="/">Início</a> ·
+        <a href="/termos.html">Termos de Uso</a> ·
+        <a href="/politica-privacidade.html">Política de Privacidade</a>
+    </p>
+    <p style="margin-top:8px;">Publicidade médica em conformidade com a Resolução CFM nº 2.336/2023.</p>
+</footer>
+
 </body>
 </html>
