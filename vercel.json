@@ -133,6 +133,11 @@
       "source": "/ozonoterapia-divinopolis",
       "destination": "/ozonoterapia-divinopolis.html",
       "permanent": false
+    },
+    {
+      "source": "/lp-dor-coluna",
+      "destination": "/lp-dor-coluna.html",
+      "permanent": false
     }
   ]
 }
