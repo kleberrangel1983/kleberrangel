@@ -138,6 +138,31 @@
       "source": "/lp-dor-coluna",
       "destination": "/lp-dor-coluna.html",
       "permanent": false
+    },
+    {
+      "source": "/itauna",
+      "destination": "/itauna.html",
+      "permanent": false
+    },
+    {
+      "source": "/claudio",
+      "destination": "/claudio.html",
+      "permanent": false
+    },
+    {
+      "source": "/para-de-minas",
+      "destination": "/para-de-minas.html",
+      "permanent": false
+    },
+    {
+      "source": "/nova-serrana",
+      "destination": "/nova-serrana.html",
+      "permanent": false
+    },
+    {
+      "source": "/formiga",
+      "destination": "/formiga.html",
+      "permanent": false
     }
   ]
 }
