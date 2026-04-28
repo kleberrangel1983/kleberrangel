@@ -140,8 +140,8 @@
             .btn-wa { padding:14px 20px; font-size:0.95rem; width:100%; }
             .grid { display:block !important; }
             .gap-8 { gap:0; }
-            .logos-bar { gap:20px; overflow-x:auto; flex-wrap:nowrap; padding-bottom:8px; }
-            .logos-bar img { height:32px !important; flex-shrink:0; }
+            .logos-bar { gap:16px; overflow-x:auto; flex-wrap:nowrap; padding-bottom:8px; justify-content:flex-start; }
+            .logos-bar img { height:36px; flex-shrink:0; filter:brightness(0) invert(1); opacity:0.9; }
             .card-warm { margin-bottom:16px; }
             .card-gold { margin-bottom:16px; }
             .review-card { margin-bottom:16px; }
@@ -207,7 +207,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <!-- Foto mobile — visível só no mobile -->
         <div class="md:hidden pt-8 px-4 flex justify-center">
-            <div style="width:140px;height:160px;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.12);">
+            <div style="width:120px;height:140px;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.12);">
                 <img src="/assets/Foto_Kleber.jpeg"
                      alt="Dr. Kleber Rangel"
                      style="width:100%;height:100%;object-fit:cover;object-position:center 10%;">
@@ -252,7 +252,7 @@
                         <img src="/assets/Foto_Kleber.jpeg"
                              alt="Dr. Kleber Rangel — Ortopedista especialista em dor"
                              width="560" height="640"
-                             style="width:100%;height:580px;object-fit:cover;object-position:center 12%;display:block;">
+                             style="width:100%;height:clamp(320px,55vw,580px);object-fit:cover;object-position:center 12%;display:block;">
                     </div>
                     <!-- Badge flutuante -->
                     <div style="position:absolute;bottom:24px;left:-20px;background:#fff;border-radius:12px;padding:14px 18px;box-shadow:0 8px 24px rgba(0,0,0,0.12);border-left:3px solid var(--gold);">
@@ -445,7 +445,7 @@
                     <img src="/assets/foto_kleber_rangel.png"
                          alt="Dr. Kleber Rangel — Ortopedista especialista em dor crônica, com aparelho de ultrassom e diplomas ao fundo"
                          width="560" height="680"
-                         style="width:100%;height:660px;object-fit:cover;object-position:center 10%;display:block;">
+                         style="width:100%;height:clamp(400px,55vw,660px);object-fit:cover;object-position:center 10%;display:block;">
                 </div>
                 <!-- Credenciais abaixo da foto -->
                 <div class="mt-6 grid grid-cols-2 gap-3">
@@ -544,7 +544,7 @@
                 <div class="flex gap-1 mb-4" style="color:#C8A96A;">★★★★★</div>
                 <p class="leading-relaxed italic mb-5" style="color:#374151;">"A consulta é longa e muito detalhada. Ele realmente ouve o paciente antes de indicar qualquer procedimento. Nunca senti que estava sendo apressado ou que ele queria apenas prescrever algo."</p>
                 <div class="flex items-center gap-3" style="border-top:1px solid #E8E0D8;padding-top:16px;">
-                    <img src="/assets/depoimentos/jar.png" alt="J.A.R." width="40" height="40" style="width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;">
+                    <img src="/assets/depoimentos/jar.png" alt="J.A.R." width="40" height="40" style="width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;background:#E8F5F2;">
                     <div>
                         <div class="font-semibold text-sm" style="color:var(--ink);">J.A.R.</div>
                         <div class="text-xs" style="color:var(--muted);">Divinópolis · Google ✓</div>
@@ -555,7 +555,7 @@
                 <div class="flex gap-1 mb-4" style="color:#C8A96A;">★★★★★</div>
                 <p class="leading-relaxed italic mb-5" style="color:#374151;">"O Dr. Kleber explicou tudo com muita clareza e paciência. Fui bem atendido e o diagnóstico foi muito detalhado. Recomendo para quem tem dor crônica e não encontrou resposta em outros lugares."</p>
                 <div class="flex items-center gap-3" style="border-top:1px solid #E8E0D8;padding-top:16px;">
-                    <img src="/assets/depoimentos/rm.png" alt="R.M." width="40" height="40" style="width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;">
+                    <img src="/assets/depoimentos/rm.png" alt="R.M." width="40" height="40" style="width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;background:#E8F5F2;">
                     <div>
                         <div class="font-semibold text-sm" style="color:var(--ink);">R.M.</div>
                         <div class="text-xs" style="color:var(--muted);">Itaúna · Google ✓</div>
@@ -566,7 +566,7 @@
                 <div class="flex gap-1 mb-4" style="color:#C8A96A;">★★★★★</div>
                 <p class="leading-relaxed italic mb-5" style="color:#374151;">"Depois de passar por vários médicos sem conseguir resultado, o Dr. Kleber foi o primeiro que realmente investigou a causa da minha dor. Saí da consulta entendendo o que estava acontecendo no meu corpo."</p>
                 <div class="flex items-center gap-3" style="border-top:1px solid #E8E0D8;padding-top:16px;">
-                    <img src="/assets/depoimentos/luciana.png" alt="Luciana Fernandes" width="40" height="40" style="width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;">
+                    <img src="/assets/depoimentos/luciana.png" alt="Luciana Fernandes" width="40" height="40" style="width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;background:#E8F5F2;">
                     <div>
                         <div class="font-semibold text-sm" style="color:var(--ink);">Luciana Fernandes</div>
                         <div class="text-xs" style="color:var(--muted);">Divinópolis · Google ✓</div>
