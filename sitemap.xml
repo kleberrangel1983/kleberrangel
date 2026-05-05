@@ -103,6 +103,42 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- LANDING PAGES REGIONAIS -->
+    <url>
+        <loc>https://www.drkleberrangel.com.br/itauna</loc>
+        <lastmod>2026-04-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://www.drkleberrangel.com.br/claudio</loc>
+        <lastmod>2026-04-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://www.drkleberrangel.com.br/para-de-minas</loc>
+        <lastmod>2026-04-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://www.drkleberrangel.com.br/nova-serrana</loc>
+        <lastmod>2026-04-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://www.drkleberrangel.com.br/formiga</loc>
+        <lastmod>2026-04-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- INSTITUCIONAL -->
     <url>
         <loc>https://www.drkleberrangel.com.br/politica-privacidade.html</loc>

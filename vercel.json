@@ -30,6 +30,18 @@
           "value": "DENY"
         },
         {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains; preload"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
           "key": "Cache-Control",
           "value": "public, max-age=3600, must-revalidate"
         }
@@ -72,97 +84,97 @@
     {
       "source": "/coluna",
       "destination": "/coluna.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/joelho",
       "destination": "/joelho.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/prp",
       "destination": "/prp.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/ombro",
       "destination": "/ombro.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/medicina-regenerativa",
       "destination": "/medicina-regenerativa.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/blog/dor-na-coluna",
       "destination": "/blog/dor-na-coluna.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/blog/hernia-de-disco",
       "destination": "/blog/hernia-de-disco.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/blog/artrose-joelho",
       "destination": "/blog/artrose-joelho.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/blog/condromalacia",
       "destination": "/blog/condromalacia.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/blog/quando-fazer-cirurgia-joelho",
       "destination": "/blog/quando-fazer-cirurgia-joelho.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/blog/dor-cronica",
       "destination": "/blog/dor-cronica.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/blog/prp-tratamento",
       "destination": "/blog/prp-tratamento.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/ozonoterapia-divinopolis",
       "destination": "/ozonoterapia-divinopolis.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/lp-dor-coluna",
       "destination": "/lp-dor-coluna.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/itauna",
       "destination": "/itauna.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/claudio",
       "destination": "/claudio.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/para-de-minas",
       "destination": "/para-de-minas.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/nova-serrana",
       "destination": "/nova-serrana.html",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/formiga",
       "destination": "/formiga.html",
-      "permanent": false
+      "permanent": true
     }
   ]
 }
