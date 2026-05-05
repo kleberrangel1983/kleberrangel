@@ -60,3 +60,10 @@ credentials.json
 *.bak
 *.backup
 *~
+
+# Arquivos zip de entrega (não devem ir ao repositório)
+*.zip
+
+# Favicons duplicados na raiz (os originais ficam em /assets/)
+/favicon*.png
+/favicon*.ico

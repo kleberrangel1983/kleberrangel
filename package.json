@@ -2,6 +2,10 @@
   "name": "drkleberrangel-site",
   "version": "1.0.0",
   "scripts": {
-    "build": "echo ok"
+    "build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/main.css --minify",
+    "dev": "tailwindcss -i ./assets/css/input.css -o ./assets/css/main.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
   }
 }

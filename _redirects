@@ -9,6 +9,3 @@
 
 # Cache busting para assets
 /assets/* /:splat 200
-
-# SPA fallback (se adicionar páginas no futuro)
-/* /index.html 200
