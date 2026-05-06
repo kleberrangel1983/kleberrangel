@@ -1329,32 +1329,25 @@ Quando perceber interesse real (pergunta sobre preço, disponibilidade, procedim
 
     const typing = showTyping();
 
-    try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 400,
-          system: SYSTEM_PROMPT,
-          messages: history
-        })
-      });
-
-      const data = await res.json();
-      const reply = data.content?.[0]?.text || 'Desculpe, não consegui processar. Fale diretamente pelo WhatsApp: (37) 99841-9396';
-
-      typing.remove();
-      addMsg('bot', reply);
-      history.push({ role: 'assistant', content: reply });
-
-      // Limita histórico a 10 mensagens
-      if (history.length > 20) history = history.slice(-20);
-
-    } catch (err) {
-      typing.remove();
-      addMsg('bot', 'Tive um problema técnico. Fale diretamente pelo <a href="https://wa.me/5537998419396" target="_blank" class="tad-wpp-btn">WhatsApp (37) 99841-9396</a>');
-    }
+    // Respostas locais — sem API key no frontend
+    await new Promise(r => setTimeout(r, 700));
+    typing.remove();
+    const t = text.toLowerCase();
+    let reply = '';
+    if(t.match(/consul|agendar|marcar|horário|disponib/)){reply='Para agendar, entre em contato pelo WhatsApp. A consulta dura 50–60 minutos.\n→ [Agendar](https://wa.me/5537998419396?text=Olá, vim pelo site e gostaria de agendar.)';}
+    else if(t.match(/preço|valor|custa|quanto/)){reply='O valor pode ser obtido com a equipe pelo WhatsApp.\n→ [Perguntar](https://wa.me/5537998419396?text=Olá, gostaria de saber o valor da consulta.)';}
+    else if(t.match(/prp|plasma|plaqueta/)){reply='O PRP pode ser indicado em artrose leve a moderada e tendinopatias selecionadas. A indicação depende da avaliação médica.';}
+    else if(t.match(/cirurgia|operar/)){reply='Nem todo caso precisa de cirurgia. Existem alternativas menos invasivas em muitas situações. A consulta define o que faz sentido para o seu quadro.';}
+    else if(t.match(/coluna|lombar|hérnia|ciática/)){reply='Dor na coluna pode ter várias origens — hérnia, dor facetária, articulação sacroilíaca. Identificar a causa correta define o tratamento.';}
+    else if(t.match(/joelho|artrose|menisco|cartilagem/)){reply='Dor no joelho pode ser artrose, condromalácia ou lesão de menisco. O diagnóstico correto define se há indicação de PRP ou outro recurso.';}
+    else if(t.match(/ombro|bursite|manguito/)){reply='Dor no ombro pode ser bursite, tendinite ou manguito rotador. O exame clínico é fundamental para identificar a causa real.';}
+    else if(t.match(/convênio|plano|reembolso/)){reply='O atendimento é particular. Emitimos nota fiscal — verifique as condições de reembolso do seu plano.';}
+    else if(t.match(/ozônio|ozon/)){reply='A ozonioterapia tem indicação em casos selecionados de hérnia de disco e artrose. A indicação depende do diagnóstico individual.';}
+    else if(t.match(/bloqueio|infiltr/)){reply='Bloqueios guiados por ultrassom aplicam o medicamento exatamente onde precisa. A indicação depende do diagnóstico.';}
+    else{reply='Para uma resposta precisa sobre o seu caso, o ideal é a avaliação com o Dr. Kleber.\n→ [Falar com a equipe](https://wa.me/5537998419396?text=Olá, vim pelo site e tenho uma dúvida.)';}
+    addMsg('bot', reply);
+    history.push({ role: 'assistant', content: reply });
+    if (history.length > 20) history = history.slice(-20);
   };
 })();
 </script>
