@@ -61,7 +61,7 @@ IDENTIDADE: Você é o assistente virtual do Dr. Kleber. Não substitui o médic
 #tad-win{position:fixed;bottom:160px;right:16px;width:330px;max-height:440px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.15);display:none;flex-direction:column;z-index:8499;overflow:hidden;font-family:Arial,sans-serif}
 #tad-win.open{display:flex}
 #tad-hdr{background:#0B2444;color:white;padding:.85rem 1rem;display:flex;align-items:center;gap:.65rem}
-#tad-hdr .av{width:32px;height:32px;background:#1E6FBF;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;color:white;flex-shrink:0}
+#tad-hdr .av{width:36px;height:36px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid rgba(255,255,255,0.3)}
 #tad-hdr .inf{flex:1}
 #tad-hdr .inf strong{display:block;font-size:.85rem}
 #tad-hdr .inf span{font-size:.68rem;opacity:.7}
@@ -97,7 +97,7 @@ IDENTIDADE: Você é o assistente virtual do Dr. Kleber. Não substitui o médic
 </button>
 <div id="tad-win" role="dialog" aria-label="Dr. Kleber Responde — assistente virtual">
   <div id="tad-hdr">
-    <div class="av">KR</div>
+    <div class="av"><img src="/assets/dr-kleber-avatar-80.webp" alt="Dr. Kleber Rangel" width="36" height="36" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
     <div class="inf"><strong>Dr. Kleber Responde</strong><span>Assistente virtual · Clínica Trate a Dor</span></div>
     <button id="tad-x" aria-label="Fechar">✕</button>
   </div>
