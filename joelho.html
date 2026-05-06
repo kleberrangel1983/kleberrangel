@@ -340,6 +340,329 @@ footer a{color:rgba(255,255,255,0.45);text-decoration:none;margin:0 8px;font-siz
   <a href="tel:+5537998419396" style="display:flex;align-items:center;justify-content:center;gap:6px;background:var(--warm);color:var(--teal);padding:12px 16px;border-radius:12px;text-decoration:none;font-weight:600;font-size:14px;border:1px solid #E8E0D8;flex:1;">📞 Ligar</a>
 </div>
 <script>window.addEventListener('scroll',function(){document.getElementById('fcta').classList.toggle('show',window.scrollY>400);},{passive:true});</script>
+<style>
+#tad-chat-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  background: #0B2444;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(11,36,68,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+#tad-chat-btn:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(11,36,68,0.45); }
+#tad-chat-btn svg { width: 28px; height: 28px; fill: white; }
+
+#tad-chat-window {
+  position: fixed;
+  bottom: 96px;
+  right: 24px;
+  width: 360px;
+  max-height: 520px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  display: none;
+  flex-direction: column;
+  z-index: 9998;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+#tad-chat-window.open { display: flex; }
+
+#tad-chat-header {
+  background: #0B2444;
+  color: white;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+#tad-chat-header .avatar {
+  width: 38px; height: 38px;
+  background: #1E6FBF;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; font-weight: 700; color: white; flex-shrink: 0;
+}
+#tad-chat-header .info { flex: 1; }
+#tad-chat-header .info strong { display: block; font-size: 0.9rem; }
+#tad-chat-header .info span { font-size: 0.72rem; opacity: 0.7; }
+#tad-close-btn {
+  background: none; border: none; color: rgba(255,255,255,0.7);
+  font-size: 1.3rem; cursor: pointer; padding: 0; line-height: 1;
+}
+#tad-close-btn:hover { color: white; }
+
+#tad-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: #f8f8f6;
+}
+
+.tad-msg {
+  max-width: 85%;
+  padding: 0.6rem 0.9rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.tad-msg.bot {
+  background: white;
+  border: 1px solid #e0e0e0;
+  color: #1a1a1a;
+  align-self: flex-start;
+  border-radius: 4px 12px 12px 12px;
+}
+.tad-msg.user {
+  background: #0B2444;
+  color: white;
+  align-self: flex-end;
+  border-radius: 12px 4px 12px 12px;
+}
+.tad-msg.typing { opacity: 0.6; font-style: italic; }
+
+.tad-quick-btns {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+  padding: 0 1rem 0.5rem;
+  background: #f8f8f6;
+}
+.tad-quick-btn {
+  background: white; border: 1px solid #1E6FBF;
+  color: #1E6FBF; padding: 0.35rem 0.7rem;
+  border-radius: 20px; font-size: 0.78rem;
+  cursor: pointer; font-family: Arial, sans-serif;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.tad-quick-btn:hover { background: #1E6FBF; color: white; }
+
+#tad-input-row {
+  display: flex;
+  padding: 0.75rem;
+  gap: 0.5rem;
+  background: white;
+  border-top: 1px solid #e0e0e0;
+}
+#tad-input {
+  flex: 1;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.875rem;
+  font-family: Arial, sans-serif;
+  outline: none;
+  resize: none;
+}
+#tad-input:focus { border-color: #1E6FBF; }
+#tad-send-btn {
+  background: #0B2444;
+  border: none; border-radius: 50%;
+  width: 36px; height: 36px;
+  cursor: pointer; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s;
+}
+#tad-send-btn:hover { background: #1E6FBF; }
+#tad-send-btn svg { width: 16px; height: 16px; fill: white; }
+
+#tad-footer {
+  text-align: center;
+  font-size: 0.68rem;
+  color: #999;
+  padding: 0.4rem;
+  background: white;
+  border-top: 1px solid #f0f0f0;
+}
+
+.tad-wpp-btn {
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 400px) {
+  #tad-chat-window { width: calc(100vw - 24px); right: 12px; bottom: 84px; }
+  #tad-chat-btn { bottom: 16px; right: 16px; }
+}
+</style>
+
+<!-- BOTÃO FLUTUANTE -->
+<button id="tad-chat-btn" aria-label="Abrir chat">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+  </svg>
+</button>
+
+<!-- JANELA DO CHAT -->
+<div id="tad-chat-window">
+  <div id="tad-chat-header">
+    <div class="avatar">KR</div>
+    <div class="info">
+      <strong>Assistente — Trate a Dor</strong>
+      <span>Dr. Kleber Rangel · CRM-MG 68724</span>
+    </div>
+    <button id="tad-close-btn" aria-label="Fechar">✕</button>
+  </div>
+
+  <div id="tad-messages"></div>
+
+  <div class="tad-quick-btns" id="tad-quick-btns">
+    <button class="tad-quick-btn" onclick="tadSendQuick('Tenho dor na coluna')">Dor na coluna</button>
+    <button class="tad-quick-btn" onclick="tadSendQuick('Tenho dor no joelho')">Dor no joelho</button>
+    <button class="tad-quick-btn" onclick="tadSendQuick('Quero saber sobre PRP')">PRP</button>
+    <button class="tad-quick-btn" onclick="tadSendQuick('Como funciona a consulta?')">Como funciona</button>
+    <button class="tad-quick-btn" onclick="tadSendQuick('Quero agendar uma consulta')">Agendar</button>
+  </div>
+
+  <div id="tad-input-row">
+    <input id="tad-input" type="text" placeholder="Digite sua dúvida..." maxlength="300" />
+    <button id="tad-send-btn" onclick="tadSend()" aria-label="Enviar">
+      <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+    </button>
+  </div>
+  <div id="tad-footer">Este chat é informativo e não substitui consulta médica.</div>
+</div>
+
+<script>
+(function() {
+  const SYSTEM_PROMPT = `Você é o assistente virtual da Clínica Trate a Dor do Dr. Kleber Rangel, ortopedista especialista em dor em Divinópolis-MG (CRM-MG 68724).
+
+Sua função é informar e converter o visitante para agendar uma consulta presencial.
+
+IDENTIDADE E VOZ:
+- Direto, claro, honesto. Nunca promete resultado.
+- Usa linguagem acessível, sem jargão desnecessário.
+- Tom cálido mas profissional — como um assistente médico competente.
+- Respostas curtas: máximo 3 parágrafos. Nunca listas longas.
+
+CLÍNICA E MÉDICO:
+- Dr. Kleber Rangel: ortopedista, coluna, joelho, ombro, medicina da dor e regenerativa.
+- Localização: Divinópolis, MG. Atendimento particular.
+- Consulta dura 50-60 minutos. Investigação real, não protocolo genérico.
+- Procedimentos: bloqueios guiados por ultrassom, PRP, BMA, ozonioterapia, viscossuplementação.
+- WhatsApp para agendamento: (37) 99841-9396
+- Horário: Seg–Sex 8h–17h
+
+REGRAS CRÍTICAS:
+1. NUNCA faça diagnóstico. Descreva possibilidades, sempre diga que só a avaliação confirma.
+2. NUNCA dê dosagem de medicamento ou prescrição.
+3. Se a dúvida for urgente (dor aguda grave, perda de força, incontinência), oriente buscar pronto-socorro.
+4. Quando o paciente demonstrar interesse em consulta ou procedimento, ofereça o WhatsApp.
+5. Responda APENAS em português brasileiro.
+6. Máximo 150 palavras por resposta.
+
+CONVERSÃO:
+Quando perceber interesse real (pergunta sobre preço, disponibilidade, procedimento específico), inclua no final:
+"→ Para agendar: [WhatsApp (37) 99841-9396](https://wa.me/5537998419396?text=Olá Dr. Kleber, vim pelo site e gostaria de agendar uma consulta.)"`;
+
+  let history = [];
+  let isOpen = false;
+  let initialized = false;
+
+  const btn = document.getElementById('tad-chat-btn');
+  const win = document.getElementById('tad-chat-window');
+  const msgs = document.getElementById('tad-messages');
+  const input = document.getElementById('tad-input');
+  const closeBtn = document.getElementById('tad-close-btn');
+  const quickBtns = document.getElementById('tad-quick-btns');
+
+  btn.addEventListener('click', () => {
+    isOpen = !isOpen;
+    win.classList.toggle('open', isOpen);
+    if (isOpen && !initialized) {
+      initialized = true;
+      addMsg('bot', 'Olá! Sou o assistente da Clínica Trate a Dor. Posso te ajudar com dúvidas sobre tratamentos, procedimentos ou como funciona a consulta com o Dr. Kleber. Como posso ajudar?');
+    }
+    if (isOpen) input.focus();
+  });
+
+  closeBtn.addEventListener('click', () => {
+    isOpen = false;
+    win.classList.remove('open');
+  });
+
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); tadSend(); }
+  });
+
+  function addMsg(role, text) {
+    const div = document.createElement('div');
+    div.className = `tad-msg ${role}`;
+    div.innerHTML = text.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="tad-wpp-btn">$1</a>').replace(/\n/g, '<br>');
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+    return div;
+  }
+
+  function showTyping() {
+    const div = addMsg('bot typing', '...');
+    return div;
+  }
+
+  window.tadSendQuick = function(text) {
+    if (quickBtns) quickBtns.style.display = 'none';
+    input.value = text;
+    tadSend();
+  };
+
+  window.tadSend = async function() {
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+
+    addMsg('user', text);
+    history.push({ role: 'user', content: text });
+
+    const typing = showTyping();
+
+    try {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 400,
+          system: SYSTEM_PROMPT,
+          messages: history
+        })
+      });
+
+      const data = await res.json();
+      const reply = data.content?.[0]?.text || 'Desculpe, não consegui processar. Fale diretamente pelo WhatsApp: (37) 99841-9396';
+
+      typing.remove();
+      addMsg('bot', reply);
+      history.push({ role: 'assistant', content: reply });
+
+      // Limita histórico a 10 mensagens
+      if (history.length > 20) history = history.slice(-20);
+
+    } catch (err) {
+      typing.remove();
+      addMsg('bot', 'Tive um problema técnico. Fale diretamente pelo <a href="https://wa.me/5537998419396" target="_blank" class="tad-wpp-btn">WhatsApp (37) 99841-9396</a>');
+    }
+  };
+})();
+</script>
 </body>
 </html><div class="trat-grid">
       <div class="trat-card">
@@ -587,5 +910,328 @@ footer a{color:rgba(255,255,255,0.45);text-decoration:none;margin:0 8px;font-siz
   <a href="tel:+5537998419396" style="display:flex;align-items:center;justify-content:center;gap:6px;background:var(--warm);color:var(--teal);padding:12px 16px;border-radius:12px;text-decoration:none;font-weight:600;font-size:14px;border:1px solid #E8E0D8;flex:1;">📞 Ligar</a>
 </div>
 <script>window.addEventListener('scroll',function(){document.getElementById('fcta').classList.toggle('show',window.scrollY>400);},{passive:true});</script>
+<style>
+#tad-chat-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  background: #0B2444;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(11,36,68,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+#tad-chat-btn:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(11,36,68,0.45); }
+#tad-chat-btn svg { width: 28px; height: 28px; fill: white; }
+
+#tad-chat-window {
+  position: fixed;
+  bottom: 96px;
+  right: 24px;
+  width: 360px;
+  max-height: 520px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  display: none;
+  flex-direction: column;
+  z-index: 9998;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+#tad-chat-window.open { display: flex; }
+
+#tad-chat-header {
+  background: #0B2444;
+  color: white;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+#tad-chat-header .avatar {
+  width: 38px; height: 38px;
+  background: #1E6FBF;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; font-weight: 700; color: white; flex-shrink: 0;
+}
+#tad-chat-header .info { flex: 1; }
+#tad-chat-header .info strong { display: block; font-size: 0.9rem; }
+#tad-chat-header .info span { font-size: 0.72rem; opacity: 0.7; }
+#tad-close-btn {
+  background: none; border: none; color: rgba(255,255,255,0.7);
+  font-size: 1.3rem; cursor: pointer; padding: 0; line-height: 1;
+}
+#tad-close-btn:hover { color: white; }
+
+#tad-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: #f8f8f6;
+}
+
+.tad-msg {
+  max-width: 85%;
+  padding: 0.6rem 0.9rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.tad-msg.bot {
+  background: white;
+  border: 1px solid #e0e0e0;
+  color: #1a1a1a;
+  align-self: flex-start;
+  border-radius: 4px 12px 12px 12px;
+}
+.tad-msg.user {
+  background: #0B2444;
+  color: white;
+  align-self: flex-end;
+  border-radius: 12px 4px 12px 12px;
+}
+.tad-msg.typing { opacity: 0.6; font-style: italic; }
+
+.tad-quick-btns {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+  padding: 0 1rem 0.5rem;
+  background: #f8f8f6;
+}
+.tad-quick-btn {
+  background: white; border: 1px solid #1E6FBF;
+  color: #1E6FBF; padding: 0.35rem 0.7rem;
+  border-radius: 20px; font-size: 0.78rem;
+  cursor: pointer; font-family: Arial, sans-serif;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.tad-quick-btn:hover { background: #1E6FBF; color: white; }
+
+#tad-input-row {
+  display: flex;
+  padding: 0.75rem;
+  gap: 0.5rem;
+  background: white;
+  border-top: 1px solid #e0e0e0;
+}
+#tad-input {
+  flex: 1;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.875rem;
+  font-family: Arial, sans-serif;
+  outline: none;
+  resize: none;
+}
+#tad-input:focus { border-color: #1E6FBF; }
+#tad-send-btn {
+  background: #0B2444;
+  border: none; border-radius: 50%;
+  width: 36px; height: 36px;
+  cursor: pointer; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s;
+}
+#tad-send-btn:hover { background: #1E6FBF; }
+#tad-send-btn svg { width: 16px; height: 16px; fill: white; }
+
+#tad-footer {
+  text-align: center;
+  font-size: 0.68rem;
+  color: #999;
+  padding: 0.4rem;
+  background: white;
+  border-top: 1px solid #f0f0f0;
+}
+
+.tad-wpp-btn {
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 400px) {
+  #tad-chat-window { width: calc(100vw - 24px); right: 12px; bottom: 84px; }
+  #tad-chat-btn { bottom: 16px; right: 16px; }
+}
+</style>
+
+<!-- BOTÃO FLUTUANTE -->
+<button id="tad-chat-btn" aria-label="Abrir chat">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+  </svg>
+</button>
+
+<!-- JANELA DO CHAT -->
+<div id="tad-chat-window">
+  <div id="tad-chat-header">
+    <div class="avatar">KR</div>
+    <div class="info">
+      <strong>Assistente — Trate a Dor</strong>
+      <span>Dr. Kleber Rangel · CRM-MG 68724</span>
+    </div>
+    <button id="tad-close-btn" aria-label="Fechar">✕</button>
+  </div>
+
+  <div id="tad-messages"></div>
+
+  <div class="tad-quick-btns" id="tad-quick-btns">
+    <button class="tad-quick-btn" onclick="tadSendQuick('Tenho dor na coluna')">Dor na coluna</button>
+    <button class="tad-quick-btn" onclick="tadSendQuick('Tenho dor no joelho')">Dor no joelho</button>
+    <button class="tad-quick-btn" onclick="tadSendQuick('Quero saber sobre PRP')">PRP</button>
+    <button class="tad-quick-btn" onclick="tadSendQuick('Como funciona a consulta?')">Como funciona</button>
+    <button class="tad-quick-btn" onclick="tadSendQuick('Quero agendar uma consulta')">Agendar</button>
+  </div>
+
+  <div id="tad-input-row">
+    <input id="tad-input" type="text" placeholder="Digite sua dúvida..." maxlength="300" />
+    <button id="tad-send-btn" onclick="tadSend()" aria-label="Enviar">
+      <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+    </button>
+  </div>
+  <div id="tad-footer">Este chat é informativo e não substitui consulta médica.</div>
+</div>
+
+<script>
+(function() {
+  const SYSTEM_PROMPT = `Você é o assistente virtual da Clínica Trate a Dor do Dr. Kleber Rangel, ortopedista especialista em dor em Divinópolis-MG (CRM-MG 68724).
+
+Sua função é informar e converter o visitante para agendar uma consulta presencial.
+
+IDENTIDADE E VOZ:
+- Direto, claro, honesto. Nunca promete resultado.
+- Usa linguagem acessível, sem jargão desnecessário.
+- Tom cálido mas profissional — como um assistente médico competente.
+- Respostas curtas: máximo 3 parágrafos. Nunca listas longas.
+
+CLÍNICA E MÉDICO:
+- Dr. Kleber Rangel: ortopedista, coluna, joelho, ombro, medicina da dor e regenerativa.
+- Localização: Divinópolis, MG. Atendimento particular.
+- Consulta dura 50-60 minutos. Investigação real, não protocolo genérico.
+- Procedimentos: bloqueios guiados por ultrassom, PRP, BMA, ozonioterapia, viscossuplementação.
+- WhatsApp para agendamento: (37) 99841-9396
+- Horário: Seg–Sex 8h–17h
+
+REGRAS CRÍTICAS:
+1. NUNCA faça diagnóstico. Descreva possibilidades, sempre diga que só a avaliação confirma.
+2. NUNCA dê dosagem de medicamento ou prescrição.
+3. Se a dúvida for urgente (dor aguda grave, perda de força, incontinência), oriente buscar pronto-socorro.
+4. Quando o paciente demonstrar interesse em consulta ou procedimento, ofereça o WhatsApp.
+5. Responda APENAS em português brasileiro.
+6. Máximo 150 palavras por resposta.
+
+CONVERSÃO:
+Quando perceber interesse real (pergunta sobre preço, disponibilidade, procedimento específico), inclua no final:
+"→ Para agendar: [WhatsApp (37) 99841-9396](https://wa.me/5537998419396?text=Olá Dr. Kleber, vim pelo site e gostaria de agendar uma consulta.)"`;
+
+  let history = [];
+  let isOpen = false;
+  let initialized = false;
+
+  const btn = document.getElementById('tad-chat-btn');
+  const win = document.getElementById('tad-chat-window');
+  const msgs = document.getElementById('tad-messages');
+  const input = document.getElementById('tad-input');
+  const closeBtn = document.getElementById('tad-close-btn');
+  const quickBtns = document.getElementById('tad-quick-btns');
+
+  btn.addEventListener('click', () => {
+    isOpen = !isOpen;
+    win.classList.toggle('open', isOpen);
+    if (isOpen && !initialized) {
+      initialized = true;
+      addMsg('bot', 'Olá! Sou o assistente da Clínica Trate a Dor. Posso te ajudar com dúvidas sobre tratamentos, procedimentos ou como funciona a consulta com o Dr. Kleber. Como posso ajudar?');
+    }
+    if (isOpen) input.focus();
+  });
+
+  closeBtn.addEventListener('click', () => {
+    isOpen = false;
+    win.classList.remove('open');
+  });
+
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); tadSend(); }
+  });
+
+  function addMsg(role, text) {
+    const div = document.createElement('div');
+    div.className = `tad-msg ${role}`;
+    div.innerHTML = text.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="tad-wpp-btn">$1</a>').replace(/\n/g, '<br>');
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+    return div;
+  }
+
+  function showTyping() {
+    const div = addMsg('bot typing', '...');
+    return div;
+  }
+
+  window.tadSendQuick = function(text) {
+    if (quickBtns) quickBtns.style.display = 'none';
+    input.value = text;
+    tadSend();
+  };
+
+  window.tadSend = async function() {
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+
+    addMsg('user', text);
+    history.push({ role: 'user', content: text });
+
+    const typing = showTyping();
+
+    try {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 400,
+          system: SYSTEM_PROMPT,
+          messages: history
+        })
+      });
+
+      const data = await res.json();
+      const reply = data.content?.[0]?.text || 'Desculpe, não consegui processar. Fale diretamente pelo WhatsApp: (37) 99841-9396';
+
+      typing.remove();
+      addMsg('bot', reply);
+      history.push({ role: 'assistant', content: reply });
+
+      // Limita histórico a 10 mensagens
+      if (history.length > 20) history = history.slice(-20);
+
+    } catch (err) {
+      typing.remove();
+      addMsg('bot', 'Tive um problema técnico. Fale diretamente pelo <a href="https://wa.me/5537998419396" target="_blank" class="tad-wpp-btn">WhatsApp (37) 99841-9396</a>');
+    }
+  };
+})();
+</script>
 </body>
 </html>
