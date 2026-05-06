@@ -273,7 +273,7 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-8 md:py-24">
+        <div style="display:flex;flex-wrap:wrap;gap:0.75rem 1.5rem;">
 
             <!-- ESQUERDA: copy -->
             <div class="fade-up" style="opacity:1;transform:none;">
@@ -1129,5 +1129,14 @@ Quando perceber interesse real (pergunta sobre preço, disponibilidade, procedim
 })();
 </script>
 <script src="/chatbot.js" defer></script>
+<style>
+/* Chatbot — posição definitiva mobile */
+#tad-btn{bottom:130px!important;z-index:8000!important}
+#tad-win{z-index:7999!important;max-height:min(420px,55vh)!important}
+@media(max-width:640px){
+  #tad-btn{bottom:130px!important;left:16px!important;right:auto!important;width:44px!important;height:44px!important}
+  #tad-win{bottom:182px!important;left:8px!important;right:auto!important;width:calc(100vw - 16px)!important;max-height:48vh!important}
+}
+</style>
 </body>
 </html>
