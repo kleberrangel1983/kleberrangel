@@ -2,7 +2,7 @@
   if (window.__tadChatLoaded) return;
   window.__tadChatLoaded = true;
 
-  const SYSTEM_PROMPT = `Você é Luna, assistente virtual educativa da Clínica Trate a Dor / Dr. Kleber Rangel, ortopedista em Divinópolis-MG (CRM-MG 68724).
+  const SYSTEM_PROMPT = `Você é o assistente virtual do Dr. Kleber Rangel, ortopedista da Clínica Trate a Dor / Dr. Kleber Rangel, ortopedista em Divinópolis-MG (CRM-MG 68724).
 
 FUNÇÃO: Responder dúvidas simples de pacientes leigos sobre dor ortopédica. Seu objetivo é educar, orientar com segurança e reduzir ansiedade — não vender consulta de forma agressiva.
 
@@ -52,7 +52,7 @@ RESPOSTAS PADRÃO:
 
 TOM: claro, calmo, direto, acolhedor, prudente. Sem prometer resultado. Sem forçar consulta.
 
-IDENTIDADE: Você é Luna. Não é médica. Não substitui o Dr. Kleber. Não fecha diagnóstico. Orienta com clareza e segurança.`;
+IDENTIDADE: Você é o assistente virtual do Dr. Kleber. Não substitui o médico. Não fecha diagnóstico. Orienta com clareza e segurança.`;
 
   const CSS = `
 #tad-btn{position:fixed;bottom:100px;right:20px;width:50px;height:50px;background:#0B2444;border-radius:50%;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(11,36,68,.3);display:flex;align-items:center;justify-content:center;z-index:8500;transition:transform .2s}
@@ -92,13 +92,13 @@ IDENTIDADE: Você é Luna. Não é médica. Não substitui o Dr. Kleber. Não fe
   document.head.appendChild(style);
 
   document.body.insertAdjacentHTML('beforeend', `
-<button id="tad-btn" aria-label="Falar com Luna — assistente da clínica">
+<button id="tad-btn" aria-label="Dr. Kleber Responde — falar com assistente">
   <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
 </button>
-<div id="tad-win" role="dialog" aria-label="Luna — assistente virtual Trate a Dor">
+<div id="tad-win" role="dialog" aria-label="Dr. Kleber Responde — assistente virtual">
   <div id="tad-hdr">
-    <div class="av">🌙</div>
-    <div class="inf"><strong>Luna — Assistente Virtual</strong><span>Clínica Trate a Dor · Informativo</span></div>
+    <div class="av">KR</div>
+    <div class="inf"><strong>Dr. Kleber Responde</strong><span>Assistente virtual · Clínica Trate a Dor</span></div>
     <button id="tad-x" aria-label="Fechar">✕</button>
   </div>
   <div id="tad-msgs"></div>
@@ -128,7 +128,7 @@ IDENTIDADE: Você é Luna. Não é médica. Não substitui o Dr. Kleber. Não fe
     win.classList.toggle('open', open);
     if (open && !init) {
       init = true;
-      addMsg('bot', 'Olá, eu sou a Luna, assistente virtual da clínica. Posso te ajudar com dúvidas gerais sobre dor na coluna, joelho, ombro e tratamentos ortopédicos. Minhas respostas são educativas e não substituem uma consulta médica.');
+      addMsg('bot', 'Olá! Aqui é o assistente do Dr. Kleber Rangel. Posso te ajudar com dúvidas sobre dor na coluna, joelho, ombro e tratamentos ortopédicos. As respostas são educativas e não substituem uma consulta médica.');
     }
     if (open) inp.focus();
   });
