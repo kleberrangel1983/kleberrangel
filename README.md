@@ -305,3 +305,5 @@ build/
 **Versão:** 1.0  
 **Data:** Abril 2026  
 **Responsável:** Dr. Kleber Rangel (CRM-MG 68724)
+
+<!-- deploy: 2026-05-06T17:06:09.997674 -->
