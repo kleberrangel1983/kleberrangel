@@ -55,10 +55,10 @@ TOM: claro, calmo, direto, acolhedor, prudente. Sem prometer resultado. Sem for�
 IDENTIDADE: Você é o assistente virtual do Dr. Kleber. Não substitui o médico. Não fecha diagnóstico. Orienta com clareza e segurança.`;
 
   const CSS = `
-#tad-btn{position:fixed;bottom:110px;right:20px;width:50px;height:50px;background:#0B2444;border-radius:50%;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(11,36,68,.3);display:flex;align-items:center;justify-content:center;z-index:8500;transition:transform .2s}
+#tad-btn{position:fixed;bottom:130px;right:20px;width:50px;height:50px;background:#0B2444;border-radius:50%;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(11,36,68,.3);display:flex;align-items:center;justify-content:center;z-index:8500;transition:transform .2s}
 #tad-btn:hover{transform:scale(1.08)}
 #tad-btn svg{width:24px;height:24px;fill:white}
-#tad-win{position:fixed;bottom:168px;right:16px;width:330px;max-height:440px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.15);display:none;flex-direction:column;z-index:8499;overflow:hidden;font-family:Arial,sans-serif}
+#tad-win{position:fixed;bottom:182px;right:16px;width:330px;max-height:440px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.15);display:none;flex-direction:column;z-index:8499;overflow:hidden;font-family:Arial,sans-serif}
 #tad-win.open{display:flex}
 #tad-hdr{background:#0B2444;color:white;padding:.75rem .85rem;display:flex;align-items:center;gap:.55rem;min-height:52px}
 #tad-hdr .av{width:36px;height:36px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid rgba(255,255,255,0.3)}
@@ -82,7 +82,7 @@ IDENTIDADE: Você é o assistente virtual do Dr. Kleber. Não substitui o médic
 #tad-snd:hover{background:#1E6FBF}
 #tad-snd svg{width:14px;height:14px;fill:white}
 #tad-foot{text-align:center;font-size:.65rem;color:#bbb;padding:.35rem;background:white;border-top:1px solid #f0f0f0}
-@media(max-width:640px){#tad-btn{bottom:120px;right:auto;left:16px;width:44px;height:44px}#tad-win{left:8px;right:auto;bottom:174px;width:calc(100vw - 16px);max-height:50vh}}`;
+@media(max-width:640px){#tad-btn{bottom:130px;right:auto;left:16px;width:44px;height:44px}#tad-win{bottom:182px;left:8px;right:auto;width:calc(100vw - 16px);max-height:48vh}}`;
 
   const style = document.createElement('style');
   style.textContent = CSS;
