@@ -114,6 +114,10 @@
         .nav-link{font-size:0.875rem;font-weight:500;color:var(--muted);transition:color 0.2s;}
         .nav-link:hover{color:var(--teal);}
 
+
+        /* ── NAV DESKTOP — independente de Tailwind ── */
+        .nav-desktop-links{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+        @media(max-width:768px){.nav-desktop-links{display:none;}}
         /* ── ANIMAÇÕES ── */
         @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
         .fade-up{animation:fadeUp 0.7s ease both;}
@@ -168,7 +172,7 @@
                     <div class="text-xs" style="color:var(--muted);">Ortopedista e Traumatologista · CRM-MG 68724</div>
                 </div>
             </a>
-            <div class="hidden md:flex items-center gap-6">
+            <div class="nav-desktop-links">
                 <a href="#metodo" class="nav-link">Método</a>
                 <a href="#tratamentos" class="nav-link">Tratamentos</a>
                 <a href="#sobre" class="nav-link">Sobre</a>
