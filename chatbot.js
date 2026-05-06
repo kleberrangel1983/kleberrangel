@@ -61,7 +61,7 @@ Quando perceber interesse real, inclua no final:
 #tad-snd:hover{background:#1E6FBF}
 #tad-snd svg{width:15px;height:15px;fill:white}
 #tad-foot{text-align:center;font-size:.65rem;color:#aaa;padding:.35rem;background:white;border-top:1px solid #f0f0f0}
-@media(max-width:600px){#tad-win{width:calc(100vw - 16px);right:8px;bottom:148px;max-height:360px}#tad-btn{bottom:90px;right:12px;width:44px;height:44px}}
+@media(max-width:600px){#tad-win{width:calc(100vw - 16px);left:8px;right:auto;bottom:148px;max-height:360px}#tad-btn{bottom:90px;left:16px;right:auto;width:44px;height:44px}}
 `;
 
   // Injeta CSS
