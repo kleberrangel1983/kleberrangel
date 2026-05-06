@@ -34,10 +34,10 @@ Quando perceber interesse real, inclua no final:
 "→ Para agendar: [WhatsApp (37) 99841-9396](https://wa.me/5537998419396?text=Olá Dr. Kleber, vim pelo site e gostaria de agendar uma consulta.)"`;
 
   const CSS = `
-#tad-btn{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#0B2444;border-radius:50%;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(11,36,68,.35);display:flex;align-items:center;justify-content:center;z-index:9999;transition:transform .2s}
+#tad-btn{position:fixed;bottom:90px;right:16px;width:48px;height:48px;background:#0B2444;border-radius:50%;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(11,36,68,.3);display:flex;align-items:center;justify-content:center;z-index:9000;transition:transform .2s}
 #tad-btn:hover{transform:scale(1.08)}
 #tad-btn svg{width:26px;height:26px;fill:white}
-#tad-win{position:fixed;bottom:92px;right:24px;width:340px;max-height:500px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.18);display:none;flex-direction:column;z-index:9998;overflow:hidden;font-family:Arial,sans-serif}
+#tad-win{position:fixed;bottom:148px;right:8px;width:320px;max-height:420px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.18);display:none;flex-direction:column;z-index:8999;overflow:hidden;font-family:Arial,sans-serif}
 #tad-win.open{display:flex}
 #tad-hdr{background:#0B2444;color:white;padding:.85rem 1rem;display:flex;align-items:center;gap:.65rem}
 #tad-hdr .av{width:34px;height:34px;background:#1E6FBF;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:700;color:white;flex-shrink:0}
@@ -61,7 +61,7 @@ Quando perceber interesse real, inclua no final:
 #tad-snd:hover{background:#1E6FBF}
 #tad-snd svg{width:15px;height:15px;fill:white}
 #tad-foot{text-align:center;font-size:.65rem;color:#aaa;padding:.35rem;background:white;border-top:1px solid #f0f0f0}
-@media(max-width:400px){#tad-win{width:calc(100vw - 20px);right:10px;bottom:80px}#tad-btn{bottom:14px;right:14px}}
+@media(max-width:600px){#tad-win{width:calc(100vw - 16px);right:8px;bottom:148px;max-height:360px}#tad-btn{bottom:90px;right:12px;width:44px;height:44px}}
 `;
 
   // Injeta CSS
