@@ -82,6 +82,11 @@
       "permanent": true
     },
     {
+      "source": "/dor-na-coluna",
+      "destination": "/blog/dor-na-coluna",
+      "permanent": true
+    },
+    {
       "source": "/coluna",
       "destination": "/coluna.html",
       "permanent": true
