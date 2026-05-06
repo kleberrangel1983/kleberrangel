@@ -95,7 +95,7 @@ IDENTIDADE: Você é o assistente virtual do Dr. Kleber. Não substitui o médic
 <div id="tad-win" role="dialog" aria-label="Dr. Kleber Responde — assistente virtual">
   <div id="tad-hdr">
     <div class="av"><img src="/assets/dr-kleber-avatar-80.webp" alt="Dr. Kleber" width="36" height="36" style="width:100%;height:100%;object-fit:cover;border-radius:50%" onerror="this.style.display='none';this.parentNode.innerHTML='KR'"></div>
-    <div class="inf"><strong>Dr. Kleber Responde</strong><span>Trate a Dor · Informativo</span></div>
+    <div class="inf"><strong>Dr. Rangel Responde</strong><span>Assistente do Dr. Kleber · Informativo</span></div>
     <button id="tad-x" aria-label="Fechar">✕</button>
   </div>
   <div id="tad-msgs"></div>
