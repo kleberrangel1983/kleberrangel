@@ -163,6 +163,26 @@
       "source": "/formiga",
       "destination": "/formiga.html",
       "permanent": false
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/index.html",
+      "permanent": false
+    },
+    {
+      "source": "/bloqueio-guiado-ultrassom-divinopolis",
+      "destination": "/bloqueio-guiado-ultrassom-divinopolis.html",
+      "permanent": false
+    },
+    {
+      "source": "/prp-joelho-divinopolis",
+      "destination": "/prp-joelho-divinopolis.html",
+      "permanent": false
+    },
+    {
+      "source": "/ozonioterapia-coluna-divinopolis",
+      "destination": "/ozonioterapia-coluna-divinopolis.html",
+      "permanent": false
     }
   ]
 }
