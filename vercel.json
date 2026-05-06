@@ -70,123 +70,84 @@
       "permanent": true
     },
     {
-      "source": "/coluna",
-      "destination": "/coluna.html",
-      "permanent": false
+      "source": "/termos",
+      "destination": "/termos.html",
+      "permanent": true
     },
     {
-      "source": "/joelho",
-      "destination": "/joelho.html",
-      "permanent": false
-    },
-    {
-      "source": "/prp",
-      "destination": "/prp.html",
-      "permanent": false
-    },
-    {
-      "source": "/ombro",
-      "destination": "/ombro.html",
-      "permanent": false
-    },
-    {
-      "source": "/medicina-regenerativa",
-      "destination": "/medicina-regenerativa.html",
-      "permanent": false
-    },
-    {
-      "source": "/blog/dor-na-coluna",
-      "destination": "/blog/dor-na-coluna.html",
-      "permanent": false
-    },
-    {
-      "source": "/blog/hernia-de-disco",
-      "destination": "/blog/hernia-de-disco.html",
-      "permanent": false
-    },
-    {
-      "source": "/blog/artrose-joelho",
-      "destination": "/blog/artrose-joelho.html",
-      "permanent": false
-    },
-    {
-      "source": "/blog/condromalacia",
-      "destination": "/blog/condromalacia.html",
-      "permanent": false
-    },
-    {
-      "source": "/blog/quando-fazer-cirurgia-joelho",
-      "destination": "/blog/quando-fazer-cirurgia-joelho.html",
-      "permanent": false
-    },
-    {
-      "source": "/blog/dor-cronica",
-      "destination": "/blog/dor-cronica.html",
-      "permanent": false
-    },
-    {
-      "source": "/blog/prp-tratamento",
-      "destination": "/blog/prp-tratamento.html",
-      "permanent": false
-    },
-    {
-      "source": "/ozonoterapia-divinopolis",
-      "destination": "/ozonoterapia-divinopolis.html",
-      "permanent": false
-    },
-    {
-      "source": "/lp-dor-coluna",
-      "destination": "/lp-dor-coluna.html",
-      "permanent": false
-    },
-    {
-      "source": "/itauna",
-      "destination": "/itauna.html",
-      "permanent": false
-    },
-    {
-      "source": "/claudio",
-      "destination": "/claudio.html",
-      "permanent": false
-    },
-    {
-      "source": "/para-de-minas",
-      "destination": "/para-de-minas.html",
-      "permanent": false
-    },
-    {
-      "source": "/nova-serrana",
-      "destination": "/nova-serrana.html",
-      "permanent": false
-    },
-    {
-      "source": "/formiga",
-      "destination": "/formiga.html",
-      "permanent": false
-    },
-    {
-      "source": "/blog",
-      "destination": "/blog/index.html",
-      "permanent": false
-    },
-    {
-      "source": "/bloqueio-guiado-ultrassom-divinopolis",
-      "destination": "/bloqueio-guiado-ultrassom-divinopolis.html",
-      "permanent": false
-    },
-    {
-      "source": "/prp-joelho-divinopolis",
-      "destination": "/prp-joelho-divinopolis.html",
-      "permanent": false
-    },
-    {
-      "source": "/ozonioterapia-coluna-divinopolis",
-      "destination": "/ozonioterapia-coluna-divinopolis.html",
+      "source": "/politica-de-privacidade",
+      "destination": "/politica-privacidade.html",
       "permanent": false
     }
   ],
-  "buildCommand": null,
-  "outputDirectory": ".",
-  "installCommand": null,
-  "framework": null
+  "rewrites": [
+    {
+      "source": "/coluna",
+      "destination": "/coluna.html"
+    },
+    {
+      "source": "/joelho",
+      "destination": "/joelho.html"
+    },
+    {
+      "source": "/ombro",
+      "destination": "/ombro.html"
+    },
+    {
+      "source": "/prp",
+      "destination": "/prp.html"
+    },
+    {
+      "source": "/medicina-regenerativa",
+      "destination": "/medicina-regenerativa.html"
+    },
+    {
+      "source": "/ozonoterapia-divinopolis",
+      "destination": "/ozonoterapia-divinopolis.html"
+    },
+    {
+      "source": "/lp-dor-coluna",
+      "destination": "/lp-dor-coluna.html"
+    },
+    {
+      "source": "/bloqueio-guiado-ultrassom-divinopolis",
+      "destination": "/bloqueio-guiado-ultrassom-divinopolis.html"
+    },
+    {
+      "source": "/prp-joelho-divinopolis",
+      "destination": "/prp-joelho-divinopolis.html"
+    },
+    {
+      "source": "/ozonioterapia-coluna-divinopolis",
+      "destination": "/ozonioterapia-coluna-divinopolis.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/blog/:path*.html"
+    },
+    {
+      "source": "/formiga",
+      "destination": "/formiga.html"
+    },
+    {
+      "source": "/itauna",
+      "destination": "/itauna.html"
+    },
+    {
+      "source": "/nova-serrana",
+      "destination": "/nova-serrana.html"
+    },
+    {
+      "source": "/para-de-minas",
+      "destination": "/para-de-minas.html"
+    },
+    {
+      "source": "/politica-privacidade",
+      "destination": "/politica-privacidade.html"
+    }
+  ]
 }
