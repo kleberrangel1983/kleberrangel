@@ -938,22 +938,36 @@ function playYTVertical(el,id){var i=document.createElement('iframe');i.src='htt
     history.push({role:'user',content:text});
     var typing = addMsg('bot','...');
     typing.style.opacity = '0.4';
-    try {
-      var res = await fetch('https://api.anthropic.com/v1/messages',{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:300,system:SYSTEM,messages:history})
-      });
-      var data = await res.json();
-      var reply = data.content?.[0]?.text || 'Tive um problema. Fale pelo [WhatsApp](https://wa.me/5537998419396).';
-      typing.remove();
-      addMsg('bot', reply);
-      history.push({role:'assistant',content:reply});
-      if(history.length > 16) history = history.slice(-16);
-    } catch(e) {
-      typing.remove();
-      addMsg('bot','Tive um problema técnico. Fale pelo [WhatsApp (37) 99841-9396](https://wa.me/5537998419396).');
+    // Respostas inteligentes baseadas em palavras-chave
+    await new Promise(r => setTimeout(r, 800));
+    typing.remove();
+    var t = text.toLowerCase();
+    var reply = '';
+    if(t.match(/consul|agendar|marcar|horário|disponib/)){
+      reply = 'Para agendar uma consulta com o Dr. Kleber, entre em contato pelo WhatsApp. A consulta dura 50 a 60 minutos e inclui exame físico completo e leitura dos seus exames.\n→ [Agendar pelo WhatsApp](https://wa.me/5537998419396?text=Olá Dr. Kleber, vim pelo site e gostaria de agendar uma consulta.)';
+    } else if(t.match(/preço|valor|custa|quanto/)){
+      reply = 'O valor da consulta pode ser obtido diretamente com a equipe. Os procedimentos, quando indicados, são orçados apenas após a avaliação médica.\n→ [Perguntar pelo WhatsApp](https://wa.me/5537998419396?text=Olá, gostaria de saber o valor da consulta.)';
+    } else if(t.match(/prp|plasma|plaqueta/)){
+      reply = 'O PRP pode ser indicado em casos selecionados de artrose de joelho, tendinopatias e outras condições. A indicação depende do diagnóstico — não é indicado para todo mundo. A avaliação define se faz sentido para o seu caso.';
+    } else if(t.match(/cirurgia|operar|operação/)){
+      reply = 'Nem todo caso precisa de cirurgia. Em muitos casos existem alternativas menos invasivas. A decisão depende do diagnóstico, grau da lesão e histórico do paciente. A consulta avalia o que faz mais sentido para o seu caso específico.';
+    } else if(t.match(/coluna|lombar|hérnia|disc[o]/)){
+      reply = 'Dor na coluna pode ter várias causas — hérnia de disco, dor facetária, articulação sacroilíaca, entre outras. Identificar a origem correta é o que define o tratamento. A consulta inclui exame físico detalhado e leitura das suas imagens.';
+    } else if(t.match(/joelho|artrose|menisco/)){
+      reply = 'Dor no joelho pode ter relação com artrose, condromalácia, lesão de menisco ou tendinopatia. O diagnóstico correto é o que define o tratamento — inclusive se há indicação de PRP, viscossuplementação ou outro recurso.';
+    } else if(t.match(/ombro|bursite|manguito|tendin/)){
+      reply = 'Dor no ombro pode ser bursite, tendinite, lesão do manguito rotador ou até dor vinda da coluna cervical. Por isso o exame clínico é fundamental — tratar sem saber a causa pode não resolver.';
+    } else if(t.match(/convênio|plano|reembolso/)){
+      reply = 'O atendimento do Dr. Kleber é particular. Emitimos nota fiscal, o que pode permitir reembolso junto ao seu plano de saúde — verifique as condições do seu plano.';
+    } else if(t.match(/ozônio|ozon/)){
+      reply = 'A ozonioterapia é indicada em casos selecionados — hérnia de disco, artrose e algumas tendinopatias. A indicação depende do diagnóstico e da avaliação clínica individual.';
+    } else if(t.match(/bloqueio|infiltr|ultrassom/)){
+      reply = 'Os bloqueios guiados por ultrassom permitem que o medicamento chegue exatamente na estrutura que está causando a dor. A indicação depende do diagnóstico — nem todo caso precisa de procedimento.';
+    } else {
+      reply = 'Boa pergunta. Para uma resposta precisa sobre o seu caso, o ideal é uma avaliação com o Dr. Kleber — a consulta dura 50 a 60 minutos e inclui exame físico e análise dos seus exames.\n→ [Falar com a equipe](https://wa.me/5537998419396?text=Olá, vim pelo site e tenho uma dúvida.)';
     }
+    addMsg('bot', reply);
+    history.push({role:'assistant',content:reply});
   };
 })();
 </script>
