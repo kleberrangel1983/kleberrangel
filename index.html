@@ -152,6 +152,26 @@
             .timeline { padding-left:24px; }
         }
         @media(max-width:767px){.hero-bg::after{display:none;}}
+
+    /* ── MOBILE CRITICAL — independente de Tailwind ── */
+    @media(max-width:767px){
+      .hidden{display:none!important}
+      .md\:flex,.md\:block,.md\:grid{display:none!important}
+      .sm\:block{display:block!important}
+      body{padding-bottom:80px}
+    }
+    @media(min-width:768px){
+      .hidden{display:none}
+      .md\:flex{display:flex!important}
+      .md\:block{display:block!important}
+      .md\:grid{display:grid!important}
+    }
+    /* Evita chatbot sobrepor footer */
+    #tad-win{max-height:min(440px,60vh)}
+    @media(max-width:640px){
+      #tad-win{max-height:50vh;bottom:160px}
+      #tad-btn{bottom:100px;left:16px;right:auto}
+    }
     </style>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Dr. Kleber Rangel — Apresentação","description":"Apresentação do Dr. Kleber Rangel, ortopedista especialista em medicina da dor em Divinópolis-MG. Tratamentos sem cirurgia para dor na coluna, joelho e articulações.","thumbnailUrl":"https://i.ytimg.com/vi/yI42EaBILQ4/hqdefault.jpg","uploadDate":"2026-04-01","duration":"PT2M35S","embedUrl":"https://www.youtube.com/embed/yI42EaBILQ4","publisher":{"@type":"Person","name":"Dr. Kleber Rangel","url":"https://www.drkleberrangel.com.br"}}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalBusiness","name":"Clínica Trate a Dor","url":"https://www.drkleberrangel.com.br","telephone":"+553799841396","email":"contato@drkleberrangel.com.br","address":{"@type":"PostalAddress","streetAddress":"Av. Antônio Olímpio de Morais, 607, Sala 808","addressLocality":"Divinópolis","addressRegion":"MG","postalCode":"35500-000","addressCountry":"BR"},"geo":{"@type":"GeoCoordinates","latitude":-20.1386,"longitude":-44.8813},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"}],"priceRange":"Particular","medicalSpecialty":"Orthopedic","hasMap":"https://maps.google.com/?q=Av.+Antônio+Olímpio+de+Morais+607+Divinópolis"}</script>
