@@ -7,8 +7,30 @@
 /instagram https://instagram.com/drkleberrangel 301
 /google https://maps.app.goo.gl/PMmPiK5sRZVHzy9K7 301
 
-# Cache busting para assets
-/assets/* /:splat 200
+# Páginas de procedimentos
+/coluna /coluna.html 200
+/joelho /joelho.html 200
+/ombro /ombro.html 200
+/prp /prp.html 200
+/medicina-regenerativa /medicina-regenerativa.html 200
+/ozonoterapia-divinopolis /ozonoterapia-divinopolis.html 200
+/lp-dor-coluna /lp-dor-coluna.html 200
 
-# SPA fallback (se adicionar páginas no futuro)
-/* /index.html 200
+# Páginas SEO novas
+/bloqueio-guiado-ultrassom-divinopolis /bloqueio-guiado-ultrassom-divinopolis.html 200
+/prp-joelho-divinopolis /prp-joelho-divinopolis.html 200
+/ozonioterapia-coluna-divinopolis /ozonioterapia-coluna-divinopolis.html 200
+
+# Blog
+/blog /blog/index.html 200
+/blog/:slug /blog/:slug.html 200
+
+# Páginas de cidades
+/formiga /formiga.html 200
+/itauna /itauna.html 200
+/nova-serrana /nova-serrana.html 200
+/para-de-minas /para-de-minas.html 200
+
+# Páginas legais
+/politica-privacidade /politica-privacidade.html 200
+/politica-de-privacidade /politica-privacidade.html 200
