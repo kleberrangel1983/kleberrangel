@@ -60,10 +60,10 @@ IDENTIDADE: Você é o assistente virtual do Dr. Kleber. Não substitui o médic
 #tad-btn svg{width:24px;height:24px;fill:white}
 #tad-win{position:fixed;bottom:160px;right:16px;width:330px;max-height:440px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.15);display:none;flex-direction:column;z-index:8499;overflow:hidden;font-family:Arial,sans-serif}
 #tad-win.open{display:flex}
-#tad-hdr{background:#0B2444;color:white;padding:.85rem 1rem;display:flex;align-items:center;gap:.65rem}
+#tad-hdr{background:#0B2444;color:white;padding:.75rem .85rem;display:flex;align-items:center;gap:.55rem;min-height:52px}
 #tad-hdr .av{width:36px;height:36px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid rgba(255,255,255,0.3)}
 #tad-hdr .inf{flex:1}
-#tad-hdr .inf strong{display:block;font-size:.85rem}
+#tad-hdr .inf strong{display:block;font-size:.82rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #tad-hdr .inf span{font-size:.68rem;opacity:.7}
 #tad-x{background:none;border:none;color:rgba(255,255,255,.7);font-size:1.1rem;cursor:pointer;padding:0;line-height:1}
 #tad-x:hover{color:white}
@@ -97,7 +97,7 @@ IDENTIDADE: Você é o assistente virtual do Dr. Kleber. Não substitui o médic
 </button>
 <div id="tad-win" role="dialog" aria-label="Dr. Kleber Responde — assistente virtual">
   <div id="tad-hdr">
-    <div class="av"><img src="/assets/dr-kleber-avatar-80.webp" alt="Dr. Kleber Rangel" width="36" height="36" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+    <div class="av"><img src="/assets/dr-kleber-avatar-80.webp" alt="Dr. Kleber" width="36" height="36" style="width:100%;height:100%;object-fit:cover;border-radius:50%" onerror="this.style.display='none';this.parentNode.innerHTML='KR'"></div>
     <div class="inf"><strong>Dr. Kleber Responde</strong><span>Assistente virtual · Clínica Trate a Dor</span></div>
     <button id="tad-x" aria-label="Fechar">✕</button>
   </div>
