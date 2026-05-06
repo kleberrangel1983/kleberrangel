@@ -148,6 +148,10 @@
     {
       "source": "/politica-privacidade",
       "destination": "/politica-privacidade.html"
+    },
+    {
+      "source": "/segunda-opiniao",
+      "destination": "/segunda-opiniao.html"
     }
   ]
 }
