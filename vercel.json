@@ -184,5 +184,9 @@
       "destination": "/ozonioterapia-coluna-divinopolis.html",
       "permanent": false
     }
-  ]
+  ],
+  "buildCommand": null,
+  "outputDirectory": ".",
+  "installCommand": null,
+  "framework": null
 }
