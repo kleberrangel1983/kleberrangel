@@ -124,7 +124,7 @@
 
         /* ── SEÇÃO LOGOS ── */
         .logos-bar{display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:center;}
-        .logos-bar img{height:56px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:0.9;transition:opacity 0.2s;}
+        .logos-bar img{height:56px;width:auto;object-fit:contain;opacity:0.85;transition:opacity 0.2s;}
         .logos-bar img:hover{opacity:1;}
 
         /* ── TIMELINE ── */
@@ -143,7 +143,7 @@
         .faq-icon{transition:transform 0.2s;color:var(--teal);font-size:20px;font-weight:300;}
 
         /* ── NAV ── */
-        .nav-link{font-size:0.875rem;font-weight:500;color:var(--muted);transition:color 0.2s;}
+        .nav-link{font-size:0.875rem;font-weight:500;color:var(--muted);transition:color 0.2s;text-decoration:none;} nav a{text-decoration:none;}
         .nav-link:hover{color:var(--teal);}
 
 
@@ -177,7 +177,7 @@
             .grid { display:block !important; }
             .gap-8 { gap:0; }
             .logos-bar { gap:16px; overflow-x:auto; flex-wrap:nowrap; padding-bottom:8px; justify-content:flex-start; }
-            .logos-bar img { height:36px; flex-shrink:0; filter:brightness(0) invert(1); opacity:0.9; }
+            .logos-bar img { height:36px; flex-shrink:0; opacity:0.85; }
             .card-warm { margin-bottom:16px; }
             .card-gold { margin-bottom:16px; }
             .review-card { margin-bottom:16px; }
@@ -217,7 +217,7 @@
 <nav class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-20">
-            <a href="#" class="flex items-center gap-3">
+            <a href="/" class="flex items-center gap-3" style="text-decoration:none;color:inherit;">
                 <img src="/assets/logo.png" alt="Clínica Trate a Dor" width="48" height="48" style="width:48px;height:48px;object-fit:contain;">
                 <div class="hidden sm:block leading-tight">
                     <div class="font-display font-bold text-base" style="color:var(--teal);">Dr. Kleber Rangel</div>
@@ -365,7 +365,7 @@
 <!-- ══════════════════════════════════════════
      BARRA DE CREDENCIAIS + NÚMEROS
 ══════════════════════════════════════════ -->
-<section style="background:var(--teal);padding:40px 16px;">
+<section style="background:var(--warm-dark);padding:32px 16px;border-top:1px solid var(--warm-dark);">
     <div class="max-w-6xl mx-auto">
         <!-- Logos -->
         <div class="logos-bar mb-8">
@@ -870,7 +870,7 @@ function playYTVertical(el,id){var i=document.createElement('iframe');i.src='htt
         </div>
         <div style="height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin-bottom:28px;"></div>
         <div class="flex flex-col md:flex-row justify-between items-center text-xs" style="color:rgba(255,255,255,0.4);">
-            <div>© 2026 Dr. Kleber Rangel · Ortopedista e Traumatologista · MÉDICO · <span style="color:var(--teal);">CRM-MG 68724 · RQE 43142</span><br>Clínica Trate a Dor · Av. Antônio Olímpio de Morais, 607 — Sala 808, Centro, Divinópolis-MG · contato@drkleberrangel.com.br<br>Conteúdo de caráter informativo e educativo. Não substitui consulta médica presencial. Os resultados dos tratamentos variam de acordo com cada paciente e dependem de avaliação clínica individual. Publicidade médica em conformidade com a Resolução CFM 2.336/2023. Os resultados dos tratamentos podem variar de acordo com cada paciente. A indicação terapêutica é definida após avaliação clínica individual presencial.</div>
+            <div>© 2026 Dr. Kleber Rangel · Ortopedista e Traumatologista · MÉDICO · <span style="color:var(--teal);">CRM-MG 68724 · RQE 43142</span><br>Clínica Trate a Dor · Av. Antônio Olímpio de Morais, 607 — Sala 808, Centro, Divinópolis-MG · contato@drkleberrangel.com.br<br>Conteúdo de caráter informativo e educativo. Não substitui consulta médica presencial. Os resultados dos tratamentos variam conforme cada paciente. A indicação terapêutica é definida após avaliação clínica individual presencial. Publicidade médica em conformidade com a Resolução CFM 2.336/2023.</div>
             <div class="flex gap-6 mt-4 md:mt-0">
                 <a href="/politica-privacidade.html" class="hover:text-white transition">Privacidade</a>
                 <a href="/termos.html" class="hover:text-white transition">Termos</a>
