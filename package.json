@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/main.css --minify",
-    "dev": "tailwindcss -i ./assets/css/input.css -o ./assets/css/main.css --watch"
+    "dev": "tailwindcss -i ./assets/css/input.css -o ./assets/css/main.css --watch",
+    "sync": "node scripts/sync-partials.js"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.19"
