@@ -3,6 +3,11 @@
 .gitignore
 .github
 
+# Build/handoff scripts & docs — never serve publicly
+scripts
+docs
+*.sh
+
 # Docs
 README.md
 *.md
