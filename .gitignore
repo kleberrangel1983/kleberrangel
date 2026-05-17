@@ -60,3 +60,6 @@ credentials.json
 *.bak
 *.backup
 *~
+
+# Archives (never deploy build/source zips)
+*.zip

@@ -39,3 +39,13 @@ build
 .env
 .env.local
 .env.*.local
+
+# Archives — never expose source/build zips publicly
+*.zip
+
+# Orphan root-level image duplicates (canonical copies live in /assets)
+icone_trate_a_dor.png
+ultrassom.jpeg
+COnsultorio_2.jpeg
+consultorio_1.jpeg
+sala_repouso.jpeg
