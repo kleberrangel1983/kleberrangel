@@ -36,8 +36,13 @@ elif command -v magick >/dev/null 2>&1; then ENC="magick"
 elif command -v convert >/dev/null 2>&1; then ENC="convert"
 fi
 if [ -z "$ENC" ]; then
-  echo "ERRO: nenhum encoder encontrado. Instale 'webp' (cwebp) ou ImageMagick." >&2
-  exit 1
+  if [ "$DRY" = 1 ]; then
+    echo "AVISO: nenhum encoder (cwebp/ImageMagick) neste ambiente — --dry-run apenas mostra o plano."
+    ENC="(nenhum — dry-run)"
+  else
+    echo "ERRO: nenhum encoder encontrado. Instale 'webp' (cwebp) ou ImageMagick." >&2
+    exit 1
+  fi
 fi
 echo "Encoder: $ENC | dry-run=$DRY force=$FORCE"
 echo
