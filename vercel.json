@@ -43,6 +43,7 @@
     { "source": "/termos", "destination": "/termos.html", "permanent": true },
     { "source": "/politica-de-privacidade", "destination": "/politica-privacidade.html", "permanent": true },
     { "source": "/dor-na-coluna", "destination": "/blog/dor-na-coluna", "permanent": true },
+    { "source": "/dor-na-coluna.html", "destination": "/blog/dor-na-coluna", "permanent": true },
     { "source": "/agenda", "destination": "https://wa.me/5537998419396?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20minha%20consulta", "permanent": true },
     { "source": "/whatsapp", "destination": "https://wa.me/5537998419396", "permanent": true },
     { "source": "/instagram", "destination": "https://instagram.com/drkleberrangel", "permanent": true },
