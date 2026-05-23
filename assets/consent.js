@@ -49,6 +49,16 @@
     else denyAnalyticsAndAds();
   };
 
+  function buildButton(level, label, style) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('data-consent', level);
+    b.style.cssText = style;
+    b.textContent = label;
+    b.addEventListener('click', function () { window.setConsent(level); });
+    return b;
+  }
+
   function ensureBanner() {
     if (document.getElementById(BANNER_ID)) return;
     var div = document.createElement('div');
@@ -57,18 +67,35 @@
     div.setAttribute('aria-live', 'polite');
     div.setAttribute('aria-label', 'Aviso de cookies');
     div.style.cssText = 'display:none;position:fixed;bottom:0;left:0;right:0;background:#1C1C1C;color:#fff;padding:16px 20px;z-index:9999;font-size:13px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);font-family:Arial,sans-serif;';
-    div.innerHTML = '<div style="max-width:900px;margin:0 auto;">' +
-      '<p style="margin:0 0 6px;font-weight:600;font-size:14px;">Utilizamos cookies</p>' +
-      '<p style="margin:0 0 12px;color:rgba(255,255,255,0.75);font-size:12px;line-height:1.5;">Usamos cookies essenciais para o funcionamento do site, cookies de análise (Google Analytics) e cookies de publicidade (Meta Pixel). Você pode aceitar todos ou apenas os essenciais. <a href="/privacidade" style="color:#C8A96A;text-decoration:underline;">Política de Privacidade</a>.</p>' +
-      '<div style="display:flex;gap:8px;flex-wrap:wrap;">' +
-      '<button type="button" data-consent="all" style="background:#C8A96A;color:#fff;border:none;padding:9px 20px;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px;">Aceitar todos</button>' +
-      '<button type="button" data-consent="essential" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.4);padding:9px 16px;border-radius:8px;cursor:pointer;font-size:13px;">Apenas essenciais</button>' +
-      '<button type="button" data-consent="none" style="background:transparent;color:rgba(255,255,255,0.5);border:none;padding:9px 12px;border-radius:8px;cursor:pointer;font-size:12px;">Rejeitar todos</button>' +
-      '</div></div>';
+
+    var inner = document.createElement('div');
+    inner.style.cssText = 'max-width:900px;margin:0 auto;';
+
+    var title = document.createElement('p');
+    title.style.cssText = 'margin:0 0 6px;font-weight:600;font-size:14px;';
+    title.textContent = 'Utilizamos cookies';
+    inner.appendChild(title);
+
+    var desc = document.createElement('p');
+    desc.style.cssText = 'margin:0 0 12px;color:rgba(255,255,255,0.75);font-size:12px;line-height:1.5;';
+    desc.appendChild(document.createTextNode('Usamos cookies essenciais para o funcionamento do site, cookies de análise (Google Analytics) e cookies de publicidade (Meta Pixel). Você pode aceitar todos ou apenas os essenciais. '));
+    var policyLink = document.createElement('a');
+    policyLink.href = '/privacidade';
+    policyLink.style.cssText = 'color:#C8A96A;text-decoration:underline;';
+    policyLink.textContent = 'Política de Privacidade';
+    desc.appendChild(policyLink);
+    desc.appendChild(document.createTextNode('.'));
+    inner.appendChild(desc);
+
+    var btnRow = document.createElement('div');
+    btnRow.style.cssText = 'display:flex;gap:8px;flex-wrap:wrap;';
+    btnRow.appendChild(buildButton('all', 'Aceitar todos', 'background:#C8A96A;color:#fff;border:none;padding:9px 20px;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px;'));
+    btnRow.appendChild(buildButton('essential', 'Apenas essenciais', 'background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.4);padding:9px 16px;border-radius:8px;cursor:pointer;font-size:13px;'));
+    btnRow.appendChild(buildButton('none', 'Rejeitar todos', 'background:transparent;color:rgba(255,255,255,0.5);border:none;padding:9px 12px;border-radius:8px;cursor:pointer;font-size:12px;'));
+    inner.appendChild(btnRow);
+
+    div.appendChild(inner);
     document.body.appendChild(div);
-    div.querySelectorAll('button[data-consent]').forEach(function (b) {
-      b.addEventListener('click', function () { window.setConsent(b.getAttribute('data-consent')); });
-    });
   }
 
   function init() {
