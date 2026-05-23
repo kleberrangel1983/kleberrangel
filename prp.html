@@ -7,12 +7,25 @@
     <meta name="description" content="PRP (Plasma Rico em Plaquetas) para joelho, coluna e ombro em Divinópolis. Avaliação individualizada. Consulta particular · (37) 99841-9396">
     <link rel="canonical" href="https://www.drkleberrangel.com.br/prp">
     <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0d7c7c">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Dr. Kleber Rangel">
+    <meta property="og:title" content="PRP em Divinópolis | Dr. Kleber Rangel">
+    <meta property="og:description" content="PRP (Plasma Rico em Plaquetas) para joelho, coluna e ombro em Divinópolis. Avaliação individualizada. CRM-MG 68724.">
+    <meta property="og:url" content="https://www.drkleberrangel.com.br/prp">
+    <meta property="og:image" content="https://www.drkleberrangel.com.br/assets/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://www.drkleberrangel.com.br/assets/og-image.jpg">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://www.drkleberrangel.com.br/"},{"@type":"ListItem","position":2,"name":"PRP","item":"https://www.drkleberrangel.com.br/prp"}]}</script>
 
     <!-- GTM -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KRCJVG3');</script>
 
-    <!-- Meta Pixel -->
-    <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','877941071024223');fbq('track','PageView');</script>
+    <!-- Meta Pixel (LGPD-gated) -->
+    <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');try{var _c=localStorage.getItem('drkleberrangel_consent');if(_c==='all'){fbq('consent','grant');fbq('init','877941071024223');fbq('track','PageView');}else{fbq('consent','revoke');fbq('init','877941071024223');}}catch(e){fbq('consent','revoke');fbq('init','877941071024223');}</script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -280,10 +293,10 @@
 #tad-chat-header .info strong { display: block; font-size: 0.9rem; }
 #tad-chat-header .info span { font-size: 0.72rem; opacity: 0.7; }
 #tad-close-btn {
-  background: none; border: none; color: rgba(255,255,255,0.7);
-  font-size: 1.3rem; cursor: pointer; padding: 0; line-height: 1;
+  background: none; border: none; color: rgba(255,255,255,0.92);
+  font-size: 1.3rem; cursor: pointer; padding: 0.25rem 0.4rem; line-height: 1; border-radius: 4px;
 }
-#tad-close-btn:hover { color: white; }
+#tad-close-btn:hover, #tad-close-btn:focus-visible { color: white; background: rgba(255,255,255,0.15); outline: none; }
 
 #tad-messages {
   flex: 1;
@@ -490,7 +503,9 @@ Quando perceber interesse real (pergunta sobre preço, disponibilidade, procedim
   function addMsg(role, text) {
     const div = document.createElement('div');
     div.className = `tad-msg ${role}`;
-    div.innerHTML = text.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="tad-wpp-btn">$1</a>').replace(/\n/g, '<br>');
+    var _esc=function(s){return String(s).replace(/[&<>"']/g,function(c){return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];});};
+    var _safe=function(u){var x=String(u).trim();return /^(https?:|tel:|mailto:)/i.test(x)?_esc(x):'#';};
+    div.innerHTML = _esc(text).replace(/\[(.*?)\]\((.*?)\)/g, function(_m,l,u){return '<a href="'+_safe(u)+'" target="_blank" rel="noopener noreferrer" class="tad-wpp-btn">'+_esc(l)+'</a>';}).replace(/\n/g, '<br>');
     msgs.appendChild(div);
     msgs.scrollTop = msgs.scrollHeight;
     return div;
@@ -546,5 +561,6 @@ Quando perceber interesse real (pergunta sobre preço, disponibilidade, procedim
   };
 })();
 </script>
+<script defer src="/consent.js"></script>
 </body>
 </html>

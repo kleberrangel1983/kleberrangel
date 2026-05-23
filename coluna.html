@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dor na Coluna em Divinópolis — Dr. Kleber Rangel | Ortopedista</title>
-<meta name="description" content="Dr. Kleber Rangel — MÉDICO Ortopedista e Traumatologista. Hérnia de disco, ciática e dor lombar crônica em Divinópolis-MG. Tratamento sem cirurgia quando possível. CRM-MG 68724 · RQE 43142.">
+<meta name="description" content="Ortopedista em Divinópolis-MG. Hérnia de disco, ciática e dor lombar crônica. Avaliação individualizada e plano terapêutico. CRM-MG 68724 · RQE 43142.">
 <link rel="canonical" href="https://www.drkleberrangel.com.br/coluna">
 <meta property="og:title" content="Dor na Coluna — Tratamento Especializado · Dr. Kleber Rangel · Divinópolis-MG">
 <meta property="og:description" content="MÉDICO Ortopedista e Traumatologista. Hérnia de disco, ciática, dor lombar crônica. Avaliação individualizada. CRM-MG 68724 · RQE 43142.">
@@ -13,7 +13,13 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.drkleberrangel.com.br/assets/og-image.jpg">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B6B6B">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Dr. Kleber Rangel">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":"Tratamento para Dor na Coluna — Dr. Kleber Rangel","description":"MÉDICO Ortopedista e Traumatologista. Tratamento da dor na coluna, hérnia de disco e ciática em Divinópolis-MG.","url":"https://www.drkleberrangel.com.br/coluna","author":{"@type":"Physician","name":"Dr. Kleber Rangel","identifier":"CRM-MG 68724"},"specialty":"Orthopedic","inLanguage":"pt-BR"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://www.drkleberrangel.com.br/"},{"@type":"ListItem","position":2,"name":"Dor na Coluna","item":"https://www.drkleberrangel.com.br/coluna"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"A cirurgia é sempre necessária para hérnia de disco?","acceptedAnswer":{"@type":"Answer","text":"Não. Em muitos casos existem alternativas como bloqueios guiados, medicina regenerativa e ozonioterapia. A indicação é definida após avaliação clínica individual."}},{"@type":"Question","name":"Qual a diferença entre hérnia de disco e ciática?","acceptedAnswer":{"@type":"Answer","text":"A hérnia de disco é a causa estrutural. A ciática é o sintoma — dor que irradia do lombar pela perna. Nem toda hérnia causa ciática e nem toda ciática é causada por hérnia."}}]}</script>
 <link rel="preload" as="image" href="/assets/Foto_Kleber.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -630,7 +636,9 @@ Quando perceber interesse real (pergunta sobre preço, disponibilidade, procedim
   function addMsg(role, text) {
     const div = document.createElement('div');
     div.className = `tad-msg ${role}`;
-    div.innerHTML = text.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="tad-wpp-btn">$1</a>').replace(/\n/g, '<br>');
+    var _esc=function(s){return String(s).replace(/[&<>"']/g,function(c){return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];});};
+    var _safe=function(u){var x=String(u).trim();return /^(https?:|tel:|mailto:)/i.test(x)?_esc(x):'#';};
+    div.innerHTML = _esc(text).replace(/\[(.*?)\]\((.*?)\)/g, function(_m,l,u){return '<a href="'+_safe(u)+'" target="_blank" rel="noopener noreferrer" class="tad-wpp-btn">'+_esc(l)+'</a>';}).replace(/\n/g, '<br>');
     msgs.appendChild(div);
     msgs.scrollTop = msgs.scrollHeight;
     return div;
@@ -687,5 +695,6 @@ Quando perceber interesse real (pergunta sobre preço, disponibilidade, procedim
 })();
 </script>
 <div style="background:#f8f8f6;border-top:1px solid #e0e0e0;padding:1rem 2rem;text-align:center;font-size:0.75rem;color:#777;font-family:Arial,sans-serif">As informações desta página são educativas e não substituem consulta médica. A indicação de qualquer tratamento depende de avaliação clínica individual presencial. Publicidade médica em conformidade com a Resolução CFM 2.336/2023.</div>
+<script defer src="/consent.js"></script>
 </body>
 </html>
