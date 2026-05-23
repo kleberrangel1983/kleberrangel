@@ -144,9 +144,7 @@ IDENTIDADE: Você é o assistente virtual do Dr. Kleber. Não substitui o médic
     if (role === 'user') {
       d.textContent = text;
     } else {
-      d.innerHTML = text
-        .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
-        .replace(/\n/g, '<br>');
+      text.split(/(\[[^\]]+\]\([^)]+\)|\n)/g).forEach(function(part){if(part==='\n'){d.appendChild(document.createElement('br'));return;}var m=part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);if(m&&/^(https?:|mailto:|tel:|\/)/i.test(m[2])){var a=document.createElement('a');a.href=m[2];a.target='_blank';a.rel='noopener noreferrer';a.textContent=m[1];d.appendChild(a);}else if(part){d.appendChild(document.createTextNode(part));}});
     }
     msgs.appendChild(d);
     msgs.scrollTop = msgs.scrollHeight;
