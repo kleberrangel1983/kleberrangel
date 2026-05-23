@@ -281,9 +281,9 @@
 </div>
 
 <footer>
-  © 2025 Dr. Kleber Rangel — CRM-MG 68724. Todos os direitos reservados.<br>
+  © 2026 Dr. Kleber Rangel — CRM-MG 68724. Todos os direitos reservados.<br>
   Este site tem finalidade exclusivamente informativa e não substitui consulta médica.<br>
-  <a href="/politica-de-privacidade" style="color:rgba(255,255,255,0.4)">Política de Privacidade</a>
+  <a href="/privacidade" style="color:rgba(255,255,255,0.4)">Política de Privacidade</a>
 </footer>
 <style>
 #tad-chat-btn {
@@ -552,7 +552,7 @@ Quando perceber interesse real (pergunta sobre preço, disponibilidade, procedim
   function addMsg(role, text) {
     const div = document.createElement('div');
     div.className = `tad-msg ${role}`;
-    div.innerHTML = text.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="tad-wpp-btn">$1</a>').replace(/\n/g, '<br>');
+    if (role === 'user') { div.textContent = text; } else { div.innerHTML = text.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="tad-wpp-btn">$1</a>').replace(/\n/g, '<br>'); }
     msgs.appendChild(div);
     msgs.scrollTop = msgs.scrollHeight;
     return div;

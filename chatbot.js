@@ -141,9 +141,13 @@ IDENTIDADE: Você é o assistente virtual do Dr. Kleber. Não substitui o médic
   function addMsg(role, text) {
     const d = document.createElement('div');
     d.className = 'tm ' + role;
-    d.innerHTML = text
-      .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
-      .replace(/\n/g, '<br>');
+    if (role === 'user') {
+      d.textContent = text;
+    } else {
+      d.innerHTML = text
+        .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+        .replace(/\n/g, '<br>');
+    }
     msgs.appendChild(d);
     msgs.scrollTop = msgs.scrollHeight;
     return d;
