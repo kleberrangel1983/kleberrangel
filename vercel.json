@@ -38,10 +38,13 @@
     }
   ],
   "redirects": [
-    { "source": "/privacidade", "destination": "/politica-privacidade.html", "permanent": true },
-    { "source": "/lgpd", "destination": "/politica-privacidade.html", "permanent": true },
-    { "source": "/termos", "destination": "/termos.html", "permanent": true },
-    { "source": "/politica-de-privacidade", "destination": "/politica-privacidade.html", "permanent": true },
+    { "source": "/politica-privacidade.html", "destination": "/privacidade", "permanent": true },
+    { "source": "/politica-privacidade", "destination": "/privacidade", "permanent": true },
+    { "source": "/politica-de-privacidade", "destination": "/privacidade", "permanent": true },
+    { "source": "/lgpd", "destination": "/privacidade", "permanent": true },
+    { "source": "/termos.html", "destination": "/termos", "permanent": true },
+    { "source": "/termos-de-uso", "destination": "/termos", "permanent": true },
+    { "source": "/termos-de-servico", "destination": "/termos", "permanent": true },
     { "source": "/dor-na-coluna", "destination": "/blog/dor-na-coluna", "permanent": true },
     { "source": "/dor-na-coluna.html", "destination": "/blog/dor-na-coluna", "permanent": true },
     { "source": "/agenda", "destination": "https://wa.me/5537998419396?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20minha%20consulta", "permanent": true },
@@ -67,7 +70,8 @@
     { "source": "/nova-serrana", "destination": "/nova-serrana.html" },
     { "source": "/para-de-minas", "destination": "/para-de-minas.html" },
     { "source": "/claudio", "destination": "/claudio.html" },
-    { "source": "/politica-privacidade", "destination": "/politica-privacidade.html" },
+    { "source": "/privacidade", "destination": "/politica-privacidade.html" },
+    { "source": "/termos", "destination": "/termos.html" },
     { "source": "/segunda-opiniao", "destination": "/segunda-opiniao.html" }
   ]
 }
