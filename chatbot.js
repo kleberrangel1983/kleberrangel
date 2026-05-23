@@ -141,11 +141,7 @@ IDENTIDADE: Você é o assistente virtual do Dr. Kleber. Não substitui o médic
   function addMsg(role, text) {
     const d = document.createElement('div');
     d.className = 'tm ' + role;
-    if (role === 'user') {
-      d.textContent = text;
-    } else {
-      text.split(/(\[[^\]]+\]\([^)]+\)|\n)/g).forEach(function(part){if(part==='\n'){d.appendChild(document.createElement('br'));return;}var m=part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);if(m&&/^(https?:|mailto:|tel:|\/)/i.test(m[2])){var a=document.createElement('a');a.href=m[2];a.target='_blank';a.rel='noopener noreferrer';a.textContent=m[1];d.appendChild(a);}else if(part){d.appendChild(document.createTextNode(part));}});
-    }
+    if (role === 'bot' || role === 'bot typing') { String(text).split(/(\[[^\]]+\]\([^)]+\)|\n)/g).forEach(function(part){if(part==='\n'){d.appendChild(document.createElement('br'));return;}var m=part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);var safeHref=null;if(m){try{var u=new URL(m[2],window.location.origin);if(u.protocol==='https:'||u.protocol==='http:'||u.protocol==='mailto:'||u.protocol==='tel:'){safeHref=u.href;}}catch(_e){}}if(safeHref){var a=document.createElement('a');a.href=safeHref;a.target='_blank';a.rel='noopener noreferrer';a.textContent=String(m[1]);d.appendChild(a);}else if(part){d.appendChild(document.createTextNode(String(part)));}}); } else { d.textContent = String(text); }
     msgs.appendChild(d);
     msgs.scrollTop = msgs.scrollHeight;
     return d;

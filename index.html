@@ -880,21 +880,9 @@ function playYTVertical(el,id){var i=document.createElement('iframe');i.src='htt
       ? 'background:white;border:1px solid #e0e0e0;border-radius:4px 12px 12px 12px;padding:0.6rem 0.85rem;font-size:0.875rem;line-height:1.55;color:#1a1a1a;max-width:90%;font-family:Arial,sans-serif;'
       : 'background:#0B2444;border-radius:12px 4px 12px 12px;padding:0.6rem 0.85rem;font-size:0.875rem;line-height:1.55;color:white;max-width:90%;align-self:flex-end;margin-left:auto;font-family:Arial,sans-serif;';
     if (isBot) {
-      text.split(/(\[[^\]]+\]\([^)]+\)|\n)/g).forEach(function(part){
-        if (part === '\n') { d.appendChild(document.createElement('br')); return; }
-        var m = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-        if (m && /^(https?:|mailto:|tel:|\/)/i.test(m[2])) {
-          var a = document.createElement('a');
-          a.href = m[2]; a.target = '_blank'; a.rel = 'noopener noreferrer';
-          a.setAttribute('style', 'display:inline-block;background:#25D366;color:white;padding:0.3rem 0.75rem;border-radius:5px;text-decoration:none;font-size:0.8rem;font-weight:700;margin-top:0.3rem;');
-          a.textContent = m[1];
-          d.appendChild(a);
-        } else if (part) {
-          d.appendChild(document.createTextNode(part));
-        }
-      });
+      String(text).split(/(\[[^\]]+\]\([^)]+\)|\n)/g).forEach(function(part){if(part==='\n'){d.appendChild(document.createElement('br'));return;}var m=part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);var safeHref=null;if(m){try{var u=new URL(m[2],window.location.origin);if(u.protocol==='https:'||u.protocol==='http:'||u.protocol==='mailto:'||u.protocol==='tel:'){safeHref=u.href;}}catch(_e){}}if(safeHref){var a=document.createElement('a');a.href=safeHref;a.target='_blank';a.rel='noopener noreferrer';a.setAttribute('style',"display:inline-block;background:#25D366;color:white;padding:0.3rem 0.75rem;border-radius:5px;text-decoration:none;font-size:0.8rem;font-weight:700;margin-top:0.3rem;");a.textContent=String(m[1]);d.appendChild(a);}else if(part){d.appendChild(document.createTextNode(String(part)));}});
     } else {
-      d.textContent = text;
+      d.textContent = String(text);
     }
     msgs.appendChild(d);
     msgs.scrollTop = msgs.scrollHeight;
