@@ -68,6 +68,15 @@
           "value": "attachment; filename=Guia-Dor-Cronica-Sem-Cirurgia-Dr-Kleber.pdf"
         }
       ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0"
+        }
+      ]
     }
   ],
   "redirects": [

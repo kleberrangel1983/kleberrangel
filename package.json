@@ -1,7 +1,11 @@
 {
   "name": "drkleberrangel-site",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=20.x"
+  },
   "scripts": {
     "build": "echo ok"
-  }
+  },
+  "type": "module"
 }
