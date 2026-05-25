@@ -199,8 +199,5 @@
       "source": "/segunda-opiniao",
       "destination": "/segunda-opiniao.html"
     }
-  ],
-  "outputDirectory": ".",
-  "installCommand": "echo \"no install needed\"",
-  "buildCommand": "echo \"static site, no build\""
+  ]
 }
