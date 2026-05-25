@@ -1152,10 +1152,19 @@ window.addEventListener('load',function(){
 
 // Analytics CTAs
 document.querySelectorAll('a[href*="wa.me"]').forEach(el=>{
-    el.addEventListener('click',()=>{if(window.gtag)gtag('event','whatsapp_click',{event_category:'cta',event_label:'homepage'});});
+    el.addEventListener('click',()=>{
+        if(window.gtag)gtag('event','whatsapp_click',{event_category:'cta',event_label:'homepage'});
+        if(window.fbq){
+            fbq('track','Lead',{content_name:'WhatsApp Click',content_category:'CTA'});
+            fbq('track','Contact');
+        }
+    });
 });
 document.querySelectorAll('a[href*="tel:"]').forEach(el=>{
-    el.addEventListener('click',()=>{if(window.gtag)gtag('event','phone_click',{event_category:'cta',event_label:'homepage'});});
+    el.addEventListener('click',()=>{
+        if(window.gtag)gtag('event','phone_click',{event_category:'cta',event_label:'homepage'});
+        if(window.fbq){fbq('track','Contact');}
+    });
 });
 </script>
 <!-- BOTÃO FLUTUANTE -->
