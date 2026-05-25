@@ -24,10 +24,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind (bundle local — gerado por npx tailwindcss build) -->
+    <link href="/assets/tailwind.css" rel="stylesheet">
     <script>
-        tailwind.config = {
+        // tailwind.config mantido por compatibilidade; bundle local já tem as cores compiladas
+        window.tailwind = window.tailwind || {};
+        window.tailwind.config = {
             theme: {
                 extend: {
                     colors: {

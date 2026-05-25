@@ -5,7 +5,6 @@
 
 # Node modules (se usar npm packages)
 node_modules/
-package-lock.json
 yarn.lock
 
 # Operating System
