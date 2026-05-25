@@ -623,20 +623,11 @@ document.addEventListener('click',function(e){
   var t=e.target.closest('a');
   if(!t||!t.href)return;
   if(t.href.indexOf('wa.me')>-1){
-    if(typeof fbq==='function'){
-      fbq('track','Lead');
-      fbq('track','Contact');
-    }
-    if(typeof gtag==='function'){
-      gtag('event','generate_lead',{'event_category':'engagement','event_label':'whatsapp'});
-    }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({'event':'whatsapp_click','lead_page':window.location.pathname});
   } else if(t.href.indexOf('tel:')>-1){
-    if(typeof fbq==='function'){
-      fbq('track','Contact');
-    }
-    if(typeof gtag==='function'){
-      gtag('event','generate_lead',{'event_category':'engagement','event_label':'phone'});
-    }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({'event':'phone_call','lead_page':window.location.pathname});
   }
 },true);
 </script>
