@@ -255,8 +255,7 @@ footer a{color:rgba(255,255,255,0.45);text-decoration:none;margin:0 8px;}
 window.addEventListener('scroll',function(){document.getElementById('fcta').classList.toggle('show',window.scrollY>400);},{passive:true});
 </script>
 <script>
-// site-lead-tracking-v1 — dispara dataLayer push em cliques de WhatsApp/telefone
-// GTM container decide quais tags disparar (Pixel, GA4, etc) pra evitar duplicacao
+// site-lead-tracking-v2 — eventos alinhados aos triggers GTM existentes (whatsapp_click, phone_call)
 (function(){
   if(!window.dataLayer){window.dataLayer=[];}
   document.addEventListener('click',function(e){
@@ -264,14 +263,12 @@ window.addEventListener('scroll',function(){document.getElementById('fcta').clas
     if(!t||!t.href)return;
     if(t.href.indexOf('wa.me')>-1){
       window.dataLayer.push({
-        'event':'lead_click',
-        'lead_channel':'whatsapp',
+        'event':'whatsapp_click',
         'lead_page':window.location.pathname
       });
     } else if(t.href.indexOf('tel:')>-1){
       window.dataLayer.push({
-        'event':'lead_click',
-        'lead_channel':'phone',
+        'event':'phone_call',
         'lead_page':window.location.pathname
       });
     }
