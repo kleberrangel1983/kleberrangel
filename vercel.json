@@ -3,71 +3,204 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), browsing-topics=()" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.tailwindcss.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://cdn.tailwindcss.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://connect.facebook.net https://www.facebook.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://td.doubleclick.net https://www.googletagmanager.com https://www.facebook.com; form-action 'self' https://wa.me; upgrade-insecure-requests" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), browsing-topics=()"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.tailwindcss.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://cdn.tailwindcss.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://connect.facebook.net https://www.facebook.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://td.doubleclick.net https://www.googletagmanager.com https://www.facebook.com; form-action 'self' https://wa.me; upgrade-insecure-requests"
+        }
       ]
     },
     {
       "source": "/",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=86400, stale-while-revalidate=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=86400, stale-while-revalidate=86400"
+        }
       ]
     },
     {
       "source": "/(.*).html",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=86400, stale-while-revalidate=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, s-maxage=86400, stale-while-revalidate=86400"
+        }
       ]
     },
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/assets/ebook-dor-cronica.pdf",
       "headers": [
-        { "key": "Content-Type", "value": "application/pdf" },
-        { "key": "Content-Disposition", "value": "attachment; filename=Guia-Dor-Cronica-Sem-Cirurgia-Dr-Kleber.pdf" }
+        {
+          "key": "Content-Type",
+          "value": "application/pdf"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "attachment; filename=Guia-Dor-Cronica-Sem-Cirurgia-Dr-Kleber.pdf"
+        }
       ]
     }
   ],
   "redirects": [
-    { "source": "/privacidade", "destination": "/politica-privacidade.html", "permanent": true },
-    { "source": "/lgpd", "destination": "/politica-privacidade.html", "permanent": true },
-    { "source": "/termos", "destination": "/termos.html", "permanent": true },
-    { "source": "/politica-de-privacidade", "destination": "/politica-privacidade.html", "permanent": true },
-    { "source": "/dor-na-coluna", "destination": "/blog/dor-na-coluna", "permanent": true },
-    { "source": "/dor-na-coluna.html", "destination": "/blog/dor-na-coluna", "permanent": true },
-    { "source": "/agenda", "destination": "https://wa.me/5537998419396?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20minha%20consulta", "permanent": true },
-    { "source": "/whatsapp", "destination": "https://wa.me/5537998419396", "permanent": true },
-    { "source": "/instagram", "destination": "https://instagram.com/drkleberrangel", "permanent": true },
-    { "source": "/google", "destination": "https://maps.app.goo.gl/PMmPiK5sRZVHzy9K7", "permanent": true }
+    {
+      "source": "/privacidade",
+      "destination": "/politica-privacidade.html",
+      "permanent": true
+    },
+    {
+      "source": "/lgpd",
+      "destination": "/politica-privacidade.html",
+      "permanent": true
+    },
+    {
+      "source": "/termos",
+      "destination": "/termos.html",
+      "permanent": true
+    },
+    {
+      "source": "/politica-de-privacidade",
+      "destination": "/politica-privacidade.html",
+      "permanent": true
+    },
+    {
+      "source": "/dor-na-coluna",
+      "destination": "/blog/dor-na-coluna",
+      "permanent": true
+    },
+    {
+      "source": "/dor-na-coluna.html",
+      "destination": "/blog/dor-na-coluna",
+      "permanent": true
+    },
+    {
+      "source": "/agenda",
+      "destination": "https://wa.me/5537998419396?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20minha%20consulta",
+      "permanent": true
+    },
+    {
+      "source": "/whatsapp",
+      "destination": "https://wa.me/5537998419396",
+      "permanent": true
+    },
+    {
+      "source": "/instagram",
+      "destination": "https://instagram.com/drkleberrangel",
+      "permanent": true
+    },
+    {
+      "source": "/google",
+      "destination": "https://maps.app.goo.gl/PMmPiK5sRZVHzy9K7",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/coluna", "destination": "/coluna.html" },
-    { "source": "/joelho", "destination": "/joelho.html" },
-    { "source": "/ombro", "destination": "/ombro.html" },
-    { "source": "/prp", "destination": "/prp.html" },
-    { "source": "/medicina-regenerativa", "destination": "/medicina-regenerativa.html" },
-    { "source": "/ozonoterapia-divinopolis", "destination": "/ozonoterapia-divinopolis.html" },
-    { "source": "/lp-dor-coluna", "destination": "/lp-dor-coluna.html" },
-    { "source": "/bloqueio-guiado-ultrassom-divinopolis", "destination": "/bloqueio-guiado-ultrassom-divinopolis.html" },
-    { "source": "/prp-joelho-divinopolis", "destination": "/prp-joelho-divinopolis.html" },
-    { "source": "/ozonioterapia-coluna-divinopolis", "destination": "/ozonioterapia-coluna-divinopolis.html" },
-    { "source": "/blog", "destination": "/blog/index.html" },
-    { "source": "/blog/:path*", "destination": "/blog/:path*.html" },
-    { "source": "/formiga", "destination": "/formiga.html" },
-    { "source": "/itauna", "destination": "/itauna.html" },
-    { "source": "/nova-serrana", "destination": "/nova-serrana.html" },
-    { "source": "/para-de-minas", "destination": "/para-de-minas.html" },
-    { "source": "/claudio", "destination": "/claudio.html" },
-    { "source": "/politica-privacidade", "destination": "/politica-privacidade.html" },
-    { "source": "/segunda-opiniao", "destination": "/segunda-opiniao.html" }
-  ]
+    {
+      "source": "/coluna",
+      "destination": "/coluna.html"
+    },
+    {
+      "source": "/joelho",
+      "destination": "/joelho.html"
+    },
+    {
+      "source": "/ombro",
+      "destination": "/ombro.html"
+    },
+    {
+      "source": "/prp",
+      "destination": "/prp.html"
+    },
+    {
+      "source": "/medicina-regenerativa",
+      "destination": "/medicina-regenerativa.html"
+    },
+    {
+      "source": "/ozonoterapia-divinopolis",
+      "destination": "/ozonoterapia-divinopolis.html"
+    },
+    {
+      "source": "/lp-dor-coluna",
+      "destination": "/lp-dor-coluna.html"
+    },
+    {
+      "source": "/bloqueio-guiado-ultrassom-divinopolis",
+      "destination": "/bloqueio-guiado-ultrassom-divinopolis.html"
+    },
+    {
+      "source": "/prp-joelho-divinopolis",
+      "destination": "/prp-joelho-divinopolis.html"
+    },
+    {
+      "source": "/ozonioterapia-coluna-divinopolis",
+      "destination": "/ozonioterapia-coluna-divinopolis.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/blog/:path*.html"
+    },
+    {
+      "source": "/formiga",
+      "destination": "/formiga.html"
+    },
+    {
+      "source": "/itauna",
+      "destination": "/itauna.html"
+    },
+    {
+      "source": "/nova-serrana",
+      "destination": "/nova-serrana.html"
+    },
+    {
+      "source": "/para-de-minas",
+      "destination": "/para-de-minas.html"
+    },
+    {
+      "source": "/claudio",
+      "destination": "/claudio.html"
+    },
+    {
+      "source": "/politica-privacidade",
+      "destination": "/politica-privacidade.html"
+    },
+    {
+      "source": "/segunda-opiniao",
+      "destination": "/segunda-opiniao.html"
+    }
+  ],
+  "outputDirectory": ".",
+  "installCommand": "echo \"no install needed\"",
+  "buildCommand": "echo \"static site, no build\""
 }
