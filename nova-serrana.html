@@ -254,5 +254,29 @@ footer a{color:rgba(255,255,255,0.45);text-decoration:none;margin:0 8px;}
 <script>
 window.addEventListener('scroll',function(){document.getElementById('fcta').classList.toggle('show',window.scrollY>400);},{passive:true});
 </script>
+<script>
+// site-lead-tracking-v1 — dispara dataLayer push em cliques de WhatsApp/telefone
+// GTM container decide quais tags disparar (Pixel, GA4, etc) pra evitar duplicacao
+(function(){
+  if(!window.dataLayer){window.dataLayer=[];}
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('a');
+    if(!t||!t.href)return;
+    if(t.href.indexOf('wa.me')>-1){
+      window.dataLayer.push({
+        'event':'lead_click',
+        'lead_channel':'whatsapp',
+        'lead_page':window.location.pathname
+      });
+    } else if(t.href.indexOf('tel:')>-1){
+      window.dataLayer.push({
+        'event':'lead_click',
+        'lead_channel':'phone',
+        'lead_page':window.location.pathname
+      });
+    }
+  },true);
+})();
+</script>
 </body>
 </html>

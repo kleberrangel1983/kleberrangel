@@ -670,5 +670,29 @@ Quando perceber interesse real (pergunta sobre preço, disponibilidade, procedim
 })();
 </script>
 <div style="background:#f8f8f6;border-top:1px solid #e0e0e0;padding:1rem 2rem;text-align:center;font-size:0.75rem;color:#777;font-family:Arial,sans-serif">As informações desta página são educativas e não substituem consulta médica. A indicação de qualquer tratamento depende de avaliação clínica individual presencial. Publicidade médica em conformidade com a Resolução CFM 2.336/2023.</div>
+<script>
+// site-lead-tracking-v1 — dispara dataLayer push em cliques de WhatsApp/telefone
+// GTM container decide quais tags disparar (Pixel, GA4, etc) pra evitar duplicacao
+(function(){
+  if(!window.dataLayer){window.dataLayer=[];}
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('a');
+    if(!t||!t.href)return;
+    if(t.href.indexOf('wa.me')>-1){
+      window.dataLayer.push({
+        'event':'lead_click',
+        'lead_channel':'whatsapp',
+        'lead_page':window.location.pathname
+      });
+    } else if(t.href.indexOf('tel:')>-1){
+      window.dataLayer.push({
+        'event':'lead_click',
+        'lead_channel':'phone',
+        'lead_page':window.location.pathname
+      });
+    }
+  },true);
+})();
+</script>
 </body>
 </html>
