@@ -54,3 +54,10 @@ ultrassom.jpeg
 COnsultorio_2.jpeg
 consultorio_1.jpeg
 sala_repouso.jpeg
+
+# Build/dev files (gerados localmente, output ja esta em /assets)
+src
+tailwind.config.js
+package.json
+package-lock.json
+DEPLOYMENT_CHECKLIST.md
