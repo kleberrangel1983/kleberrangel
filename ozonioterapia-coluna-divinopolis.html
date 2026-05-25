@@ -95,8 +95,16 @@
   .breadcrumb a { color: var(--blue); text-decoration: none; }
 </style>
     <link href="/assets/tailwind.css" rel="stylesheet">
+<!-- GTM + GA4 + Meta Pixel -->
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','wait_for_update':500});</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KRCJVG3');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KHC1QSGV36"></script>
+<script>gtag('js',new Date());gtag('config','G-KHC1QSGV36',{'anonymize_ip':true,'restricted_data_processing':true});</script>
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('consent','revoke');fbq('init','877941071024223');</script>
+
 </head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRCJVG3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="urgency-strip">🌿 Ozonioterapia: procedimento ambulatorial sem internação — indicação individual após avaliação</div>
 
@@ -608,6 +616,29 @@ Quando perceber interesse real (pergunta sobre preço, disponibilidade, procedim
     }, 500);
   };
 })();
+</script>
+<script>
+// Meta Pixel Lead+Contact tracking nos cliques de WhatsApp/telefone
+document.addEventListener('click',function(e){
+  var t=e.target.closest('a');
+  if(!t||!t.href)return;
+  if(t.href.indexOf('wa.me')>-1){
+    if(typeof fbq==='function'){
+      fbq('track','Lead');
+      fbq('track','Contact');
+    }
+    if(typeof gtag==='function'){
+      gtag('event','generate_lead',{'event_category':'engagement','event_label':'whatsapp'});
+    }
+  } else if(t.href.indexOf('tel:')>-1){
+    if(typeof fbq==='function'){
+      fbq('track','Contact');
+    }
+    if(typeof gtag==='function'){
+      gtag('event','generate_lead',{'event_category':'engagement','event_label':'phone'});
+    }
+  }
+},true);
 </script>
 </body>
 </html>
