@@ -856,7 +856,7 @@ function playYTVertical(el,id){var i=document.createElement('iframe');i.src='htt
         <input id="inline-inp" type="text" placeholder="Digite sua dúvida..." maxlength="300"
           style="flex:1;border:1px solid #e0e0e0;border-radius:20px;padding:0.5rem 0.9rem;font-size:0.875rem;font-family:Arial,sans-serif;outline:none;"
           onfocus="this.style.borderColor='#1E6FBF'" onblur="this.style.borderColor='#e0e0e0'"
-          onkeydown="if(event.key==='Enter')inlineSend()">
+          onkeydown="if(event.key==='Enter')inlineSend()" aria-label="Digite sua dúvida para o assistente">
         <button onclick="inlineSend()" style="background:#0B2444;border:none;border-radius:50%;width:36px;height:36px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
         </button>
