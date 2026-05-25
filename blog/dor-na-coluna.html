@@ -51,9 +51,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" media="print" onload="this.media='all'">
 
     <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/assets/tailwind.css" rel="stylesheet">
     <script>
-        tailwind.config = {
+        window.tailwind = window.tailwind || {};
+        window.tailwind.config = {
             theme: {
                 extend: {
                     colors: {

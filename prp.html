@@ -19,7 +19,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com" defer></script>
     <script>
-        tailwind.config = {
+        window.tailwind = window.tailwind || {};
+        window.tailwind.config = {
             theme: { extend: {
                 colors: { 'teal':'#0d7c7c','teal-dark':'#0a6363','teal-light':'#e8f5f5' },
                 fontFamily: { 'display':['Playfair Display','serif'],'sans':['Inter','sans-serif'] }
