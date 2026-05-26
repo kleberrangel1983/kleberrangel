@@ -62,20 +62,36 @@
     <style>
         *{margin:0;padding:0;box-sizing:border-box;}
         html{scroll-behavior:smooth;}
-        body{font-family:'DM Sans',sans-serif;color:#1C1C1C;background:#fff;overflow-x:hidden;}
+        body{font-family:'DM Sans',sans-serif;color:#0F0F0F;background:#fff;overflow-x:hidden;}
         h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;}
 
-        /* ── PALETA UNIFICADA ── */
+        /* ── PALETA UNIFICADA v2 (Maio 2026) ──
+           Refinamento editorial: teal mais saturado, gold→clay (caramelo do consultório),
+           warm→bone (mais quente), ink mais profundo, muted→stone (cinza quente).
+           Aliases antigos preservados apontando para valores novos pra zero quebra. */
         :root{
-            --teal:#0B6B6B;
-            --teal-dark:#085555;
-            --teal-light:#E8F5F2;
-            --gold:#C8A96A;
-            --gold-light:#F5EDD8;
-            --warm:#FAF7F2;
-            --warm-dark:#F0EAE0;
-            --ink:#1C1C1C;
-            --muted:#5A6472;
+            /* Novos tokens v2 */
+            --teal:#0A5757;
+            --teal-deep:#053838;
+            --teal-soft:#E6EDEC;
+            --clay:#B5654A;
+            --clay-soft:#F0E5DF;
+            --bone:#F5F0E8;
+            --bone-deep:#E8E0D2;
+            --ink:#0F0F0F;
+            --stone:#6B6660;
+            --stone-soft:#C9C3BA;
+            --hairline:rgba(15,15,15,0.08);
+            --hairline-strong:rgba(15,15,15,0.15);
+
+            /* Aliases legados — apontam pros novos pra zero quebra de CSS existente */
+            --teal-dark:var(--teal-deep);
+            --teal-light:var(--teal-soft);
+            --gold:var(--clay);
+            --gold-light:var(--clay-soft);
+            --warm:var(--bone);
+            --warm-dark:var(--bone-deep);
+            --muted:var(--stone);
         }
 
         /* ── HERO BEGE ── */
@@ -141,13 +157,13 @@
 
         @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
 
-        :focus-visible{outline:2px solid var(--teal,#0B6B6B);outline-offset:2px;}
-        .skip-link{position:absolute;left:-9999px;top:0;z-index:9999;background:var(--teal,#0B6B6B);color:#fff;padding:10px 16px;border-radius:0 0 8px 0;text-decoration:none;font-weight:600;}
+        :focus-visible{outline:2px solid var(--teal,#0A5757);outline-offset:2px;}
+        .skip-link{position:absolute;left:-9999px;top:0;z-index:9999;background:var(--teal,#0A5757);color:#fff;padding:10px 16px;border-radius:0 0 8px 0;text-decoration:none;font-weight:600;}
         .skip-link:focus{left:0;}
 
         /* ── MOBILE CRÍTICO — garante render sem Tailwind ── */
         @media(max-width:767px){
-            .hero-bg { background: #FAF7F2 !important; }
+            .hero-bg { background: #F5F0E8 !important; }
             .hero-bg::after { display:none !important; }
             .max-w-6xl { max-width:100%; }
             .px-4 { padding-left:16px; padding-right:16px; }
@@ -186,6 +202,45 @@
     @media(max-width:640px){
       #tad-win{max-height:50vh;bottom:160px}
       #tad-btn{bottom:100px;left:16px;right:auto}
+    }
+
+    /* ── REDESIGN v2 — assinatura tipográfica e refinamentos editoriais ── */
+    /* Itálico Cormorant em teal — usado pra destacar conceito-chave em headlines */
+    .display-italic {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--teal);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+    /* Botão primário refinado — border-radius reduzido (2-4px em vez de 50px) pra registro editorial */
+    .btn-wa {
+      border-radius: 4px;
+    }
+    /* Eyebrow editorial — hairline horizontal antes do texto */
+    .eyebrow-v2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stone);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .eyebrow-v2::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--clay);
+      display: inline-block;
+    }
+    /* Hairlines em vez de borders fortes — disciplina editorial */
+    .border-editorial {
+      border: 1px solid var(--hairline);
+    }
+    .border-editorial:hover {
+      border-color: var(--hairline-strong);
     }
     </style>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Dr. Kleber Rangel — Apresentação","description":"Apresentação do Dr. Kleber Rangel, ortopedista especialista em medicina da dor em Divinópolis-MG. Tratamentos sem cirurgia para dor na coluna, joelho e articulações.","thumbnailUrl":"https://i.ytimg.com/vi/yI42EaBILQ4/hqdefault.jpg","uploadDate":"2026-04-01","duration":"PT2M35S","embedUrl":"https://www.youtube.com/embed/yI42EaBILQ4","publisher":{"@type":"Person","name":"Dr. Kleber Rangel","url":"https://www.drkleberrangel.com.br"}}</script>
@@ -346,8 +401,8 @@
     <a href="/" style="display:flex;align-items:center;gap:0.5rem;text-decoration:none;flex-shrink:0;">
       <img src="/assets/logo.webp" alt="Clínica Trate a Dor" width="36" height="36" style="width:36px;height:36px;object-fit:contain;flex-shrink:0;">
       <div style="line-height:1.3;">
-        <div style="font-weight:700;font-size:0.875rem;color:#0B6B6B;white-space:nowrap;">Dr. Kleber Rangel</div>
-        <div style="font-size:0.65rem;color:#5A6472;white-space:nowrap;">Ortopedista · CRM-MG 68724</div>
+        <div style="font-weight:700;font-size:0.875rem;color:#0A5757;white-space:nowrap;">Dr. Kleber Rangel</div>
+        <div style="font-size:0.65rem;color:#6B6660;white-space:nowrap;">Ortopedista · CRM-MG 68724</div>
       </div>
     </a>
 
@@ -362,7 +417,7 @@
 
     <!-- CTA Agendar -->
     <a href="https://wa.me/5537998419396?text=Olá Dr. Kleber, vim pela home do site drkleberrangel.com.br e gostaria de agendar uma consulta." 
-       style="background:#0B6B6B;color:white;padding:0.5rem 1.1rem;border-radius:8px;text-decoration:none;font-size:0.85rem;font-weight:600;white-space:nowrap;flex-shrink:0;">
+       style="background:#0A5757;color:white;padding:0.5rem 1.1rem;border-radius:8px;text-decoration:none;font-size:0.85rem;font-weight:600;white-space:nowrap;flex-shrink:0;">
       Agendar
     </a>
 
@@ -393,11 +448,11 @@
 
             <!-- ESQUERDA: copy -->
             <div class="fade-up" style="opacity:1;transform:none;width:100%;min-width:0;">
-                <div class="inline-flex items-center gap-2 mb-6 text-sm font-medium px-4 py-2 rounded-full" style="background:var(--teal-light);color:var(--teal);">
-                    <span>✓</span> Ortopedista · Medicina da Dor · Divinópolis-MG · CRM-MG 68724
+                <div class="eyebrow-v2 mb-6">
+                    Ortopedia · Medicina da dor · Divinópolis-MG · CRM-MG 68724
                 </div>
                 <h1 class="text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight" style="color:var(--ink);">
-                    Dor crônica na coluna, joelho ou ombro?<br><span style="color:var(--teal);">Vamos descobrir a causa.</span>
+                    Dor crônica na coluna, joelho ou ombro?<br><span class="display-italic">Vamos descobrir a causa.</span>
                 </h1>
                 <p class="text-lg mb-4 leading-relaxed" style="color:var(--muted);">
                     A maioria dos pacientes que chega até mim já passou por vários médicos, tomou anti-inflamatório, fez fisioterapia — e <strong style="color:var(--ink);">continua com dor</strong>. O problema quase sempre é o mesmo: ninguém investigou direito de onde vem a dor.
@@ -430,10 +485,10 @@
                              style="width:100%;height:clamp(320px,55vw,580px);object-fit:cover;object-position:center 12%;display:block;"></picture>
                     </div>
                     <!-- Badge flutuante -->
-                    <div style="position:absolute;bottom:24px;left:-20px;background:#fff;border-radius:12px;padding:14px 18px;box-shadow:0 8px 24px rgba(0,0,0,0.12);border-left:3px solid var(--gold);">
-                        <div class="text-xs font-semibold mb-1" style="color:var(--muted);">Consulta especializada</div>
+                    <div style="position:absolute;bottom:24px;left:-20px;background:#fff;border-radius:4px;padding:14px 18px;box-shadow:0 8px 24px rgba(0,0,0,0.12);border-left:3px solid var(--clay);">
+                        <div class="text-xs font-semibold mb-1" style="color:var(--muted);">Tempo de consulta</div>
                         <div class="text-lg font-bold" style="color:var(--ink);font-family:'Cormorant Garamond',serif;">50–60 minutos</div>
-                        <div class="text-xs" style="color:var(--muted);">de investigação real</div>
+                        <div class="text-xs" style="color:var(--muted);">avaliação clínica detalhada</div>
                     </div>
                     <!-- Botão vídeo — abre modal centralizado -->
                     <div style="position:absolute;bottom:24px;right:-16px;background:#fff;border-radius:14px;padding:12px 16px;box-shadow:0 8px 28px rgba(0,0,0,0.14);cursor:pointer;display:flex;align-items:center;gap:10px;min-width:180px;" onclick="openVideo()" id="video-badge">
@@ -452,7 +507,7 @@
                             <div style="position:relative;padding-bottom:177.78%;border-radius:16px;overflow:hidden;background:#000;">
                                 <iframe id="yt-iframe" src="" title="Dr. Kleber Rangel — Apresentação" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;"></iframe>
                             </div>
-                            <button onclick="closeVideo()" style="position:absolute;top:-14px;right:-14px;background:#fff;border:none;color:#1C1C1C;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.4);line-height:1;">✕</button>
+                            <button onclick="closeVideo()" style="position:absolute;top:-14px;right:-14px;background:#fff;border:none;color:#0F0F0F;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.4);line-height:1;">✕</button>
                         </div>
                     </div>
                     <script>
@@ -697,7 +752,7 @@
         </div>
         <div class="max-w-md mx-auto rounded-2xl p-8 text-center" style="background:#fff;border:1px solid #E8E0D8;border-top:3px solid var(--gold);">
             <div class="text-5xl font-bold mb-1" style="font-family:'Cormorant Garamond',serif;color:var(--ink);">4,8</div>
-            <div class="text-2xl mb-3" style="color:#C8A96A;letter-spacing:3px;">★★★★★</div>
+            <div class="text-2xl mb-3" style="color:#B5654A;letter-spacing:3px;">★★★★★</div>
             <div class="text-sm mb-6" style="color:var(--muted);">Média das avaliações públicas no Google — pacientes atendidos em Divinópolis-MG e região.</div>
             <a href="https://www.google.com/search?q=Dr+Kleber+Rangel+Divinopolis" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold hover:underline" style="color:var(--teal);">Ver avaliações no Google →</a>
         </div>
@@ -822,9 +877,9 @@ function playYTVertical(el,id){var i=document.createElement('iframe');i.src='htt
 <section style="background:#f0f4f9;padding:2rem 1rem;">
   <div style="max-width:560px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:1.25rem;">
-      <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:#0B6B6B;font-family:Arial,sans-serif;margin-bottom:0.4rem;">Ficou com dúvida?</div>
-      <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;font-weight:700;color:#1C1C1C;margin-bottom:0.4rem;line-height:1.2;">Pergunte antes de decidir</h2>
-      <p style="font-size:0.85rem;color:#5A6472;font-family:Arial,sans-serif;">O assistente responde dúvidas sobre tratamentos e como funciona a consulta. Não substitui avaliação médica.</p>
+      <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:#0A5757;font-family:Arial,sans-serif;margin-bottom:0.4rem;">Ficou com dúvida?</div>
+      <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;font-weight:700;color:#0F0F0F;margin-bottom:0.4rem;line-height:1.2;">Pergunte antes de decidir</h2>
+      <p style="font-size:0.85rem;color:#6B6660;font-family:Arial,sans-serif;">O assistente responde dúvidas sobre tratamentos e como funciona a consulta. Não substitui avaliação médica.</p>
     </div>
 
     <!-- Chat inline -->
@@ -1108,12 +1163,12 @@ function playYTVertical(el,id){var i=document.createElement('iframe');i.src='htt
 <!-- ══════════════════════════════════════════
      CONSENT BANNER LGPD
 ══════════════════════════════════════════ -->
-<div id="consent-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1C1C1C;color:#fff;padding:16px 20px;z-index:9999;font-size:13px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
+<div id="consent-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0F0F0F;color:#fff;padding:16px 20px;z-index:9999;font-size:13px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
     <div style="max-width:900px;margin:0 auto;">
         <p style="margin:0 0 6px;font-weight:600;font-size:14px;">🔒 Utilizamos cookies</p>
         <p style="margin:0 0 12px;color:rgba(255,255,255,0.75);font-size:12px;line-height:1.5;">Usamos cookies essenciais para o funcionamento do site, cookies de análise (Google Analytics) e cookies de publicidade (Meta Pixel). Você pode aceitar todos ou apenas os essenciais. <a href="/politica-privacidade.html" style="color:var(--gold);text-decoration:underline;">Política de Privacidade</a>.</p>
         <div style="display:flex;gap:8px;flex-wrap:wrap;">
-            <button onclick="setConsent('all')" style="background:#C8A96A;color:#fff;border:none;padding:9px 20px;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px;">✓ Aceitar todos</button>
+            <button onclick="setConsent('all')" style="background:#B5654A;color:#fff;border:none;padding:9px 20px;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px;">✓ Aceitar todos</button>
             <button onclick="setConsent('essential')" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.4);padding:9px 16px;border-radius:8px;cursor:pointer;font-size:13px;">Apenas essenciais</button>
             <button onclick="setConsent('none')" style="background:transparent;color:rgba(255,255,255,0.5);border:none;padding:9px 12px;border-radius:8px;cursor:pointer;font-size:12px;">Rejeitar todos</button>
         </div>
