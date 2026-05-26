@@ -57,25 +57,41 @@
 
     <!-- Schema -->
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Physician","name":"Dr. Kleber Rangel","description":"Ortopedista especialista em dor crônica e tratamentos sem cirurgia. CRM-MG 68724.","url":"https://www.drkleberrangel.com.br","telephone":"+5537998419396","image":"https://www.drkleberrangel.com.br/assets/Foto_Kleber.jpeg","identifier":[{"@type":"PropertyValue","name":"CRM","value":"CRM-MG 68724"},{"@type":"PropertyValue","name":"RQE","value":"RQE 43142"}],"address":{"@type":"PostalAddress","streetAddress":"Av. Antônio Olímpio de Morais, 607, Sala 808","addressLocality":"Divinópolis","addressRegion":"MG","addressCountry":"BR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"}]}</script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O que acontece na primeira consulta?","acceptedAnswer":{"@type":"Answer","text":"A consulta dura 50 a 60 minutos: escuta completa, exame clínico detalhado, leitura das suas imagens e plano terapêutico individualizado. Emitimos nota fiscal."}},{"@type":"Question","name":"A cirurgia é sempre necessária?","acceptedAnswer":{"@type":"Answer","text":"Não. Em muitos casos existem alternativas — bloqueios, técnicas regenerativas — avaliadas individualmente antes de qualquer decisão cirúrgica."}},{"@type":"Question","name":"O atendimento é particular?","acceptedAnswer":{"@type":"Answer","text":"Sim, 100% particular. Emitimos nota fiscal para reembolso junto ao plano de saúde."}}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O procedimento dói?","acceptedAnswer":{"@type":"Answer","text":"A maior parte dos procedimentos guiados por ultrassom é realizada com anestesia local — o desconforto principal costuma ser apenas o da picada inicial. A visualização em tempo real evita manipulação desnecessária dos tecidos."}},{"@type":"Question","name":"Quanto tempo leva para começar a sentir diferença?","acceptedAnswer":{"@type":"Answer","text":"Depende do diagnóstico e da técnica. Bloqueios diagnósticos podem ter efeito em horas; procedimentos regenerativos têm cronograma de semanas com reavaliação programada. A estimativa é individualizada na consulta."}},{"@type":"Question","name":"Vou precisar me afastar do trabalho?","acceptedAnswer":{"@type":"Answer","text":"A maioria dos procedimentos é ambulatorial. Trabalhos sedentários geralmente permitem retorno no mesmo dia ou no dia seguinte. Trabalhos com esforço físico podem demandar adaptação temporária definida caso a caso."}},{"@type":"Question","name":"Preciso fazer repouso depois do procedimento?","acceptedAnswer":{"@type":"Answer","text":"Repouso absoluto raramente é necessário. Recomenda-se evitar esforços específicos por 24 a 72 horas conforme a técnica. Atividade leve é estimulada — imobilidade prolongada piora a evolução."}},{"@type":"Question","name":"Quais são os riscos?","acceptedAnswer":{"@type":"Answer","text":"Os mais comuns em intervenções guiadas por ultrassom são dor local transitória, hematoma no ponto da punção e, raramente, reação ao anestésico. Riscos específicos são discutidos antes do termo de consentimento."}},{"@type":"Question","name":"Idade avançada, artrose ou cirurgia prévia inviabilizam o tratamento?","acceptedAnswer":{"@type":"Answer","text":"Idade isolada não é critério de exclusão. Pacientes idosos, com artrose moderada a avançada ou histórico cirúrgico podem ser candidatos a tratamentos conservadores quando há indicação clínica clara após avaliação."}}]}</script>
 
     <style>
         *{margin:0;padding:0;box-sizing:border-box;}
         html{scroll-behavior:smooth;}
-        body{font-family:'DM Sans',sans-serif;color:#1C1C1C;background:#fff;overflow-x:hidden;}
+        body{font-family:'DM Sans',sans-serif;color:#0F0F0F;background:#fff;overflow-x:hidden;}
         h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;}
 
-        /* ── PALETA UNIFICADA ── */
+        /* ── PALETA UNIFICADA v2 (Maio 2026) ──
+           Refinamento editorial: teal mais saturado, gold→clay (caramelo do consultório),
+           warm→bone (mais quente), ink mais profundo, muted→stone (cinza quente).
+           Aliases antigos preservados apontando para valores novos pra zero quebra. */
         :root{
-            --teal:#0B6B6B;
-            --teal-dark:#085555;
-            --teal-light:#E8F5F2;
-            --gold:#C8A96A;
-            --gold-light:#F5EDD8;
-            --warm:#FAF7F2;
-            --warm-dark:#F0EAE0;
-            --ink:#1C1C1C;
-            --muted:#5A6472;
+            /* Novos tokens v2 */
+            --teal:#0A5757;
+            --teal-deep:#053838;
+            --teal-soft:#E6EDEC;
+            --clay:#B5654A;
+            --clay-soft:#F0E5DF;
+            --bone:#F5F0E8;
+            --bone-deep:#E8E0D2;
+            --ink:#0F0F0F;
+            --stone:#6B6660;
+            --stone-soft:#C9C3BA;
+            --hairline:rgba(15,15,15,0.08);
+            --hairline-strong:rgba(15,15,15,0.15);
+
+            /* Aliases legados — apontam pros novos pra zero quebra de CSS existente */
+            --teal-dark:var(--teal-deep);
+            --teal-light:var(--teal-soft);
+            --gold:var(--clay);
+            --gold-light:var(--clay-soft);
+            --warm:var(--bone);
+            --warm-dark:var(--bone-deep);
+            --muted:var(--stone);
         }
 
         /* ── HERO BEGE ── */
@@ -141,13 +157,13 @@
 
         @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
 
-        :focus-visible{outline:2px solid var(--teal,#0B6B6B);outline-offset:2px;}
-        .skip-link{position:absolute;left:-9999px;top:0;z-index:9999;background:var(--teal,#0B6B6B);color:#fff;padding:10px 16px;border-radius:0 0 8px 0;text-decoration:none;font-weight:600;}
+        :focus-visible{outline:2px solid var(--teal,#0A5757);outline-offset:2px;}
+        .skip-link{position:absolute;left:-9999px;top:0;z-index:9999;background:var(--teal,#0A5757);color:#fff;padding:10px 16px;border-radius:0 0 8px 0;text-decoration:none;font-weight:600;}
         .skip-link:focus{left:0;}
 
         /* ── MOBILE CRÍTICO — garante render sem Tailwind ── */
         @media(max-width:767px){
-            .hero-bg { background: #FAF7F2 !important; }
+            .hero-bg { background: #F5F0E8 !important; }
             .hero-bg::after { display:none !important; }
             .max-w-6xl { max-width:100%; }
             .px-4 { padding-left:16px; padding-right:16px; }
@@ -186,6 +202,45 @@
     @media(max-width:640px){
       #tad-win{max-height:50vh;bottom:160px}
       #tad-btn{bottom:100px;left:16px;right:auto}
+    }
+
+    /* ── REDESIGN v2 — assinatura tipográfica e refinamentos editoriais ── */
+    /* Itálico Cormorant em teal — usado pra destacar conceito-chave em headlines */
+    .display-italic {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--teal);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+    /* Botão primário refinado — border-radius reduzido (2-4px em vez de 50px) pra registro editorial */
+    .btn-wa {
+      border-radius: 4px;
+    }
+    /* Eyebrow editorial — hairline horizontal antes do texto */
+    .eyebrow-v2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stone);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .eyebrow-v2::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--clay);
+      display: inline-block;
+    }
+    /* Hairlines em vez de borders fortes — disciplina editorial */
+    .border-editorial {
+      border: 1px solid var(--hairline);
+    }
+    .border-editorial:hover {
+      border-color: var(--hairline-strong);
     }
     </style>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Dr. Kleber Rangel — Apresentação","description":"Apresentação do Dr. Kleber Rangel, ortopedista especialista em medicina da dor em Divinópolis-MG. Tratamentos sem cirurgia para dor na coluna, joelho e articulações.","thumbnailUrl":"https://i.ytimg.com/vi/yI42EaBILQ4/hqdefault.jpg","uploadDate":"2026-04-01","duration":"PT2M35S","embedUrl":"https://www.youtube.com/embed/yI42EaBILQ4","publisher":{"@type":"Person","name":"Dr. Kleber Rangel","url":"https://www.drkleberrangel.com.br"}}</script>
@@ -346,8 +401,8 @@
     <a href="/" style="display:flex;align-items:center;gap:0.5rem;text-decoration:none;flex-shrink:0;">
       <img src="/assets/logo.webp" alt="Clínica Trate a Dor" width="36" height="36" style="width:36px;height:36px;object-fit:contain;flex-shrink:0;">
       <div style="line-height:1.3;">
-        <div style="font-weight:700;font-size:0.875rem;color:#0B6B6B;white-space:nowrap;">Dr. Kleber Rangel</div>
-        <div style="font-size:0.65rem;color:#5A6472;white-space:nowrap;">Ortopedista · CRM-MG 68724</div>
+        <div style="font-weight:700;font-size:0.875rem;color:#0A5757;white-space:nowrap;">Dr. Kleber Rangel</div>
+        <div style="font-size:0.65rem;color:#6B6660;white-space:nowrap;">Ortopedista · CRM-MG 68724</div>
       </div>
     </a>
 
@@ -362,7 +417,7 @@
 
     <!-- CTA Agendar -->
     <a href="https://wa.me/5537998419396?text=Olá Dr. Kleber, vim pela home do site drkleberrangel.com.br e gostaria de agendar uma consulta." 
-       style="background:#0B6B6B;color:white;padding:0.5rem 1.1rem;border-radius:8px;text-decoration:none;font-size:0.85rem;font-weight:600;white-space:nowrap;flex-shrink:0;">
+       style="background:#0A5757;color:white;padding:0.5rem 1.1rem;border-radius:8px;text-decoration:none;font-size:0.85rem;font-weight:600;white-space:nowrap;flex-shrink:0;">
       Agendar
     </a>
 
@@ -393,11 +448,11 @@
 
             <!-- ESQUERDA: copy -->
             <div class="fade-up" style="opacity:1;transform:none;width:100%;min-width:0;">
-                <div class="inline-flex items-center gap-2 mb-6 text-sm font-medium px-4 py-2 rounded-full" style="background:var(--teal-light);color:var(--teal);">
-                    <span>✓</span> Ortopedista · Medicina da Dor · Divinópolis-MG · CRM-MG 68724
+                <div class="eyebrow-v2 mb-6">
+                    Ortopedia · Medicina da dor · Divinópolis-MG · CRM-MG 68724
                 </div>
                 <h1 class="text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight" style="color:var(--ink);">
-                    Dor crônica na coluna, joelho ou ombro?<br><span style="color:var(--teal);">Vamos descobrir a causa.</span>
+                    Dor crônica na coluna, joelho ou ombro?<br><span class="display-italic">Vamos descobrir a causa.</span>
                 </h1>
                 <p class="text-lg mb-4 leading-relaxed" style="color:var(--muted);">
                     A maioria dos pacientes que chega até mim já passou por vários médicos, tomou anti-inflamatório, fez fisioterapia — e <strong style="color:var(--ink);">continua com dor</strong>. O problema quase sempre é o mesmo: ninguém investigou direito de onde vem a dor.
@@ -430,10 +485,10 @@
                              style="width:100%;height:clamp(320px,55vw,580px);object-fit:cover;object-position:center 12%;display:block;"></picture>
                     </div>
                     <!-- Badge flutuante -->
-                    <div style="position:absolute;bottom:24px;left:-20px;background:#fff;border-radius:12px;padding:14px 18px;box-shadow:0 8px 24px rgba(0,0,0,0.12);border-left:3px solid var(--gold);">
-                        <div class="text-xs font-semibold mb-1" style="color:var(--muted);">Consulta especializada</div>
+                    <div style="position:absolute;bottom:24px;left:-20px;background:#fff;border-radius:4px;padding:14px 18px;box-shadow:0 8px 24px rgba(0,0,0,0.12);border-left:3px solid var(--clay);">
+                        <div class="text-xs font-semibold mb-1" style="color:var(--muted);">Tempo de consulta</div>
                         <div class="text-lg font-bold" style="color:var(--ink);font-family:'Cormorant Garamond',serif;">50–60 minutos</div>
-                        <div class="text-xs" style="color:var(--muted);">de investigação real</div>
+                        <div class="text-xs" style="color:var(--muted);">avaliação clínica detalhada</div>
                     </div>
                     <!-- Botão vídeo — abre modal centralizado -->
                     <div style="position:absolute;bottom:24px;right:-16px;background:#fff;border-radius:14px;padding:12px 16px;box-shadow:0 8px 28px rgba(0,0,0,0.14);cursor:pointer;display:flex;align-items:center;gap:10px;min-width:180px;" onclick="openVideo()" id="video-badge">
@@ -452,7 +507,7 @@
                             <div style="position:relative;padding-bottom:177.78%;border-radius:16px;overflow:hidden;background:#000;">
                                 <iframe id="yt-iframe" src="" title="Dr. Kleber Rangel — Apresentação" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;"></iframe>
                             </div>
-                            <button onclick="closeVideo()" style="position:absolute;top:-14px;right:-14px;background:#fff;border:none;color:#1C1C1C;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.4);line-height:1;">✕</button>
+                            <button onclick="closeVideo()" style="position:absolute;top:-14px;right:-14px;background:#fff;border:none;color:#0F0F0F;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.4);line-height:1;">✕</button>
                         </div>
                     </div>
                     <script>
@@ -522,10 +577,16 @@
             <!-- Foto grande -->
             <div class="hidden md:block">
                 <div style="border-radius:4px 20px 20px 4px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.12);">
-                    <picture><source srcset="/assets/foto_kleber_rangel.webp" type="image/webp"><img src="/assets/foto_kleber_rangel.png"
-                         alt="Dr. Kleber Rangel — Ortopedista especialista em dor crônica, com aparelho de ultrassom e diplomas ao fundo"
-                         width="560" height="680"
-                         style="width:100%;height:clamp(400px,55vw,660px);object-fit:cover;object-position:center 10%;display:block;"></picture>
+                    <picture>
+                        <source media="(max-width: 640px)" srcset="/assets/dr-kleber-consulta-mobile.webp" type="image/webp">
+                        <source media="(max-width: 640px)" srcset="/assets/dr-kleber-consulta-mobile.jpg" type="image/jpeg">
+                        <source srcset="/assets/dr-kleber-consulta.webp" type="image/webp">
+                        <img src="/assets/dr-kleber-consulta.jpg"
+                             alt="Dr. Kleber Rangel em consulta no consultório em Divinópolis, em postura de escuta atenta a uma paciente"
+                             width="800" height="1548"
+                             loading="lazy" decoding="async"
+                             style="width:100%;height:clamp(400px,55vw,660px);object-fit:cover;object-position:center top;display:block;">
+                    </picture>
                 </div>
                 <!-- Credenciais abaixo da foto -->
                 <div class="mt-6 grid grid-cols-2 gap-3">
@@ -540,59 +601,57 @@
                 </div>
             </div>
 
-            <!-- Bio storytelling -->
+            <!-- Bio + Posicionamento -->
             <div>
-                <h2 class="text-4xl md:text-5xl mb-3" style="color:var(--ink);">Quem é o Dr. Kleber</h2>
-                <p class="text-sm font-medium mb-8 flex items-center gap-2 flex-wrap" style="color:var(--muted);">
-                    <span>Cristão</span>
-                    <span style="color:var(--gold);">·</span>
-                    <span>Marido e pai</span>
-                    <span style="color:var(--gold);">·</span>
-                    <span>Médico</span>
+                <div class="text-sm font-semibold mb-3 uppercase tracking-widest" style="color:var(--teal);">Sobre o médico</div>
+                <h2 class="text-4xl md:text-5xl mb-4" style="color:var(--ink);">
+                    Dor crônica precisa de quem <span class="display-italic">olha para a causa</span>, não para o sintoma
+                </h2>
+                <p class="text-base leading-relaxed mb-8" style="color:var(--muted);">
+                    Sou o Dr. Kleber Rangel — ortopedista com subespecialização em coluna vertebral e formação em intervenções guiadas por ultrassom. Atendo adultos que convivem com dor há meses ou anos, já passaram por outros profissionais e querem entender o que realmente está acontecendo antes de aceitar uma cirurgia ou continuar em ciclos de remédio.
                 </p>
 
-                <!-- Parágrafo 1 -->
-                <p class="text-base leading-relaxed mb-5" style="color:var(--muted);">
-                    Me formei em medicina em Volta Redonda, em 2009. No ano seguinte, servi como <strong style="color:var(--ink);">Tenente Médico da Força Aérea Brasileira</strong> — uma experiência que moldou minha forma de trabalhar: rigor, precisão e responsabilidade com cada decisão.
-                </p>
-                <p class="text-base leading-relaxed mb-5" style="color:var(--muted);">
-                    Em 2011, iniciei a residência em Ortopedia e Traumatologia no <strong style="color:var(--ink);">SOTRP de Ribeirão Preto</strong>, onde obtive o Título de Especialista em Ortopedia e Traumatologia pela SBOT (TEOT 14.706).
-                </p>
-                <p class="text-base leading-relaxed mb-5" style="color:var(--muted);">
-                    Depois, fiz a subespecialização em <strong style="color:var(--ink);">Cirurgia e Patologia da Coluna Vertebral na Santa Casa de Misericórdia de São Paulo</strong>, dois anos dedicados à formação em coluna vertebral.
-                </p>
+                <!-- Posicionamento: quem atende -->
+                <div class="mb-8 p-6 rounded-2xl" style="background:var(--bone);border-left:3px solid var(--clay);">
+                    <div class="text-xs font-semibold mb-3 uppercase tracking-wider" style="color:var(--teal);">Perfil dos pacientes que atendo</div>
+                    <ul class="space-y-2 text-sm" style="color:var(--ink);">
+                        <li class="check-gold">Adultos com dor crônica em coluna, joelho, quadril ou ombro</li>
+                        <li class="check-gold">Quem já recebeu indicação cirúrgica e quer uma segunda opinião antes de decidir</li>
+                        <li class="check-gold">Pacientes que tentaram fisioterapia, infiltrações ou medicação sem o resultado esperado</li>
+                        <li class="check-gold">Casos que exigem investigação detalhada — não diagnóstico de 10 minutos</li>
+                    </ul>
+                </div>
 
-                <!-- Timeline -->
+                <!-- Formação resumida -->
+                <h3 class="text-xl mb-4" style="color:var(--ink);">Formação</h3>
+                <ul class="space-y-2 text-sm mb-8" style="color:var(--muted);">
+                    <li class="check-gold">Graduação em Medicina — Faculdade de Ciências Médicas de Volta Redonda (2009)</li>
+                    <li class="check-gold">Tenente Médico — Força Aérea Brasileira (2010)</li>
+                    <li class="check-gold">Residência em Ortopedia e Traumatologia — SOTRP, Ribeirão Preto (2011–2013)</li>
+                    <li class="check-gold">Título de Especialista em Ortopedia — SBOT · TEOT 14.706</li>
+                    <li class="check-gold">Subespecialização em Cirurgia e Patologia da Coluna Vertebral — Santa Casa de São Paulo (2014–2015)</li>
+                    <li class="check-gold">Pós-graduação em Medicina da Dor</li>
+                    <li class="check-gold">Formação em Medicina Regenerativa e Intervenções Guiadas por Ultrassom</li>
+                </ul>
+
+                <!-- Trajetória curta -->
+                <h3 class="text-xl mb-4" style="color:var(--ink);">Trajetória</h3>
                 <div class="timeline mb-8">
                     <div class="timeline-item">
-                        <div class="text-xs font-semibold mb-1" style="color:var(--gold);">2016 – 2023</div>
-                        <div class="text-sm font-semibold" style="color:var(--ink);">Hospital São João de Deus + Hospital Santa Mônica</div>
-                        <div class="text-sm" style="color:var(--muted);">Atuação hospitalar com foco específico em coluna. Foi nesse período que vi de perto o quanto a cirurgia assustava os pacientes — e o quanto existia outro caminho.</div>
+                        <div class="text-xs font-semibold mb-1" style="color:var(--clay);">2016 – 2023</div>
+                        <div class="text-sm font-semibold" style="color:var(--ink);">Hospital São João de Deus e Hospital Santa Mônica</div>
+                        <div class="text-sm" style="color:var(--muted);">Atuação hospitalar com foco em coluna vertebral, acompanhando casos cirúrgicos e conservadores.</div>
                     </div>
                     <div class="timeline-item">
-                        <div class="text-xs font-semibold mb-1" style="color:var(--gold);">2023 – hoje</div>
+                        <div class="text-xs font-semibold mb-1" style="color:var(--clay);">2023 – hoje</div>
                         <div class="text-sm font-semibold" style="color:var(--ink);">Clínica Trate a Dor — dedicação exclusiva</div>
-                        <div class="text-sm" style="color:var(--muted);">Larguei os hospitais para oferecer o que cada paciente merece: tempo, escuta e diagnóstico honesto. Sem atalhos.</div>
+                        <div class="text-sm" style="color:var(--muted);">Modelo de consulta longa, com tempo de escuta e investigação que o atendimento hospitalar não permitia.</div>
                     </div>
                 </div>
 
-                <!-- Citação -->
-                <blockquote style="border-left:3px solid var(--gold);padding:16px 0 16px 24px;margin-bottom:24px;background:var(--gold-light);border-radius:0 12px 12px 0;">
-                    <p class="text-lg italic leading-relaxed" style="color:var(--ink);font-family:'Cormorant Garamond',serif;">"A maioria dos meus pacientes chegava com medo de uma cirurgia. Meu trabalho é mostrar que, na maior parte dos casos, existe outro caminho."</p>
-                    <footer class="text-sm mt-2 font-semibold" style="color:var(--teal);">— Dr. Kleber Rangel, CRM-MG 68724</footer>
-                </blockquote>
-
-                <!-- Credenciais lista -->
-                <ul class="space-y-2 text-sm" style="color:var(--muted);">
-                    <li class="check-gold">Medicina: Faculdade de Ciências Médicas de Volta Redonda (2009)</li>
-                    <li class="check-gold">Tenente Médico — Força Aérea Brasileira (2010)</li>
-                    <li class="check-gold">Residência Ortopedia e Traumatologia — SOTRP Ribeirão Preto (2011–2013)</li>
-                    <li class="check-gold">Título de Especialista SBOT · TEOT 14.706</li>
-                    <li class="check-gold">Subespecialização em Coluna Vertebral — Santa Casa de São Paulo (2014–2015)</li>
-                    <li class="check-gold">Pós-graduação em Medicina da Dor</li>
-                    <li class="check-gold">Formação em Medicina Regenerativa e Intervenções por Ultrassom</li>
-                    <li class="check-gold">Membro: SBOT · SBED · SBRET · ABDOR · ASRM</li>
-                </ul>
+                <!-- Afiliações -->
+                <div class="text-xs uppercase tracking-wider mb-2" style="color:var(--muted);">Sociedades médicas</div>
+                <p class="text-sm" style="color:var(--ink);">SBOT · SBED · SBRET · ABDOR · ASRM</p>
             </div>
         </div>
     </div>
@@ -601,62 +660,121 @@
 <!-- ══════════════════════════════════════════
      MÉTODO — 4 passos
 ══════════════════════════════════════════ -->
-<section id="metodo" class="py-12" style="background:#fff;">
+<section id="metodo" class="py-20" style="background:#fff;">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-8">
-            <h2 class="text-4xl md:text-5xl mb-4" style="color:var(--ink);">Como funciona na prática</h2>
-            <p class="text-lg max-w-2xl mx-auto" style="color:var(--muted);">Não existe protocolo genérico aqui. O tratamento começa com investigação — e só depois vem a proposta terapêutica.</p>
+        <div class="text-center mb-12">
+            <div class="text-sm font-semibold mb-3 uppercase tracking-widest" style="color:var(--teal);">Método</div>
+            <h2 class="text-4xl md:text-5xl mb-4" style="color:var(--ink);">
+                Do <span class="display-italic">preparo do organismo</span> até a alta — uma sequência clínica
+            </h2>
+            <p class="text-lg max-w-2xl mx-auto" style="color:var(--muted);">Tratamento de dor crônica não começa pela agulha. Começa por entender o terreno onde a dor se instalou — e só depois vem o procedimento.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
-            <!-- Linha conectora desktop -->
-            <div class="hidden md:block absolute top-8 left-1/8 right-1/8 h-px" style="background:linear-gradient(to right,var(--gold),var(--teal));top:28px;left:12%;right:12%;position:absolute;"></div>
 
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
+            <!-- Linha conectora desktop -->
+            <div class="hidden md:block" style="position:absolute;top:28px;left:10%;right:10%;height:1px;background:linear-gradient(to right,var(--clay),var(--teal));"></div>
+
+            <!-- 01 — Preparo do organismo -->
             <div class="card-warm relative">
                 <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-white mb-5 text-sm" style="background:var(--teal);">01</div>
-                <h3 class="text-xl mb-3" style="color:var(--ink);">Escutar de verdade</h3>
-                <p class="text-sm leading-relaxed" style="color:var(--muted);">A consulta começa pela sua história. O que dói, desde quando, o que piora, o que já foi tentado. Isso leva tempo — e esse tempo faz diferença no diagnóstico.</p>
+                <h3 class="text-lg mb-3" style="color:var(--ink);">Preparo do organismo</h3>
+                <p class="text-sm leading-relaxed mb-3" style="color:var(--muted);">Antes de qualquer procedimento, avaliamos o terreno: sono, inflamação sistêmica, déficits nutricionais, controle metabólico. Um organismo inflamado não responde bem a nenhuma técnica — por mais precisa que ela seja.</p>
+                <p class="text-xs" style="color:var(--clay);font-style:italic;">Por que isso importa: reduz risco e melhora a resposta clínica.</p>
             </div>
+
+            <!-- 02 — Avaliação completa -->
             <div class="card-warm relative">
                 <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-white mb-5 text-sm" style="background:var(--teal);">02</div>
-                <h3 class="text-xl mb-3" style="color:var(--ink);">Encontrar a causa</h3>
-                <p class="text-sm leading-relaxed" style="color:var(--muted);">Exame clínico detalhado e leitura ativa das suas imagens. A maioria das pessoas sai daqui com uma resposta que nunca recebeu antes: de onde realmente vem a dor.</p>
+                <h3 class="text-lg mb-3" style="color:var(--ink);">Avaliação completa</h3>
+                <p class="text-sm leading-relaxed mb-3" style="color:var(--muted);">Anamnese aprofundada e exame físico ortopédico detalhado. Não é triagem de 10 minutos. Mapeamos cada estrutura suspeita — coluna, articulação, tendão, nervo — e correlacionamos com o que você sente.</p>
+                <p class="text-xs" style="color:var(--clay);font-style:italic;">Duração média: 50 a 60 minutos.</p>
             </div>
+
+            <!-- 03 — Ultrassom em consultório -->
             <div class="card-warm relative">
                 <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-white mb-5 text-sm" style="background:var(--teal);">03</div>
-                <h3 class="text-xl mb-3" style="color:var(--ink);">Tratar com precisão</h3>
-                <p class="text-sm leading-relaxed" style="color:var(--muted);">O plano é montado para o seu caso — não para uma lista de queixas. PRP, bloqueios guiados, ozonioterapia: cada recurso tem indicação baseada no que o seu quadro pede.</p>
+                <h3 class="text-lg mb-3" style="color:var(--ink);">Ultrassom no consultório</h3>
+                <p class="text-sm leading-relaxed mb-3" style="color:var(--muted);">Quando indicado, o ultrassom é realizado na mesma consulta. Visualiza tendões, bursas, nervos periféricos e articulações em tempo real — informação que a ressonância isolada nem sempre oferece.</p>
+                <p class="text-xs" style="color:var(--clay);font-style:italic;">Equipamento próprio, no consultório.</p>
             </div>
+
+            <!-- 04 — Diagnóstico -->
             <div class="card-warm relative">
                 <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-white mb-5 text-sm" style="background:var(--teal);">04</div>
-                <h3 class="text-xl mb-3" style="color:var(--ink);">Acompanhar e ajustar</h3>
-                <p class="text-sm leading-relaxed" style="color:var(--muted);">Reavaliação contínua. Se algo não está funcionando como esperado, o plano muda. Não existe "vamos continuar e ver" sem uma razão clínica clara.</p>
+                <h3 class="text-lg mb-3" style="color:var(--ink);">Diagnóstico explicado</h3>
+                <p class="text-sm leading-relaxed mb-3" style="color:var(--muted);">Você sai entendendo o que está acontecendo no seu corpo. Em linguagem clara, com base no exame clínico, nas suas imagens prévias e no ultrassom. Sem termos vagos, sem "é da idade".</p>
+                <p class="text-xs" style="color:var(--clay);font-style:italic;">Inclui leitura ativa das suas imagens prévias.</p>
+            </div>
+
+            <!-- 05 — Jornada -->
+            <div class="card-warm relative">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-white mb-5 text-sm" style="background:var(--teal);">05</div>
+                <h3 class="text-lg mb-3" style="color:var(--ink);">Jornada terapêutica</h3>
+                <p class="text-sm leading-relaxed mb-3" style="color:var(--muted);">Plano com etapas, retornos e critérios de reavaliação definidos. Se algo não responde como esperado, o plano é ajustado — com base clínica, não no "vamos ver como vai".</p>
+                <p class="text-xs" style="color:var(--clay);font-style:italic;">Cronograma individualizado por caso.</p>
             </div>
         </div>
+
+        <!-- Bloco visual: diagnóstico explicado em linguagem clara -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mt-16 mb-4">
+            <div>
+                <div style="border-radius:4px 20px 20px 4px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.10);">
+                    <picture>
+                        <source media="(max-width: 640px)" srcset="/assets/dr-kleber-coluna-mobile.webp" type="image/webp">
+                        <source media="(max-width: 640px)" srcset="/assets/dr-kleber-coluna-mobile.jpg" type="image/jpeg">
+                        <source srcset="/assets/dr-kleber-coluna.webp" type="image/webp">
+                        <img src="/assets/dr-kleber-coluna.jpg"
+                             alt="Dr. Kleber Rangel demonstrando modelo anatômico de hérnia de disco lombar L4-L5 no consultório"
+                             width="800" height="1100"
+                             loading="lazy" decoding="async"
+                             style="width:100%;height:auto;display:block;">
+                    </picture>
+                </div>
+            </div>
+            <div>
+                <div class="text-sm font-semibold mb-3 uppercase tracking-widest" style="color:var(--clay);">Diagnóstico em linguagem clara</div>
+                <h3 class="text-3xl md:text-4xl mb-5" style="color:var(--ink);">
+                    Você precisa <span class="display-italic">entender o que está acontecendo</span> no seu corpo
+                </h3>
+                <p class="text-base leading-relaxed mb-4" style="color:var(--muted);">
+                    Hérnia, protrusão, abaulamento, espondilose, condropatia. Termos que aparecem em laudos e que, sem explicação, viram só motivo de medo. Aqui, modelos anatômicos e as suas próprias imagens são usados para mostrar — visualmente — o que está acontecendo na sua coluna ou articulação.
+                </p>
+                <p class="text-base leading-relaxed" style="color:var(--muted);">
+                    Decisão informada exige informação clara. Sem isso, qualquer tratamento — cirúrgico ou conservador — vira aposta.
+                </p>
+            </div>
+        </div>
+
+        <!-- Nota CFM -->
+        <p class="text-xs text-center mt-10 max-w-3xl mx-auto" style="color:var(--muted);">A descrição acima representa a sequência de avaliação padrão do consultório. Indicação, duração e desfecho de cada etapa dependem da avaliação clínica individual — Resolução CFM nº 2.336/2023.</p>
     </div>
 </section>
 
 <!-- ══════════════════════════════════════════
      TRATAMENTOS — cards com borda dourada
 ══════════════════════════════════════════ -->
-<section id="tratamentos" class="py-20" style="background:var(--warm);">
+<section id="tratamentos" class="py-20" style="background:var(--bone);">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-8">
-            <h2 class="text-4xl md:text-5xl mb-4" style="color:var(--ink);">Principais Tratamentos</h2>
-            <p class="text-lg max-w-2xl mx-auto" style="color:var(--muted);">Cada recurso tem indicação clínica definida. Você vai saber exatamente por que foi escolhido — e o que esperar.</p>
+        <div class="text-center mb-12">
+            <div class="text-sm font-semibold mb-3 uppercase tracking-widest" style="color:var(--teal);">Tratamentos</div>
+            <h2 class="text-4xl md:text-5xl mb-4" style="color:var(--ink);">
+                Recursos com <span class="display-italic">indicação clínica definida</span>
+            </h2>
+            <p class="text-lg max-w-2xl mx-auto" style="color:var(--muted);">Cada técnica abaixo tem indicação específica. Na consulta você entende por que ela foi — ou não foi — escolhida para o seu caso.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="card-gold">
-                <h3 class="text-2xl mb-3" style="color:var(--teal);">Bloqueios Guiados por Ultrassom</h3>
-                <p class="mb-4 leading-relaxed" style="color:var(--muted);">A agulha chega exatamente onde precisa — nervo, articulação ou estrutura específica — com guia de imagem em tempo real. Não às cegas. Isso muda o resultado e reduz o desconforto do procedimento.</p>
+                <h3 class="text-2xl mb-3" style="color:var(--teal);">Procedimentos guiados por ultrassom</h3>
+                <p class="mb-4 leading-relaxed" style="color:var(--muted);">A agulha é posicionada com visualização em tempo real da estrutura-alvo — nervo, articulação, bursa ou tendão. A imagem em tempo real permite maior precisão técnica e tende a reduzir o desconforto comparado à punção às cegas.</p>
                 <ul class="space-y-2 text-sm" style="color:var(--muted);">
-                    <li class="check-gold">Bloqueio facetário (coluna)</li>
-                    <li class="check-gold">Infiltração epidural</li>
+                    <li class="check-gold">Bloqueio facetário e bloqueio de ramo medial</li>
+                    <li class="check-gold">Infiltração epidural e radicular</li>
                     <li class="check-gold">Bloqueio de nervo periférico</li>
                 </ul>
             </div>
             <div class="card-gold">
-                <h3 class="text-2xl mb-3" style="color:var(--teal);">Medicina Regenerativa</h3>
-                <p class="mb-4 leading-relaxed" style="color:var(--muted);">Usa componentes do próprio sangue ou medula para estimular reparo em articulações e tendões. Não é indicado para todo mundo — a evidência atual mostra benefício real em casos selecionados. Se o seu não for, você vai saber na consulta, antes de gastar qualquer coisa.</p>
+                <h3 class="text-2xl mb-3" style="color:var(--teal);">Medicina regenerativa</h3>
+                <p class="mb-4 leading-relaxed" style="color:var(--muted);">Uso de componentes do próprio sangue ou medula óssea para estimular reparo em articulações e tendões. A indicação é restrita a casos selecionados, conforme evidência clínica atual. Se o seu quadro não tem indicação, você é informado antes de qualquer custo.</p>
                 <ul class="space-y-2 text-sm" style="color:var(--muted);">
                     <li class="check-gold">PRP — plasma rico em plaquetas</li>
                     <li class="check-gold">BMA — aspirado de medula óssea</li>
@@ -665,23 +783,26 @@
             </div>
             <div class="card-gold">
                 <h3 class="text-2xl mb-3" style="color:var(--teal);">Viscossuplementação</h3>
-                <p class="mb-4 leading-relaxed" style="color:var(--muted);">Ácido hialurônico intra-articular para joelho, quadril e ombro com artrose. Melhora a lubrificação e reduz inflamação local. A indicação depende do estágio da artrose e do quadro clínico — isso será explicado antes de qualquer proposta.</p>
+                <p class="mb-4 leading-relaxed" style="color:var(--muted);">Aplicação intra-articular de ácido hialurônico em joelho, quadril e ombro com artrose. A indicação depende do estágio da artrose, do quadro clínico e da resposta a tratamentos prévios — discutida individualmente antes da proposta.</p>
                 <ul class="space-y-2 text-sm" style="color:var(--muted);">
                     <li class="check-gold">Artrose de joelho</li>
                     <li class="check-gold">Quadril e ombro</li>
-                    <li class="check-gold">Indicação sempre individualizada</li>
+                    <li class="check-gold">Indicação individualizada por caso</li>
                 </ul>
             </div>
             <div class="card-gold">
-                <h3 class="text-2xl mb-3" style="color:var(--teal);">Abordagem Integrativa</h3>
-                <p class="mb-4 leading-relaxed" style="color:var(--muted);">Sono ruim amplifica dor. Inflamação sistêmica perpetua o quadro. Por isso avaliamos hormônios, metabolismo e sono — não como modismo, mas porque esses fatores têm impacto direto no resultado do tratamento.</p>
+                <h3 class="text-2xl mb-3" style="color:var(--teal);">Abordagem integrativa da dor</h3>
+                <p class="mb-4 leading-relaxed" style="color:var(--muted);">Sono fragmentado e inflamação sistêmica influenciam a percepção e a manutenção da dor crônica. Quando relevante, investigamos sono, perfil hormonal e marcadores metabólicos — fatores que podem afetar a resposta ao tratamento principal.</p>
                 <ul class="space-y-2 text-sm" style="color:var(--muted);">
-                    <li class="check-gold">Ozonioterapia</li>
-                    <li class="check-gold">Ondas de choque</li>
+                    <li class="check-gold">Ozonioterapia (quando indicada)</li>
+                    <li class="check-gold">Terapia por ondas de choque</li>
                     <li class="check-gold">Avaliação hormonal e metabólica</li>
                 </ul>
             </div>
         </div>
+
+        <!-- Nota CFM -->
+        <p class="text-xs text-center mt-10 max-w-3xl mx-auto" style="color:var(--muted);">As técnicas listadas têm indicação clínica específica e devem ser avaliadas individualmente. Resultados variam conforme o caso. Conteúdo informativo — não substitui consulta presencial. Resolução CFM nº 2.336/2023.</p>
     </div>
 </section>
 
@@ -697,7 +818,7 @@
         </div>
         <div class="max-w-md mx-auto rounded-2xl p-8 text-center" style="background:#fff;border:1px solid #E8E0D8;border-top:3px solid var(--gold);">
             <div class="text-5xl font-bold mb-1" style="font-family:'Cormorant Garamond',serif;color:var(--ink);">4,8</div>
-            <div class="text-2xl mb-3" style="color:#C8A96A;letter-spacing:3px;">★★★★★</div>
+            <div class="text-2xl mb-3" style="color:#B5654A;letter-spacing:3px;">★★★★★</div>
             <div class="text-sm mb-6" style="color:var(--muted);">Média das avaliações públicas no Google — pacientes atendidos em Divinópolis-MG e região.</div>
             <a href="https://www.google.com/search?q=Dr+Kleber+Rangel+Divinopolis" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold hover:underline" style="color:var(--teal);">Ver avaliações no Google →</a>
         </div>
@@ -822,9 +943,9 @@ function playYTVertical(el,id){var i=document.createElement('iframe');i.src='htt
 <section style="background:#f0f4f9;padding:2rem 1rem;">
   <div style="max-width:560px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:1.25rem;">
-      <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:#0B6B6B;font-family:Arial,sans-serif;margin-bottom:0.4rem;">Ficou com dúvida?</div>
-      <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;font-weight:700;color:#1C1C1C;margin-bottom:0.4rem;line-height:1.2;">Pergunte antes de decidir</h2>
-      <p style="font-size:0.85rem;color:#5A6472;font-family:Arial,sans-serif;">O assistente responde dúvidas sobre tratamentos e como funciona a consulta. Não substitui avaliação médica.</p>
+      <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:#0A5757;font-family:Arial,sans-serif;margin-bottom:0.4rem;">Ficou com dúvida?</div>
+      <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;font-weight:700;color:#0F0F0F;margin-bottom:0.4rem;line-height:1.2;">Pergunte antes de decidir</h2>
+      <p style="font-size:0.85rem;color:#6B6660;font-family:Arial,sans-serif;">O assistente responde dúvidas sobre tratamentos e como funciona a consulta. Não substitui avaliação médica.</p>
     </div>
 
     <!-- Chat inline -->
@@ -943,73 +1064,93 @@ function playYTVertical(el,id){var i=document.createElement('iframe');i.src='htt
   };
 })();
 </script>
-<section id="faq" class="py-20" style="background:var(--warm);">
+<section id="faq" class="py-20" style="background:var(--bone);">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-            <h2 class="text-4xl md:text-5xl mb-4" style="color:var(--ink);">Perguntas Frequentes</h2>
-            <p style="color:var(--muted);">As dúvidas mais comuns, respondidas de forma direta</p>
+            <div class="text-sm font-semibold mb-3 uppercase tracking-widest" style="color:var(--teal);">Dúvidas</div>
+            <h2 class="text-4xl md:text-5xl mb-4" style="color:var(--ink);">
+                As perguntas que <span class="display-italic">você está se fazendo agora</span>
+            </h2>
+            <p style="color:var(--muted);">Respostas diretas — sem promessa, sem evasiva.</p>
         </div>
         <div class="space-y-3">
-            <details class="rounded-xl overflow-hidden" style="background:#fff;border:1px solid #E8E0D8;" open>
+
+            <!-- 01 — Dói? -->
+            <details class="rounded-xl overflow-hidden" style="background:#fff;border:1px solid var(--bone-deep);" open>
                 <summary class="flex justify-between items-center p-6 font-semibold" style="color:var(--ink);">
-                    O que acontece exatamente na primeira consulta?
+                    O procedimento dói?
                     <span class="faq-icon">+</span>
                 </summary>
                 <div class="px-6 pb-6 text-sm leading-relaxed space-y-2" style="color:var(--muted);">
-                    <p>A consulta dura de 50 a 60 minutos e segue uma sequência específica:</p>
-                    <p><strong style="color:var(--ink);">1. Escuta da história completa</strong> — desde quando dói, o que piora, o que já foi tentado, quais exames você já fez.</p>
-                    <p><strong style="color:var(--ink);">2. Exame clínico detalhado</strong> — não um exame de triagem. O exame que define onde está o problema real.</p>
-                    <p><strong style="color:var(--ink);">3. Leitura ativa das suas imagens</strong> — se você tiver ressonância, tomografia ou raio-x, eles são lidos aqui, no momento, com você.</p>
-                    <p><strong style="color:var(--ink);">4. Diagnóstico e plano</strong> — ao final, você sai entendendo o que está acontecendo no seu corpo e com um plano terapêutico claro. Sem "volta daqui a 30 dias para ver como está".</p>
-                    <p class="text-xs" style="color:#9CA3AF;padding-top:8px;">Atendimento particular. Emitimos nota fiscal para reembolso junto ao seu plano de saúde.</p>
+                    <p>A maior parte dos procedimentos guiados por ultrassom é realizada com anestesia local — o desconforto principal costuma ser apenas o da picada inicial. Como a agulha é visualizada em tempo real, evita-se manipulação desnecessária dos tecidos.</p>
+                    <p>Pacientes com ansiedade procedimental podem ser orientados sobre opções adicionais de conforto durante a consulta.</p>
                 </div>
             </details>
-            <details class="rounded-xl overflow-hidden" style="background:#fff;border:1px solid #E8E0D8;">
+
+            <!-- 02 — Quanto tempo até sentir melhora? -->
+            <details class="rounded-xl overflow-hidden" style="background:#fff;border:1px solid var(--bone-deep);">
                 <summary class="flex justify-between items-center p-6 font-semibold" style="color:var(--ink);">
-                    A cirurgia é sempre necessária para tratar dor crônica?
+                    Quanto tempo leva para começar a sentir diferença?
                     <span class="faq-icon">+</span>
                 </summary>
-                <div class="px-6 pb-6 text-sm leading-relaxed" style="color:var(--muted);">
-                    Não necessariamente. Em muitos casos de dor crônica, existem alternativas ao procedimento cirúrgico — como bloqueios, técnicas regenerativas e reabilitação — que podem ser avaliadas pelo especialista antes de qualquer decisão. A indicação cirúrgica depende de cada caso e é sempre definida após avaliação clínica completa.
+                <div class="px-6 pb-6 text-sm leading-relaxed space-y-2" style="color:var(--muted);">
+                    <p>Depende do diagnóstico e da técnica usada. Bloqueios anestésicos diagnósticos podem ter efeito em horas. Procedimentos regenerativos (PRP, BMA) costumam ter cronograma de semanas, com reavaliação programada.</p>
+                    <p>Não existe prazo padrão. Ao final da consulta você recebe uma estimativa individualizada — baseada no seu quadro, não em média de marketing.</p>
                 </div>
             </details>
-            <details class="rounded-xl overflow-hidden" style="background:#fff;border:1px solid #E8E0D8;">
+
+            <!-- 03 — Vou precisar parar de trabalhar? -->
+            <details class="rounded-xl overflow-hidden" style="background:#fff;border:1px solid var(--bone-deep);">
                 <summary class="flex justify-between items-center p-6 font-semibold" style="color:var(--ink);">
-                    Quanto tempo leva para sentir melhora?
+                    Vou precisar me afastar do trabalho?
                     <span class="faq-icon">+</span>
                 </summary>
-                <div class="px-6 pb-6 text-sm leading-relaxed" style="color:var(--muted);">
-                    Varia conforme o quadro clínico e o tratamento indicado. Procedimentos intervencionistas e protocolos regenerativos têm cronogramas diferentes. Ao final da consulta você recebe uma estimativa individualizada e realista — sem prometer prazos que dependem de variáveis clínicas individuais.
+                <div class="px-6 pb-6 text-sm leading-relaxed space-y-2" style="color:var(--muted);">
+                    <p>A maioria dos procedimentos é ambulatorial e permite retorno às atividades habituais em curto prazo. Trabalhos sedentários geralmente podem ser retomados no mesmo dia ou no dia seguinte.</p>
+                    <p>Trabalhos que exigem esforço físico, dirigir profissionalmente ou postura prolongada podem demandar adaptação temporária — isso é definido caso a caso, com orientação por escrito.</p>
                 </div>
             </details>
-            <details class="rounded-xl overflow-hidden" style="background:#fff;border:1px solid #E8E0D8;">
+
+            <!-- 04 — Repouso? -->
+            <details class="rounded-xl overflow-hidden" style="background:#fff;border:1px solid var(--bone-deep);">
                 <summary class="flex justify-between items-center p-6 font-semibold" style="color:var(--ink);">
-                    O atendimento é particular ou atende convênio?
+                    Preciso fazer repouso depois do procedimento?
                     <span class="faq-icon">+</span>
                 </summary>
-                <div class="px-6 pb-6 text-sm leading-relaxed" style="color:var(--muted);">
-                    Atendimento <strong style="color:var(--ink);">100% particular</strong>. Esta escolha nos permite oferecer o tempo e a profundidade que uma dor crônica exige — algo que a lógica de consulta rápida do convênio não viabiliza. Emitimos nota fiscal e recibo para você tentar reembolso junto ao seu plano de saúde.
+                <div class="px-6 pb-6 text-sm leading-relaxed space-y-2" style="color:var(--muted);">
+                    <p>Repouso absoluto raramente é necessário. O que se recomenda é evitar esforços específicos nas primeiras 24–72 horas, dependendo da técnica. Atividade leve costuma ser estimulada — imobilidade prolongada piora a evolução clínica.</p>
+                    <p>Cada procedimento tem orientação pós escrita, entregue na própria consulta.</p>
                 </div>
             </details>
-            <details class="rounded-xl overflow-hidden" style="background:#fff;border:1px solid #E8E0D8;">
+
+            <!-- 05 — Riscos -->
+            <details class="rounded-xl overflow-hidden" style="background:#fff;border:1px solid var(--bone-deep);">
                 <summary class="flex justify-between items-center p-6 font-semibold" style="color:var(--ink);">
-                    Preciso parar o que estou tomando?
+                    Quais são os riscos?
                     <span class="faq-icon">+</span>
                 </summary>
-                <div class="px-6 pb-6 text-sm leading-relaxed" style="color:var(--muted);">
-                    <strong style="color:var(--ink);">Não por conta própria.</strong> Avaliamos toda a sua medicação atual e reorganizamos se for o caso — sempre com segurança e em conjunto com os outros profissionais que já te acompanham. Nunca mudamos tratamento sem coordenação.
+                <div class="px-6 pb-6 text-sm leading-relaxed space-y-2" style="color:var(--muted);">
+                    <p>Como qualquer procedimento médico, existem riscos. Os mais comuns em intervenções guiadas por ultrassom são dor local transitória, hematoma no ponto da punção e, raramente, reação ao anestésico. Infecção é incomum quando se respeita técnica asséptica.</p>
+                    <p>Riscos específicos da sua técnica indicada são discutidos individualmente antes da assinatura do termo de consentimento.</p>
                 </div>
             </details>
-            <details class="rounded-xl overflow-hidden" style="background:#fff;border:1px solid #E8E0D8;">
+
+            <!-- 06 — Idade / casos complexos -->
+            <details class="rounded-xl overflow-hidden" style="background:#fff;border:1px solid var(--bone-deep);">
                 <summary class="flex justify-between items-center p-6 font-semibold" style="color:var(--ink);">
-                    Atendimento para outras cidades?
+                    Tenho mais de 60 anos / artrose avançada / já operei antes. Ainda é uma opção?
                     <span class="faq-icon">+</span>
                 </summary>
-                <div class="px-6 pb-6 text-sm leading-relaxed" style="color:var(--muted);">
-                    Sim. Atendemos pacientes de toda a região Centro-Oeste de Minas Gerais (Divinópolis, Cláudio, Itaúna, Itatiaiuçu, Carmo do Cajuru, Pará de Minas, Nova Serrana, Pitangui, Arcos, Formiga, etc.), além de pacientes vindos de Belo Horizonte e de outros estados.
+                <div class="px-6 pb-6 text-sm leading-relaxed space-y-2" style="color:var(--muted);">
+                    <p>Idade isolada não é critério de exclusão. Pacientes idosos, com artrose moderada a avançada ou histórico cirúrgico podem ser candidatos a tratamentos conservadores — desde que haja indicação clínica clara após avaliação.</p>
+                    <p>Em casos em que a cirurgia é a melhor opção, isso é dito com clareza, com encaminhamento adequado quando necessário.</p>
                 </div>
             </details>
+
         </div>
+
+        <!-- Nota CFM -->
+        <p class="text-xs text-center mt-8" style="color:var(--muted);">Respostas com caráter informativo. Cada caso exige avaliação clínica individual. Resolução CFM nº 2.336/2023.</p>
     </div>
 </section>
 
@@ -1108,12 +1249,12 @@ function playYTVertical(el,id){var i=document.createElement('iframe');i.src='htt
 <!-- ══════════════════════════════════════════
      CONSENT BANNER LGPD
 ══════════════════════════════════════════ -->
-<div id="consent-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1C1C1C;color:#fff;padding:16px 20px;z-index:9999;font-size:13px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
+<div id="consent-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#0F0F0F;color:#fff;padding:16px 20px;z-index:9999;font-size:13px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
     <div style="max-width:900px;margin:0 auto;">
         <p style="margin:0 0 6px;font-weight:600;font-size:14px;">🔒 Utilizamos cookies</p>
         <p style="margin:0 0 12px;color:rgba(255,255,255,0.75);font-size:12px;line-height:1.5;">Usamos cookies essenciais para o funcionamento do site, cookies de análise (Google Analytics) e cookies de publicidade (Meta Pixel). Você pode aceitar todos ou apenas os essenciais. <a href="/politica-privacidade.html" style="color:var(--gold);text-decoration:underline;">Política de Privacidade</a>.</p>
         <div style="display:flex;gap:8px;flex-wrap:wrap;">
-            <button onclick="setConsent('all')" style="background:#C8A96A;color:#fff;border:none;padding:9px 20px;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px;">✓ Aceitar todos</button>
+            <button onclick="setConsent('all')" style="background:#B5654A;color:#fff;border:none;padding:9px 20px;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px;">✓ Aceitar todos</button>
             <button onclick="setConsent('essential')" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.4);padding:9px 16px;border-radius:8px;cursor:pointer;font-size:13px;">Apenas essenciais</button>
             <button onclick="setConsent('none')" style="background:transparent;color:rgba(255,255,255,0.5);border:none;padding:9px 12px;border-radius:8px;cursor:pointer;font-size:12px;">Rejeitar todos</button>
         </div>
