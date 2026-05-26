@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System v2 — Dr. Kleber Rangel</title>
+<meta name="robots" content="noindex,nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  /* TEAL — autoridade clínica, mais editorial */
+  --teal: #0A5757;
+  --teal-deep: #053838;
+  --teal-soft: #E6EDEC;
+
+  /* CLAY — extraído das poltronas caramelo do consultório, substitui o gold "spa" */
+  --clay: #B5654A;
+  --clay-soft: #F0E5DF;
+
+  /* BONE — creme mais quente que warm, fundo editorial */
+  --bone: #F5F0E8;
+  --bone-deep: #E8E0D2;
+
+  /* INK + STONE — cinza-quente em vez de cinza-frio */
+  --ink: #0F0F0F;
+  --stone: #6B6660;
+  --stone-soft: #C9C3BA;
+
+  /* Acentos funcionais */
+  --white: #FFFFFF;
+  --hairline: rgba(15,15,15,0.08);
+  --hairline-strong: rgba(15,15,15,0.15);
+
+  /* Tipografia — escala editorial */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+
+  /* Espaço — escala de 4px, mais generosa */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 128px;
+  --s-11: 160px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--bone);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* === LAYOUT === */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 var(--s-5); }
+@media (min-width: 768px) { .container { padding: 0 var(--s-7); } }
+
+.section { padding: var(--s-9) 0; }
+.section-tight { padding: var(--s-7) 0; }
+
+.divider {
+  height: 1px;
+  background: var(--hairline);
+  margin: var(--s-9) 0;
+}
+
+/* === EYEBROW === */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--stone);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+}
+.eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--clay);
+}
+
+/* === TIPOGRAFIA === */
+.h1-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(40px, 7vw, 88px);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.h1-display em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--teal);
+}
+
+.h2-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.h2-display em { font-style: italic; font-weight: 400; color: var(--teal); }
+
+.h3-display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(22px, 2.4vw, 28px);
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.lede {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: clamp(18px, 1.8vw, 22px);
+  line-height: 1.5;
+  color: var(--stone);
+  max-width: 56ch;
+}
+
+.body-lg {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.body strong { font-weight: 600; color: var(--ink); }
+
+.caption {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--stone);
+  font-weight: 400;
+}
+
+/* === BOTÕES === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-3);
+  padding: 18px 32px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 180ms ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+  min-height: 56px;
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: var(--bone);
+}
+.btn-primary:hover { background: var(--teal-deep); }
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.btn-secondary:hover { background: var(--ink); color: var(--bone); }
+
+.btn-tertiary {
+  background: transparent;
+  color: var(--ink);
+  border: none;
+  padding: 18px 0;
+  position: relative;
+}
+.btn-tertiary::after {
+  content: '';
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--ink);
+  transform-origin: left;
+  transition: transform 200ms ease;
+}
+.btn-tertiary:hover::after { transform: scaleX(0.9); }
+
+/* === CARDS === */
+.card {
+  background: var(--white);
+  padding: var(--s-7);
+  border: 1px solid var(--hairline);
+  transition: border-color 200ms ease;
+}
+.card:hover { border-color: var(--hairline-strong); }
+
+.card-numbered {
+  display: flex;
+  gap: var(--s-5);
+  padding: var(--s-6) 0;
+  border-top: 1px solid var(--hairline);
+}
+.card-numbered:last-child { border-bottom: 1px solid var(--hairline); }
+.card-numbered__num {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--clay);
+  font-feature-settings: 'lnum';
+  min-width: 48px;
+  font-style: italic;
+}
+
+/* === BADGES === */
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background: var(--teal-soft);
+  color: var(--teal-deep);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-radius: 2px;
+}
+
+.badge-credential {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: 6px 10px;
+  background: transparent;
+  border: 1px solid var(--hairline-strong);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* === GRID === */
+.grid-2 { display: grid; gap: var(--s-7); }
+.grid-3 { display: grid; gap: var(--s-7); }
+.grid-4 { display: grid; gap: var(--s-5); }
+@media (min-width: 768px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* === PALETA SHOWCASE === */
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--s-5);
+}
+.swatch {
+  border: 1px solid var(--hairline);
+  overflow: hidden;
+}
+.swatch__color {
+  height: 120px;
+  position: relative;
+}
+.swatch__meta {
+  padding: var(--s-4);
+  background: var(--white);
+}
+.swatch__name {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.swatch__hex {
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: 12px;
+  color: var(--stone);
+}
+
+/* === SECTION HEADERS === */
+.section-label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clay);
+  margin-bottom: var(--s-4);
+  padding-bottom: var(--s-4);
+  border-bottom: 1px solid var(--hairline);
+}
+
+/* === SCROLL BARRA TOP === */
+.system-nav {
+  position: sticky;
+  top: 0;
+  background: var(--bone);
+  border-bottom: 1px solid var(--hairline);
+  z-index: 10;
+  padding: var(--s-4) 0;
+}
+.system-nav__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--s-4);
+}
+.system-nav__title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+}
+.system-nav__links {
+  display: flex;
+  gap: var(--s-5);
+  font-size: 13px;
+}
+.system-nav__links a {
+  color: var(--stone);
+  text-decoration: none;
+  transition: color 150ms;
+}
+.system-nav__links a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+
+<nav class="system-nav">
+  <div class="container system-nav__inner">
+    <div class="system-nav__title">Design System v2 — Dr. Kleber Rangel</div>
+    <div class="system-nav__links">
+      <a href="#palette">Paleta</a>
+      <a href="#type">Tipografia</a>
+      <a href="#components">Componentes</a>
+      <a href="#hero">Preview Hero</a>
+      <a href="#credentials">Credenciais</a>
+    </div>
+  </div>
+</nav>
+
+<!-- INTRO -->
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">Identidade visual · v2 · Maio 2026</div>
+    <h1 class="h1-display" style="margin-top: var(--s-5); max-width: 18ch;">
+      Um sistema visual para o <em>jeito Kleber</em> de investigar dor.
+    </h1>
+    <p class="lede" style="margin-top: var(--s-5);">
+      Nem clínica fria, nem spa wellness. Um consultório investigativo — onde tipografia editorial, materiais quentes e respiração entre os elementos fazem o trabalho de transmitir cuidado técnico para um adulto 40+ que já viu de tudo.
+    </p>
+  </div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- PALETA -->
+<section class="section" id="palette">
+  <div class="container">
+    <div class="section-label">01 · Paleta</div>
+    <h2 class="h2-display" style="margin-bottom: var(--s-3); max-width: 24ch;">
+      Quatro famílias. Zero ornamento.
+    </h2>
+    <p class="lede" style="margin-bottom: var(--s-7);">
+      Teal profundo para autoridade clínica. Clay (caramelo queimado, extraído das poltronas do consultório) substituindo o "gold" wellness genérico. Bone como fundo editorial. Ink quase preto para contraste real.
+    </p>
+
+    <h3 class="h3-display" style="margin-bottom: var(--s-5);">Teal — autoridade clínica</h3>
+    <div class="swatch-grid" style="margin-bottom: var(--s-8);">
+      <div class="swatch">
+        <div class="swatch__color" style="background: #0A5757;"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">teal</div>
+          <div class="swatch__hex">#0A5757</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background: #053838;"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">teal-deep</div>
+          <div class="swatch__hex">#053838</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background: #E6EDEC;"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">teal-soft</div>
+          <div class="swatch__hex">#E6EDEC</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="h3-display" style="margin-bottom: var(--s-5);">Clay — earth tone do consultório</h3>
+    <div class="swatch-grid" style="margin-bottom: var(--s-8);">
+      <div class="swatch">
+        <div class="swatch__color" style="background: #B5654A;"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">clay</div>
+          <div class="swatch__hex">#B5654A</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background: #F0E5DF;"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">clay-soft</div>
+          <div class="swatch__hex">#F0E5DF</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="h3-display" style="margin-bottom: var(--s-5);">Bone — fundo editorial</h3>
+    <div class="swatch-grid" style="margin-bottom: var(--s-8);">
+      <div class="swatch">
+        <div class="swatch__color" style="background: #F5F0E8;"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">bone</div>
+          <div class="swatch__hex">#F5F0E8</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background: #E8E0D2;"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">bone-deep</div>
+          <div class="swatch__hex">#E8E0D2</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background: #FFFFFF; border: 1px solid var(--hairline);"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">white</div>
+          <div class="swatch__hex">#FFFFFF</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="h3-display" style="margin-bottom: var(--s-5);">Ink + Stone — texto e neutros</h3>
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="swatch__color" style="background: #0F0F0F;"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">ink</div>
+          <div class="swatch__hex">#0F0F0F</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background: #6B6660;"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">stone</div>
+          <div class="swatch__hex">#6B6660</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch__color" style="background: #C9C3BA;"></div>
+        <div class="swatch__meta">
+          <div class="swatch__name">stone-soft</div>
+          <div class="swatch__hex">#C9C3BA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- TIPOGRAFIA -->
+<section class="section" id="type">
+  <div class="container">
+    <div class="section-label">02 · Tipografia</div>
+    <h2 class="h2-display" style="margin-bottom: var(--s-3); max-width: 24ch;">
+      Cormorant em <em>itálico</em> faz o trabalho que stock photo não faz.
+    </h2>
+    <p class="lede" style="margin-bottom: var(--s-8);">
+      Display em Cormorant Garamond (serif humanista). Itálico do Cormorant em teal para destacar o conceito-chave da frase. Corpo em DM Sans peso 400. Sem peso bold em corpo — só medium quando precisa marcar termo crítico.
+    </p>
+
+    <div style="background: var(--white); padding: var(--s-7); border: 1px solid var(--hairline); margin-bottom: var(--s-5);">
+      <div class="caption" style="margin-bottom: var(--s-3);">H1 · Hero (clamp 40 → 88px)</div>
+      <div class="h1-display">Volte a fazer o que ama, <em>sem cirurgia</em>.</div>
+    </div>
+
+    <div style="background: var(--white); padding: var(--s-7); border: 1px solid var(--hairline); margin-bottom: var(--s-5);">
+      <div class="caption" style="margin-bottom: var(--s-3);">H2 · Seção (clamp 32 → 56px)</div>
+      <div class="h2-display">Investigar onde dói é <em>diferente</em> de tratar a dor.</div>
+    </div>
+
+    <div style="background: var(--white); padding: var(--s-7); border: 1px solid var(--hairline); margin-bottom: var(--s-5);">
+      <div class="caption" style="margin-bottom: var(--s-3);">H3 · Bloco interno (clamp 22 → 28px)</div>
+      <div class="h3-display">Como funciona sua primeira consulta</div>
+    </div>
+
+    <div style="background: var(--white); padding: var(--s-7); border: 1px solid var(--hairline); margin-bottom: var(--s-5);">
+      <div class="caption" style="margin-bottom: var(--s-3);">Lede · Subtítulo de seção (clamp 18 → 22px)</div>
+      <div class="lede">A maioria dos pacientes que chega até mim passou por vários médicos, tomou anti-inflamatório, fez fisioterapia — e continua com dor. O problema quase sempre é o mesmo: ninguém investigou direito de onde vem a dor.</div>
+    </div>
+
+    <div style="background: var(--white); padding: var(--s-7); border: 1px solid var(--hairline); margin-bottom: var(--s-5);">
+      <div class="caption" style="margin-bottom: var(--s-3);">Body · Texto corrido (16px)</div>
+      <div class="body">Aqui a primeira consulta dura <strong>50 a 60 minutos</strong>. Não para impressionar — mas porque menos do que isso não é suficiente para entender o seu caso de verdade. Escuto sua história inteira, examino com calma, leio suas imagens, e só depois falo de tratamento.</div>
+    </div>
+
+    <div style="background: var(--white); padding: var(--s-7); border: 1px solid var(--hairline);">
+      <div class="caption" style="margin-bottom: var(--s-3);">Caption · Legenda, footer (13px)</div>
+      <div class="caption">Dr. Kleber Rangel · Ortopedista · CRM-MG 68724 · RQE 43142 · Av. Antônio Olímpio de Morais, 607 sala 808 · Divinópolis-MG</div>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- COMPONENTES -->
+<section class="section" id="components">
+  <div class="container">
+    <div class="section-label">03 · Componentes</div>
+    <h2 class="h2-display" style="margin-bottom: var(--s-7); max-width: 24ch;">
+      Botões, badges, cards — disciplinados.
+    </h2>
+
+    <h3 class="h3-display" style="margin-bottom: var(--s-5);">Botões</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: var(--s-4); margin-bottom: var(--s-8);">
+      <a href="#" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.36m-5.446 7.443h-.016a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.971.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
+        Conversar pelo WhatsApp
+      </a>
+      <a href="#" class="btn btn-secondary">Sobre a primeira consulta</a>
+      <a href="#" class="btn btn-tertiary">Ler caso clínico →</a>
+    </div>
+
+    <h3 class="h3-display" style="margin-bottom: var(--s-5);">Badges e credenciais</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: var(--s-3); margin-bottom: var(--s-5);">
+      <span class="badge">Ortopedia · Dor crônica</span>
+      <span class="badge">Bloqueio guiado por USG</span>
+      <span class="badge">Medicina regenerativa</span>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: var(--s-3); margin-bottom: var(--s-8);">
+      <span class="badge-credential">CRM-MG 68724</span>
+      <span class="badge-credential">RQE 43142</span>
+      <span class="badge-credential">TEOT 13.130</span>
+      <span class="badge-credential">SBOT · Membro titular</span>
+    </div>
+
+    <h3 class="h3-display" style="margin-bottom: var(--s-5);">Card numerado (Como funciona)</h3>
+    <div style="background: var(--white); padding: var(--s-7); border: 1px solid var(--hairline); margin-bottom: var(--s-8);">
+      <div class="card-numbered">
+        <div class="card-numbered__num">01</div>
+        <div>
+          <div class="h3-display" style="margin-bottom: var(--s-2);">Escuta inteira da sua história</div>
+          <p class="body" style="color: var(--stone);">Quando começou. O que piora. O que já tentou. Quais médicos viu. Que exames trouxe. Os primeiros 20 minutos são só pra entender — não pra falar de tratamento.</p>
+        </div>
+      </div>
+      <div class="card-numbered">
+        <div class="card-numbered__num">02</div>
+        <div>
+          <div class="h3-display" style="margin-bottom: var(--s-2);">Exame clínico detalhado</div>
+          <p class="body" style="color: var(--stone);">Testes ortopédicos específicos para localizar a estrutura que está gerando a dor. Quando indicado, ultrassom musculoesquelético no próprio consultório.</p>
+        </div>
+      </div>
+      <div class="card-numbered">
+        <div class="card-numbered__num">03</div>
+        <div>
+          <div class="h3-display" style="margin-bottom: var(--s-2);">Leitura das suas imagens</div>
+          <p class="body" style="color: var(--stone);">Ressonância, raio-x, tomografia. Não pra repetir o laudo — pra cruzar com o que o seu corpo mostrou no exame clínico.</p>
+        </div>
+      </div>
+      <div class="card-numbered">
+        <div class="card-numbered__num">04</div>
+        <div>
+          <div class="h3-display" style="margin-bottom: var(--s-2);">Plano individualizado, sem urgência fabricada</div>
+          <p class="body" style="color: var(--stone);">Você sai entendendo o que está acontecendo e quais são as opções — não com uma indicação cirúrgica empurrada na hora.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- HERO PREVIEW -->
+<section style="background: var(--bone-deep); padding: var(--s-9) 0; margin-top: var(--s-9);" id="hero">
+  <div class="container">
+    <div class="section-label" style="color: var(--clay);">04 · Preview do hero</div>
+
+    <div style="display: grid; gap: var(--s-7); align-items: center; padding-top: var(--s-7);" class="hero-preview">
+      <div>
+        <div class="eyebrow" style="margin-bottom: var(--s-5);">Ortopedia · Medicina da dor · Divinópolis</div>
+        <h1 class="h1-display" style="margin-bottom: var(--s-5); max-width: 18ch;">
+          Volte a fazer o que ama, <em>sem cirurgia</em>.
+        </h1>
+        <p class="lede" style="margin-bottom: var(--s-6);">
+          Investigação clínica detalhada para dor crônica de coluna, joelho e ombro. Tratamentos baseados em evidência: bloqueios guiados por ultrassom, medicina regenerativa, ozonioterapia.
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: var(--s-4); margin-bottom: var(--s-7);">
+          <a href="#" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.36m-5.446 7.443h-.016a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.971.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
+            Conversar pelo WhatsApp
+          </a>
+          <a href="#" class="btn btn-secondary">Sobre a primeira consulta</a>
+        </div>
+
+        <!-- Credibilidade discreta abaixo do CTA -->
+        <div style="display: flex; flex-wrap: wrap; gap: var(--s-5); padding-top: var(--s-5); border-top: 1px solid var(--hairline);">
+          <div>
+            <div class="caption" style="margin-bottom: 2px;">Tempo de consulta</div>
+            <div class="body-lg" style="font-family: var(--font-display); font-weight: 500;">50 a 60 minutos</div>
+          </div>
+          <div>
+            <div class="caption" style="margin-bottom: 2px;">CRM-MG</div>
+            <div class="body-lg" style="font-family: var(--font-display); font-weight: 500;">68724 · RQE 43142</div>
+          </div>
+          <div>
+            <div class="caption" style="margin-bottom: 2px;">Atendimento</div>
+            <div class="body-lg" style="font-family: var(--font-display); font-weight: 500;">Particular</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lado direito do hero: foto do consultório -->
+      <div style="aspect-ratio: 4/5; background: url('assets/ultrassom.jpeg') center/cover; border: 1px solid var(--hairline);"></div>
+    </div>
+
+    <style>
+      @media (min-width: 1024px) {
+        .hero-preview { grid-template-columns: 1.1fr 1fr; gap: var(--s-9); }
+      }
+    </style>
+  </div>
+</section>
+
+<div class="container"><div class="divider"></div></div>
+
+<!-- CREDENCIAIS -->
+<section class="section" id="credentials">
+  <div class="container">
+    <div class="section-label">05 · Parede de credenciais</div>
+    <h2 class="h2-display" style="margin-bottom: var(--s-3); max-width: 24ch;">
+      Formação e <em>filiações reais</em>.
+    </h2>
+    <p class="lede" style="margin-bottom: var(--s-7);">
+      Sem hipérbole. Sem "melhor do Brasil". Apenas onde o Dr. Kleber se formou e a quais sociedades médicas pertence — verificáveis em cada uma delas.
+    </p>
+
+    <div class="grid-4">
+      <div style="background: var(--white); padding: var(--s-5); border: 1px solid var(--hairline); display: flex; align-items: center; justify-content: center; min-height: 100px;">
+        <img src="assets/logos/sbot.webp" alt="SBOT" style="max-height: 60px; max-width: 100%; opacity: 0.85;">
+      </div>
+      <div style="background: var(--white); padding: var(--s-5); border: 1px solid var(--hairline); display: flex; align-items: center; justify-content: center; min-height: 100px;">
+        <img src="assets/logos/sbed.webp" alt="SBED" style="max-height: 60px; max-width: 100%; opacity: 0.85;">
+      </div>
+      <div style="background: var(--white); padding: var(--s-5); border: 1px solid var(--hairline); display: flex; align-items: center; justify-content: center; min-height: 100px;">
+        <img src="assets/logos/abdor-comite-dor.webp" alt="ABDOR" style="max-height: 60px; max-width: 100%; opacity: 0.85;">
+      </div>
+      <div style="background: var(--white); padding: var(--s-5); border: 1px solid var(--hairline); display: flex; align-items: center; justify-content: center; min-height: 100px;">
+        <img src="assets/logos/santa-casa-sp.webp" alt="Santa Casa SP" style="max-height: 60px; max-width: 100%; opacity: 0.85;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RATIONALE -->
+<section class="section" style="background: var(--ink); color: var(--bone);">
+  <div class="container">
+    <div class="eyebrow" style="color: var(--clay); margin-bottom: var(--s-5);">Racional do sistema</div>
+    <h2 class="h2-display" style="color: var(--bone); margin-bottom: var(--s-6); max-width: 22ch;">
+      Por que essas decisões e <em style="color: var(--clay);">não outras</em>.
+    </h2>
+
+    <div style="display: grid; gap: var(--s-7); max-width: 60ch;">
+      <div>
+        <div class="caption" style="color: var(--stone-soft); margin-bottom: var(--s-2);">SOBRE A COR CLAY (#B5654A)</div>
+        <p class="body-lg" style="color: var(--bone);">Substituímos o gold #C8A96A original por clay caramelo. O gold soava "spa wellness" — exatamente o que paciente 40+ desconfiado evita. Clay vem das poltronas reais do consultório (já existem nas fotos), conecta visual com físico, e dá a aparência editorial de hotel-boutique sério em vez de clínica de estética.</p>
+      </div>
+      <div>
+        <div class="caption" style="color: var(--stone-soft); margin-bottom: var(--s-2);">SOBRE O TEAL MAIS ESCURO (#0A5757)</div>
+        <p class="body-lg" style="color: var(--bone);">O teal anterior (#0B6B6B) é correto mas raso. #0A5757 é mais saturado, mais "ink-teal" — funciona como segunda cor de hierarquia (depois do preto) sem soar startup tech. Aplicado no itálico do Cormorant, vira assinatura visual única.</p>
+      </div>
+      <div>
+        <div class="caption" style="color: var(--stone-soft); margin-bottom: var(--s-2);">SOBRE ITÁLICO COMO ASSINATURA</div>
+        <p class="body-lg" style="color: var(--bone);">"Volte a fazer o que ama, <em style="color: var(--clay); font-style: italic;">sem cirurgia</em>." O destaque em itálico-teal isola a promessa-chave da headline. Faz o trabalho que negrito faria de forma grosseira. Padrão usado em editoriais sérios (NY Times Magazine, The Atlantic) — não em landing page de SaaS.</p>
+      </div>
+      <div>
+        <div class="caption" style="color: var(--stone-soft); margin-bottom: var(--s-2);">SOBRE BORDAS QUADRADAS (2px radius)</div>
+        <p class="body-lg" style="color: var(--bone);">Border-radius pequeno em botões. Não é totalmente reto (parece duro), não é arredondado (parece app de banco). 2px transmite "feito pra durar, não pra impressionar" — alinhado com o registro do Dr. Kleber.</p>
+      </div>
+      <div>
+        <div class="caption" style="color: var(--stone-soft); margin-bottom: var(--s-2);">SOBRE WHITESPACE GENEROSO</div>
+        <p class="body-lg" style="color: var(--bone);">Padding vertical mínimo de 96px (--s-9) entre seções. Lede sempre limitada a 56 caracteres por linha. Paciente 40+ não quer escanear — quer ler com calma. Densidade baixa transmite "tenho tempo pra você" — o mesmo que a consulta de 60min comunica.</p>
+      </div>
+      <div>
+        <div class="caption" style="color: var(--stone-soft); margin-bottom: var(--s-2);">O QUE NÃO TEM</div>
+        <p class="body-lg" style="color: var(--bone);">Sem ícones cartoon. Sem animação 3D. Sem parallax. Sem dark mode. Sem carrossel. Sem pop-up de "agende agora". Sem stock photo. Sem hipérbole ("melhor do Brasil"). Sem azul-hospital. Sem verde-farmácia. Sem sombra grande em cards. Sem gradient. Tudo isso queimaria credibilidade com o paciente alvo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">Próximos passos</div>
+    <h2 class="h2-display" style="margin-bottom: var(--s-6); max-width: 24ch;">
+      Aprove o sistema, eu aplico na home.
+    </h2>
+    <p class="lede" style="margin-bottom: var(--s-7);">
+      Este arquivo é só o ponto de decisão. Ao aprovar, todo o site herda: tokens de cor, escala tipográfica, componentes, copy editorial.
+    </p>
+
+    <div style="background: var(--clay-soft); padding: var(--s-7); border-left: 4px solid var(--clay); max-width: 64ch;">
+      <div class="h3-display" style="margin-bottom: var(--s-4);">Se aprovar, vou:</div>
+      <ol style="list-style: decimal; padding-left: var(--s-5); display: grid; gap: var(--s-3);">
+        <li class="body">Aplicar os novos tokens em <code>index.html</code> via CSS variables (zero quebra de tracking)</li>
+        <li class="body">Reescrever a home inteira com a nova hierarquia (hero outcome-first → 4 passos do método → Quem é o Dr. → parede de credenciais → tratamentos → casos → FAQ → CTA final)</li>
+        <li class="body">Auditar toda a copy pelo skill <code>cfm-compliance-auditor</code> antes de publicar</li>
+        <li class="body">Publicar em branch <code>feat/redesign-v2</code> com preview Vercel</li>
+        <li class="body">Te mandar link do preview pra você comparar lado a lado com produção</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer style="background: var(--ink); color: var(--stone-soft); padding: var(--s-7) 0;">
+  <div class="container caption" style="color: var(--stone-soft);">
+    Design system v2 · Dr. Kleber Rangel · Maio 2026 · Branch feat/redesign-v2
+  </div>
+</footer>
+
+</body>
+</html>
