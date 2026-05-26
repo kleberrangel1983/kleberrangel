@@ -26,7 +26,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 
     <!-- Tailwind (bundle local — gerado por npx tailwindcss build) -->
     <link href="/assets/tailwind.css" rel="stylesheet">
@@ -423,7 +425,7 @@
 
     <!-- CTA Agendar -->
     <a href="https://wa.me/5537998419396?text=Olá Dr. Kleber, vim pela home do site drkleberrangel.com.br e gostaria de agendar uma consulta." 
-       style="background:#0A5757;color:white;padding:0.5rem 1.1rem;border-radius:8px;text-decoration:none;font-size:0.85rem;font-weight:600;white-space:nowrap;flex-shrink:0;">
+       style="background:#0A5757;color:white;padding:12px 18px;min-height:44px;display:inline-flex;align-items:center;border-radius:8px;text-decoration:none;font-size:0.9rem;font-weight:600;white-space:nowrap;flex-shrink:0;">
       Agendar
     </a>
 
@@ -472,7 +474,7 @@
                         Me conta seu caso pelo WhatsApp
                     </a>
                     <div class="flex items-center gap-4 text-sm" style="color:var(--muted);">
-                        <a href="tel:+5537998419396" style="color:var(--muted);text-decoration:none;">(37) 99841-9396</a>
+                        <a href="tel:+5537998419396" style="color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;min-height:44px;padding:8px 4px;font-weight:600;">(37) 99841-9396</a>
                         <span>·</span>
                         <span>Seg–Sex 8h–17h</span>
                     </div>
@@ -978,10 +980,10 @@ function playYTVertical(el,id){var i=document.createElement('iframe');i.src='htt
 
       <!-- Botões rápidos -->
       <div id="inline-quick" style="display:flex;flex-wrap:wrap;gap:0.35rem;padding:0.5rem 0.85rem;background:#f8f8f6;border-top:1px solid #e8e8e8;">
-        <button onclick="inlineQ('Como funciona a primeira consulta?')" style="background:white;border:1px solid #1E6FBF;color:#1E6FBF;padding:0.28rem 0.65rem;border-radius:20px;font-size:0.74rem;cursor:pointer;font-family:Arial,sans-serif;white-space:nowrap;">Como funciona</button>
-        <button onclick="inlineQ('PRP é indicado para mim?')" style="background:white;border:1px solid #1E6FBF;color:#1E6FBF;padding:0.28rem 0.65rem;border-radius:20px;font-size:0.74rem;cursor:pointer;font-family:Arial,sans-serif;white-space:nowrap;">PRP</button>
-        <button onclick="inlineQ('Preciso mesmo de cirurgia?')" style="background:white;border:1px solid #1E6FBF;color:#1E6FBF;padding:0.28rem 0.65rem;border-radius:20px;font-size:0.74rem;cursor:pointer;font-family:Arial,sans-serif;white-space:nowrap;">Preciso de cirurgia?</button>
-        <button onclick="inlineQ('Quanto custa a consulta?')" style="background:white;border:1px solid #1E6FBF;color:#1E6FBF;padding:0.28rem 0.65rem;border-radius:20px;font-size:0.74rem;cursor:pointer;font-family:Arial,sans-serif;white-space:nowrap;">Valor da consulta</button>
+        <button onclick="inlineQ('Como funciona a primeira consulta?')" style="background:white;border:1px solid #1E6FBF;color:#1E6FBF;padding:10px 14px;min-height:44px;border-radius:22px;font-size:0.8rem;cursor:pointer;font-family:Arial,sans-serif;white-space:nowrap;">Como funciona</button>
+        <button onclick="inlineQ('PRP é indicado para mim?')" style="background:white;border:1px solid #1E6FBF;color:#1E6FBF;padding:10px 14px;min-height:44px;border-radius:22px;font-size:0.8rem;cursor:pointer;font-family:Arial,sans-serif;white-space:nowrap;">PRP</button>
+        <button onclick="inlineQ('Preciso mesmo de cirurgia?')" style="background:white;border:1px solid #1E6FBF;color:#1E6FBF;padding:10px 14px;min-height:44px;border-radius:22px;font-size:0.8rem;cursor:pointer;font-family:Arial,sans-serif;white-space:nowrap;">Preciso de cirurgia?</button>
+        <button onclick="inlineQ('Quanto custa a consulta?')" style="background:white;border:1px solid #1E6FBF;color:#1E6FBF;padding:10px 14px;min-height:44px;border-radius:22px;font-size:0.8rem;cursor:pointer;font-family:Arial,sans-serif;white-space:nowrap;">Valor da consulta</button>
       </div>
 
       <!-- Input -->
@@ -1260,9 +1262,9 @@ function playYTVertical(el,id){var i=document.createElement('iframe');i.src='htt
         <p style="margin:0 0 6px;font-weight:600;font-size:14px;">🔒 Utilizamos cookies</p>
         <p style="margin:0 0 12px;color:rgba(255,255,255,0.75);font-size:12px;line-height:1.5;">Usamos cookies essenciais para o funcionamento do site, cookies de análise (Google Analytics) e cookies de publicidade (Meta Pixel). Você pode aceitar todos ou apenas os essenciais. <a href="/politica-privacidade.html" style="color:var(--gold);text-decoration:underline;">Política de Privacidade</a>.</p>
         <div style="display:flex;gap:8px;flex-wrap:wrap;">
-            <button onclick="setConsent('all')" style="background:#B5654A;color:#fff;border:none;padding:9px 20px;border-radius:8px;cursor:pointer;font-weight:600;font-size:13px;">✓ Aceitar todos</button>
-            <button onclick="setConsent('essential')" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.4);padding:9px 16px;border-radius:8px;cursor:pointer;font-size:13px;">Apenas essenciais</button>
-            <button onclick="setConsent('none')" style="background:transparent;color:rgba(255,255,255,0.5);border:none;padding:9px 12px;border-radius:8px;cursor:pointer;font-size:12px;">Rejeitar todos</button>
+            <button onclick="setConsent('all')" style="background:#B5654A;color:#fff;border:none;padding:12px 20px;min-height:44px;border-radius:8px;cursor:pointer;font-weight:600;font-size:14px;">✓ Aceitar todos</button>
+            <button onclick="setConsent('essential')" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.4);padding:12px 16px;min-height:44px;border-radius:8px;cursor:pointer;font-size:14px;">Apenas essenciais</button>
+            <button onclick="setConsent('none')" style="background:transparent;color:rgba(255,255,255,0.5);border:none;padding:12px 14px;min-height:44px;border-radius:8px;cursor:pointer;font-size:13px;">Rejeitar todos</button>
         </div>
     </div>
 </div>
