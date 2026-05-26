@@ -117,6 +117,37 @@
           content_category: finalContentCategory
         }, { eventID: eventId });
         fbq('track', 'Contact', {}, { eventID: eventId });
+
+        // Bloquear duplicações: GTM tag v22 "Lead + Contact on whatsapp_click" dispara
+        // fbq('track','Lead') e fbq('track','Contact') SEM eventID quando recebe
+        // o dataLayer push abaixo — isso causa duplicata no Meta.
+        // Sobrescrever fbq por 2s pra ignorar Lead/Contact subsequentes sem eventID.
+        // Resolução definitiva: atualizar tag GTM pra passar event_id (v23 docs no Notion).
+        var origFbqRef = window.fbq;
+        var unblockAt = Date.now() + 2000;
+        window.fbq = function() {
+          var args = arguments;
+          // Se passar de 2s, restaurar e deixar passar
+          if (Date.now() > unblockAt) {
+            window.fbq = origFbqRef;
+            return origFbqRef.apply(this, args);
+          }
+          // Bloquear track Lead/Contact SEM eventID (assinatura: 2 ou 3 args)
+          if (args[0] === 'track' && (args[1] === 'Lead' || args[1] === 'Contact')) {
+            // Se tem eventID (4 args com objeto eventID), deixa passar
+            var hasEventID = args.length >= 4 && args[3] && args[3].eventID;
+            if (!hasEventID) {
+              // Bloqueado — log opcional pra debug
+              if (window.console && window.console.debug) {
+                console.debug('[AM] suppressed duplicate fbq(track,' + args[1] + ') without eventID');
+              }
+              return;
+            }
+          }
+          return origFbqRef.apply(this, args);
+        };
+        // Restaurar after 2s no setTimeout (caso fbq não seja chamado mais)
+        setTimeout(function(){ window.fbq = origFbqRef; }, 2100);
       }
     } catch (e) {
       if (window.console) console.warn('[AM] fbq error', e);
