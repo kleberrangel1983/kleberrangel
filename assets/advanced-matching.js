@@ -99,8 +99,11 @@
   }
 
   // Dispara eventos pro Pixel + CAPI server-side com PII
-  async function fireEnrichedEvents(name, phone, destinationUrl) {
+  // contentName/contentCategory: opcionais — se vier de onclick inline, preserva
+  async function fireEnrichedEvents(name, phone, destinationUrl, contentName, contentCategory) {
     var eventId = 'evt_am_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 11);
+    var finalContentName = contentName || 'WhatsApp Click (Enhanced)';
+    var finalContentCategory = contentCategory || 'CTA';
 
     // 1. Advanced Matching no Pixel: re-init com user_data
     try {
@@ -110,8 +113,8 @@
         fbq('init', '877941071024223', userData);
         // Disparar Lead+Contact com eventID pra dedup com CAPI server
         fbq('track', 'Lead', {
-          content_name: 'WhatsApp Click (Enhanced)',
-          content_category: 'CTA'
+          content_name: finalContentName,
+          content_category: finalContentCategory
         }, { eventID: eventId });
         fbq('track', 'Contact', {}, { eventID: eventId });
       }
@@ -125,8 +128,8 @@
       window.dataLayer.push({
         event: 'whatsapp_click',
         event_id: eventId,
-        content_name: 'WhatsApp Click (Enhanced)',
-        content_category: 'CTA',
+        content_name: finalContentName,
+        content_category: finalContentCategory,
         am_enriched: true // sinal pra audit: este evento tem advanced matching
       });
     } catch (e) {}
@@ -139,8 +142,8 @@
         event_name: 'Lead',
         event_id: eventId,
         event_source_url: window.location.href,
-        content_name: 'WhatsApp Click (Enhanced)',
-        content_category: 'CTA',
+        content_name: finalContentName,
+        content_category: finalContentCategory,
         first_name: nameParts[0] || undefined,
         last_name: nameParts.length > 1 ? nameParts.slice(1).join(' ') : undefined,
         phone: phoneClean || undefined,
@@ -305,6 +308,24 @@
 
   // Handler de clique interceptado
   async function onWaClick(e, link) {
+    // Antes de prevenir o clique padrão: capturar content_name de qualquer
+    // onclick inline (em pages como prp.html, ombro.html, medicina-regenerativa.html etc.
+    // o onclick faz dataLayer.push com content_name granular tipo "PRP Hero",
+    // "Ombro Floating" etc — esse sinal é valioso e precisa ser preservado).
+    var inlineContentName = null;
+    var inlineContentCategory = null;
+    try {
+      var onclickAttr = link.getAttribute('onclick');
+      if (onclickAttr) {
+        // Tentar extrair content_name do código do onclick sem executá-lo
+        // (executá-lo dispararia outro dataLayer.push duplicado)
+        var nameMatch = onclickAttr.match(/content_name\s*:\s*['"]([^'"]+)['"]/);
+        var catMatch = onclickAttr.match(/content_category\s*:\s*['"]([^'"]+)['"]/);
+        if (nameMatch) inlineContentName = nameMatch[1];
+        if (catMatch) inlineContentCategory = catMatch[1];
+      }
+    } catch (extractErr) { /* não bloquear se extração falhar */ }
+
     // Sempre prevenir o clique padrão pra controlar o fluxo
     e.preventDefault();
     e.stopPropagation();
@@ -317,7 +338,7 @@
 
     // Caso 1: já tem dados preenchidos antes → usar e dispara enhanced events
     if (stored && stored.name) {
-      await fireEnrichedEvents(stored.name, stored.phone, originalHref);
+      await fireEnrichedEvents(stored.name, stored.phone, originalHref, inlineContentName, inlineContentCategory);
       // Pequeno delay pra eventos saírem antes da navegação
       setTimeout(function() {
         window.location.href = buildWaUrl(originalHref, stored.name);
@@ -327,13 +348,13 @@
 
     // Caso 2: já pulou antes — não mostra modal de novo, comportamento padrão
     if (stored && stored.skipped) {
-      // Disparar evento padrão (sem PII)
+      // Disparar evento padrão (sem PII) — preservando content_name granular se houver
       try {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: 'whatsapp_click',
-          content_name: 'WhatsApp Click',
-          content_category: 'CTA'
+          content_name: inlineContentName || 'WhatsApp Click',
+          content_category: inlineContentCategory || 'CTA'
         });
       } catch (e2) {}
       setTimeout(function() {
@@ -347,13 +368,13 @@
 
     if (result.action === 'skip') {
       markSkipped();
-      // Disparar evento padrão (sem PII)
+      // Disparar evento padrão (sem PII) — preservando content_name granular se houver
       try {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: 'whatsapp_click',
-          content_name: 'WhatsApp Click',
-          content_category: 'CTA'
+          content_name: inlineContentName || 'WhatsApp Click',
+          content_category: inlineContentCategory || 'CTA'
         });
       } catch (e2) {}
       setTimeout(function() {
@@ -369,7 +390,7 @@
     if (name || phone) {
       // Salvar pra próxima
       setStored({ name: name, phone: phone, t: Date.now() });
-      await fireEnrichedEvents(name, phone, originalHref);
+      await fireEnrichedEvents(name, phone, originalHref, inlineContentName, inlineContentCategory);
       setTimeout(function() {
         window.location.href = buildWaUrl(originalHref, name);
       }, 150);
@@ -380,8 +401,8 @@
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           event: 'whatsapp_click',
-          content_name: 'WhatsApp Click',
-          content_category: 'CTA'
+          content_name: inlineContentName || 'WhatsApp Click',
+          content_category: inlineContentCategory || 'CTA'
         });
       } catch (e2) {}
       setTimeout(function() {
