@@ -577,10 +577,16 @@
             <!-- Foto grande -->
             <div class="hidden md:block">
                 <div style="border-radius:4px 20px 20px 4px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.12);">
-                    <picture><source srcset="/assets/foto_kleber_rangel.webp" type="image/webp"><img src="/assets/foto_kleber_rangel.png"
-                         alt="Dr. Kleber Rangel — Ortopedista especialista em dor crônica, com aparelho de ultrassom e diplomas ao fundo"
-                         width="560" height="680"
-                         style="width:100%;height:clamp(400px,55vw,660px);object-fit:cover;object-position:center 10%;display:block;"></picture>
+                    <picture>
+                        <source media="(max-width: 640px)" srcset="/assets/dr-kleber-coluna-mobile.webp" type="image/webp">
+                        <source media="(max-width: 640px)" srcset="/assets/dr-kleber-coluna-mobile.jpg" type="image/jpeg">
+                        <source srcset="/assets/dr-kleber-coluna.webp" type="image/webp">
+                        <img src="/assets/dr-kleber-coluna.jpg"
+                             alt="Dr. Kleber Rangel, ortopedista CRM-MG 68724, demonstrando modelo anatômico de hérnia de disco lombar no consultório"
+                             width="800" height="1100"
+                             loading="lazy" decoding="async"
+                             style="width:100%;height:clamp(400px,55vw,660px);object-fit:cover;object-position:center top;display:block;">
+                    </picture>
                 </div>
                 <!-- Credenciais abaixo da foto -->
                 <div class="mt-6 grid grid-cols-2 gap-3">
