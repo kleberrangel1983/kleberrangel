@@ -82,6 +82,9 @@
       for (var i = 0; i < arguments.length; i++) {
         var item = arguments[i];
         if (item && typeof item === 'object' && item.event && EVENT_MAP[item.event]) {
+          // Skip se advanced-matching já enviou CAPI com PII (evita duplicar)
+          if (item.am_enriched === true) continue;
+
           var metaEvent = EVENT_MAP[item.event];
           // event_id já no item, ou gerar novo
           var eventId = item.event_id || genEventId();
