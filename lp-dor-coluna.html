@@ -33,18 +33,18 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:#FAF7F2;color:#1C1C1C;overflow-x:hidden;}
+body{font-family:'DM Sans',sans-serif;background:#F5F0E8;color:#0F0F0F;overflow-x:hidden;}
 
 :root{
-  --teal:#0B6B6B;
-  --teal-dark:#085555;
-  --teal-light:#E8F5F2;
-  --gold:#C8A96A;
-  --gold-light:#F5EDD8;
-  --warm:#FAF7F2;
-  --warm-dark:#F0EAE0;
-  --ink:#1C1C1C;
-  --muted:#5A6472;
+  --teal:#0A5757;
+  --teal-dark:#053838;
+  --teal-light:#E6EDEC;
+  --gold:#B5654A;
+  --gold-light:#F0E5DF;
+  --warm:#F5F0E8;
+  --warm-dark:#E8E0D2;
+  --ink:#0F0F0F;
+  --muted:#6B6660;
 }
 
 /* ── TIPOGRAFIA ── */
@@ -113,7 +113,7 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #E
 .quiz-option{display:flex;align-items:center;gap:14px;padding:16px 20px;border:2px solid #E8E0D8;border-radius:14px;cursor:pointer;transition:all 0.2s;background:#fff;text-align:left;width:100%;font-size:15px;color:var(--ink);font-family:'DM Sans',sans-serif;}
 .quiz-option:hover{border-color:var(--teal);background:var(--teal-light);}
 .quiz-option.selected{border-color:var(--teal);background:var(--teal-light);color:var(--teal);font-weight:600;}
-.quiz-option-num{width:28px;height:28px;border-radius:50%;background:#F0EAE0;color:var(--muted);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;}
+.quiz-option-num{width:28px;height:28px;border-radius:50%;background:#E8E0D2;color:var(--muted);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;}
 .quiz-option.selected .quiz-option-num{background:var(--teal);color:#fff;}
 .quiz-nav{display:flex;justify-content:flex-end;margin-top:24px;}
 .btn-next{background:var(--teal);color:#fff;border:none;padding:14px 32px;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px;transition:all 0.2s;font-family:'DM Sans',sans-serif;}
@@ -124,7 +124,7 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #E
 .quiz-result{display:none;animation:fadeIn 0.5s ease both;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 .result-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:600;margin-bottom:20px;}
-.result-badge.a{background:#E8F5F2;color:#0B6B6B;}
+.result-badge.a{background:#E6EDEC;color:#0A5757;}
 .result-badge.b{background:#FFF3E0;color:#E65100;}
 .result-badge.c{background:#FCE4EC;color:#880E4F;}
 .result-card{background:var(--warm);border:1px solid #E8E0D8;border-left:4px solid var(--gold);border-radius:16px;padding:28px;margin-bottom:28px;}
@@ -177,7 +177,7 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #E
 .dep-stars{color:var(--gold);font-size:14px;margin-bottom:14px;letter-spacing:2px;}
 .dep-text{font-size:14px;color:#374151;line-height:1.7;margin-bottom:18px;font-style:italic;}
 .dep-author{display:flex;align-items:center;gap:12px;border-top:1px solid #F3F0EA;padding-top:14px;}
-.dep-author img{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:center top;background:#E8F5F2;}
+.dep-author img{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:center top;background:#E6EDEC;}
 .dep-name{font-size:13px;font-weight:600;color:var(--ink);}
 .dep-city{font-size:11px;color:var(--muted);}
 .dep-disclaimer{text-align:center;font-size:11px;color:#9CA3AF;margin-top:20px;}
@@ -213,7 +213,7 @@ footer{background:#111;padding:40px 24px;text-align:center;}
 #fcta.show{transform:translateY(0);}
 
 /* ── CONSENT ── */
-#consent{display:none;position:fixed;bottom:0;left:0;right:0;background:#1C1C1C;color:#fff;padding:14px 20px;z-index:9100;font-size:13px;}
+#consent{display:none;position:fixed;bottom:0;left:0;right:0;background:#0F0F0F;color:#fff;padding:14px 20px;z-index:9100;font-size:13px;}
 #consent p{margin-bottom:10px;color:rgba(255,255,255,0.75);}
 .consent-btns{display:flex;gap:8px;flex-wrap:wrap;}
 .consent-btn{padding:8px 18px;border-radius:8px;border:none;font-size:13px;font-weight:600;cursor:pointer;}
@@ -464,9 +464,9 @@ footer{background:#111;padding:40px 24px;text-align:center;}
     <div style="text-align:center;max-width:560px;margin:0 auto;">
       <div style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--teal);margin-bottom:8px;">Reputação</div>
       <h2>Avaliação dos pacientes</h2>
-      <div style="background:#fff;border:1px solid #E8E0D8;border-top:3px solid #C8A96A;border-radius:16px;padding:28px;margin:24px auto 0;max-width:360px;">
-        <div style="font-size:44px;font-weight:700;color:#1C1C1C;line-height:1;">4,8</div>
-        <div style="font-size:22px;color:#C8A96A;letter-spacing:3px;margin:6px 0 10px;">★★★★★</div>
+      <div style="background:#fff;border:1px solid #E8E0D8;border-top:3px solid #B5654A;border-radius:16px;padding:28px;margin:24px auto 0;max-width:360px;">
+        <div style="font-size:44px;font-weight:700;color:#0F0F0F;line-height:1;">4,8</div>
+        <div style="font-size:22px;color:#B5654A;letter-spacing:3px;margin:6px 0 10px;">★★★★★</div>
         <div style="font-size:14px;color:#666;margin-bottom:18px;">Média das avaliações públicas no Google — pacientes atendidos em Divinópolis-MG e região.</div>
         <a href="https://www.google.com/search?q=Dr+Kleber+Rangel+Divinopolis" target="_blank" rel="noopener noreferrer" style="font-size:14px;font-weight:600;color:var(--teal);text-decoration:none;">Ver avaliações no Google →</a>
       </div>
@@ -523,7 +523,7 @@ footer{background:#111;padding:40px 24px;text-align:center;}
 
 <!-- ══ RODAPÉ ══ -->
 <footer>
-  <div class="footer-crm" style="color:rgba(255,255,255,0.7);">Dr. Kleber Rangel — MÉDICO · Ortopedista e Traumatologista · <span style="color:#C8A96A;">CRM-MG 68724 · RQE 43142</span></div>
+  <div class="footer-crm" style="color:rgba(255,255,255,0.7);">Dr. Kleber Rangel — MÉDICO · Ortopedista e Traumatologista · <span style="color:#B5654A;">CRM-MG 68724 · RQE 43142</span></div>
   <div class="footer-links">
     <a href="/">Site principal</a>
     <a href="/politica-privacidade.html">Privacidade</a>
