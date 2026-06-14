@@ -1,5 +1,5 @@
 // /api/capi.js — Vercel Serverless Function
-// CAPI server-side para Meta Pixel 877941071024223
+// CAPI server-side para Meta Pixel (ID via env var META_PIXEL_ID)
 //
 // Recebe eventos do browser via POST e encaminha pra Conversions API com:
 // - event_id sincronizado (dedup nativa com browser pixel)
@@ -16,7 +16,7 @@
 
 import crypto from 'crypto';
 
-const PIXEL_ID = '877941071024223';
+const PIXEL_ID = process.env.META_PIXEL_ID; // Configurar no painel Vercel: Settings → Environment Variables
 const CAPI_VERSION = 'v21.0';
 const TEST_EVENT_CODE = process.env.META_CAPI_TEST_EVENT_CODE || null; // opcional, pra debug
 
