@@ -61,3 +61,6 @@ tailwind.config.js
 package.json
 package-lock.json
 DEPLOYMENT_CHECKLIST.md
+
+# Internal design/audit pages — never expose publicly
+design-system.html
