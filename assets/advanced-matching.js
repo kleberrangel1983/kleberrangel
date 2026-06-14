@@ -24,7 +24,7 @@
 
   var STORAGE_KEY = 'drkr_am_v1'; // versão pra invalidar se trocar formato
   var MODAL_ID = 'drkr-am-modal';
-  var WHATSAPP_NUMBER = '5537998419396';
+    var WHATSAPP_NUMBER = (document.querySelector('[data-whatsapp]') || {}).dataset.whatsapp || ''; // definido no HTML via data-whatsapp
 
   // SHA-256 client-side (pra Advanced Matching no fbq)
   // Implementação minimalista usando Web Crypto API (todos browsers modernos)
