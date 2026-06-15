@@ -50,24 +50,23 @@ O projeto usa **Vercel** com deploy automático via GitHub.
 ### Passos
 
 1. Push para `main` → deploy automático em produção
-2. 2. PRs → preview deployment automático
-  
-   3. ---
-  
-   4. ## Stack Técnico
-  
-   5. - **Frontend:** HTML5 + CSS3 + Vanilla JS (sem framework)
-      - - **Backend:** Vercel Serverless Functions (Node.js)
-        - - **CDN/Hosting:** Vercel Pro
-          - - **Analytics:** Google Analytics 4 + Google Tag Manager
-            - - **Conversões:** Meta Conversions API (server-side) + Pixel browser-side
-              - - **SEO:** Schema.org MedicalBusiness, sitemap.xml, robots.txt
-               
-                - ---
+2. PRs → preview deployment automático
 
-                ## Compliance
+---
 
-                - **LGPD:** Política de privacidade, checkbox de consentimento, Consent Mode
-                - - **CFM 2.336/2023:** Disclaimer, termos de uso, credenciais visíveis no site
-                  - - **Segurança:** Headers CSP, X-Frame-Options, HTTPS via Vercel
-                    - 
+## Stack Técnico
+
+- **Frontend:** HTML5 + CSS3 + Vanilla JS (sem framework)
+- **Backend:** Vercel Serverless Functions (Node.js)
+- **CDN/Hosting:** Vercel Pro
+- **Analytics:** Google Analytics 4 + Google Tag Manager
+- **Conversões:** Meta Conversions API (server-side) + Pixel browser-side
+- **SEO:** Schema.org MedicalBusiness, sitemap.xml, robots.txt
+
+---
+
+## Compliance
+
+- **LGPD:** Política de privacidade, checkbox de consentimento, Consent Mode
+- **CFM 2.336/2023:** Disclaimer, termos de uso, credenciais visíveis no site
+- **Segurança:** Headers CSP, X-Frame-Options, HTTPS via Vercel
