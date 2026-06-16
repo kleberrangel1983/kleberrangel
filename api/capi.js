@@ -135,6 +135,8 @@ export default async function handler(req, res) {
     phone,
     first_name,
     last_name,
+    city,
+    external_id,
   } = body || {};
 
   if (!isValidEventName(event_name)) {
@@ -160,6 +162,8 @@ export default async function handler(req, res) {
   if (phone) user_data.ph = [sha256(phone.replace(/\D/g, ''))];
   if (first_name) user_data.fn = [sha256(first_name)];
   if (last_name) user_data.ln = [sha256(last_name)];
+  if (city) user_data.ct = [sha256(String(city).replace(/\s+/g, ''))];
+  if (external_id) user_data.external_id = [sha256(external_id)];
 
   // Montar custom_data
   const custom_data = {};
