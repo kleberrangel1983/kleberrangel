@@ -5,7 +5,8 @@
     "node": ">=20.x"
   },
   "scripts": {
-    "build": "echo ok"
+    "build": "echo ok",
+    "build:css": "node scripts/build-landing-css.mjs"
   },
   "type": "module"
 }

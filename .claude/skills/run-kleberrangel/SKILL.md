@@ -33,13 +33,19 @@ npx playwright install chromium
 
 The 4 treatment landings (`prp`, `ombro`, `medicina-regenerativa`,
 `ozonoterapia-divinopolis`) use their **own** purged Tailwind theme (teal `#0d7c7c` +
-Playfair/Inter) in `assets/tailwind-landing.css` — separate from the main
-`assets/tailwind.css`. Both are prebuilt and committed. Rebuild the landing CSS only if
-you change classes on those 4 pages (otherwise new classes are missing from the purged build):
+Playfair/Inter), built to a **content-hashed** file `assets/tailwind-landing.<hash>.css` —
+separate from the main `assets/tailwind.css`. Both are prebuilt and committed. Rebuild the
+landing CSS whenever you change classes on those 4 pages (otherwise new classes are missing
+from the purged build):
 
 ```bash
-npx tailwindcss@3.4.13 -c tailwind.landing.config.cjs -i src/landing-input.css -o assets/tailwind-landing.css --minify
+npm run build:css
 ```
+
+That runs `scripts/build-landing-css.mjs`, which rebuilds with Tailwind v3.4.13, fingerprints
+the output with a content hash, deletes the old hashed file, and rewrites the `<link>` in the
+4 pages. The hash keeps the year-long immutable cache (`/assets/(.*)` in `vercel.json`) correct
+across rebuilds. Commit the new `assets/tailwind-landing.<hash>.css` and the 4 updated pages.
 
 ## Run (agent path)
 
