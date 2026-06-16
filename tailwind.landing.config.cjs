@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 // Build dedicado das landings de tratamento (tema próprio: teal #0d7c7c + Playfair/Inter).
 // Substitui o antigo Tailwind via CDN runtime nessas páginas.
-// Build: npx tailwindcss@3.4.13 -c tailwind.landing.config.cjs -i src/landing-input.css -o assets/tailwind-landing.css --minify
+// Build: npm run build:css  (usa src/tailwind-input.css, compartilhado com o build principal)
 module.exports = {
   content: [
     "./prp.html",

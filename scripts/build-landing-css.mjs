@@ -23,7 +23,7 @@ const TAILWIND = 'tailwindcss@3.4.13';
 
 // 1) Build para um arquivo temporário
 execSync(
-  `npx ${TAILWIND} -c tailwind.landing.config.cjs -i src/landing-input.css -o "${TMP}" --minify`,
+  `npx ${TAILWIND} -c tailwind.landing.config.cjs -i src/tailwind-input.css -o "${TMP}" --minify`,
   { stdio: 'inherit', cwd: ROOT }
 );
 if (!existsSync(TMP)) throw new Error('build falhou: CSS temporário não foi gerado');

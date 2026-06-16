@@ -6,7 +6,9 @@
   },
   "scripts": {
     "build": "echo ok",
-    "build:css": "node scripts/build-landing-css.mjs"
+    "build:css:home": "npx tailwindcss@3.4.13 -c tailwind.config.js -i src/tailwind-input.css -o assets/tailwind.css --minify",
+    "build:css": "node scripts/build-landing-css.mjs",
+    "build:css:all": "npm run build:css:home && npm run build:css"
   },
   "type": "module"
 }
