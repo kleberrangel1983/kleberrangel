@@ -55,6 +55,32 @@ function isValidEventName(name) {
   return typeof name === 'string' && ALLOWED_EVENTS.has(name);
 }
 
+// ── Rate limiting (anti-abuso / anti-poisoning de conversões) ──
+// Best-effort em memória, por IP e por instância quente. Reduz flood de eventos
+// falsos que degradariam a otimização do algoritmo do Meta e gerariam custo.
+// IMPORTANTE: a defesa primária em produção é uma regra de rate limit no
+// Vercel WAF/Firewall na rota /api/capi (compartilhada entre instâncias).
+// Este limiter é a segunda camada, defensiva.
+const RATE_LIMIT_MAX = 20;            // máx. de requisições...
+const RATE_LIMIT_WINDOW_MS = 60_000;  // ...por janela de 60s, por IP
+const rateBuckets = new Map();        // ip -> { count, resetAt }
+
+function isRateLimited(ip) {
+  if (!ip) return false;
+  const now = Date.now();
+  let bucket = rateBuckets.get(ip);
+  if (!bucket || now >= bucket.resetAt) {
+    bucket = { count: 0, resetAt: now + RATE_LIMIT_WINDOW_MS };
+    rateBuckets.set(ip, bucket);
+  }
+  bucket.count++;
+  // Limpeza oportunista pra não vazar memória em instâncias longevas
+  if (rateBuckets.size > 5000) {
+    for (const [k, v] of rateBuckets) { if (now >= v.resetAt) rateBuckets.delete(k); }
+  }
+  return bucket.count > RATE_LIMIT_MAX;
+}
+
 export default async function handler(req, res) {
   // CORS — só aceita do próprio domínio
   const allowedOrigins = [
@@ -74,6 +100,12 @@ export default async function handler(req, res) {
 
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  // Rate limiting por IP (anti-abuso) — antes de qualquer trabalho pesado
+  const client_ip = getClientIp(req);
+  if (isRateLimited(client_ip)) {
+    return res.status(429).json({ error: 'Too many requests' });
   }
 
   // Validar token configurado
@@ -114,7 +146,7 @@ export default async function handler(req, res) {
   }
 
   // Capturar contexto do request (impossível via browser)
-  const client_ip = getClientIp(req);
+  // client_ip já obtido acima (rate limiting)
   const client_user_agent = getUserAgent(req);
 
   // Montar user_data — Meta usa esses sinais pra match
@@ -164,7 +196,8 @@ export default async function handler(req, res) {
 
     if (!fbRes.ok) {
       console.error('[CAPI] Meta error:', fbData);
-      return res.status(502).json({ error: 'Meta CAPI rejected', details: fbData });
+      // Não devolve `fbData` ao cliente (vaza estrutura interna da Graph API)
+      return res.status(502).json({ error: 'Meta CAPI rejected' });
     }
 
     return res.status(200).json({
@@ -174,6 +207,7 @@ export default async function handler(req, res) {
     });
   } catch (e) {
     console.error('[CAPI] Network/fetch error:', e);
-    return res.status(502).json({ error: 'Failed to reach Meta CAPI', message: e.message });
+    // Não devolve `e.message` ao cliente
+    return res.status(502).json({ error: 'Failed to reach Meta CAPI' });
   }
 }

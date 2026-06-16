@@ -18,16 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com" defer></script>
-    <script>
-        window.tailwind = window.tailwind || {};
-        window.tailwind.config = {
-            theme: { extend: {
-                colors: {'teal':'#0d7c7c','teal-dark':'#0a6363','teal-light':'#e8f5f5'},
-                fontFamily: {'display':['Playfair Display','serif'],'sans':['Inter','sans-serif']}
-            }}
-        }
-    </script>
+    <link href="/assets/tailwind-landing.css" rel="stylesheet">
     <style>
         .hero-bg { background: linear-gradient(135deg, #0d7c7c 0%, #0a5f5f 100%); }
         .cta-pulse { animation: pulse 2s infinite; }
@@ -66,7 +57,7 @@
         </div>
         <h1 class="font-display text-3xl md:text-5xl font-bold mb-6 leading-tight">
             Dor no ombro que não passa?<br>
-            <span class="text-yellow-300">Diagnóstico real antes de qualquer procedimento</span>
+            <span class="text-yellow-300">Diagnóstico detalhado antes de qualquer procedimento</span>
         </h1>
         <p class="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto">
             Tendinite, bursite, artrose e lesão de manguito têm tratamentos diferentes. A consulta define o que está causando a dor — e só depois vem a proposta terapêutica.
@@ -188,23 +179,13 @@
 <!-- DEPOIMENTOS -->
 <section class="py-16 bg-gray-50">
     <div class="max-w-4xl mx-auto px-4">
-        <h2 class="font-display text-3xl font-bold text-center mb-12" style="color:#0d7c7c">O que dizem os pacientes</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-white rounded-xl p-6 shadow-sm">
-                <div class="text-yellow-400 mb-3">★★★★★</div>
-                <p class="text-gray-700 text-sm italic mb-4">"Depois de passar por vários médicos sem conseguir resultado, o Dr. Kleber foi o primeiro que realmente investigou a causa da minha dor."</p>
-                <p class="text-xs text-gray-400">M.C.S. · Divinópolis · Google ✓</p>
-            </div>
-            <div class="bg-white rounded-xl p-6 shadow-sm">
-                <div class="text-yellow-400 mb-3">★★★★★</div>
-                <p class="text-gray-700 text-sm italic mb-4">"A consulta é longa e muito detalhada. Ele realmente ouve o paciente antes de indicar qualquer procedimento."</p>
-                <p class="text-xs text-gray-400">J.A.R. · Divinópolis · Google ✓</p>
-            </div>
-            <div class="bg-white rounded-xl p-6 shadow-sm">
-                <div class="text-yellow-400 mb-3">★★★★★</div>
-                <p class="text-gray-700 text-sm italic mb-4">"Voltei a fazer minhas caminhadas após o tratamento. Dr. Kleber explicou tudo com muita clareza e paciência."</p>
-                <p class="text-xs text-gray-400">R.M. · Itaúna · Google ✓</p>
-            </div>
+        <h2 class="font-display text-3xl font-bold text-center mb-3" style="color:#0d7c7c">Avaliação dos pacientes</h2>
+        <p class="text-center text-gray-500 text-sm max-w-xl mx-auto mb-10">Avaliação pública agregada, sem divulgação de relatos individuais — em conformidade com a Resolução CFM nº 2.336/2023.</p>
+        <div class="max-w-md mx-auto bg-white rounded-xl p-8 shadow-sm text-center border-t-4" style="border-color:#0d7c7c">
+            <div class="text-5xl font-display font-bold mb-1" style="color:#0d7c7c">4,8</div>
+            <div class="text-2xl mb-3" style="color:#caa84a;letter-spacing:3px">★★★★★</div>
+            <p class="text-gray-500 text-sm mb-6">Média das avaliações públicas no Google — pacientes atendidos em Divinópolis-MG e região.</p>
+            <a href="https://www.google.com/search?q=Dr+Kleber+Rangel+Divinopolis" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold hover:underline" style="color:#0d7c7c">Ver avaliações no Google →</a>
         </div>
     </div>
 </section>
@@ -457,7 +438,7 @@ IDENTIDADE E VOZ:
 CLÍNICA E MÉDICO:
 - Dr. Kleber Rangel: ortopedista, coluna, joelho, ombro, medicina da dor e regenerativa.
 - Localização: Divinópolis, MG. Atendimento particular.
-- Consulta dura 50-60 minutos. Investigação real, não protocolo genérico.
+- Consulta dura 50-60 minutos. Investigação clínica detalhada e individualizada.
 - Procedimentos: bloqueios guiados por ultrassom, PRP, BMA, ozonioterapia, viscossuplementação.
 - WhatsApp para agendamento: (37) 99841-9396
 - Horário: Seg–Sex 8h–17h
