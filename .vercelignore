@@ -48,16 +48,19 @@ build
 # Archives — never expose source/build zips publicly
 *.zip
 
-# Orphan root-level image duplicates (canonical copies live in /assets)
+# Imagens órfãs — não referenciadas por nenhuma página servida (só design-system, que é noindex/ignorado).
+# Caminhos apontam para /assets (onde os arquivos realmente estão) para que o deploy não as inclua.
 icone_trate_a_dor.png
-ultrassom.jpeg
-COnsultorio_2.jpeg
-consultorio_1.jpeg
-sala_repouso.jpeg
+assets/ultrassom.jpeg
+assets/COnsultorio_2.jpeg
+assets/consultorio_1.jpeg
+assets/sala_repouso.jpeg
+assets/Logo_Transparente.png
 
 # Build/dev files (gerados localmente, output ja esta em /assets)
 src
 tailwind.config.js
+tailwind.landing.config.cjs
 package.json
 package-lock.json
 DEPLOYMENT_CHECKLIST.md
