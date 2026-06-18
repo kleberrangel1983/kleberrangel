@@ -11,6 +11,8 @@ city/treatment landing pages, blog) deployed on Vercel, plus three serverless fu
 - `api/capi.js` — Meta Conversions API (`META_CAPI_TOKEN`, `META_PIXEL_ID`, `META_CAPI_TEST_EVENT_CODE`)
 - `api/chat.js` — site chatbot, calls Anthropic (`ANTHROPIC_API_KEY`)
 - `api/lead.js` — lead capture, writes to Supabase via `service_role` (`SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`)
+city/treatment landing pages, blog) deployed on Vercel, plus one serverless function
+(`api/capi.js`, Meta Conversions API).
 
 It's driven headless with **Playwright/Chromium** via
 [`driver.mjs`](driver.mjs): it serves nothing itself — you start a static
@@ -89,6 +91,8 @@ Note: the static server does **not** apply the `vercel.json` clean-URL rewrites,
 `.html` paths. The static server also serves **no** `api/*` route (those are serverless
 functions — 404 under `python -m http.server`). To exercise them you need `vercel dev`
 with the matching env vars set (per function, see the intro). None are needed for UI work.
+`.html` paths. To exercise `api/capi.js` (Meta CAPI) you need `vercel dev` with
+`META_CAPI_TOKEN` / `META_PIXEL_ID` env vars set — not needed for any UI work.
 
 ## Test
 
@@ -97,6 +101,10 @@ test. The serverless functions can be syntax-checked without running them:
 
 ```bash
 node --check api/capi.js && node --check api/chat.js && node --check api/lead.js
+test. The serverless function can be syntax-checked:
+
+```bash
+node --check api/capi.js
 ```
 
 ## Gotchas
@@ -107,6 +115,7 @@ node --check api/capi.js && node --check api/chat.js && node --check api/lead.js
 - **Static server ≠ Vercel.** No clean-URL rewrites (`/prp` won't resolve — use `/prp.html`),
   and every `/api/*` route returns 404 (`capi`, `chat`, `lead` are serverless functions, only
   live under `vercel dev`).
+  and `/api/capi` returns 404 (it's a serverless function, only live under `vercel dev`).
 - **The 4 landings have a separate Tailwind build.** They load `assets/tailwind-landing.css`
   (config: `tailwind.landing.config.cjs`), NOT `assets/tailwind.css`. Editing utility classes
   on those pages without rebuilding that file = silently missing styles (purged build).
