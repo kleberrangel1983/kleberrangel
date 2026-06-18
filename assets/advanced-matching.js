@@ -285,7 +285,7 @@
       overlay.innerHTML = '\
 <div class="drkr-am-box">\
 <h2 id="drkr-am-title-text" class="drkr-am-title">Antes de abrir o WhatsApp</h2>\
-<p class="drkr-am-sub">Se preferir, deixe seu nome e telefone — a Maysa, da nossa equipe, já te chama pelo nome. <strong>Opcional.</strong></p>\
+<p class="drkr-am-sub">Se preferir, deixe seu nome e telefone — nossa secretária já te chama pelo nome. <strong>Opcional.</strong></p>\
 <div class="drkr-am-field">\
 <label class="drkr-am-label" for="drkr-am-name">Nome</label>\
 <input id="drkr-am-name" class="drkr-am-input" type="text" placeholder="Como você gosta de ser chamado(a)" autocomplete="given-name">\
