@@ -99,7 +99,7 @@
 
   // Dispara eventos pro Pixel + CAPI server-side com PII
   // contentName/contentCategory: opcionais — se vier de onclick inline, preserva
-  async function fireEnrichedEvents(name, phone, destinationUrl, contentName, contentCategory) {
+  async function fireEnrichedEvents(name, phone, destinationUrl, contentName, contentCategory, consent) {
     var eventId = 'evt_am_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 11);
     var finalContentName = contentName || 'WhatsApp Click (Enhanced)';
     var finalContentCategory = contentCategory || 'CTA';
@@ -187,6 +187,30 @@
         keepalive: true,
       }).catch(function(){});
     } catch (e) {}
+
+    // P1: persistir o lead no nosso store (Supabase via /api/lead) para reativação
+    persistLead(name, phone, consent, finalContentName);
+  }
+
+  // Persiste o lead capturado no funil → /api/lead (Supabase). Fire-and-forget.
+  function persistLead(name, phone, consent, contentName) {
+    if (!phone) return;
+    try {
+      fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name || undefined,
+          phone: phone,
+          consent: consent === true,
+          content_name: contentName || undefined,
+          source_url: window.location.href,
+          fbp: getCookie('_fbp'),
+          fbc: getCookie('_fbc') || getFbcFromUrl(),
+        }),
+        keepalive: true,
+      }).catch(function(){});
+    } catch (e) {}
   }
 
   function getCookie(name) {
@@ -268,6 +292,10 @@
 <label class="drkr-am-label" for="drkr-am-phone">WhatsApp</label>\
 <input id="drkr-am-phone" class="drkr-am-input" type="tel" placeholder="(37) 99999-9999" autocomplete="tel" inputmode="tel">\
 </div>\
+<label style="display:flex;gap:8px;align-items:flex-start;font-size:0.78rem;color:#555;line-height:1.4;cursor:pointer;margin-top:2px;">\
+<input id="drkr-am-consent" type="checkbox" checked style="margin-top:2px;flex-shrink:0;">\
+<span>Aceito receber lembretes e orientações sobre meu atendimento pelo WhatsApp.</span>\
+</label>\
 <div class="drkr-am-actions">\
 <button type="button" class="drkr-am-btn-primary" id="drkr-am-submit">Conversar no WhatsApp</button>\
 <button type="button" class="drkr-am-btn-secondary" id="drkr-am-skip">Pular e ir direto</button>\
@@ -284,6 +312,7 @@
 
       var nameInput = overlay.querySelector('#drkr-am-name');
       var phoneInput = overlay.querySelector('#drkr-am-phone');
+      var consentInput = overlay.querySelector('#drkr-am-consent');
       var submitBtn = overlay.querySelector('#drkr-am-submit');
       var skipBtn = overlay.querySelector('#drkr-am-skip');
 
@@ -300,8 +329,9 @@
       function handleSubmit() {
         var name = (nameInput.value || '').trim();
         var phone = (phoneInput.value || '').trim();
+        var consent = consentInput ? consentInput.checked : true;
         cleanup();
-        resolve({ action: 'submit', name: name, phone: phone });
+        resolve({ action: 'submit', name: name, phone: phone, consent: consent });
       }
 
       function handleSkip() {
@@ -368,7 +398,7 @@
 
     // Caso 1: já tem dados preenchidos antes → usar e dispara enhanced events
     if (stored && stored.name) {
-      await fireEnrichedEvents(stored.name, stored.phone, originalHref, inlineContentName, inlineContentCategory);
+      await fireEnrichedEvents(stored.name, stored.phone, originalHref, inlineContentName, inlineContentCategory, stored.consent);
       // Pequeno delay pra eventos saírem antes da navegação
       setTimeout(function() {
         window.location.href = buildWaUrl(originalHref, stored.name);
@@ -416,11 +446,12 @@
     // Submit — pode ter dados, pode estar vazio (usuário clicou no botão sem preencher)
     var name = result.name || '';
     var phone = result.phone || '';
+    var consent = result.consent !== false;
 
     if (name || phone) {
       // Salvar pra próxima
-      setStored({ name: name, phone: phone, t: Date.now() });
-      await fireEnrichedEvents(name, phone, originalHref, inlineContentName, inlineContentCategory);
+      setStored({ name: name, phone: phone, consent: consent, t: Date.now() });
+      await fireEnrichedEvents(name, phone, originalHref, inlineContentName, inlineContentCategory, consent);
       setTimeout(function() {
         window.location.href = buildWaUrl(originalHref, name);
       }, 150);

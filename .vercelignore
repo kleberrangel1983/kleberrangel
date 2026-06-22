@@ -40,6 +40,9 @@ node_modules
 dist
 build
 
+# Migrations/infra do banco — não servir publicamente
+supabase
+
 # Environment
 .env
 .env.local

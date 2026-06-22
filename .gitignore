@@ -62,3 +62,6 @@ credentials.json
 
 # Archives (never deploy build/source zips)
 *.zip
+
+# Dashboard de reativação — gerado localmente pelo scripts/reativacao.mjs (pode conter PII de leads)
+scripts/reativacao.html

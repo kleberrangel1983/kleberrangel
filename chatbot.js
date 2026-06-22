@@ -2,57 +2,11 @@
   if (window.__tadChatLoaded) return;
   window.__tadChatLoaded = true;
 
-  const SYSTEM_PROMPT = `Você é o assistente virtual do Dr. Kleber Rangel, ortopedista da Clínica Trate a Dor / Dr. Kleber Rangel, ortopedista em Divinópolis-MG (CRM-MG 68724).
+  // O system prompt (CFM-compliant) vive SERVER-SIDE em /api/chat.js — única fonte
+  // da verdade, fora do alcance do cliente. Aqui ficam só UI + chamada à API + fallback.
 
-FUNÇÃO: Responder dúvidas simples de pacientes leigos sobre dor ortopédica. Seu objetivo é educar, orientar com segurança e reduzir ansiedade — não vender consulta de forma agressiva.
-
-TEMAS PERMITIDOS: coluna, joelho, ombro, medicina regenerativa ortopédica, funcionamento da consulta.
-
-REGRAS OBRIGATÓRIAS:
-1. Respostas curtas — máximo 4 linhas.
-2. Linguagem simples, sem termos médicos difíceis.
-3. NUNCA faça diagnóstico.
-4. NUNCA prescreva medicamentos ou doses.
-5. NUNCA interprete exames.
-6. NUNCA indique procedimento (infiltração, PRP, BMA, bloqueio, cirurgia).
-7. NUNCA prometa cura ou regeneração de cartilagem.
-8. NUNCA diga "evita cirurgia".
-9. NUNCA use medo para convencer.
-10. Responda APENAS em português brasileiro.
-
-SINAIS DE ALERTA — se paciente relatar qualquer um, oriente urgência:
-- perda de força progressiva
-- perda de controle da urina ou fezes
-- dormência na região íntima
-- febre com dor na coluna
-- trauma importante
-- dor intensa e progressiva
-- dificuldade súbita para andar
-- câncer prévio com dor nova forte
-
-Resposta para alerta: "Pelos sinais que você descreveu, o mais seguro é procurar atendimento médico com urgência. Esse tipo de situação precisa ser avaliado presencialmente."
-
-QUANDO ENCAMINHAR PARA O WHATSAPP:
-- quiser agendar consulta
-- perguntar preço
-- quiser enviar exame
-- caso individual complexo
-- perguntar se precisa de procedimento
-- demonstrar ansiedade importante
-
-Resposta padrão ao encaminhar: "Para te orientar com segurança, a equipe pode ajudar diretamente pelo WhatsApp. → [Falar com a equipe](https://wa.me/5537998419396?text=Olá, vim pelo chat do site e gostaria de falar com a equipe.)"
-
-RESPOSTAS PADRÃO:
-- Preço da consulta: "A equipe pode informar o valor pelo WhatsApp. A consulta é particular e inclui avaliação médica, exame físico, análise dos exames e plano individualizado."
-- PRP/BMA/infiltração (preço ou se funciona): "O valor e a indicação dependem do diagnóstico e da avaliação médica. Não existe procedimento indicado sem consulta."
-- Medicina regenerativa: "Pode ser considerada em casos selecionados. Não funciona igual para todos e não deve ser prometida como cura."
-- Hérnia de disco: "Nem toda hérnia de disco precisa operar. O tratamento depende dos sintomas, exame físico e exames de imagem."
-- Artrose no joelho: "Artrose pode ter controle da dor e melhora de função. O tratamento depende do grau e da avaliação do paciente."
-- Dor no ombro: "Dor no ombro pode ser bursite, tendinite, manguito rotador, rigidez ou dor vinda da cervical. O ideal é avaliar a causa antes de tratar."
-
-TOM: claro, calmo, direto, acolhedor, prudente. Sem prometer resultado. Sem forçar consulta.
-
-IDENTIDADE: Você é o assistente virtual do Dr. Kleber. Não substitui o médico. Não fecha diagnóstico. Orienta com clareza e segurança.`;
+  const API_URL = '/api/chat';
+  const WA = '[Falar com a equipe no WhatsApp](https://wa.me/5537998419396?text=Ol%C3%A1%2C%20vim%20pelo%20chat%20do%20site%20e%20gostaria%20de%20falar%20com%20a%20equipe.)';
 
   const CSS = `
 #tad-btn{position:fixed;bottom:130px;right:20px;width:50px;height:50px;background:#0B2444;border-radius:50%;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(11,36,68,.3);display:flex;align-items:center;justify-content:center;z-index:8500;transition:transform .2s}
@@ -113,7 +67,7 @@ IDENTIDADE: Você é o assistente virtual do Dr. Kleber. Não substitui o médic
   <div id="tad-foot">Informativo — não substitui consulta médica</div>
 </div>`);
 
-  let history = [], open = false, init = false;
+  let history = [], open = false, init = false, busy = false;
   const btn = document.getElementById('tad-btn');
   const win = document.getElementById('tad-win');
   const msgs = document.getElementById('tad-msgs');
@@ -155,40 +109,59 @@ IDENTIDADE: Você é o assistente virtual do Dr. Kleber. Não substitui o médic
     send();
   };
 
+  // Fallback offline (regex) — usado só se /api/chat falhar. Mantém as respostas
+  // seguras essenciais, em especial a orientação de urgência para sinais de alerta.
+  function localReply(text) {
+    var q = (text || '').toLowerCase();
+    if (/(perda de for|urin|fezes|dorm[êe]ncia|febre|trauma|n[ãa]o consigo andar|c[âa]ncer)/.test(q)) {
+      return 'Pelos sinais que você descreveu, o mais seguro é procurar atendimento médico com urgência. Esse tipo de situação precisa ser avaliado presencialmente. ' + WA;
+    } else if (/(agendar|marcar|agenda|hor[áa]rio|pre[çc]o|valor|quanto custa|exame)/.test(q)) {
+      return 'A consulta é particular e inclui avaliação médica, exame físico, análise dos exames e plano individualizado. Para valores e agendamento, a equipe ajuda diretamente. ' + WA;
+    } else if (/(coluna|h[ée]rnia|lombar|ci[áa]tic|disco|lombalgia)/.test(q)) {
+      return 'Nem toda dor na coluna ou hérnia de disco precisa de cirurgia. O tratamento depende dos sintomas, do exame físico e dos exames de imagem — por isso a avaliação presencial é o primeiro passo.';
+    } else if (/(joelho|artrose|menisco|cartilagem)/.test(q)) {
+      return 'Dor no joelho e artrose podem ter controle da dor e melhora de função. A conduta depende do grau e da avaliação individual — não indico tratamento sem consulta.';
+    } else if (/(ombro|manguito|bursite|tendinite)/.test(q)) {
+      return 'Dor no ombro pode ser bursite, tendinite, lesão do manguito rotador, rigidez ou dor vinda da coluna cervical. O ideal é avaliar a causa antes de tratar.';
+    } else if (/(regenerativ|prp|oz[ôo]nio|ozonio|bma|infiltra|ortobiol)/.test(q)) {
+      return 'Medicina regenerativa (PRP, BMA, ozônio) pode ser considerada em casos selecionados. A indicação depende do diagnóstico e da avaliação médica — não existe procedimento indicado sem consulta.';
+    } else if (/(como funciona|consulta|atende|atendimento|primeira vez)/.test(q)) {
+      return 'A consulta é particular, com tempo para ouvir sua história, exame físico, análise dos exames e um plano individualizado. ' + WA;
+    }
+    return 'Posso ajudar com dúvidas gerais sobre dor na coluna, joelho, ombro e tratamentos. Para o seu caso específico, o ideal é uma avaliação presencial. ' + WA;
+  }
+
   async function send() {
+    if (busy) return;
     const text = inp.value.trim();
     if (!text) return;
+    busy = true;
     inp.value = '';
     addMsg('usr', text);
-    history.push({role: 'user', content: text});
+    history.push({ role: 'user', content: text });
+
     const typing = addMsg('bot', '...');
     typing.style.opacity = '0.4';
 
-    setTimeout(function() {
-      typing.remove();
-      var q = (text || '').toLowerCase();
-      var wa = '[Falar com a equipe no WhatsApp](https://wa.me/5537998419396?text=Ol%C3%A1%2C%20vim%20pelo%20chat%20do%20site%20e%20gostaria%20de%20falar%20com%20a%20equipe.)';
-      var reply;
-      if (/(perda de for|urin|fezes|dorm[\u00eae]ncia|febre|trauma|n[\u00e3a]o consigo andar|c[\u00e2a]ncer)/.test(q)) {
-        reply = 'Pelos sinais que voc\u00ea descreveu, o mais seguro \u00e9 procurar atendimento m\u00e9dico com urg\u00eancia. Esse tipo de situa\u00e7\u00e3o precisa ser avaliado presencialmente. ' + wa;
-      } else if (/(agendar|marcar|agenda|hor[\u00e1a]rio|pre[\u00e7c]o|valor|quanto custa|exame)/.test(q)) {
-        reply = 'A consulta \u00e9 particular e inclui avalia\u00e7\u00e3o m\u00e9dica, exame f\u00edsico, an\u00e1lise dos exames e plano individualizado. Para valores e agendamento, a equipe ajuda diretamente. ' + wa;
-      } else if (/(coluna|h[\u00e9e]rnia|lombar|ci[\u00e1a]tic|disco|lombalgia)/.test(q)) {
-        reply = 'Nem toda dor na coluna ou h\u00e9rnia de disco precisa de cirurgia. O tratamento depende dos sintomas, do exame f\u00edsico e dos exames de imagem \u2014 por isso a avalia\u00e7\u00e3o presencial \u00e9 o primeiro passo.';
-      } else if (/(joelho|artrose|menisco|cartilagem)/.test(q)) {
-        reply = 'Dor no joelho e artrose podem ter controle da dor e melhora de fun\u00e7\u00e3o. A conduta depende do grau e da avalia\u00e7\u00e3o individual \u2014 n\u00e3o indico tratamento sem consulta.';
-      } else if (/(ombro|manguito|bursite|tendinite)/.test(q)) {
-        reply = 'Dor no ombro pode ser bursite, tendinite, les\u00e3o do manguito rotador, rigidez ou dor vinda da coluna cervical. O ideal \u00e9 avaliar a causa antes de tratar.';
-      } else if (/(regenerativ|prp|oz[\u00f4o]nio|ozonio|bma|infiltra|ortobiol)/.test(q)) {
-        reply = 'Medicina regenerativa (PRP, BMA, oz\u00f4nio) pode ser considerada em casos selecionados. A indica\u00e7\u00e3o depende do diagn\u00f3stico e da avalia\u00e7\u00e3o m\u00e9dica \u2014 n\u00e3o existe procedimento indicado sem consulta.';
-      } else if (/(como funciona|consulta|atende|atendimento|primeira vez)/.test(q)) {
-        reply = 'A consulta \u00e9 particular, com tempo para ouvir sua hist\u00f3ria, exame f\u00edsico, an\u00e1lise dos exames e um plano individualizado. ' + wa;
-      } else {
-        reply = 'Posso ajudar com d\u00favidas gerais sobre dor na coluna, joelho, ombro e tratamentos. Para o seu caso espec\u00edfico, o ideal \u00e9 uma avalia\u00e7\u00e3o presencial. ' + wa;
-      }
-      addMsg('bot', reply);
-      history.push({role: 'assistant', content: reply});
-      if (history.length > 16) history = history.slice(-16);
-    }, 500);
+    let reply;
+    try {
+      const res = await fetch(API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: history.slice(-16) }),
+      });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      reply = (data && data.reply) ? data.reply : localReply(text);
+    } catch (e) {
+      // API indisponível / rate limit / rede → fallback seguro offline
+      reply = localReply(text);
+    }
+
+    typing.remove();
+    addMsg('bot', reply);
+    history.push({ role: 'assistant', content: reply });
+    if (history.length > 16) history = history.slice(-16);
+    busy = false;
   }
 })();
