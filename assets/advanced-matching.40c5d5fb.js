@@ -193,8 +193,11 @@
   }
 
   // Persiste o lead capturado no funil → /api/lead (Supabase). Fire-and-forget.
+  // LGPD: só grava com opt-in explícito (consentimento afirmativo do titular).
+  // Sem consentimento, o evento de marketing (fbq/CAPI) ainda dispara, mas o
+  // dado NÃO entra no nosso store de reativação.
   function persistLead(name, phone, consent, contentName) {
-    if (!phone) return;
+    if (!phone || consent !== true) return;
     try {
       fetch('/api/lead', {
         method: 'POST',
@@ -293,7 +296,7 @@
 <input id="drkr-am-phone" class="drkr-am-input" type="tel" placeholder="(37) 99999-9999" autocomplete="tel" inputmode="tel">\
 </div>\
 <label style="display:flex;gap:8px;align-items:flex-start;font-size:0.78rem;color:#555;line-height:1.4;cursor:pointer;margin-top:2px;">\
-<input id="drkr-am-consent" type="checkbox" checked style="margin-top:2px;flex-shrink:0;">\
+<input id="drkr-am-consent" type="checkbox" style="margin-top:2px;flex-shrink:0;">\
 <span>Aceito receber lembretes e orientações sobre meu atendimento pelo WhatsApp.</span>\
 </label>\
 <div class="drkr-am-actions">\
@@ -329,7 +332,7 @@
       function handleSubmit() {
         var name = (nameInput.value || '').trim();
         var phone = (phoneInput.value || '').trim();
-        var consent = consentInput ? consentInput.checked : true;
+        var consent = consentInput ? consentInput.checked : false;
         cleanup();
         resolve({ action: 'submit', name: name, phone: phone, consent: consent });
       }
