@@ -208,5 +208,11 @@
       "source": "/segunda-opiniao",
       "destination": "/segunda-opiniao.html"
     }
+  ],
+  "crons": [
+    {
+      "path": "/api/keepalive",
+      "schedule": "0 6 * * *"
+    }
   ]
 }
