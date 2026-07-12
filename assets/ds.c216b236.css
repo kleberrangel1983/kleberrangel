@@ -1,0 +1,341 @@
+/* assets/ds.css — Design System do site (fonte única).
+ *
+ * Extraído do index.html, que era o único lugar onde a identidade visual existia:
+ * tokens de cor, tipografia (Cormorant Garamond + DM Sans), botões, cards, seções.
+ * As landings de anúncio tinham CSS próprio e pareciam outro site — este arquivo
+ * é o que as traz para a mesma língua visual.
+ *
+ * Carregar ANTES de qualquer <style> específico da página.
+ */
+*{margin:0;padding:0;box-sizing:border-box;}
+        html{scroll-behavior:smooth;}
+        body{font-family:'DM Sans',sans-serif;color:#0F0F0F;background:#fff;overflow-x:hidden;}
+        h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;}
+
+        /* ── PALETA UNIFICADA v2 (Maio 2026) ──
+           Refinamento editorial: teal mais saturado, gold→clay (caramelo do consultório),
+           warm→bone (mais quente), ink mais profundo, muted→stone (cinza quente).
+           Aliases antigos preservados apontando para valores novos pra zero quebra. */
+        :root{
+            /* Novos tokens v2 */
+            --teal:#0A5757;
+            --teal-deep:#053838;
+            --teal-soft:#E6EDEC;
+            --clay:#B5654A;
+            --clay-soft:#F0E5DF;
+            --bone:#F5F0E8;
+            --bone-deep:#E8E0D2;
+            --ink:#0F0F0F;
+            --stone:#6B6660;
+            --stone-soft:#C9C3BA;
+            --hairline:rgba(15,15,15,0.08);
+            --hairline-strong:rgba(15,15,15,0.15);
+
+            /* Aliases legados — apontam pros novos pra zero quebra de CSS existente */
+            --teal-dark:var(--teal-deep);
+            --teal-light:var(--teal-soft);
+            --gold:var(--clay);
+            --gold-light:var(--clay-soft);
+            --warm:var(--bone);
+            --warm-dark:var(--bone-deep);
+            --muted:var(--stone);
+        }
+
+        /* ── HERO BEGE ── */
+        .hero-bg{background:var(--warm);position:relative;}
+        .hero-bg::after{content:'';position:absolute;right:0;top:0;width:50%;height:100%;background:linear-gradient(135deg,var(--warm) 0%,var(--warm-dark) 100%);z-index:0;clip-path:polygon(8% 0,100% 0,100% 100%,0 100%);}
+
+        /* ── BOTÕES ── */
+        .btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;font-weight:600;padding:16px 32px;border-radius:14px;font-size:1rem;text-decoration:none;box-shadow:0 4px 18px rgba(37,211,102,0.35);transition:all 0.2s;white-space:nowrap;}
+        .btn-wa:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,0.4);}
+        .btn-teal{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;font-weight:600;padding:12px 24px;border-radius:10px;font-size:0.9rem;text-decoration:none;transition:all 0.2s;}
+        .btn-teal:hover{background:var(--teal-dark);}
+
+        /* ── CARDS ── */
+        .card-gold{border-left:3px solid var(--gold);padding:24px 24px 24px 28px;background:#fff;border-radius:0 12px 12px 0;box-shadow:0 2px 16px rgba(0,0,0,0.05);}
+        .card-warm{background:var(--warm);border-radius:16px;padding:28px;}
+        .check-gold::before{content:'✓';color:var(--gold);font-weight:700;margin-right:8px;}
+
+        /* ── SEÇÃO LOGOS ── */
+        .logos-bar{display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:center;}
+        .logos-bar img{height:44px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:1;transition:opacity 0.2s;}
+        .logos-bar img:hover{opacity:1;}
+
+        /* ── TIMELINE ── */
+        .timeline{position:relative;padding-left:32px;}
+        .timeline::before{content:'';position:absolute;left:10px;top:6px;bottom:6px;width:2px;background:linear-gradient(to bottom,var(--gold),var(--teal));}
+        .timeline-item{position:relative;margin-bottom:28px;}
+        .timeline-item::before{content:'';position:absolute;left:-27px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid #fff;box-shadow:0 0 0 2px var(--gold);}
+
+        /* ── DEPOIMENTOS ── */
+        .review-card{background:#fff;border:1px solid #E8E0D8;border-top:3px solid var(--gold);border-radius:12px;padding:28px;}
+
+        /* ── FAQ ── */
+        details summary{list-style:none;cursor:pointer;}
+        details summary::-webkit-details-marker{display:none;}
+        details[open] .faq-icon{transform:rotate(45deg);}
+        .faq-icon{transition:transform 0.2s;color:var(--teal);font-size:20px;font-weight:300;}
+
+        /* ── NAV ── */
+        .nav-link{font-size:0.875rem;font-weight:500;color:var(--muted);transition:color 0.2s;text-decoration:none;} nav a{text-decoration:none;}
+        .nav-link:hover{color:var(--teal);}
+
+
+        /* ── NAV DESKTOP — independente de Tailwind ── */
+        .nav-desktop-links{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+        @media(max-width:768px){.nav-desktop-links{display:none;}}
+
+        /* Hero mobile fix */
+        @media(max-width:767px){
+          .hero-bg .fade-up{width:100%!important;min-width:0!important;padding-right:0!important;}
+          .hero-bg .text-4xl{font-size:1.75rem!important;}
+          .hero-bg .text-lg{font-size:0.95rem!important;}
+        }
+        /* ── ANIMAÇÕES ── */
+        @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+        .fade-up{animation:fadeUp 0.7s ease both;}
+        .fade-up-2{animation:fadeUp 0.7s 0.15s ease both;}
+        .fade-up-3{animation:fadeUp 0.7s 0.3s ease both;}
+
+        /* ── FLOATING CTA ── */
+        #fcta{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #E8E0D8;box-shadow:0 -4px 20px rgba(0,0,0,0.1);padding:10px 16px;display:flex;gap:10px;z-index:9990;opacity:0;pointer-events:none;transform:translateY(100%);transition:all 0.4s ease;}
+        #fcta.visible{opacity:1;pointer-events:auto;transform:translateY(0);}
+        @media(min-width:768px){#fcta{bottom:24px;left:auto;right:24px;border-top:none;border-radius:50px;padding:8px 16px 8px 12px;width:auto;box-shadow:0 8px 32px rgba(0,0,0,0.15);}}
+
+        @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+
+        :focus-visible{outline:2px solid var(--teal,#0A5757);outline-offset:2px;}
+        .skip-link{position:absolute;left:-9999px;top:0;z-index:9999;background:var(--teal,#0A5757);color:#fff;padding:10px 16px;border-radius:0 0 8px 0;text-decoration:none;font-weight:600;}
+        .skip-link:focus{left:0;}
+
+        /* ── MOBILE CRÍTICO — garante render sem Tailwind ── */
+        @media(max-width:767px){
+            .hero-bg { background: #F5F0E8 !important; }
+            .hero-bg::after { display:none !important; }
+            .max-w-6xl { max-width:100%; }
+            .px-4 { padding-left:16px; padding-right:16px; }
+            .py-8 { padding-top:32px; padding-bottom:32px; }
+            .text-4xl { font-size:clamp(28px, 8vw, 40px) !important; }
+            .text-lg { font-size:16px; }
+            .text-base { font-size:15px; }
+            .btn-wa { padding:14px 20px; font-size:0.95rem; width:100%; }
+            .grid { display:block !important; }
+            .gap-8 { gap:0; }
+            .logos-bar { gap:20px; overflow-x:auto; flex-wrap:nowrap; padding:8px 0 12px; justify-content:flex-start; scrollbar-width:none; -ms-overflow-style:none; }
+        .logos-bar::-webkit-scrollbar{display:none;}
+            .logos-bar img { height:36px; flex-shrink:0; filter:brightness(0) invert(1); opacity:1; }
+            .card-warm { margin-bottom:16px; }
+            .card-gold { margin-bottom:16px; }
+            .review-card { margin-bottom:16px; }
+            .timeline { padding-left:24px; }
+        }
+        @media(max-width:767px){.hero-bg::after{display:none;}}
+
+    /* ── MOBILE CRITICAL — independente de Tailwind ── */
+    @media(max-width:767px){
+      .hidden{display:none!important}
+      .md\:flex,.md\:block,.md\:grid{display:none!important}
+      .sm\:block{display:block!important}
+      body{padding-bottom:80px}
+    }
+    @media(min-width:768px){
+      .hidden{display:none}
+      .md\:flex{display:flex!important}
+      .md\:block{display:block!important}
+      .md\:grid{display:grid!important}
+    }
+    /* Evita chatbot sobrepor footer */
+    #tad-win{max-height:min(440px,60vh)}
+    @media(max-width:640px){
+      #tad-win{max-height:50vh;bottom:160px}
+      #tad-btn{bottom:100px;left:16px;right:auto}
+    }
+
+    /* ── REDESIGN v2 — assinatura tipográfica e refinamentos editoriais ── */
+    /* Itálico Cormorant em teal — usado pra destacar conceito-chave em headlines */
+    .display-italic {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--teal);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+    /* Botão primário refinado — border-radius reduzido (2-4px em vez de 50px) pra registro editorial */
+    .btn-wa {
+      border-radius: 4px;
+    }
+    /* Eyebrow editorial — hairline horizontal antes do texto */
+    .eyebrow-v2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stone);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .eyebrow-v2::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--clay);
+      display: inline-block;
+    }
+    /* Hairlines em vez de borders fortes — disciplina editorial */
+    .border-editorial {
+      border: 1px solid var(--hairline);
+    }
+    .border-editorial:hover {
+      border-color: var(--hairline-strong);
+    }
+/* ════════════════════════════════════════
+   MOBILE RESET UNIFICADO — drkleberrangel
+   Resolve: hero, footer, chatbot, margens
+   ════════════════════════════════════════ */
+
+/* BASE MOBILE */
+@media(max-width:767px){
+
+  /* Garante que nada vaze lateralmente */
+  body{overflow-x:hidden;width:100%;-webkit-text-size-adjust:100%;}
+  box-sizing:border-box;
+  img:not(nav img){max-width:100%;height:auto;}
+
+  /* Hero — copy ocupa largura total */
+  .hero-bg .fade-up,
+  .hero-bg [class*="fade"]{
+    width:100%!important;
+    min-width:0!important;
+    padding-right:0!important;
+  }
+  .hero-bg h1{font-size:1.75rem!important;line-height:1.2!important;}
+  .hero-bg .text-lg{font-size:0.95rem!important;}
+
+  /* Botão WhatsApp do hero — largura total no mobile */
+  .hero-bg a[href*="wa.me"]{
+    width:100%!important;
+    display:flex!important;
+    justify-content:center!important;
+    margin-bottom:0.5rem!important;
+  }
+
+  /* Remove número ao lado do botão WA — fica na linha de baixo */
+  .hero-bg a[href*="tel"]{
+    display:block!important;
+    text-align:center!important;
+    margin-top:0.5rem!important;
+  }
+
+  /* Credenciais — lista sem vazar */
+  ul li, ol li{
+    margin-left:0!important;
+    padding-left:0!important;
+    list-style-position:inside!important;
+  }
+
+  /* Seção "Quem é o Dr. Kleber" — remove espaço excessivo */
+  #sobre{padding-top:2rem!important;}
+  [id="sobre"]{padding-top:2rem!important;}
+
+  /* Footer links — flex wrap com gap */
+  footer .grid,
+  footer [class*="grid"]{
+    display:flex!important;
+    flex-wrap:wrap!important;
+    gap:0.5rem 1rem!important;
+  }
+  footer a{
+    white-space:nowrap!important;
+    font-size:0.8rem!important;
+  }
+
+  /* Chatbot — posição definitiva, não sobrepõe nada */
+  #tad-btn{
+    position:fixed!important;
+    bottom:140px!important;
+    left:16px!important;
+    right:auto!important;
+    width:44px!important;
+    height:44px!important;
+    z-index:8000!important;
+  }
+  #tad-win{
+    position:fixed!important;
+    bottom:190px!important;
+    left:8px!important;
+    right:8px!important;
+    width:auto!important;
+    max-height:46vh!important;
+    z-index:7999!important;
+  }
+
+  /* Chatbot header — não vaza */
+  #tad-hdr .inf strong{
+    font-size:0.8rem!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+  #tad-hdr .inf span{
+    font-size:0.65rem!important;
+  }
+
+  /* Seções com padding lateral adequado */
+  section, .section{
+    padding-left:1rem!important;
+    padding-right:1rem!important;
+  }
+
+  /* Padding horizontal geral nas divs com max-w */
+  .max-w-6xl, .max-w-4xl, .max-w-3xl{
+    padding-left:1rem!important;
+    padding-right:1rem!important;
+  }
+
+  /* Textos centralizados em mobile */
+  h2.text-center{font-size:1.5rem!important;}
+
+  /* Cards de tratamento — sem vazar */
+  [class*="rounded-xl"],[class*="rounded-2xl"]{
+    margin-left:0!important;
+    margin-right:0!important;
+  }
+
+  /* Espaçamentos excessivos */
+  .py-20{padding-top:3rem!important;padding-bottom:3rem!important;}
+  .py-16{padding-top:2.5rem!important;padding-bottom:2.5rem!important;}
+  .mb-16{margin-bottom:2rem!important;}
+  .mb-20{margin-bottom:2.5rem!important;}
+}
+
+/* Chatbot desktop */
+@media(min-width:768px){
+  #tad-btn{bottom:110px!important;right:20px!important;z-index:8000!important;}
+  #tad-win{bottom:164px!important;right:16px!important;z-index:7999!important;}
+}
+/* Footer — sem cores do browser */
+.bg-gray-900 a, .bg-gray-900 a:visited,
+[style*="background:#0B"] a, [style*="background:#1"] a,
+[style*="background:#111"] a, [style*="background:#0b"] a {
+  color: rgba(255,255,255,0.55) !important;
+  text-decoration: none !important;
+}
+@media(min-width:768px){#nav-links-desktop{display:flex!important;align-items:center;}}
+/* ── VÍDEOS ── */
+            .yt-thumb{position:relative;cursor:pointer;background:#000;border-radius:16px;overflow:hidden;}
+            .yt-thumb img{width:100%;height:100%;object-fit:cover;transition:opacity 0.3s;display:block;}
+            .yt-thumb:hover img{opacity:0.75;}
+            .yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;}
+            .yt-thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+            /* Card horizontal do Shorts */
+            .vid-shorts{display:flex;background:var(--warm);border-radius:20px;overflow:hidden;border:1px solid #E8E0D8;}
+            .vid-shorts .yt-thumb{width:140px;flex-shrink:0;aspect-ratio:9/16;}
+            .vid-info{padding:20px;display:flex;flex-direction:column;justify-content:center;gap:10px;}
+            /* Card padrão horizontal */
+            .vid-card{background:var(--warm);border-radius:20px;overflow:hidden;border:1px solid #E8E0D8;}
+            .vid-card .yt-thumb{aspect-ratio:16/9;}
+            @media(max-width:640px){
+                .vid-shorts{flex-direction:column;}
+                .vid-shorts .yt-thumb{width:100%;aspect-ratio:16/9;}
+            }
