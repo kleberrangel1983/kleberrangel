@@ -541,15 +541,7 @@ footer{background:#111;padding:40px 24px;text-align:center;}
   <a href="tel:+5537998419396" onclick="gtag('event','phone_click',{event_label:'floating_cta'})" style="display:flex;align-items:center;gap:6px;background:var(--warm);color:var(--teal);padding:12px 16px;border-radius:12px;text-decoration:none;font-weight:600;font-size:14px;border:1px solid #E8E0D8;flex:1;justify-content:center;">📞 Ligar</a>
 </div>
 
-<!-- ══ CONSENT ══ -->
-<div id="consent">
-  <p>🔒 Usamos cookies para análise e publicidade. <a href="/politica-privacidade.html" style="color:var(--gold);">Saiba mais</a>.</p>
-  <div class="consent-btns">
-    <button class="consent-btn all" onclick="setConsent('all')">✓ Aceitar todos</button>
-    <button class="consent-btn ess" onclick="setConsent('essential')">Apenas essenciais</button>
-    <button class="consent-btn no" onclick="setConsent('none')">Rejeitar</button>
-  </div>
-</div>
+<!-- Banner de consentimento: injetado por /assets/consent.js (fonte única). -->
 
 <script>
 // ── QUIZ STATE ──
@@ -654,22 +646,8 @@ window.addEventListener('scroll', function() {
 }, {passive:true});
 
 // ── CONSENT ──
-function setConsent(level) {
-  localStorage.setItem('kleber_consent', level);
-  document.getElementById('consent').style.display = 'none';
-  var ok = level === 'all' ? 'granted' : 'denied';
-  gtag('consent','update',{'analytics_storage':ok,'ad_storage':ok,'ad_user_data':ok,'ad_personalization':ok});
-  if (level === 'all' && window.fbq) fbq('track','PageView');
-}
-window.addEventListener('load', function() {
-  var saved = localStorage.getItem('kleber_consent');
-  if (!saved) {
-    document.getElementById('consent').style.display = 'block';
-  } else if (saved === 'all') {
-    gtag('consent','update',{'analytics_storage':'granted','ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted'});
-    if (window.fbq) fbq('track','PageView');
-  }
-});
+// Gerido por /assets/consent.js (fonte única). A escolha antiga, gravada sob a
+// chave 'kleber_consent', é migrada por lá — ninguém é perguntado duas vezes.
 
 // ── ANALYTICS CTAs ──
 document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){
@@ -1002,5 +980,6 @@ Quando perceber interesse real (pergunta sobre preço, disponibilidade, procedim
   };
 })();
 </script>
+<script src="/assets/consent.js" defer></script>
 </body>
 </html>

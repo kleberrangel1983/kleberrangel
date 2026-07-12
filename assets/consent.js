@@ -1,19 +1,55 @@
-// assets/consent.js — banner de consentimento LGPD + Google Consent Mode.
+// assets/consent.js — gestor único de consentimento (LGPD + Google Consent Mode).
 //
 // As páginas declaram no <head> `gtag('consent','default', {...'denied'})`, que
 // FECHA o portão do rastreamento. Sem um `consent update`, GA4/Google Ads nunca
 // gravam cookie e a conversão do anúncio não é atribuída ao clique. Este arquivo
 // é quem abre o portão — quando (e só quando) o visitante aceita.
 //
+// Fonte única para TODAS as páginas. Antes havia banner inline duplicado no
+// index.html e no lp-dor-coluna.html, cada um com sua própria chave de storage.
+//
 // Autossuficiente de propósito: injeta o próprio HTML e não usa variáveis CSS da
 // página (as landings de anúncio não definem --gold). Incluir com `defer`.
 
 (function () {
-  var STORAGE_KEY = 'drkleberrangel_consent'; // mesma chave do index.html: quem já aceitou lá não revê o banner
+  var STORAGE_KEY = 'drkleberrangel_consent';
+  // lp-dor-coluna.html gravava a escolha sob outra chave. Migramos em vez de
+  // ignorar: quem já decidiu lá não pode ser perguntado de novo.
+  var LEGACY_KEYS = ['kleber_consent'];
   var BANNER_ID = 'consent-banner';
 
-  // index.html e lp-dor-coluna.html já trazem o banner inline — não duplicar.
-  if (document.getElementById(BANNER_ID)) return;
+  function comStorage(fn, fallback) {
+    try {
+      return fn();
+    } catch (e) {
+      return fallback; // navegação anônima com storage bloqueado
+    }
+  }
+
+  function gravarEscolha(level) {
+    comStorage(function () {
+      localStorage.setItem(STORAGE_KEY, level);
+    });
+  }
+
+  function lerEscolha() {
+    var atual = comStorage(function () {
+      return localStorage.getItem(STORAGE_KEY);
+    }, null);
+    if (atual) return atual;
+
+    for (var i = 0; i < LEGACY_KEYS.length; i++) {
+      var chave = LEGACY_KEYS[i];
+      var legado = comStorage(function () {
+        return localStorage.getItem(chave);
+      }, null);
+      if (legado) {
+        gravarEscolha(legado); // migra para a chave única
+        return legado;
+      }
+    }
+    return null;
+  }
 
   function gtagSafe() {
     window.dataLayer = window.dataLayer || [];
@@ -21,7 +57,7 @@
   }
   var gtagFn = typeof window.gtag === 'function' ? window.gtag : gtagSafe;
 
-  function applyConsent(level) {
+  function aplicar(level) {
     var granted = level === 'all' ? 'granted' : 'denied';
     gtagFn('consent', 'update', {
       analytics_storage: granted,
@@ -36,18 +72,16 @@
   }
 
   function setConsent(level) {
-    try {
-      localStorage.setItem(STORAGE_KEY, level);
-    } catch (e) {
-      /* navegação anônima com storage bloqueado: decisão vale só nesta página */
-    }
+    gravarEscolha(level);
     var el = document.getElementById(BANNER_ID);
     if (el) el.remove();
-    applyConsent(level);
+    aplicar(level);
   }
-  window.setConsent = setConsent; // paridade com o banner inline do index
+  window.setConsent = setConsent;
 
-  function render() {
+  function abrirBanner() {
+    if (document.getElementById(BANNER_ID)) return;
+
     var wrap = document.createElement('div');
     wrap.id = BANNER_ID;
     wrap.setAttribute('role', 'dialog');
@@ -76,14 +110,61 @@
 
     document.body.appendChild(wrap);
   }
+  window.abrirPreferenciasCookies = abrirBanner;
 
-  var saved = null;
-  try {
-    saved = localStorage.getItem(STORAGE_KEY);
-  } catch (e) {
-    /* storage indisponível: trata como primeira visita */
+  // Link "Gerenciar cookies" no rodapé. A Política de Privacidade (Seção 8) promete
+  // que o titular revoga o consentimento "reabrindo as preferências pelo banner/painel"
+  // — sem este link, a promessa não tinha suporte funcional (LGPD Art. 8 §5: revogar
+  // tem de ser tão fácil quanto consentir).
+  function renderLinkRodape() {
+    var footer = document.querySelector('footer');
+    if (!footer || document.getElementById('gerenciar-cookies')) return;
+
+    var link = document.createElement('a');
+    link.id = 'gerenciar-cookies';
+    link.href = '#';
+    link.textContent = 'Gerenciar cookies';
+    link.style.cssText = 'text-decoration:underline;cursor:pointer;';
+    link.addEventListener('click', function (ev) {
+      ev.preventDefault();
+      abrirBanner();
+    });
+
+    // Anexa ao FIM da linha de links do rodapé (inserir no meio quebraria os
+    // separadores existentes) e herda a aparência do link da política, para não
+    // destoar — os rodapés variam entre home, landing e blog.
+    var vizinho = footer.querySelector('a[href*="politica"]');
+    var pai = vizinho && vizinho.parentElement;
+    if (pai) {
+      link.className = vizinho.className;
+      link.style.cssText = vizinho.getAttribute('style') || '';
+      link.style.textDecoration = 'underline';
+      link.style.cursor = 'pointer';
+
+      // Se o container já espaça os links via CSS (flex/grid com gap), o separador
+      // é do layout; num rodapé de texto corrido, o " · " precisa vir de nós.
+      var layout = getComputedStyle(pai).display;
+      var espacaSozinho = layout === 'flex' || layout === 'grid';
+      if (espacaSozinho) pai.appendChild(link);
+      else pai.append(' · ', link);
+    } else {
+      var p = document.createElement('p');
+      p.style.cssText = 'margin-top:8px;font-size:12px;opacity:.75;';
+      p.appendChild(link);
+      footer.appendChild(p);
+    }
   }
 
-  if (saved === 'all') applyConsent('all'); // reabre o portão numa visita seguinte
-  else if (!saved) render();
+  function init() {
+    renderLinkRodape();
+    var escolha = lerEscolha();
+    if (escolha === 'all') aplicar('all'); // reabre o portão numa visita seguinte
+    else if (!escolha) abrirBanner();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
