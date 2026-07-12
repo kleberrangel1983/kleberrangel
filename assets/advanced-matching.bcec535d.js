@@ -105,6 +105,19 @@
     var finalContentName = contentName || 'WhatsApp Click (Enhanced)';
     var finalContentCategory = contentCategory || 'CTA';
 
+    // Sem consentimento de publicidade, NADA vai para a Meta — nem o Pixel, nem a CAPI.
+    // Aqui trafega o NOME e o TELEFONE do paciente: mandar isso sem opt-in é dado
+    // pessoal de titular em contexto de saúde (LGPD Art. 11), e o gate do GTM não cobre
+    // o envio server-side. O lead segue sendo gravado no nosso store (persistLead), que
+    // tem base legal própria — o checkbox de opt-in do modal.
+    // Fail-closed: se o consent.js não carregou, não envia.
+    var podeEnviarAMeta =
+      typeof window.temConsentimentoPublicidade === 'function' && window.temConsentimentoPublicidade();
+    if (!podeEnviarAMeta) {
+      persistLead(name, phone, consent, finalContentName);
+      return;
+    }
+
     // 1. Advanced Matching no Pixel: re-init com user_data
     try {
       if (typeof fbq === 'function') {

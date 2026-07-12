@@ -79,6 +79,14 @@
   }
   window.setConsent = setConsent;
 
+  // Fonte única da verdade sobre o consentimento, para quem precisa decidir se pode
+  // enviar dado à Meta. O gate do GTM só vale para o navegador — o envio server-side
+  // (/api/capi) passaria por fora dele, mandando IP, user-agent e cookies _fbp/_fbc
+  // de quem nunca aceitou. Ver capi-client.js.
+  window.temConsentimentoPublicidade = function () {
+    return lerEscolha() === 'all';
+  };
+
   function abrirBanner() {
     if (document.getElementById(BANNER_ID)) return;
 
