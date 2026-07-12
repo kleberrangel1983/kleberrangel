@@ -69,6 +69,17 @@
       window.fbq('consent', 'grant');
       window.fbq('track', 'PageView');
     }
+
+    // Evento para o GTM re-disparar as tags que ele bloqueou por falta de consentimento.
+    // O GTM avalia o consentimento NO INSTANTE do gatilho: a tag do Pixel usa "All Pages",
+    // que já passou quando o visitante clica em "Aceitar" — e tags Custom HTML NÃO
+    // re-disparam sozinhas quando o consentimento chega depois. Sem um gatilho novo, o
+    // Pixel só voltaria a rodar na próxima navegação (perdendo o PageView desta).
+    // No GTM: adicionar o gatilho "CE - consent_granted" à tag do Pixel.
+    if (level === 'all') {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'consent_granted' });
+    }
   }
 
   function setConsent(level) {
