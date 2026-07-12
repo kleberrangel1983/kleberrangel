@@ -41,6 +41,15 @@
 
   // Disparar evento server-side
   function sendCapi(eventName, eventId, contentName, contentCategory) {
+    // Sem consentimento de publicidade, NÃO envia. O gate de consentimento do GTM só
+    // vale para o navegador; o server-side passaria por fora dele e mandaria IP,
+    // user-agent e cookies _fbp/_fbc de quem nunca aceitou — num site de saúde, dado
+    // sensível por inferência (LGPD Art. 11). Fonte da verdade: /assets/consent.js.
+    // Fail-closed de propósito: se o consent.js não carregou, não envia.
+    if (typeof window.temConsentimentoPublicidade !== 'function' || !window.temConsentimentoPublicidade()) {
+      return;
+    }
+
     // Não bloqueia navegação — usa keepalive
     try {
       var payload = {
