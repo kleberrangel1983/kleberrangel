@@ -9,6 +9,11 @@
 // a tag do Pixel no GTM — se divergirem, o evento do navegador e o server-side
 // caem em datasets diferentes e a deduplicação para de funcionar.
 //
-// Pixel: "Pixel 2 Dr Kleber Rangel" — Business Manager "Trate a Dor - Dr Kleber
-// Rangel" (338286065214169), o BM do próprio Dr. Kleber.
-window.META_PIXEL_ID = '1252963350362396';
+// Pixel: "Pixel Kleber Rangel" (877941071024223) — o Pixel oficial da clínica,
+// com histórico desde 2024.
+//
+// ⚠️ Hoje ele pertence ao Business Manager "Doutor Hérnia Divinópolis"
+// (1038976620492716), não ao BM principal "Trate a Dor - Dr Kleber Rangel"
+// (338286065214169). A consolidação é TRANSFERIR este Pixel para o BM principal
+// — não trocá-lo por outro (isso jogaria fora o histórico).
+window.META_PIXEL_ID = '877941071024223';
