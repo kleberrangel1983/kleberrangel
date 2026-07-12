@@ -1,8 +1,9 @@
 // /assets/advanced-matching.js
 // Modal opcional de captura de nome+phone ANTES do clique no WhatsApp.
 //
-// Objetivo: subir EMQ do Pixel 877941071024223 de 6.1 → 8+ enviando
-// email/phone hashados como user_data quando o paciente preenche.
+// Objetivo: subir o EMQ do Pixel (de 6.1 → 8+) enviando email/phone hashados
+// como user_data quando o paciente preenche. O ID do Pixel vem de
+// /assets/meta-config.js (window.META_PIXEL_ID) — fonte única, nunca hardcoded.
 //
 // Princípio: NÃO BLOQUEAR. O modal aparece, mas tem botão grande
 // "Ir direto pro WhatsApp" — quem não quer preencher tem experiência
@@ -108,8 +109,16 @@
     try {
       if (typeof fbq === 'function') {
         var userData = await hashUserData(name, phone);
-        // Re-init pixel com user_data — sobrescreve init original pra esse evento
-        fbq('init', '877941071024223', userData);
+        // Re-init pixel com user_data — sobrescreve init original pra esse evento.
+        // ID vem de /assets/meta-config.js (fonte única); sem ele, não re-inicializa
+        // às cegas num pixel errado — melhor perder o advanced matching do que
+        // mandar PII pro dataset de outro Business Manager.
+        var pixelId = window.META_PIXEL_ID;
+        if (!pixelId) {
+          console.warn('[advanced-matching] META_PIXEL_ID ausente (meta-config.js não carregou)');
+          return;
+        }
+        fbq('init', pixelId, userData);
         // Disparar Lead+Contact com eventID pra dedup com CAPI server
         fbq('track', 'Lead', {
           content_name: finalContentName,
