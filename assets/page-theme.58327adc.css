@@ -1,0 +1,113 @@
+/* assets/page-theme.css — traz as páginas construídas com utilitários Tailwind
+ * para a identidade da home (prp, ombro, medicina-regenerativa, ozonoterapia).
+ *
+ * Estas páginas nasceram com outra paleta (teal médico #0d7c7c) e outra tipografia
+ * (Inter + Playfair). Não têm classes semânticas como as landings: o layout é
+ * feito de utilitários Tailwind inline (text-white, bg-teal, text-yellow-300),
+ * que descrevem a COR e não o PAPEL do elemento.
+ *
+ * Por isso aqui a estratégia é sobrescrever os utilitários — e, no hero, inverter
+ * o contraste com escopo: o fundo passa de teal escuro para bone claro, então todo
+ * `text-white` de dentro dele precisa virar tinta escura, ou o texto sumiria.
+ *
+ * Depende dos tokens de /assets/ds.<hash>.css — carregar DEPOIS dele e DEPOIS do
+ * tailwind.css (senão os utilitários vencem).
+ */
+
+/* ─── Tipografia ───────────────────────────────────────────────────── */
+body {
+  font-family: 'DM Sans', system-ui, sans-serif !important;
+  color: var(--ink);
+  background: var(--bone);
+  line-height: 1.75;
+}
+h1, h2, h3, .font-display {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* ─── Hero: era teal escuro chapado; vira editorial claro, como a home ─ */
+.hero-bg {
+  background: linear-gradient(180deg, var(--bone) 0%, var(--bone-deep) 100%) !important;
+  color: var(--ink);
+}
+/* o hero era escuro: todo texto branco de dentro dele precisa virar tinta */
+.hero-bg .text-white,
+.hero-bg h1,
+.hero-bg h2,
+.hero-bg p { color: var(--ink) !important; }
+.hero-bg .text-white\/90,
+.hero-bg .text-white\/80,
+.hero-bg .text-white\/70,
+.hero-bg .text-white\/60 { color: var(--stone) !important; }
+
+/* o destaque do título (era amarelo) vira o itálico teal — assinatura da home */
+.hero-bg .text-yellow-300,
+.hero-bg .text-yellow-400 {
+  color: var(--teal) !important;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* badge do hero (era branco translúcido sobre teal) */
+.hero-bg .bg-white\/20,
+.hero-bg .bg-white\/10 {
+  background: var(--clay-soft) !important;
+  color: var(--ink) !important;
+  border: 1px solid rgba(181, 101, 74, 0.25);
+}
+
+/* botão secundário do hero (era translúcido sobre escuro) */
+.hero-bg .border-white\/40,
+.hero-bg .border-white\/30 { border-color: var(--hairline-strong) !important; }
+
+/* ─── Neutraliza a decoração do hero da HOME ───────────────────────────
+ * O ds.css define .hero-bg::after — um painel diagonal com clip-path que cobre
+ * 50% da largura. Na home é o efeito de layout do hero. Mas ESTAS páginas usam
+ * a MESMA classe .hero-bg para outra coisa: o painel vinha junto e passava por
+ * cima do texto (o conteúdo não tem z-index; o ::after tem). Colisão de nomes.
+ */
+.hero-bg::after { display: none !important; }
+.hero-bg > * { position: relative; z-index: 1; }
+
+/* ─── Cores da marca ───────────────────────────────────────────────── */
+.text-teal, .text-medical-teal { color: var(--teal) !important; }
+.bg-teal, .bg-medical-teal { background-color: var(--teal) !important; }
+.bg-teal-light, .bg-medical-light { background-color: var(--teal-soft) !important; }
+.border-teal, .border-teal\/30 { border-color: rgba(10, 87, 87, 0.28) !important; }
+
+/* acentos (eram laranja/âmbar) passam a clay — o acento da home */
+.text-orange-700, .text-accent-orange { color: var(--clay) !important; }
+.bg-orange-50 { background-color: var(--clay-soft) !important; }
+.border-orange-200, .border-amber-200 { border-color: rgba(181, 101, 74, 0.28) !important; }
+.bg-amber-50 { background-color: var(--clay-soft) !important; }
+.text-amber-800 { color: #6B3A2A !important; }
+
+/* ─── Superfícies ──────────────────────────────────────────────────── */
+.bg-gray-50 { background-color: var(--bone) !important; }
+.bg-gray-900 { background-color: var(--ink) !important; }
+.text-gray-900, .text-gray-800 { color: var(--ink) !important; }
+.text-gray-700, .text-gray-600, .text-gray-500, .text-gray-400 { color: var(--stone) !important; }
+
+/* ─── Botões ───────────────────────────────────────────────────────── */
+/* o verde do WhatsApp é preservado: é o botão de conversão */
+.bg-green-500, .bg-green-600 { background-color: #1FA855 !important; }
+.bg-green-500:hover, .bg-green-600:hover { background-color: #178C46 !important; }
+
+/* cantos e sombras no tom da home */
+.rounded-lg, .rounded-xl { border-radius: 14px !important; }
+.rounded-full { border-radius: 999px !important; }
+
+/* ─── Ritmo tipográfico ────────────────────────────────────────────── */
+.prose p, p { line-height: 1.75; }
+.prose h2 { color: var(--ink) !important; }
+.prose h3 { color: var(--teal-deep) !important; }
+
+/* ─── Rodapé ───────────────────────────────────────────────────────── */
+footer { background: var(--ink) !important; }
+footer, footer a, footer p { color: rgba(255, 255, 255, 0.55) !important; }
+
+/* ─── Chat ─────────────────────────────────────────────────────────── */
+#tad-chat-btn { background: var(--teal) !important; }
+.tad-wpp-btn { background: #1FA855 !important; color: #fff !important; }
