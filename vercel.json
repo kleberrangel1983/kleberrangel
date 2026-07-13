@@ -207,6 +207,10 @@
     {
       "source": "/segunda-opiniao",
       "destination": "/segunda-opiniao.html"
+    },
+    {
+      "source": "/unha-encravada",
+      "destination": "/unha-encravada.html"
     }
   ],
   "crons": [
