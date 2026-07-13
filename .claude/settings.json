@@ -1,0 +1,30 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/guard-cfm-pixel.mjs\"",
+            "timeout": 10,
+            "statusMessage": "Checando CFM 2.336/2023 e fonte do pixel..."
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/aviso-pagina-orfa.mjs\"",
+            "timeout": 15,
+            "statusMessage": "Checando registro da página nova..."
+          }
+        ]
+      }
+    ]
+  }
+}
