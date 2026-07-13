@@ -9,6 +9,18 @@
             "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/guard-cfm-pixel.mjs\"",
             "timeout": 10,
             "statusMessage": "Checando CFM 2.336/2023 e fonte do pixel..."
+          },
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/guard-csp.mjs\"",
+            "timeout": 10,
+            "statusMessage": "Checando CSP (contenção do gateway Datahash)..."
+          },
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/guard-service-role.mjs\"",
+            "timeout": 10,
+            "statusMessage": "Checando segredos e fronteira servidor/navegador..."
           }
         ]
       }
@@ -22,6 +34,17 @@
             "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/aviso-pagina-orfa.mjs\"",
             "timeout": 15,
             "statusMessage": "Checando registro da página nova..."
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/guard-hash-de-asset.mjs\"",
+            "timeout": 15,
+            "statusMessage": "Checando hash de conteúdo do asset (cache de 1 ano)..."
           }
         ]
       }
