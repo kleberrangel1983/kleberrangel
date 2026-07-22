@@ -57,6 +57,44 @@
   }
   var gtagFn = typeof window.gtag === 'function' ? window.gtag : gtagSafe;
 
+  // ── Persistência do _fbc (identificador de clique de anúncio da Meta) ──
+  // O fbclid só vem na URL no primeiro acesso via anúncio. Se o visitante navega para
+  // uma página interna antes de decidir sobre cookies, ele se perde e o matching de
+  // cliques pagos despenca. Capturamos o fbclid cedo (buffer técnico de sessão), mas só
+  // materializamos o cookie de publicidade _fbc COM consentimento — mesmo rigor do resto
+  // do arquivo (LGPD Art. 11: em site de saúde, é dado sensível por inferência).
+  var FBCLID_BUFFER = 'drkleberrangel_fbclid';
+
+  function lerCookie(nome) {
+    var m = document.cookie.match(new RegExp('(^|; )' + nome + '=([^;]+)'));
+    return m ? decodeURIComponent(m[2]) : null;
+  }
+
+  function capturarFbclid() {
+    try {
+      var fbclid = new URLSearchParams(window.location.search).get('fbclid');
+      if (!fbclid || lerCookie('_fbc')) return; // sem fbclid, ou o fbevents já gravou o cookie
+      comStorage(function () {
+        if (!sessionStorage.getItem(FBCLID_BUFFER)) {
+          sessionStorage.setItem(FBCLID_BUFFER, 'fb.1.' + Date.now() + '.' + fbclid);
+        }
+      });
+    } catch (e) {}
+  }
+
+  function materializarFbc() {
+    if (lerCookie('_fbc')) return; // não sobrescreve o cookie do próprio fbevents
+    var valor = comStorage(function () { return sessionStorage.getItem(FBCLID_BUFFER); }, null);
+    if (!valor) {
+      try {
+        var fbclid = new URLSearchParams(window.location.search).get('fbclid');
+        if (fbclid) valor = 'fb.1.' + Date.now() + '.' + fbclid; // fbclid ainda na URL desta página
+      } catch (e) {}
+    }
+    if (!valor) return;
+    document.cookie = '_fbc=' + valor + '; max-age=7776000; path=/; SameSite=Lax'; // 90 dias (janela de atribuição da Meta)
+  }
+
   function aplicar(level) {
     var granted = level === 'all' ? 'granted' : 'denied';
     gtagFn('consent', 'update', {
@@ -77,6 +115,7 @@
     // Pixel só voltaria a rodar na próxima navegação (perdendo o PageView desta).
     // No GTM: adicionar o gatilho "CE - consent_granted" à tag do Pixel.
     if (level === 'all') {
+      materializarFbc(); // agora há consentimento: grava o cookie _fbc do clique de anúncio
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: 'consent_granted' });
     }
@@ -175,6 +214,7 @@
   }
 
   function init() {
+    capturarFbclid(); // guarda o fbclid cedo (buffer de sessão); só vira cookie com consentimento
     renderLinkRodape();
     var escolha = lerEscolha();
     if (escolha === 'all') aplicar('all'); // reabre o portão numa visita seguinte

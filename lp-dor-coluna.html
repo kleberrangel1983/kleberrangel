@@ -405,7 +405,7 @@ footer{background:#111;padding:40px 24px;text-align:center;}
           <svg width="20" height="20" viewBox="0 0 32 32" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 2C8.268 2 2 8.268 2 16c0 2.428.651 4.703 1.788 6.664L2 30l7.528-1.768A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm-3.93 7.62c-.22-.493-.45-.503-.658-.512l-.56-.007c-.195 0-.512.073-.78.366-.268.293-1.024 1.001-1.024 2.44 0 1.44 1.049 2.83 1.195 3.025.147.195 2.025 3.22 4.977 4.388 2.463.972 2.953.779 3.484.73.532-.049 1.708-.698 1.95-1.372.24-.674.24-1.251.168-1.372-.073-.122-.269-.195-.562-.342-.293-.146-1.708-.843-1.977-.94-.268-.097-.463-.146-.659.147-.195.293-.757.94-.927 1.135-.17.195-.341.22-.634.073-.293-.147-1.237-.456-2.357-1.453-.87-.776-1.458-1.734-1.629-2.027-.17-.293-.018-.451.128-.597.13-.13.293-.341.44-.512.146-.17.195-.293.293-.488.097-.195.049-.366-.025-.512-.073-.146-.65-1.592-.903-2.181z" fill="white"/></svg>
           Falar agora pelo WhatsApp
         </a>
-        <p class="form-lgpd">🔒 Seus dados são protegidos pela LGPD e não são compartilhados com terceiros. O contato via WhatsApp não constitui consulta médica.</p>
+        <p class="form-lgpd">🔒 Seus dados são protegidos pela LGPD e usados para entrar em contato com você. Com o seu consentimento, identificadores podem ser enviados de forma criptografada a plataformas de anúncios para mensuração — detalhes na <a href="/politica-privacidade.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Política de Privacidade</a>. O contato via WhatsApp não constitui consulta médica.</p>
       </div>
     </div>
   </div>
@@ -554,7 +554,7 @@ footer{background:#111;padding:40px 24px;text-align:center;}
   <a href="tel:+5537998419396" onclick="gtag('event','phone_click',{event_label:'floating_cta'})" style="display:flex;align-items:center;gap:6px;background:var(--warm);color:var(--teal);padding:12px 16px;border-radius:12px;text-decoration:none;font-weight:600;font-size:14px;border:1px solid #E8E0D8;flex:1;justify-content:center;">📞 Ligar</a>
 </div>
 
-<!-- Banner de consentimento: injetado por /assets/consent.978a4bc3.js (fonte única). -->
+<!-- Banner de consentimento: injetado por /assets/consent.4f504ec1.js (fonte única). -->
 
 <script>
 // ── QUIZ STATE ──
@@ -638,8 +638,45 @@ function submitForm() {
   if (!nome) { document.getElementById('f-nome').focus(); return; }
   if (!wa || wa.length < 8) { document.getElementById('f-wa').focus(); return; }
 
-  gtag('event','form_submit',{event_label:'quiz_lead'});
-  if (window.fbq) fbq('track','Lead');
+  // ── Lead com dedup browser↔CAPI (LGPD-safe) ──
+  // Um event_id único, compartilhado entre o Pixel (browser) e o /api/capi (server),
+  // para o Meta deduplicar e ainda aproveitar os sinais server-side (IP/UA reais → EMQ).
+  var eventId = 'evt_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 11);
+  var partesNome = nome.split(/\s+/);
+  var firstName = partesNome.shift() || '';
+  var lastName = partesNome.join(' ');
+
+  gtag('event','form_submit',{event_label:'quiz_lead', event_id: eventId});
+  // Pixel browser: fica represado pelo consent-guard até o opt-in; drena já com o eventID.
+  if (window.fbq) fbq('track','Lead',{content_name:'quiz_lead_coluna', content_category:'lead_form'},{eventID:eventId});
+
+  // CAPI server-side: SÓ com consentimento de publicidade (fail-closed, igual ao capi-client.js).
+  // Sem isso, IP/UA/cookies de quem não aceitou iriam à Meta — dado sensível por inferência (LGPD Art. 11).
+  if (typeof window.temConsentimentoPublicidade === 'function' && window.temConsentimentoPublicidade()) {
+    try {
+      var lerCookie = function(n){ var m = document.cookie.match(new RegExp('(^|; )' + n + '=([^;]+)')); return m ? decodeURIComponent(m[2]) : null; };
+      var fbcUrl = null;
+      try { var fbclid = new URLSearchParams(window.location.search).get('fbclid'); if (fbclid) fbcUrl = 'fb.1.' + Date.now() + '.' + fbclid; } catch (e) {}
+      fetch('/api/capi', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        keepalive: true, // o clique abre o WhatsApp em seguida; não deixa a request morrer
+        body: JSON.stringify({
+          event_name: 'Lead',
+          event_id: eventId,
+          event_source_url: window.location.href,
+          content_name: 'quiz_lead_coluna',
+          content_category: 'lead_form',
+          first_name: firstName,
+          last_name: lastName || undefined,
+          phone: wa,
+          city: cidade || undefined,
+          fbp: lerCookie('_fbp'),
+          fbc: lerCookie('_fbc') || fbcUrl,
+        }),
+      }).catch(function(e){ if (window.console) console.warn('[lead CAPI]', e); });
+    } catch (e) { if (window.console) console.warn('[lead CAPI]', e); }
+  }
 
   var perfis = {
     A: 'ainda não tratei de forma especializada e quero investigar a causa',
@@ -659,7 +696,7 @@ window.addEventListener('scroll', function() {
 }, {passive:true});
 
 // ── CONSENT ──
-// Gerido por /assets/consent.978a4bc3.js (fonte única). A escolha antiga, gravada sob a
+// Gerido por /assets/consent.4f504ec1.js (fonte única). A escolha antiga, gravada sob a
 // chave 'kleber_consent', é migrada por lá — ninguém é perguntado duas vezes.
 
 // ── ANALYTICS CTAs ──
@@ -993,6 +1030,6 @@ Quando perceber interesse real (pergunta sobre preço, disponibilidade, procedim
   };
 })();
 </script>
-<script src="/assets/consent.978a4bc3.js" defer></script>
+<script src="/assets/consent.4f504ec1.js" defer></script>
 </body>
 </html>
