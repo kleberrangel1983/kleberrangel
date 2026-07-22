@@ -91,11 +91,6 @@
       "permanent": true
     },
     {
-      "source": "/termos",
-      "destination": "/termos.html",
-      "permanent": true
-    },
-    {
       "source": "/politica-de-privacidade",
       "destination": "/politica-privacidade.html",
       "permanent": true
@@ -203,6 +198,10 @@
     {
       "source": "/politica-privacidade",
       "destination": "/politica-privacidade.html"
+    },
+    {
+      "source": "/termos",
+      "destination": "/termos.html"
     },
     {
       "source": "/segunda-opiniao",
