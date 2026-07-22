@@ -60,7 +60,7 @@ QUANDO ENCAMINHAR PARA O WHATSAPP:
 - perguntar se precisa de procedimento
 - demonstrar ansiedade importante
 
-Resposta padrão ao encaminhar: "Para te orientar com segurança, a equipe pode ajudar diretamente pelo WhatsApp. → [Falar com a equipe](https://wa.me/5537998419396?text=Olá, vim pelo chat do site e gostaria de falar com a equipe.)"
+Resposta padrão ao encaminhar: "Para te orientar com segurança, a equipe pode ajudar diretamente pelo WhatsApp. → [Falar com a equipe](https://wa.me/553784161539?text=Olá, vim pelo chat do site e gostaria de falar com a equipe.)"
 
 RESPOSTAS PADRÃO:
 - Preço da consulta: "A equipe pode informar o valor pelo WhatsApp. A consulta é particular e inclui avaliação médica, exame físico, análise dos exames e plano individualizado."
@@ -213,7 +213,7 @@ export default async function handler(req, res) {
     // Defesa: recusa de segurança do modelo
     if (data.stop_reason === 'refusal') {
       return res.status(200).json({
-        reply: 'Não consigo te ajudar com isso por aqui. Para o seu caso, o ideal é uma avaliação presencial. → [Falar com a equipe](https://wa.me/5537998419396?text=Olá, vim pelo chat do site e gostaria de falar com a equipe.)',
+        reply: 'Não consigo te ajudar com isso por aqui. Para o seu caso, o ideal é uma avaliação presencial. → [Falar com a equipe](https://wa.me/553784161539?text=Olá, vim pelo chat do site e gostaria de falar com a equipe.)',
       });
     }
 
