@@ -6,7 +6,7 @@
   // da verdade, fora do alcance do cliente. Aqui ficam só UI + chamada à API + fallback.
 
   const API_URL = '/api/chat';
-  const WA = '[Falar com a equipe no WhatsApp](https://wa.me/5537998419396?text=Ol%C3%A1%2C%20vim%20pelo%20chat%20do%20site%20e%20gostaria%20de%20falar%20com%20a%20equipe.)';
+  const WA = '[Falar com a equipe no WhatsApp](https://wa.me/553784161539?text=Ol%C3%A1%2C%20vim%20pelo%20chat%20do%20site%20e%20gostaria%20de%20falar%20com%20a%20equipe.)';
 
   const CSS = `
 #tad-btn{position:fixed;bottom:130px;right:20px;width:50px;height:50px;background:#0B2444;border-radius:50%;border:none;cursor:pointer;box-shadow:0 4px 16px rgba(11,36,68,.3);display:flex;align-items:center;justify-content:center;z-index:8500;transition:transform .2s}
