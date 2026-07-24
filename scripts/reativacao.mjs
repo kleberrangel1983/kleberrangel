@@ -26,7 +26,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 
-const MODEL = 'claude-sonnet-4-6'; // boa copy em pt-BR; troque se quiser
+const MODEL = 'claude-opus-4-8'; // suporta structured outputs (o json_schema abaixo é garantido, não "pedido")
 const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages';
 const ANTHROPIC_VERSION = '2023-06-01';
 const CONCURRENCY = 5;
