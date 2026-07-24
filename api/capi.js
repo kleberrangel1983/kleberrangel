@@ -17,6 +17,10 @@
 import crypto from 'crypto';
 
 const PIXEL_ID = process.env.META_PIXEL_ID; // Configurar no painel Vercel: Settings → Environment Variables
+// Pixel/dataset secundário OPCIONAL (ex.: o pixel da conta de anúncios em outro BM). Se as duas
+// env vars META_PIXEL_ID_2 + META_CAPI_TOKEN_2 existirem, o MESMO evento é enviado também para ele
+// — fire-and-forget, sem afetar a resposta ao cliente, que reflete só o pixel principal.
+const PIXEL_ID_2 = process.env.META_PIXEL_ID_2 || null;
 const CAPI_VERSION = 'v21.0';
 const TEST_EVENT_CODE = process.env.META_CAPI_TEST_EVENT_CODE || null; // opcional, pra debug
 
@@ -114,6 +118,7 @@ export default async function handler(req, res) {
     console.error('[CAPI] META_CAPI_TOKEN env var não configurada');
     return res.status(500).json({ error: 'Server misconfigured' });
   }
+  const TOKEN_2 = process.env.META_CAPI_TOKEN_2 || null; // par do PIXEL_ID_2 (opcional)
 
   // Parse body
   let body;
@@ -187,27 +192,40 @@ export default async function handler(req, res) {
     payload.test_event_code = TEST_EVENT_CODE;
   }
 
-  const url = `https://graph.facebook.com/${CAPI_VERSION}/${PIXEL_ID}/events?access_token=${TOKEN}`;
-
-  try {
-    const fbRes = await fetch(url, {
+  // Envia o payload para um pixel/dataset. Retorna { ok, data }.
+  async function enviarParaPixel(pixelId, token) {
+    const url = `https://graph.facebook.com/${CAPI_VERSION}/${pixelId}/events?access_token=${token}`;
+    const r = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
     });
+    const data = await r.json();
+    return { ok: r.ok, data };
+  }
 
-    const fbData = await fbRes.json();
+  try {
+    // Pixel principal (obrigatório) — a resposta ao cliente reflete SÓ este.
+    const principal = await enviarParaPixel(PIXEL_ID, TOKEN);
 
-    if (!fbRes.ok) {
-      console.error('[CAPI] Meta error:', fbData);
-      // Não devolve `fbData` ao cliente (vaza estrutura interna da Graph API)
+    // Pixel secundário (opcional): mesmo evento, para o dataset da conta de anúncios em outro BM.
+    // Fire-and-forget de propósito — não bloqueia nem derruba a resposta do principal se ele falhar.
+    if (PIXEL_ID_2 && TOKEN_2) {
+      enviarParaPixel(PIXEL_ID_2, TOKEN_2).catch(function (e) {
+        console.error('[CAPI] secundário falhou (ignorado):', e && e.message);
+      });
+    }
+
+    if (!principal.ok) {
+      console.error('[CAPI] Meta error:', principal.data);
+      // Não devolve `data` ao cliente (vaza estrutura interna da Graph API)
       return res.status(502).json({ error: 'Meta CAPI rejected' });
     }
 
     return res.status(200).json({
       success: true,
-      events_received: fbData.events_received,
-      fbtrace_id: fbData.fbtrace_id,
+      events_received: principal.data.events_received,
+      fbtrace_id: principal.data.fbtrace_id,
     });
   } catch (e) {
     console.error('[CAPI] Network/fetch error:', e);
