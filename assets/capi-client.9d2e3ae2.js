@@ -85,24 +85,30 @@
 
     var originalPush = window.dataLayer.push.bind(window.dataLayer);
     window.dataLayer.push = function() {
+      // 1) ANTES do push original: anexar o event_id aos eventos relevantes. Este é o
+      //    ponto que faz a deduplicação funcionar — a tag do Pixel no GTM dispara DENTRO
+      //    do originalPush, então o event_id precisa já estar no item para a tag lê-lo
+      //    (via a variável "DLV - event_id" no GTM) e passar ao fbq o MESMO id que
+      //    enviaremos ao CAPI abaixo. Se anexássemos depois (como era), o browser Pixel
+      //    usaria o event_id próprio do GTM (gtm.uniqueEventId) e a dedup nunca casaria.
+      for (var i = 0; i < arguments.length; i++) {
+        var item = arguments[i];
+        if (item && typeof item === 'object' && item.event && EVENT_MAP[item.event]
+            && item.am_enriched !== true && !item.event_id) {
+          item.event_id = genEventId();
+        }
+      }
+
       var result = originalPush.apply(window.dataLayer, arguments);
 
-      // Processar cada arg pushed
+      // 2) DEPOIS do push original: enviar ao CAPI com o MESMO event_id anexado acima.
       for (var i = 0; i < arguments.length; i++) {
         var item = arguments[i];
         if (item && typeof item === 'object' && item.event && EVENT_MAP[item.event]) {
           // Skip se advanced-matching já enviou CAPI com PII (evita duplicar)
           if (item.am_enriched === true) continue;
-
-          var metaEvent = EVENT_MAP[item.event];
-          // event_id já no item, ou gerar novo
-          var eventId = item.event_id || genEventId();
-          // Sincronizar com browser pixel: anexar event_id ao item pra GTM tag usar
-          if (!item.event_id) {
-            item.event_id = eventId;
-          }
           // Disparar Meta evento principal (Lead/Contact) via CAPI
-          sendCapi(metaEvent, eventId, item.content_name, item.content_category);
+          sendCapi(EVENT_MAP[item.event], item.event_id, item.content_name, item.content_category);
         }
       }
       return result;
