@@ -65,3 +65,9 @@ credentials.json
 
 # Dashboard de reativação — gerado localmente pelo scripts/reativacao.mjs (pode conter PII de leads)
 scripts/reativacao.html
+
+# Listas de leads reais (nome/telefone de paciente). O exemplo fictício continua versionado.
+scripts/*.csv
+!scripts/leads.exemplo.csv
+
+.env*
